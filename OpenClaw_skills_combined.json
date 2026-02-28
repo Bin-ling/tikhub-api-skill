@@ -1175,8 +1175,9 @@
     }
   },
   "tikhub_integration": {
-    "api_client": "TikTok Hub API客户端",
-    "base_url": "https://api.tikhub.io",
+    "api_client": "TikHub-API-Python-SDK-V2",
+    "sdk_path": "OpenClaw_skill_combined/TikHub-API-Python-SDK-V2",
+    "base_url": "https://api.tikhub.dev",
     "api_key": "",
     "endpoints": {
       "douyin": {
@@ -1184,44 +1185,52 @@
           "fetch_hot_search_list": {
             "path": "/api/v1/douyin/app/v3/fetch_hot_search_list",
             "method": "GET",
-            "description": "获取抖音热搜榜数据"
+            "description": "获取抖音热搜榜数据",
+            "sdk_method": "DouyinAppV3APIApi.fetch_hot_search_list_api_v1_douyin_app_v3_fetch_hot_search_list_get"
           },
           "fetch_video_statistics": {
             "path": "/api/v1/douyin/app/v3/fetch_video_statistics",
             "method": "GET",
-            "description": "获取视频统计数据"
+            "description": "获取视频统计数据",
+            "sdk_method": "DouyinAppV3APIApi.fetch_video_statistics_api_v1_douyin_app_v3_fetch_video_statistics_get"
           },
           "handler_user_profile": {
             "path": "/api/v1/douyin/app/v3/handler_user_profile",
             "method": "GET",
-            "description": "获取用户信息"
+            "description": "获取用户信息",
+            "sdk_method": "DouyinAppV3APIApi.handler_user_profile_api_v1_douyin_app_v3_handler_user_profile_get"
           },
           "fetch_user_post_videos": {
             "path": "/api/v1/douyin/app/v3/fetch_user_post_videos",
             "method": "GET",
-            "description": "获取用户作品"
+            "description": "获取用户作品",
+            "sdk_method": "DouyinAppV3APIApi.fetch_user_post_videos_api_v1_douyin_app_v3_fetch_user_post_videos_get"
           },
           "fetch_video_comments": {
             "path": "/api/v1/douyin/app/v3/fetch_video_comments",
             "method": "GET",
-            "description": "获取视频评论"
+            "description": "获取视频评论",
+            "sdk_method": "DouyinAppV3APIApi.fetch_video_comments_api_v1_douyin_app_v3_fetch_video_comments_get"
           }
         },
         "billboard": {
           "fetch_hot_total_list": {
             "path": "/api/v1/douyin/billboard/fetch_hot_total_list",
             "method": "GET",
-            "description": "获取热点总榜"
+            "description": "获取热点总榜",
+            "sdk_method": "DouyinBillboardAPIApi.fetch_hot_total_list_api_v1_douyin_billboard_fetch_hot_total_list_get"
           },
           "fetch_hot_rise_list": {
             "path": "/api/v1/douyin/billboard/fetch_hot_rise_list",
             "method": "GET",
-            "description": "获取上升热点榜"
+            "description": "获取上升热点榜",
+            "sdk_method": "DouyinBillboardAPIApi.fetch_hot_rise_list_api_v1_douyin_billboard_fetch_hot_rise_list_get"
           },
           "fetch_hot_total_search_list": {
             "path": "/api/v1/douyin/billboard/fetch_hot_total_search_list",
             "method": "GET",
-            "description": "获取搜索热榜"
+            "description": "获取搜索热榜",
+            "sdk_method": "DouyinBillboardAPIApi.fetch_hot_total_search_list_api_v1_douyin_billboard_fetch_hot_total_search_list_post"
           },
           "fetch_hot_account_list": {
             "path": "/api/v1/douyin/billboard/fetch_hot_account_list",
