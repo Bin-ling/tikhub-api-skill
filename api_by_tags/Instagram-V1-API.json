@@ -1,0 +1,147 @@
+[
+  {
+    "path": "/api/v1/instagram/v1/shortcode_to_media_id",
+    "summary": "Shortcode转Media ID/Convert shortcode to media ID",
+    "description": "# [中文]\n### 用途:\n- 将Instagram帖子的Shortcode转换为Media ID\n- Shortcode是帖子URL中的唯一标识，如 instagram.com/p/DRhvwVLAHAG/ 中的 DRhvwVLAHAG\n### 参数:\n- shortcode: 帖子的Shortcode\n### 返回:\n- `status`: 转换状态\n- `shortcode`: 原始Shortcode\n- `media_id`: 转换后的Media ID\n### 价格:\n- 0.001 USD/请求\n\n# [English]\n### Purpose:\n- Convert Instagram post shortcode to media ID\n- Shortcode is the unique identifier in post URL, e.g., DRhvwVLAHAG in instagram.com/p/DRhvwVLAHAG/\n### Parameters:\n- shortcode: Post shortcode\n### Return:\n- `status`: Conversion status\n- `shortcode`: Original shortcode\n- `media_id`: Converted media ID\n### Price:\n- 0.001 USD/request\n\n# [示例/Example]\nshortcode = \"DRhvwVLAHAG\""
+  },
+  {
+    "path": "/api/v1/instagram/v1/media_id_to_shortcode",
+    "summary": "Media ID转Shortcode/Convert media ID to shortcode",
+    "description": "# [中文]\n### 用途:\n- 将Instagram帖子的Media ID转换为Shortcode\n- Shortcode可用于构建帖子URL：instagram.com/p/{shortcode}/\n### 参数:\n- media_id: 帖子的Media ID\n### 返回:\n- `status`: 转换状态\n- `media_id`: 原始Media ID\n- `shortcode`: 转换后的Shortcode\n### 价格:\n- 0.001 USD/请求\n\n# [English]\n### Purpose:\n- Convert Instagram post media ID to shortcode\n- Shortcode can be used to construct post URL: instagram.com/p/{shortcode}/\n### Parameters:\n- media_id: Post media ID\n### Return:\n- `status`: Conversion status\n- `media_id`: Original media ID\n- `shortcode`: Converted shortcode\n### Price:\n- 0.001 USD/request\n\n# [示例/Example]\nmedia_id = \"3774507992167247878\""
+  },
+  {
+    "path": "/api/v1/instagram/v1/user_id_to_username",
+    "summary": "用户ID转用户信息/Get user info by user ID",
+    "description": "# [中文]\n### 用途:\n- 通过Instagram用户ID获取用户信息\n- 可用于将用户ID转换为用户名及获取完整用户资料\n### 参数:\n- user_id: 用户ID\n### 返回:\n- `pk`/`pk_id`: 用户ID\n- `username`: 用户名\n- `full_name`: 用户全名\n- `is_private`: 是否私密账户\n- `is_verified`: 是否已认证\n- `profile_pic_url`: 头像URL\n- `biography`: 个人简介\n- `follower_count`: 粉丝数\n- `following_count`: 关注数\n- `media_count`: 帖子数\n### 价格:\n- 0.001 USD/请求\n\n# [English]\n### Purpose:\n- Get user info by Instagram user ID\n- Can be used to convert user ID to username and get full profile\n### Parameters:\n- user_id: User ID\n### Return:\n- `pk`/`pk_id`: User ID\n- `username`: Username\n- `full_name`: Full name\n- `is_private`: Whether account is private\n- `is_verified`: Whether account is verified\n- `profile_pic_url`: Profile picture URL\n- `biography`: Bio\n- `follower_count`: Followers count\n- `following_count`: Following count\n- `media_count`: Posts count\n### Price:\n- 0.001 USD/request\n\n# [示例/Example]\nuser_id = \"18527\""
+  },
+  {
+    "path": "/api/v1/instagram/v1/fetch_user_info_by_username",
+    "summary": "根据用户名获取用户数据/Get user data by username",
+    "description": "# [中文]\n### 用途:\n- 根据Instagram用户名获取用户数据\n### 参数:\n- username: Instagram用户名\n### 返回:\n- 用户信息对象，包含以下主要字段：\n  - `id`: 用户ID\n  - `username`: 用户名\n  - `full_name`: 用户全名\n  - `biography`: 个人简介\n  - `bio_links`: 个人简介链接列表\n  - `edge_followed_by`: 粉丝数 {count: xxx}\n  - `edge_follow`: 关注数 {count: xxx}\n  - `profile_pic_url`: 头像URL\n  - `profile_pic_url_hd`: 高清头像URL\n  - `is_private`: 是否私密账户\n  - `is_verified`: 是否已认证\n  - `external_url`: 外部链接\n  - `is_business_account`: 是否商业账户\n  - `is_professional_account`: 是否专业账户\n  - `highlight_reel_count`: 精选集数量\n  - `edge_owner_to_timeline_media`: 时间线媒体（包含最近帖子）\n### 价格:\n- 0.001 USD/请求\n\n# [English]\n### Purpose:\n- Get user data by Instagram username\n### Parameters:\n- username: Instagram username\n### Return:\n- User information object with main fields:\n  - `id`: User ID\n  - `username`: Username\n  - `full_name`: Full name\n  - `biography`: Bio\n  - `bio_links`: Bio links list\n  - `edge_followed_by`: Followers count {count: xxx}\n  - `edge_follow`: Following count {count: xxx}\n  - `profile_pic_url`: Profile picture URL\n  - `profile_pic_url_hd`: HD profile picture URL\n  - `is_private`: Whether account is private\n  - `is_verified`: Whether account is verified\n  - `external_url`: External link\n  - `is_business_account`: Whether business account\n  - `is_professional_account`: Whether professional account\n  - `highlight_reel_count`: Highlights count\n  - `edge_owner_to_timeline_media`: Timeline media (contains recent posts)\n### Price:\n- 0.001 USD/request\n\n# [示例/Example]\nusername = \"instagram\""
+  },
+  {
+    "path": "/api/v1/instagram/v1/fetch_user_info_by_username_v2",
+    "summary": "根据用户名获取用户数据V2/Get user data by username V2",
+    "description": "# [中文]\n### 用途:\n- 根据Instagram用户名获取用户数据\n### 参数:\n- username: Instagram用户名\n### 返回:\n- 用户信息对象，包含以下主要字段：\n  - `id`: 用户ID\n  - `username`: 用户名\n  - `full_name`: 用户全名\n  - `biography`: 个人简介\n  - `bio_links`: 个人简介链接列表\n  - `edge_followed_by`: 粉丝数 {count: xxx}\n  - `edge_follow`: 关注数 {count: xxx}\n  - `profile_pic_url`: 头像URL\n  - `profile_pic_url_hd`: 高清头像URL\n  - `is_private`: 是否私密账户\n  - `is_verified`: 是否已认证\n  - `external_url`: 外部链接\n  - `is_business_account`: 是否商业账户\n  - `is_professional_account`: 是否专业账户\n  - `highlight_reel_count`: 精选集数量\n  - `edge_owner_to_timeline_media`: 时间线媒体（包含最近12条帖子）\n  - `status`: 请求状态\n  - `attempts`: 尝试次数\n### 价格:\n- 0.001 USD/请求\n\n# [English]\n### Purpose:\n- Get user data by Instagram username\n### Parameters:\n- username: Instagram username\n### Return:\n- User information object with main fields:\n  - `id`: User ID\n  - `username`: Username\n  - `full_name`: Full name\n  - `biography`: Bio\n  - `bio_links`: Bio links list\n  - `edge_followed_by`: Followers count {count: xxx}\n  - `edge_follow`: Following count {count: xxx}\n  - `profile_pic_url`: Profile picture URL\n  - `profile_pic_url_hd`: HD profile picture URL\n  - `is_private`: Whether account is private\n  - `is_verified`: Whether account is verified\n  - `external_url`: External link\n  - `is_business_account`: Whether business account\n  - `is_professional_account`: Whether professional account\n  - `highlight_reel_count`: Highlights count\n  - `edge_owner_to_timeline_media`: Timeline media (contains recent 12 posts)\n  - `status`: Request status\n  - `attempts`: Retry attempts\n### Price:\n- 0.001 USD/request\n\n# [示例/Example]\nusername = \"instagram\""
+  },
+  {
+    "path": "/api/v1/instagram/v1/fetch_user_info_by_username_v3",
+    "summary": "根据用户名获取用户数据V3/Get user data by username V3",
+    "description": "# [中文]\n### 用途:\n- 根据Instagram用户名获取用户数据，返回更详细的信息\n### 参数:\n- username: Instagram用户名\n### 返回:\n- 用户信息对象，包含以下主要字段：\n  - `pk/id`: 用户ID\n  - `username`: 用户名\n  - `full_name`: 用户全名\n  - `biography`: 个人简介\n  - `bio_links`: 个人简介链接列表\n  - `follower_count`: 粉丝数\n  - `following_count`: 关注数\n  - `media_count`: 媒体数量\n  - `profile_pic_url`: 头像URL\n  - `hd_profile_pic_url_info`: 高清头像URL信息\n  - `is_private`: 是否私密账户\n  - `is_verified`: 是否已认证\n### 价格:\n- 0.001 USD/请求\n\n# [English]\n### Purpose:\n- Get user data by Instagram username with more details\n### Parameters:\n- username: Instagram username\n### Return:\n- User information object with main fields:\n  - `pk/id`: User ID\n  - `username`: Username\n  - `full_name`: Full name\n  - `biography`: Bio\n  - `bio_links`: Bio links list\n  - `follower_count`: Followers count\n  - `following_count`: Following count\n  - `media_count`: Media count\n  - `profile_pic_url`: Profile picture URL\n  - `hd_profile_pic_url_info`: HD profile picture URL info\n  - `is_private`: Whether account is private\n  - `is_verified`: Whether account is verified\n### Price:\n- 0.001 USD/request\n\n# [示例/Example]\nusername = \"instagram\""
+  },
+  {
+    "path": "/api/v1/instagram/v1/fetch_user_info_by_id",
+    "summary": "根据用户ID获取用户数据/Get user data by user ID",
+    "description": "# [中文]\n### 用途:\n- 根据Instagram用户ID获取用户数据\n### 参数:\n- user_id: Instagram用户ID\n### 返回:\n- 用户信息对象，包含时间线媒体、高清头像等完整数据\n### 价格:\n- 0.001 USD/请求\n\n# [English]\n### Purpose:\n- Get user data by Instagram user ID\n### Parameters:\n- user_id: Instagram user ID\n### Return:\n- User information object with timeline media, HD avatar and complete data\n### Price:\n- 0.001 USD/request\n\n# [示例/Example]\nuser_id = \"25025320\""
+  },
+  {
+    "path": "/api/v1/instagram/v1/fetch_user_info_by_id_v2",
+    "summary": "根据用户ID获取用户数据V2/Get user data by user ID V2",
+    "description": "# [中文]\n### 用途:\n- 根据Instagram用户ID获取用户数据，返回更详细的信息\n### 参数:\n- user_id: Instagram用户ID\n### 返回:\n- 用户信息对象，包含bio_links、hd_profile_pic_url_info等更多字段\n### 价格:\n- 0.001 USD/请求\n\n# [English]\n### Purpose:\n- Get user data by Instagram user ID with more details\n### Parameters:\n- user_id: Instagram user ID\n### Return:\n- User information object with bio_links, hd_profile_pic_url_info and more\n### Price:\n- 0.001 USD/request\n\n# [示例/Example]\nuser_id = \"25025320\""
+  },
+  {
+    "path": "/api/v1/instagram/v1/fetch_user_about_info",
+    "summary": "获取用户的About信息/Get user about info",
+    "description": "# [中文]\n### 用途:\n- 获取用户的\"关于此账户\"（About This Account）信息\n- 包含账户创建日期、所在地区、认证状态等详细信息\n### 参数:\n- user_id: Instagram用户ID（数字格式）\n### 返回:\n- `status`: 请求状态\n- `user_id`: 用户ID\n- `username`: 用户名\n- `profile_pic_url`: 头像URL\n- `is_verified`: 是否认证\n- `date_joined`: 账户创建日期（如：\"June 2012\"）\n- `account_based_in`: 账户所在地区（如：\"United States\"）\n- `verified_date`: 认证日期（如：\"August 2017\"，未认证则为None）\n### 价格:\n- 0.001 USD/请求\n\n# [English]\n### Purpose:\n- Get user's \"About This Account\" information\n- Contains account creation date, location, verification status and more\n### Parameters:\n- user_id: Instagram user ID (numeric format)\n### Return:\n- `status`: Request status\n- `user_id`: User ID\n- `username`: Username\n- `profile_pic_url`: Profile picture URL\n- `is_verified`: Whether verified\n- `date_joined`: Account creation date (e.g., \"June 2012\")\n- `account_based_in`: Account location (e.g., \"United States\")\n- `verified_date`: Verification date (e.g., \"August 2017\", None if not verified)\n### Price:\n- 0.001 USD/request\n\n# [示例/Example]\nuser_id = \"182988865\""
+  },
+  {
+    "path": "/api/v1/instagram/v1/fetch_user_posts",
+    "summary": "获取用户帖子列表/Get user posts list",
+    "description": "# [中文]\n### 用途:\n- 获取用户帖子列表，支持分页\n### 参数:\n- user_id: Instagram用户ID\n- count: 每页数量，默认12\n- max_id: 分页游标，首次请求不传\n### 返回:\n- `items`: 帖子列表\n- `more_available`: 是否有更多数据\n- `next_max_id`: 下一页游标\n### 价格:\n- 0.001 USD/请求\n\n# [English]\n### Purpose:\n- Get user posts list with pagination support\n### Parameters:\n- user_id: Instagram user ID\n- count: Count per page, default 12\n- max_id: Pagination cursor, omit for first request\n### Return:\n- `items`: Posts list\n- `more_available`: Whether more data available\n- `next_max_id`: Next page cursor\n### Price:\n- 0.001 USD/request\n\n# [示例/Example]\nuser_id = \"25025320\""
+  },
+  {
+    "path": "/api/v1/instagram/v1/fetch_user_posts_v2",
+    "summary": "获取用户帖子列表V2/Get user posts list V2",
+    "description": "# [中文]\n### 用途:\n- 获取用户帖子列表，支持分页\n### 参数:\n- user_id: Instagram用户ID\n- count: 每页数量，默认12\n- end_cursor: 分页游标，首次请求不传\n### 返回:\n- GraphQL风格响应，包含`data.user.edge_owner_to_timeline_media`\n### 价格:\n- 0.001 USD/请求\n\n# [English]\n### Purpose:\n- Get user posts list with pagination\n### Parameters:\n- user_id: Instagram user ID\n- count: Count per page, default 12\n- end_cursor: Pagination cursor, omit for first request\n### Return:\n- GraphQL style response with `data.user.edge_owner_to_timeline_media`\n### Price:\n- 0.001 USD/request\n\n# [示例/Example]\nuser_id = \"25025320\""
+  },
+  {
+    "path": "/api/v1/instagram/v1/fetch_user_reels",
+    "summary": "获取用户Reels列表/Get user Reels list",
+    "description": "# [中文]\n### 用途:\n- 获取用户Reels短视频列表，支持分页\n### 参数:\n- user_id: Instagram用户ID\n- count: 每页数量，默认12\n- max_id: 分页游标，首次请求不传\n### 返回:\n- `items`: Reels列表\n- `paging_info`: 分页信息\n### 价格:\n- 0.001 USD/请求\n\n# [English]\n### Purpose:\n- Get user Reels list with pagination\n### Parameters:\n- user_id: Instagram user ID\n- count: Count per page, default 12\n- max_id: Pagination cursor, omit for first request\n### Return:\n- `items`: Reels list\n- `paging_info`: Pagination info\n### Price:\n- 0.001 USD/request\n\n# [示例/Example]\nuser_id = \"25025320\""
+  },
+  {
+    "path": "/api/v1/instagram/v1/fetch_user_reposts",
+    "summary": "获取用户转发列表/Get user reposts list",
+    "description": "# [中文]\n### 用途:\n- 获取用户转发/分享的帖子列表，支持分页\n### 参数:\n- user_id: Instagram用户ID\n- max_id: 分页游标，首次请求不传\n### 返回:\n- `items`: 转发帖子列表\n- `more_available`: 是否有更多数据\n- `next_max_id`: 下一页游标\n### 价格:\n- 0.001 USD/请求\n\n# [English]\n### Purpose:\n- Get user reposts/shares list with pagination\n### Parameters:\n- user_id: Instagram user ID\n- max_id: Pagination cursor, omit for first request\n### Return:\n- `items`: Reposts list\n- `more_available`: Whether more data available\n- `next_max_id`: Next page cursor\n### Price:\n- 0.001 USD/request\n\n# [示例/Example]\nuser_id = \"25025320\""
+  },
+  {
+    "path": "/api/v1/instagram/v1/fetch_user_tagged_posts",
+    "summary": "获取用户被标记的帖子/Get user tagged posts",
+    "description": "# [中文]\n### 用途:\n- 获取其他用户帖子中标记了该用户的帖子列表\n### 参数:\n- user_id: Instagram用户ID\n- count: 每页数量，默认12\n- end_cursor: 分页游标，首次请求不传\n### 返回:\n- GraphQL风格响应，包含`data.user.edge_user_to_photos_of_you`\n### 价格:\n- 0.001 USD/请求\n\n# [English]\n### Purpose:\n- Get posts where this user is tagged by others\n### Parameters:\n- user_id: Instagram user ID\n- count: Count per page, default 12\n- end_cursor: Pagination cursor, omit for first request\n### Return:\n- GraphQL style response with `data.user.edge_user_to_photos_of_you`\n### Price:\n- 0.001 USD/request\n\n# [示例/Example]\nuser_id = \"25025320\""
+  },
+  {
+    "path": "/api/v1/instagram/v1/fetch_related_profiles",
+    "summary": "获取相关用户推荐/Get related profiles",
+    "description": "# [中文]\n### 用途:\n- 获取与指定用户相关/相似的用户推荐列表\n### 参数:\n- user_id: Instagram用户ID\n### 返回:\n- GraphQL风格响应，包含`data.user.edge_related_profiles`\n### 价格:\n- 0.001 USD/请求\n\n# [English]\n### Purpose:\n- Get related/similar user recommendations\n### Parameters:\n- user_id: Instagram user ID\n### Return:\n- GraphQL style response with `data.user.edge_related_profiles`\n### Price:\n- 0.001 USD/request\n\n# [示例/Example]\nuser_id = \"25025320\""
+  },
+  {
+    "path": "/api/v1/instagram/v1/fetch_search",
+    "summary": "搜索用户/话题/地点/Search users/hashtags/places",
+    "description": "# [中文]\n### 用途:\n- 根据关键词搜索Instagram上的用户、话题标签或地点\n### 参数:\n- query: 搜索关键词\n- select: 筛选类型（可选）\n  - `users`: 仅返回用户\n  - `hashtags`: 仅返回话题标签\n  - `places`: 仅返回地点\n  - 不传: 返回所有类型\n### 返回:\n- `users`: 用户列表\n- `hashtags`: 话题列表\n- `places`: 地点列表\n### 价格:\n- 0.001 USD/请求\n\n# [English]\n### Purpose:\n- Search users, hashtags or places on Instagram\n### Parameters:\n- query: Search keyword\n- select: Filter type (optional)\n  - `users`: Only return users\n  - `hashtags`: Only return hashtags\n  - `places`: Only return places\n  - omit: Return all types\n### Return:\n- `users`: Users list\n- `hashtags`: Hashtags list\n- `places`: Places list\n### Price:\n- 0.001 USD/request\n\n# [示例/Example]\nquery = \"taylorswift\"\nselect = \"users\""
+  },
+  {
+    "path": "/api/v1/instagram/v1/fetch_post_by_url",
+    "summary": "通过URL获取帖子详情/Get post by URL",
+    "description": "# [中文]\n### 用途:\n- 通过URL获取单个帖子的详细信息\n### 参数:\n- post_url: 帖子URL\n### 返回:\n- 帖子详情对象，包含媒体、点赞数、评论等\n### 价格:\n- 0.001 USD/请求\n\n# [English]\n### Purpose:\n- Get single post details by URL\n### Parameters:\n- post_url: Post URL\n### Return:\n- Post details object with media, likes, comments etc.\n### Price:\n- 0.001 USD/request\n\n# [示例/Example]\npost_url = \"https://www.instagram.com/p/DPwhVB-jo9k/\""
+  },
+  {
+    "path": "/api/v1/instagram/v1/fetch_post_by_url_v2",
+    "summary": "通过URL获取帖子详情 V2/Get post by URL V2",
+    "description": "# [中文]\n### 用途:\n- 通过URL获取单个帖子的详细信息 V2 - 数据没有V1完整，但速度更快，用于下载大量帖子时推荐使用。\n### 参数:\n- post_url: 帖子URL\n### 返回:\n- 帖子详情对象，包含媒体、点赞数、评论等\n### 价格:\n- 0.001 USD/请求\n\n# [English]\n### Purpose:\n- Get single post details by URL V2 - Data is not as complete as V1, but faster. Recommended for downloading large number of posts.\n### Parameters:\n- post_url: Post URL\n### Return:\n- Post details object with media, likes, comments etc.\n### Price:\n- 0.001 USD/request\n\n# [示例/Example]\npost_url = \"https://www.instagram.com/p/DPwhVB-jo9k/\""
+  },
+  {
+    "path": "/api/v1/instagram/v1/fetch_post_by_id",
+    "summary": "通过ID获取帖子详情/Get post by ID",
+    "description": "# [中文]\n### 用途:\n- 通过ID获取单个帖子的详细信息\n### 参数:\n- post_id: 帖子ID\n### 返回:\n- 帖子详情对象，包含媒体、点赞数、评论等\n### 价格:\n- 0.001 USD/请求\n\n# [English]\n### Purpose:\n- Get single post details by ID\n### Parameters:\n- post_id: Post ID\n### Return:\n- Post details object with media, likes, comments etc.\n### Price:\n- 0.001 USD/request\n\n# [示例/Example]\npost_id = \"3742637871112032100\""
+  },
+  {
+    "path": "/api/v1/instagram/v1/fetch_post_comments_v2",
+    "summary": "获取帖子评论列表V2/Get post comments V2",
+    "description": "# [中文]\n### 用途:\n- 获取帖子评论列表，支持分页\n- 返回的评论数据更完整，包含子评论预览和更多元数据\n### 参数:\n- media_id: 帖子ID（媒体ID）\n- sort_order: 排序方式，popular(热门)/recent(最新)\n- min_id: 分页游标，首次请求不传，从上一次响应的`next_min_id`字段获取\n### 返回:\n- `comment_count`: 评论总数\n- `comments`: 评论列表，每个评论包含：\n  - `pk`: 评论ID\n  - `text`: 评论内容\n  - `created_at`/`created_at_utc`: 评论时间戳\n  - `user`: 评论者信息（pk, username, full_name, is_verified, profile_pic_url等）\n  - `comment_like_count`: 评论点赞数\n  - `child_comment_count`: 子评论数量\n  - `preview_child_comments`: 子评论预览列表\n  - `is_liked_by_media_owner`: 是否被帖子作者点赞\n  - `has_translation`: 是否有翻译\n- `next_min_id`: 下一页游标（JSON格式字符串）\n- `has_more_headload_comments`: 是否有更多评论\n- `caption`: 帖子描述信息\n### 价格:\n- 0.001 USD/请求\n\n# [English]\n### Purpose:\n- Get post comments list with pagination\n- Returns more complete comment data including child comment previews and more metadata\n### Parameters:\n- media_id: Post ID (Media ID)\n- sort_order: Sorting method, popular/recent\n- min_id: Pagination cursor, omit for first request, get from previous response's `next_min_id`\n### Return:\n- `comment_count`: Total comments count\n- `comments`: Comments list, each comment contains:\n  - `pk`: Comment ID\n  - `text`: Comment content\n  - `created_at`/`created_at_utc`: Comment timestamp\n  - `user`: Commenter info (pk, username, full_name, is_verified, profile_pic_url etc.)\n  - `comment_like_count`: Comment likes count\n  - `child_comment_count`: Child comments count\n  - `preview_child_comments`: Child comments preview list\n  - `is_liked_by_media_owner`: Whether liked by post author\n  - `has_translation`: Whether translation available\n- `next_min_id`: Next page cursor (JSON format string)\n- `has_more_headload_comments`: Whether more comments available\n- `caption`: Post caption info\n### Price:\n- 0.001 USD/request\n\n# [示例/Example]\nmedia_id = \"3766120364183949816\"\nsort_order = \"recent\""
+  },
+  {
+    "path": "/api/v1/instagram/v1/fetch_comment_replies",
+    "summary": "获取评论的子评论列表/Get comment replies",
+    "description": "# [中文]\n### 用途:\n- 获取指定评论下的子评论（二级评论/回复），支持分页\n### 参数:\n- media_id: 帖子ID（媒体ID）\n- comment_id: 父评论ID（从fetch_post_comments_v2返回的评论pk字段获取）\n- min_id: 分页游标，首次请求不传，从上一次响应的`page_info.next_min_id`字段获取\n### 返回:\n- `child_comments`: 子评论列表，每个评论包含：\n  - `pk`: 评论ID\n  - `text`: 评论内容\n  - `created_at`/`created_at_utc`: 评论时间戳\n  - `user`: 评论者信息（pk, username, full_name, is_verified, profile_pic_url等）\n  - `comment_like_count`: 评论点赞数\n  - `parent_comment_id`: 父评论ID\n  - `has_translation`: 是否有翻译\n- `child_comment_count`: 子评论总数\n- `has_more_tail_child_comments`: 是否有更多子评论\n- `next_min_child_cursor`: 下一页游标\n- `page_info`: 分页信息汇总\n### 价格:\n- 0.001 USD/请求\n\n# [English]\n### Purpose:\n- Get child comments (replies) under a specific comment with pagination\n### Parameters:\n- media_id: Post ID (Media ID)\n- comment_id: Parent comment ID (get from pk field in fetch_post_comments_v2 response)\n- min_id: Pagination cursor, omit for first request, get from previous response's `page_info.next_min_id`\n### Return:\n- `child_comments`: Child comment list, each comment contains:\n  - `pk`: Comment ID\n  - `text`: Comment content\n  - `created_at`/`created_at_utc`: Comment timestamp\n  - `user`: Commenter info (pk, username, full_name, is_verified, profile_pic_url, etc.)\n  - `comment_like_count`: Comment like count\n  - `parent_comment_id`: Parent comment ID\n  - `has_translation`: Has translation\n- `child_comment_count`: Total child comment count\n- `has_more_tail_child_comments`: Has more child comments\n- `next_min_child_cursor`: Next page cursor\n- `page_info`: Pagination info summary\n### Price:\n- 0.001 USD/request\n\n# [示例/Example]\nmedia_id = \"3766120364183949816\"\ncomment_id = \"17871667485468098\"\nmin_id = \"\""
+  },
+  {
+    "path": "/api/v1/instagram/v1/fetch_music_posts",
+    "summary": "获取使用特定音乐的帖子/Get posts using specific music",
+    "description": "# [中文]\n### 用途:\n- 获取使用指定音乐/音频的Reels和帖子列表\n### 参数:\n- music_id: 音乐ID（与music_url二选一）\n- music_url: 音乐URL，会自动提取ID（与music_id二选一）\n- max_id: 分页游标，首次请求不传\n### 返回:\n- `items`: 帖子列表\n- `metadata`: 音乐元数据\n- `paging_info`: 分页信息\n### 价格:\n- 0.001 USD/请求\n\n# [English]\n### Purpose:\n- Get Reels and posts using specific music/audio\n### Parameters:\n- music_id: Music ID (alternative to music_url)\n- music_url: Music URL, ID will be extracted automatically (alternative to music_id)\n- max_id: Pagination cursor, omit for first request\n### Return:\n- `items`: Posts list\n- `metadata`: Music metadata\n- `paging_info`: Pagination info\n### Price:\n- 0.001 USD/request\n\n# [示例/Example]\nmusic_id = \"564058920086577\""
+  },
+  {
+    "path": "/api/v1/instagram/v1/fetch_hashtag_posts",
+    "summary": "获取话题标签下的帖子/Get posts by hashtag",
+    "description": "# [中文]\n### 用途:\n- 获取指定话题标签下的帖子列表\n### 参数:\n- hashtag: 话题标签名称（不含#号）\n- end_cursor: 分页游标，首次请求不传\n### 返回:\n- GraphQL风格响应，包含`data.hashtag.edge_hashtag_to_media`\n### 价格:\n- 0.001 USD/请求\n\n# [English]\n### Purpose:\n- Get posts under specific hashtag\n### Parameters:\n- hashtag: Hashtag name (without #)\n- end_cursor: Pagination cursor, omit for first request\n### Return:\n- GraphQL style response with `data.hashtag.edge_hashtag_to_media`\n### Price:\n- 0.001 USD/request\n\n# [示例/Example]\nhashtag = \"cat\""
+  },
+  {
+    "path": "/api/v1/instagram/v1/fetch_location_info",
+    "summary": "获取地点信息/Get location info",
+    "description": "# [中文]\n### 用途:\n- 获取指定地点的详细信息\n### 参数:\n- location_id: 地点ID\n### 返回:\n- `location_info`: 地点信息，包含名称、地址、坐标等\n### 价格:\n- 0.001 USD/请求\n\n# [English]\n### Purpose:\n- Get detailed information of specified location\n### Parameters:\n- location_id: Location ID\n### Return:\n- `location_info`: Location info including name, address, coordinates etc.\n### Price:\n- 0.001 USD/request\n\n# [示例/Example]\nlocation_id = \"703457703\""
+  },
+  {
+    "path": "/api/v1/instagram/v1/fetch_location_posts",
+    "summary": "获取地点下的帖子/Get posts by location",
+    "description": "# [中文]\n### 用途:\n- 获取指定地点标记的帖子列表\n### 参数:\n- location_id: 地点ID\n- tab: 排序方式，ranked(热门)/recent(最新)\n- end_cursor: 分页游标，首次请求不传\n### 返回:\n- `edges`: 帖子列表\n- `page_info`: 分页信息\n### 价格:\n- 0.001 USD/请求\n\n# [English]\n### Purpose:\n- Get posts tagged at specified location\n### Parameters:\n- location_id: Location ID\n- tab: Sorting method, ranked(top)/recent(latest)\n- end_cursor: Pagination cursor, omit for first request\n### Return:\n- `edges`: Posts list\n- `page_info`: Pagination info\n### Price:\n- 0.001 USD/request\n\n# [示例/Example]\nlocation_id = \"703457703\""
+  },
+  {
+    "path": "/api/v1/instagram/v1/fetch_cities",
+    "summary": "获取国家城市列表/Get cities by country",
+    "description": "# [中文]\n### 用途:\n- 获取指定国家的城市/地区列表\n### 参数:\n- country_code: 国家代码，如US、CN、JP\n- page: 页码，默认1\n### 返回:\n- `country_info`: 国家信息\n- `city_list`: 城市列表\n- `next_page`: 下一页页码\n### 价格:\n- 0.001 USD/请求\n\n# [English]\n### Purpose:\n- Get cities/regions list of specified country\n### Parameters:\n- country_code: Country code, e.g. US, CN, JP\n- page: Page number, default 1\n### Return:\n- `country_info`: Country info\n- `city_list`: Cities list\n- `next_page`: Next page number\n### Price:\n- 0.001 USD/request\n\n# [示例/Example]\ncountry_code = \"US\""
+  },
+  {
+    "path": "/api/v1/instagram/v1/fetch_locations",
+    "summary": "获取城市地点列表/Get locations by city",
+    "description": "# [中文]\n### 用途:\n- 获取指定城市下的Instagram地点列表\n### 参数:\n- city_id: 城市ID（可从fetch_cities接口获取）\n- page: 页码，默认1\n### 返回:\n- `country_info`: 国家信息\n- `city_info`: 城市信息\n- `location_list`: 地点列表\n- `next_page`: 下一页页码\n### 价格:\n- 0.001 USD/请求\n\n# [English]\n### Purpose:\n- Get Instagram locations list of specified city\n### Parameters:\n- city_id: City ID (from fetch_cities API)\n- page: Page number, default 1\n### Return:\n- `country_info`: Country info\n- `city_info`: City info\n- `location_list`: Locations list\n- `next_page`: Next page number\n### Price:\n- 0.001 USD/request\n\n# [示例/Example]\ncity_id = \"c2791472\""
+  },
+  {
+    "path": "/api/v1/instagram/v1/fetch_explore_sections",
+    "summary": "获取探索页面分类/Get explore page sections",
+    "description": "# [中文]\n### 用途:\n- 获取Instagram探索页面的所有分类和子分类\n### 返回:\n- `sections`: 分类列表，包含分类名称、子分类和推荐内容\n### 价格:\n- 0.001 USD/请求\n\n# [English]\n### Purpose:\n- Get all sections and subsections of Instagram explore page\n### Return:\n- `sections`: Sections list with names, subsections and recommended content\n### Price:\n- 0.001 USD/request"
+  },
+  {
+    "path": "/api/v1/instagram/v1/fetch_section_posts",
+    "summary": "获取分类下的帖子/Get posts by section",
+    "description": "# [中文]\n### 用途:\n- 获取探索页面某个分类下的帖子列表\n### 参数:\n- section_id: 分类ID（可从fetch_explore_sections接口获取）\n- count: 每页数量，默认20\n- max_id: 分页游标，首次请求不传\n### 返回:\n- `section_name`: 分类名称\n- `items`: 帖子列表\n- `subsections`: 子分类列表\n- `max_id`: 下一页游标\n- `more_available`: 是否有更多数据\n### 价格:\n- 0.001 USD/请求\n\n# [English]\n### Purpose:\n- Get posts under specific explore section\n### Parameters:\n- section_id: Section ID (from fetch_explore_sections API)\n- count: Count per page, default 20\n- max_id: Pagination cursor, omit for first request\n### Return:\n- `section_name`: Section name\n- `items`: Posts list\n- `subsections`: Subsections list\n- `max_id`: Next page cursor\n- `more_available`: Whether more data available\n### Price:\n- 0.001 USD/request\n\n# [示例/Example]\nsection_id = \"10156104410190727\""
+  }
+]

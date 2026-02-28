@@ -1,0 +1,102 @@
+[
+  {
+    "path": "/api/v1/kuaishou/app/fetch_one_video",
+    "summary": "视频详情V1/Video detailsV1",
+    "description": "# [中文]\n### 用途:\n- 获取单个作品数据接口 V1。\n### 参数:\n- photo_id: 作品ID，作品ID可以从分享链接中提取\n    - 格式备注：支持纯数字版本的ID，也支持短字符串版本（eID）的ID，两种ID可以混合使用。\n### 返回:\n- 视频数据\n\n# [English]\n### Purpose:\n- Fetch single video data API V1.\n### Parameters:\n- photo_id: Photo ID, the photo ID can be extracted from the share link\n    - Format note: Supports both pure digital version IDs and short string version (eID) IDs, both types can be mixed.\n### Returns:\n- Video data\n\n# [示例/Example]\nphoto_id = \"3xhpk3xcf6e4iac\"\nphoto_id = \"5246975215478907538\""
+  },
+  {
+    "path": "/api/v1/kuaishou/app/fetch_videos_batch",
+    "summary": "快手批量视频查询接口/Kuaishou batch video query API",
+    "description": "# [中文]\n### 用途:\n- 批量获取多个作品数据，单次请求最多支持40个视频ID。\n- 如果此接口连续请求失败，可以尝试使用价格更昂贵的V2接口进行冗余请求。\n- 此接口收费标准默认为：40 * 0.001 = 0.04 美元/次。\n### 参数:\n- photo_ids: 作品ID列表，多个ID用英文逗号分隔，单次最多40个\n    - 格式备注：支持纯数字版本的ID，也支持短字符串版本（eID）的ID，两种ID可以混合使用。\n### 返回:\n- 视频数据列表\n\n# [English]\n### Purpose:\n- Batch fetch multiple video data, supports up to 40 video IDs per request.\n- If this API continuously fails, you can try to use the more expensive V2 API for redundant requests.\n- The default charging standard for this API is: 40 * 0.001 = 0.04 USD/time.\n### Parameters:\n- photo_ids: Photo ID list, multiple IDs separated by commas, max 40 per request\n    - Format note: Supports both pure digital version IDs and short string version (eID) IDs, both types can be mixed.\n### Returns:\n- Video data list\n\n# [示例/Example]\nphoto_ids = \"5228960823332207296,5196309727975443273,5222486898325987583\""
+  },
+  {
+    "path": "/api/v1/kuaishou/app/fetch_one_video_by_url",
+    "summary": "根据链接获取单个作品数据/Fetch single video by URL",
+    "description": "# [中文]\n### 用途:\n- 根据链接获取单个作品数据，此接口默认使用价格更便宜的V1接口进行请求。\n### 参数:\n- share_text: 作品链接或分享文本\n### 返回:\n- 视频数据\n\n# [English]\n### Purpose:\n- Fetch single video by URL, this API defaults to using the cheaper V1 API for requests.\n### Parameters:\n- share_text: Photo URL or share text\n### Returns:\n- Video data\n\n# [示例/Example]\nshare_text = \"https://v.kuaishou.com/cNYP0Z\""
+  },
+  {
+    "path": "/api/v1/kuaishou/app/fetch_one_video_comment",
+    "summary": "获取单个作品评论数据/Get single video comment data",
+    "description": "# [中文]\n### 用途:\n- 获取单个作品评论数据\n### 参数:\n- photo_id: 作品ID\n    - 格式备注：支持纯数字版本的ID，也支持短字符串版本（eID）的ID，两种ID可以混合使用。\n- pcursor: 评论游标，第一次请求为空，后续请求使用返回响应中的pcursor值进行翻页。\n### 返回:\n- 评论数据\n\n# [English]\n### Purpose:\n- Fetch single video comment data\n### Parameters:\n- photo_id: Photo ID\n    - Format note: Supports both pure digital version IDs and short string version (eID) IDs, both types can be mixed.\n- pcursor: Comment cursor, empty for the first request, and use the pcursor value in the returned response for subsequent requests.\n### Returns:\n- Comments data\n\n# [示例/Example]\nphoto_id = \"3x7gxp2zhgjv832\"\npcursor = None"
+  },
+  {
+    "path": "/api/v1/kuaishou/app/fetch_one_user_v2",
+    "summary": "获取单个用户数据V2/Get single user data V2",
+    "description": "# [中文]\n### 用途:\n- 获取单个用户数据 V2\n- 此接口收费较贵，但稳定性更高，具体价格请在用户后台查看价格表。\n### 参数:\n- user_id: 支持`eid`或`userId`，eid是用户主页链接中的一部分，user_id则可以从不同的接口中获取。\n- 两种用户ID都可以使用，下面是两种用户ID的示例，这两个ID都指向同一个用户：\n    - eid = \"3xz63mn6fngqtiq\"\n    - userId = \"228905802\"\n### 返回:\n- 用户数据\n\n# [English]\n### Purpose:\n- Fetch single user data V2\n- This API is more expensive, but more stable, please check the price list in the user background for specific prices.\n### Parameters:\n- user_id: Supports `eid` or `userId`, `eid` is part of the user profile link, and `user_id` can be obtained from different interfaces.\n- Both user IDs can be used, here are examples of the two user IDs, both of which point to the same user:\n    - eid = \"3xz63mn6fngqtiq\"\n    - userId = \"228905802\"\n### Returns:\n- User data\n\n# [示例/Example]\nuser_id = \"3xz63mn6fngqtiq\""
+  },
+  {
+    "path": "/api/v1/kuaishou/app/fetch_user_live_info",
+    "summary": "获取用户直播信息/Get user live info",
+    "description": "# [中文]\n### 用途:\n- 获取用户直播信息\n### 参数:\n- user_id: 用户ID，此接口只支持用户ID，不支持用户eid，也就是输入必须要是纯数字ID。\n- user_id 可以从获取单个用户数据接口中获取。\n### 返回:\n- 直播信息\n\n# [English]\n### Purpose:\n- Get user live info\n### Parameters:\n- user_id: User ID, this API only supports user ID, not user eid, that is, the input must be a pure digital ID.\n- user_id can be obtained from the get single user data interface.\n### Returns:\n- Live info\n\n# [示例/Example]\nuser_id = \"1377082950\""
+  },
+  {
+    "path": "/api/v1/kuaishou/app/fetch_user_hot_post",
+    "summary": "获取用户热门作品数据/Get user hot post data",
+    "description": "# [中文]\n### 用途:\n- 获取用户热门作品数据\n### 参数:\n- user_id: 用户ID，此接口只支持用户ID，不支持用户eid，也就是输入必须要是纯数字ID。\n- user_id 可以从获取单个用户数据接口中获取。\n- pcursor: 作品游标，第一次请求为空，后续请求使用返回响应中的pcursor值进行翻页。\n### 返回:\n- 作品数据\n\n# [English]\n### Purpose:\n- Get user hot post data\n### Parameters:\n- user_id: User ID, this API only supports user ID, not user eid, that is, the input must be a pure digital ID.\n- user_id can be obtained from the get single user data interface.\n- pcursor: Post cursor, empty for the first request, and use the pcursor value in the returned response for subsequent requests.\n### Returns:\n- Post data\n\n# [示例/Example]\nuser_id = \"228905802\"\npcursor = None"
+  },
+  {
+    "path": "/api/v1/kuaishou/app/fetch_user_post_v2",
+    "summary": "用户视频列表V2/User video list V2",
+    "description": "# [中文]\n### 用途:\n- 用户视频列表 V2\n- 此接口收费较贵，但稳定性更高，具体价格请在用户后台查看价格表。\n### 参数:\n- user_id: 用户ID，此接口只支持用户ID，不支持用户eid，也就是输入必须要是纯数字ID。\n- user_id 可以从获取单个用户数据接口中获取。\n- pcursor: 视频游标，第一次请求为空，后续请求使用返回响应中的pcursor值进行翻页。\n### 返回:\n- 视频数据\n\n# [English]\n### Purpose:\n- User video list V2\n- This API is more expensive, but more stable, please check the price list in the user background for specific prices.\n### Parameters:\n- user_id: User ID, this API only supports user ID, not user eid, that is, the input must be a pure digital ID.\n- user_id can be obtained from the get single user data interface.\n- pcursor: Video cursor, empty for the first request, and use the pcursor value in the returned response for subsequent requests.\n### Returns:\n- Videos data\n\n# [示例/Example]\nuser_id = \"903511772\"\npcursor = None"
+  },
+  {
+    "path": "/api/v1/kuaishou/app/search_comprehensive",
+    "summary": "综合搜索/Comprehensive search",
+    "description": "# [中文]\n### 用途:\n- 快手综合搜索接口，支持搜索视频、用户等内容，并提供多维度筛选功能。\n### 参数:\n- keyword: 搜索关键词（必填）\n- pcursor: 分页游标，首次请求为空，后续使用响应中的pcursor值\n- sort_type: 排序方式\n    - all: 综合排序（默认）\n    - newest: 最新发布\n    - most_likes: 最多点赞\n- publish_time: 发布时间筛选\n    - all: 全部时间（默认）\n    - one_day: 近一日\n    - one_week: 近一周\n    - one_month: 近一月\n- duration: 作品时长筛选\n    - all: 全部时长（默认）\n    - under_1_min: 1分钟以内\n    - 1_to_5_min: 1-5分钟\n    - over_5_min: 5分钟以上\n- search_scope: 搜索范围\n    - all: 全部（默认）\n### 返回:\n- 搜索结果数据\n\n# [English]\n### Purpose:\n- Kuaishou comprehensive search API, supports searching videos, users, etc., and provides multi-dimensional filtering.\n### Parameters:\n- keyword: Search keyword (required)\n- pcursor: Pagination cursor, empty for first request, use pcursor from response for subsequent pages\n- sort_type: Sort type\n    - all: Comprehensive sort (default)\n    - newest: Latest release\n    - most_likes: Most likes\n- publish_time: Publish time filter\n    - all: All time (default)\n    - one_day: Last day\n    - one_week: Last week\n    - one_month: Last month\n- duration: Duration filter\n    - all: All duration (default)\n    - under_1_min: Under 1 minute\n    - 1_to_5_min: 1-5 minutes\n    - over_5_min: Over 5 minutes\n- search_scope: Search scope\n    - all: All (default)\n### Returns:\n- Search result data\n\n# [示例/Example]\nkeyword = \"汽车之家\"\nsort_type = \"most_likes\"\npublish_time = \"one_week\""
+  },
+  {
+    "path": "/api/v1/kuaishou/app/search_video_v2",
+    "summary": "搜索视频V2/Search video V2",
+    "description": "# [中文]\n### 用途:\n- 搜索视频 V2\n- 此接口收费较贵，但稳定性更高，具体价格请在用户后台查看价格表。\n### 参数:\n- keyword: 搜索关键词\n- page: 视频页数，从1开始\n### 返回:\n- 视频数据\n\n# [English]\n### Purpose:\n- Search video V2\n- This API is more expensive, but more stable, please check the price list in the user background for specific prices.\n### Parameters:\n- keyword: Search keyword\n- page: Page number, starting from 1\n### Returns:\n- Videos data\n\n# [示例/Example]\nkeyword = \"人工智能\"\npage = \"1\""
+  },
+  {
+    "path": "/api/v1/kuaishou/app/search_user_v2",
+    "summary": "搜索用户V2/Search user V2",
+    "description": "# [中文]\n### 用途:\n- 搜索用户 V2\n- 此接口收费较贵，但稳定性更高，具体价格请在用户后台查看价格表。\n### 参数:\n- keyword: 搜索关键词\n- page: 用户页数，从1开始\n### 返回:\n- 用户数据\n\n# [English]\n### Purpose:\n- Search user V2\n- This API is more expensive, but more stable, please check the price list in the user background for specific prices.\n### Parameters:\n- keyword: Search keyword\n- page: User page number, starting from 1\n### Returns:\n- User data\n\n# [示例/Example]\nkeyword = \"人工智能\"\npage = \"1\""
+  },
+  {
+    "path": "/api/v1/kuaishou/app/fetch_hot_board_categories",
+    "summary": "快手热榜分类/Kuaishou hot categories",
+    "description": "# [中文]\n### 用途:\n- 快手热榜分类\n### 返回:\n- 分类数据\n\n# [English]\n### Purpose:\n- Kuaishou hot categories\n### Returns:\n- Categories data"
+  },
+  {
+    "path": "/api/v1/kuaishou/app/fetch_hot_board_detail",
+    "summary": "快手热榜详情/Kuaishou hot board detail",
+    "description": "# [中文]\n### 用途:\n- 快手热榜详情\n### 参数:\n- boardType: 榜单类型\n- boardId: 榜单ID\n- boardType 和 boardId 可以从热榜分类接口中获取。\n### 返回:\n- 详情数据\n\n# [English]\n### Purpose:\n- Kuaishou hot board detail\n### Parameters:\n- boardType: Board type\n- boardId: Board ID\n- boardType and boardId can be obtained from the hot board categories interface.\n### Returns:\n- Detail data\n\n# [示例/Example]\nboardType = 1\nboardId = 1"
+  },
+  {
+    "path": "/api/v1/kuaishou/app/fetch_hot_search_person",
+    "summary": "快手热搜人物榜单/Kuaishou hot search person board",
+    "description": "# [中文]\n### 用途:\n- 快手热搜人物榜单\n### 返回:\n- 榜单数据\n\n# [English]\n### Purpose:\n- Kuaishou hot search person board\n### Returns:\n- Board data"
+  },
+  {
+    "path": "/api/v1/kuaishou/app/fetch_live_top_list",
+    "summary": "快手直播榜单/Kuaishou live top list",
+    "description": "# [中文]\n### 用途:\n- 快手直播榜单\n### 参数:\n获取快手直播榜单，支持多个子榜单，具体参数如下：\n\n- 直播总榜对应参数：\n    - subTabId = 0\n    - subTabName = None\n- 直播音乐榜对应参数：\n    - subTabId = 102\n    - subTabName = \"音乐\"\n- 直播舞蹈榜对应参数：\n    - subTabId = 107\n    - subTabName = \"舞蹈\"\n- 直播颜值榜对应参数：\n    - subTabId = 101\n    - subTabName = \"颜值\"\n- 直播国艺榜对应参数：\n    - subTabId = 105\n    - subTabName = \"国艺\"\n- 直播相亲榜对应参数：\n    - subTabId = 111\n    - subTabName = \"相亲\"\n- 直播游戏榜对应参数：\n    - subTabId = 106\n    - subTabName = \"游戏\"\n- 直播二次元榜对应参数：\n    - subTabId = 110\n    - subTabName = \"二次元\"\n- 直播故事榜对应参数：\n    - subTabId = 104\n    - subTabName = \"故事\"\n- 直播团播榜对应参数：\n    - subTabId = 113\n    - subTabName = \"团播\"\n- 直播九宫格榜对应参数：\n    - subTabId = 114\n    - subTabName = \"九宫格\"\n\n### 返回:\n- 榜单数据\n\n# [English]\n### Purpose:\n- Kuaishou live top list\n### Parameters:\nGet the Kuaishou live top list, support multiple sub-top lists, specific parameters are as follows:\n\n- Corresponding parameters for the live total list:\n    - subTabId = 0\n    - subTabName = None\n- Corresponding parameters for the live music list:\n    - subTabId = 102\n    - subTabName = \"Music\"\n- Corresponding parameters for the live dance list:\n    - subTabId = 107\n    - subTabName = \"Dance\"\n- Corresponding parameters for the live beauty list:\n    - subTabId = 101\n    - subTabName = \"Beauty\"\n- Corresponding parameters for the live national art list:\n    - subTabId = 105\n    - subTabName = \"National Art\"\n- Corresponding parameters for the live blind date list:\n    - subTabId = 111\n    - subTabName = \"Blind Date\"\n- Corresponding parameters for the live game list:\n    - subTabId = 106\n    - subTabName = \"Game\"\n- Corresponding parameters for the live second element list:\n    - subTabId = 110\n    - subTabName = \"Second Element\"\n- Corresponding parameters for the live story list:\n    - subTabId = 104\n    - subTabName = \"Story\"\n- Corresponding parameters for the live group broadcast list:\n    - subTabId = 113\n    - subTabName = \"Group Broadcast\"\n- Corresponding parameters for the live nine-grid list:\n    - subTabId = 114\n    - subTabName = \"Nine Grid\"\n\n### Returns:\n- List data\n\n# [示例/Example]\nsubTabId = 0\nsubTabName = None"
+  },
+  {
+    "path": "/api/v1/kuaishou/app/fetch_shopping_top_list",
+    "summary": "快手购物榜单/Kuaishou shopping top list",
+    "description": "# [中文]\n### 用途:\n- 快手购物榜单\n### 参数:\n获取快手购物榜单，支持多个子榜单，具体参数如下：\n\n- 购物榜单热门主播榜对应参数：\n    - subTabId = 0\n    - subTabName = None\n- 购物榜单热销商品榜对应参数：\n    - subTabId = 102\n    - subTabName = \"热销商品\"\n\n### 返回:\n- 榜单数据\n\n# [English]\n### Purpose:\n- Kuaishou shopping top list\n### Parameters:\nGet the Kuaishou shopping top list, support multiple sub-top lists, specific parameters are as follows:\n\n- Corresponding parameters for the shopping hot anchor list:\n    - subTabId = 0\n    - subTabName = None\n- Corresponding parameters for the shopping hot selling product list:\n    - subTabId = 102\n    - subTabName = \"Hot Selling Product\"\n\n### Returns:\n- List data\n\n# [示例/Example]\nsubTabId = 0\nsubTabName = None"
+  },
+  {
+    "path": "/api/v1/kuaishou/app/fetch_brand_top_list",
+    "summary": "快手品牌榜单/Kuaishou brand top list",
+    "description": "# [中文]\n### 用途:\n- 快手品牌榜单\n### 参数:\n获取快手品牌榜单，支持多个子榜单，具体参数如下：\n\n- 品牌榜单热门美妆榜对应参数：\n    - subTabId = 0\n    - subTabName = None\n- 品牌榜单热门服饰榜对应参数：\n    - subTabId = 131\n    - subTabName = \"服饰\"\n- 品牌榜单热门汽车榜对应参数：\n    - subTabId = 1\n    - subTabName = \"汽车\"\n- 品牌榜单热门游戏榜对应参数：\n    - subTabId = 25\n    - subTabName = \"游戏\"\n- 品牌榜单热门医疗健康榜对应参数：\n    - subTabId = 24\n    - subTabName = \"医疗健康\"\n- 品牌榜单热门3C数码榜对应参数：\n    - subTabId = 130\n    - subTabName = \"3C数码\"\n- 品牌榜单热门手机榜对应参数：\n    - subTabId = 128\n    - subTabName = \"手机\"\n- 品牌榜单热门家电榜对应参数：\n    - subTabId = 11\n    - subTabName = \"家电\"\n- 品牌榜单热门母婴榜对应参数：\n    - subTabId = 4\n    - subTabName = \"母婴\"\n- 品牌榜单热门食品饮料榜对应参数：\n    - subTabId = 2\n    - subTabName = \"食品饮料\"\n\n### 返回:\n- 榜单数据\n\n# [English]\n### Purpose:\n- Kuaishou brand top list\n### Parameters:\nGet the Kuaishou brand top list, support multiple sub-top lists, specific parameters are as follows:\n\n- Corresponding parameters for the brand hot beauty list:\n    - subTabId = 0\n    - subTabName = None\n- Corresponding parameters for the brand hot clothing list:\n    - subTabId = 131\n    - subTabName = \"Clothing\"\n- Corresponding parameters for the brand hot car list:\n    - subTabId = 1\n    - subTabName = \"Car\"\n- Corresponding parameters for the brand hot game list:\n    - subTabId = 25\n    - subTabName = \"Game\"\n- Corresponding parameters for the brand hot medical health list:\n    - subTabId = 24\n    - subTabName = \"Medical Health\"\n- Corresponding parameters for the brand hot 3C digital list:\n    - subTabId = 130\n    - subTabName = \"3C Digital\"\n- Corresponding parameters for the brand hot mobile phone list:\n    - subTabId = 128\n    - subTabName = \"Mobile Phone\"\n- Corresponding parameters for the brand hot home appliance list:\n    - subTabId = 11\n    - subTabName = \"Home Appliance\"\n- Corresponding parameters for the brand hot maternal and child list:\n    - subTabId = 4\n    - subTabName = \"Maternal and Child\"\n- Corresponding parameters for the brand hot food and beverage list:\n    - subTabId = 2\n    - subTabName = \"Food and Beverage\"\n\n\n### Returns:\n- List data\n\n# [示例/Example]\nsubTabId = 0\nsubTabName = None"
+  },
+  {
+    "path": "/api/v1/kuaishou/app/generate_kuaishou_share_link",
+    "summary": "生成快手分享链接/Generate Kuaishou share link",
+    "description": "# [中文]\n### 用途:\n- 生成快手分享链接\n### 参数:\n- shareObjectId: 作品ID\n### 返回:\n- 分享链接\n\n# [English]\n### Purpose:\n- Generate Kuaishou share link\n### Parameters:\n- photo_id: Photo ID\n### Returns:\n- Share link\n\n# [示例/Example]\nshareObjectId = \"3xg5wjqdtekbb3u\""
+  },
+  {
+    "path": "/api/v1/kuaishou/app/fetch_magic_face_usage",
+    "summary": "获取魔法表情使用人数/Fetch magic face usage count",
+    "description": "# [中文]\n### 用途:\n- 获取快手魔法表情使用人数（H5接口）\n### 参数:\n- magic_face_id: 魔法表情ID\n### 返回:\n- 魔法表情使用人数\n\n# [English]\n### Purpose:\n- Fetch Kuaishou magic face usage count (H5 API)\n### Parameters:\n- magic_face_id: Magic face ID\n### Returns:\n- Magic face usage count\n\n# [示例/Example]\nmagic_face_id = \"11541661\""
+  },
+  {
+    "path": "/api/v1/kuaishou/app/fetch_magic_face_hot",
+    "summary": "获取魔法表情热门视频/Fetch magic face hot videos",
+    "description": "# [中文]\n### 用途:\n- 获取快手魔法表情热门视频列表（H5接口）\n### 参数:\n- magic_face_id: 魔法表情ID\n- pcursor: 分页游标，首页为\"0\"，后续使用响应中返回的pcursor值\n- count: 每页数量，默认18\n### 返回:\n- 魔法表情热门视频列表\n\n# [English]\n### Purpose:\n- Fetch Kuaishou magic face hot videos list (H5 API)\n### Parameters:\n- magic_face_id: Magic face ID\n- pcursor: Pagination cursor, \"0\" for first page, use pcursor from response for subsequent pages\n- count: Count per page, default 18\n### Returns:\n- Magic face hot videos list\n\n# [示例/Example]\nmagic_face_id = \"11541661\"\npcursor = \"0\"\ncount = 18"
+  }
+]

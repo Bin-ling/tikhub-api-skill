@@ -1,0 +1,52 @@
+[
+  {
+    "path": "/api/v1/wechat_mp/web/fetch_mp_article_detail_json",
+    "summary": "获取微信公众号文章详情的JSON/Get Wechat MP Article Detail JSON",
+    "description": "# [中文]\n### 用途:\n- 获取微信公众号文章详情的JSON格式数据\n- 此接口收费便宜，如果你需要获取详细的HTML格式数据，请使用`/api/v1/wechat_mp/web/fetch_mp_article_detail_html`接口，但是此接口收费更贵。\n- 价格：0.001$/次\n### 参数:\n- url: 文章链接\n### 返回:\n- 文章详情的HTML\n\n# [English]\n### Purpose:\n- Get WeChat MP Article Detail in JSON format\n- This interface is cheaper, if you need detailed HTML format data, please use the `/api/v1/wechat_mp/web/fetch_mp_article_detail_html` interface, but this interface is more expensive.\n- Price: 0.001$/time\n### Parameters:\n- url: Article URL\n### Returns:\n- Article Detail HTML\n\n# [示例/Example]\nurl = \"https://mp.weixin.qq.com/s/TSNQKkRpN1qbKsT7BvzqIw\""
+  },
+  {
+    "path": "/api/v1/wechat_mp/web/fetch_mp_article_detail_html",
+    "summary": "获取微信公众号文章详情的HTML/Get Wechat MP Article Detail HTML",
+    "description": "# [中文]\n### 用途:\n- 获取微信公众号文章详情的HTML，如果你需要获取详细的JSON格式数据，请使用`/api/v1/wechat_mp/web/fetch_mp_article_detail_json`接口\n- 此接口收费贵，价格：0.01$/次\n### 参数:\n- url: 文章链接\n### 返回:\n- 文章详情的HTML\n\n# [English]\n### Purpose:\n- Get WeChat MP Article Detail, if you need detailed JSON format data, please use the `/api/v1/wechat_mp/web/fetch_mp_article_detail_json` interface\n- This interface is more expensive, price: 0.01$/time\n### Parameters:\n- url: Article URL\n### Returns:\n- Article Detail HTML\n\n# [示例/Example]\nurl = \"https://mp.weixin.qq.com/s/TSNQKkRpN1qbKsT7BvzqIw\""
+  },
+  {
+    "path": "/api/v1/wechat_mp/web/fetch_mp_article_list",
+    "summary": "获取微信公众号文章列表/Get Wechat MP Article List",
+    "description": "# [中文]\n### 用途:\n- 获取微信公众号文章列表\n### 参数:\n- ghid: 公众号ID\n- offset: 偏移量\n### 返回:\n- 文章列表\n\n# [English]\n### Purpose:\n- Get Wechat MP Article List\n### Parameters:\n- ghid: MP ID\n- offset: Offset\n### Returns:\n- Article List\n\n# [示例/Example]\nghid = \"gh_a3d35d4c9d3f\"\noffset = \"\""
+  },
+  {
+    "path": "/api/v1/wechat_mp/web/fetch_mp_article_read_count",
+    "summary": "获取微信公众号文章阅读量/Get Wechat MP Article Read Count",
+    "description": "# [中文]\n### 用途:\n- 获取微信公众号文章阅读量\n### 参数:\n- url: 文章链接\n- comment_id: 评论ID\n### 返回:\n- 阅读量\n\n# [English]\n### Purpose:\n- Get Wechat MP Article Read Count\n### Parameters:\n- url: Article URL\n- comment_id: Comment ID\n### Returns:\n- Read Count\n\n# [示例/Example]\nurl = \"https://mp.weixin.qq.com/s/hrTDuwh0pWyJFYC93kKCrg\"\ncomment_id = \"3363399664632332289\""
+  },
+  {
+    "path": "/api/v1/wechat_mp/web/fetch_mp_article_url",
+    "summary": "获取微信公众号文章永久链接/Get Wechat MP Article URL",
+    "description": "# [中文]\n### 用途:\n- 获取微信公众号文章永久链接\n### 参数:\n- sogou_url: 搜狗链接\n### 返回:\n- 永久链接\n\n# [English]\n### Purpose:\n- Get Wechat MP Article URL\n### Parameters:\n- sogou_url: Sogou URL\n### Returns:\n- Article URL\n\n# [示例/Example]\nsogou_url = \"https://weixin.sogou.com/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS5mzcw64XRlRaPIdMgILsPEBI9djq3byAlqXa8Fplpd9bV3r44ewJj5IFttt-prmTSHShu8JtNlpDYR_z_1xvD2J_XrGTUriRYOOY2mt9pZSIUQEepUVTybxAOW4P5fEPd23R0CgK6W3KEODtIkcv1U5w5VkZ8a7_lyyAqreiCgr1YH9mz_7mzFDl6rX6ZnkVYNsUHV_OmaXBUCqpZ1Pa6YO8fIRwtipOg..&type=2&query=deepseek&token=C2E90D2050EB6EA5C2C4EDB1541D855FC322013E67C5DC5A&k=4&h=k\""
+  },
+  {
+    "path": "/api/v1/wechat_mp/web/fetch_mp_article_comment_list",
+    "summary": "获取微信公众号文章评论列表/Get Wechat MP Article Comment List",
+    "description": "# [中文]\n### 用途:\n- 获取微信公众号文章评论列表\n### 参数:\n- url: 文章链接\n- comment_id: 评论ID，可以不传获取评论用的id，默认传空字符串\n- buffer: 偏移量，第一次传空字符串，后续传上次返回的buffer值\n### 返回:\n- 评论列表\n\n# [English]\n### Purpose:\n- Get Wechat MP Article Comment List\n### Parameters:\n- url: Article URL\n- comment_id: Comment ID, can be empty to get the comment ID, default is an empty string\n- buffer: Offset, first time is an empty string, then pass the buffer value returned last time\n### Returns:\n- Comment List\n\n# [示例/Example]\nurl = \"https://mp.weixin.qq.com/s/Iv-xRzL7WzbL0dUUIgi3Nw\"\ncomment_id = \"\"\nbuffer = \"0\""
+  },
+  {
+    "path": "/api/v1/wechat_mp/web/fetch_mp_article_comment_reply_list",
+    "summary": "获取微信公众号文章评论回复列表/Get Wechat MP Article Comment Reply List",
+    "description": "# [中文]\n### 用途:\n- 获取微信公众号文章评论回复列表\n### 参数:\n- url: 文章链接\n- comment_id: 评论ID\n- content_id: 内容ID\n- offset: 偏移量\n### 返回:\n- 评论回复列表\n\n# [English]\n### Purpose:\n- Get Wechat MP Article Comment Reply List\n### Parameters:\n- url: Article URL\n- comment_id: Comment ID\n- content_id: Content ID\n- offset: Offset\n### Returns:\n- Comment Reply List\n\n# [示例/Example]\nurl = \"https://mp.weixin.qq.com/s/RCjkQlkRS4oKZ0GAT9slzA\"\ncomment_id = \"3601466901697855492\"\ncontent_id = \"6387234930341970671\"\noffset = \"0\""
+  },
+  {
+    "path": "/api/v1/wechat_mp/web/fetch_mp_article_ad",
+    "summary": "获取微信公众号广告/Get Wechat MP Article Ad",
+    "description": "# [中文]\n### 用途:\n- 获取微信公众号广告\n### 参数:\n- url: 文章链接\n### 返回:\n- 广告\n\n# [English]\n### Purpose:\n- Get Wechat MP Article Ad\n### Parameters:\n- url: Article URL\n### Returns:\n- Ad\n\n# [示例/Example]\nurl = \"https://mp.weixin.qq.com/s/hrTDuwh0pWyJFYC93kKCrg\""
+  },
+  {
+    "path": "/api/v1/wechat_mp/web/fetch_mp_article_url_conversion",
+    "summary": "获取微信公众号长链接转短链接/Get Wechat MP Long URL to Short URL",
+    "description": "# [中文]\n### 用途:\n- 获取微信公众号长链接转短链接\n### 参数:\n- url: 文章链接\n### 返回:\n- 短链接\n\n# [English]\n### Purpose:\n- Get Wechat MP Long URL to Short URL\n### Parameters:\n- url: Article URL\n### Returns:\n- Short URL\n\n# [示例/Example]\nurl = \"http://mp.weixin.qq.com/s?__biz=MzIyMDQzMTM4Mg==&mid=2247504868&idx=1&sn=37ee48875df1be54cb766783177ce61d\""
+  },
+  {
+    "path": "/api/v1/wechat_mp/web/fetch_mp_related_articles",
+    "summary": "获取微信公众号关联文章/Get Wechat MP Related Articles",
+    "description": "# [中文]\n### 用途:\n- 获取微信公众号关联文章\n### 参数:\n- url: 文章链接\n### 返回:\n- 关联文章\n\n# [English]\n### Purpose:\n- Get Wechat MP Related Articles\n### Parameters:\n- url: Article URL\n### Returns:\n- Related Articles\n\n# [示例/Example]\nurl = \"https://mp.weixin.qq.com/s/Ko5V9jw9kwL8TO6Q7J3UqQ\""
+  }
+]

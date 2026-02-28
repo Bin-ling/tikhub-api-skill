@@ -1,0 +1,7 @@
+[
+  {
+    "path": "/api/v1/health/check",
+    "summary": "检查服务器是否正确响应请求 / Check if the server responds to requests correctly",
+    "description": "# [中文]\n\n### 用途说明:\n\n- 检查服务器是否正确响应请求。\n\n### 参数说明:\n\n- 无参数。\n\n### 返回结果:\n\n- `status`: 服务器状态，正常为 `ok`。\n\n# [English]\n\n### Purpose:\n\n- Check if the server responds to requests correctly.\n\n### Parameter Description:\n\n- No parameters.\n\n### Return Result:\n\n- `status`: Server status, normal is `ok`."
+  }
+]

@@ -1,0 +1,57 @@
+[
+  {
+    "path": "/api/v1/weibo/web/fetch_config_list",
+    "summary": "获取频道配置列表/Get channel config list",
+    "description": "# [中文]\n### 用途:\n- 获取微博移动端所有频道的配置信息\n### 返回:\n- 频道列表，包含频道名称和 containerid\n### 说明:\n- 返回的 containerid 可用于 fetch_trend_top 接口获取对应频道的热门内容\n\n# [English]\n### Purpose:\n- Get all channel configuration information from Weibo mobile\n### Return:\n- Channel list, including channel name and containerid\n### Note:\n- The returned containerid can be used in fetch_trend_top endpoint to get trending content of the corresponding channel"
+  },
+  {
+    "path": "/api/v1/weibo/web/fetch_trend_top",
+    "summary": "获取频道热门趋势/Get channel trend top",
+    "description": "# [中文]\n### 用途:\n- 获取指定频道的热门趋势内容\n### 参数:\n- containerid: 频道容器ID，可从 fetch_config_list 接口获取\n- page: 页码，默认1\n### 返回:\n- 热门微博列表\n### 说明:\n- containerid 示例: 102803_ctg1_8999_-_ctg1_8999_home\n- 可通过 fetch_config_list 获取所有可用的 containerid\n\n# [English]\n### Purpose:\n- Get trending content of the specified channel\n### Parameters:\n- containerid: Channel container ID, can be obtained from fetch_config_list endpoint\n- page: Page number, default 1\n### Return:\n- Trending Weibo list\n### Note:\n- containerid example: 102803_ctg1_8999_-_ctg1_8999_home\n- You can get all available containerids from fetch_config_list\n\n# [示例/Example]\ncontainerid = \"102803_ctg1_8999_-_ctg1_8999_home\"\npage = 1"
+  },
+  {
+    "path": "/api/v1/weibo/web/fetch_channel_feed",
+    "summary": "根据频道名称获取热门内容/Get channel feed by name",
+    "description": "# [中文]\n### 用途:\n- 根据频道名称获取热门内容（便捷接口）\n### 参数:\n- channel_name: 频道名称，如 \"热门\"、\"榜单\"、\"社会\" 等，不传则使用默认频道\n- page: 页码，默认1\n### 返回:\n- 热门微博列表\n### 说明:\n- 此接口会自动调用 fetch_config_list 获取频道配置，然后获取对应频道的热门内容\n- 如果指定的频道名称不存在，会返回错误信息\n- 可用频道：热门、榜单、同城、社会、科技、明星、电影、音乐、数码、汽车、游戏\n\n# [English]\n### Purpose:\n- Get trending content by channel name (convenience endpoint)\n### Parameters:\n- channel_name: Channel name, such as \"热门\", \"榜单\", \"社会\", etc. Use default if not provided\n- page: Page number, default 1\n### Return:\n- Trending Weibo list\n### Note:\n- This endpoint will automatically call fetch_config_list to get channel config, then fetch trending content\n- Returns error if the specified channel name does not exist\n- Available channels: 热门, 榜单, 同城, 社会, 科技, 明星, 电影, 音乐, 数码, 汽车, 游戏\n\n# [示例/Example]\nchannel_name = \"热门\"\npage = 1"
+  },
+  {
+    "path": "/api/v1/weibo/web/fetch_user_info",
+    "summary": "获取用户信息/Get user information",
+    "description": "# [中文]\n### 用途:\n- 获取微博用户信息\n### 参数:\n- uid: 用户ID\n### 返回:\n- 用户信息\n\n# [English]\n### Purpose:\n- Get Weibo user information\n### Parameters:\n- uid: User ID\n### Return:\n- User information\n\n# [示例/Example]\nuid = \"2992978081\""
+  },
+  {
+    "path": "/api/v1/weibo/web/fetch_user_posts",
+    "summary": "获取用户微博列表/Get user posts",
+    "description": "# [中文]\n### 用途:\n- 获取微博用户的微博列表\n### 参数:\n- uid: 用户ID\n- page: 页码，默认1\n- since_id: 翻页用的ID，从上一页返回结果中获取\n### 返回:\n- 用户微博列表\n\n# [English]\n### Purpose:\n- Get Weibo user's posts list\n### Parameters:\n- uid: User ID\n- page: Page number, default 1\n- since_id: Pagination ID from previous page result\n### Return:\n- User posts list\n\n# [示例/Example]\nuid = \"7277477906\"\npage = 1"
+  },
+  {
+    "path": "/api/v1/weibo/web/fetch_post_detail",
+    "summary": "获取微博详情/Get post detail",
+    "description": "# [中文]\n### 用途:\n- 获取单条微博的详情\n### 参数:\n- post_id: 微博ID\n### 返回:\n- 微博详情\n\n# [English]\n### Purpose:\n- Get single Weibo post detail\n### Parameters:\n- post_id: Post ID\n### Return:\n- Post detail\n\n# [示例/Example]\npost_id = \"5092682368025584\""
+  },
+  {
+    "path": "/api/v1/weibo/web/fetch_post_comments",
+    "summary": "获取微博评论/Get post comments",
+    "description": "# [中文]\n### 用途:\n- 获取微博的评论列表（热门评论流）\n### 参数:\n- post_id: 微博ID\n- mid: 微博MID\n- max_id: 翻页用的ID，从上一页返回结果中获取\n- max_id_type: max_id类型，默认0\n### 返回:\n- 评论列表\n\n# [English]\n### Purpose:\n- Get Weibo post comments (hot comments flow)\n### Parameters:\n- post_id: Post ID\n- mid: Post MID\n- max_id: Pagination ID from previous page result\n- max_id_type: max_id type, default 0\n### Return:\n- Comments list\n\n# [示例/Example]\npost_id = \"5100663548412324\"\nmid = \"5100663548412324\""
+  },
+  {
+    "path": "/api/v1/weibo/web/fetch_comment_replies",
+    "summary": "获取评论子评论/Get comment replies",
+    "description": "# [中文]\n### 用途:\n- 获取评论的子评论（回复）\n### 参数:\n- cid: 根评论ID（从 fetch_post_comments 返回的评论中获取）\n- max_id: 翻页用的ID，默认0为第一页，从上一页返回结果中获取下一页的max_id\n### 返回:\n- 子评论列表\n\n# [English]\n### Purpose:\n- Get comment replies (sub-comments)\n### Parameters:\n- cid: Root comment ID (from fetch_post_comments response)\n- max_id: Pagination ID, default 0 for first page, get next page max_id from previous response\n### Return:\n- Sub-comments list\n\n# [示例/Example]\ncid = \"5100663573318494\"\nmax_id = \"0\""
+  },
+  {
+    "path": "/api/v1/weibo/web/fetch_search",
+    "summary": "搜索微博/Search Weibo",
+    "description": "# [中文]\n### 用途:\n- 搜索微博内容\n### 参数:\n- **keyword**: 搜索关键词\n    - 普通搜索: `游戏`、`新闻`\n    - 话题搜索: `#话题名#`（如 `#大冰建议女生不要找老登#`）\n- **page**: 页码\n    - 从 **1** 开始递增: 1, 2, 3, 4...\n    - 每页约返回 10-20 条结果\n    - **不是** 1, 10, 20 这种偏移量模式\n- **search_type**: 搜索类型\n    - **1**: 综合（默认，按相关性排序）\n    - **61**: 实时（按时间排序，最新优先）\n    - **3**: 用户（搜索用户账号）\n    - **60**: 热门（按热度排序）\n    - **64**: 视频（仅视频内容）\n    - **63**: 图片（仅图片内容）\n    - **21**: 文章（仅长文章）\n- **time_scope**: 时间范围筛选\n    - **null/不传**: 不限时间（默认）\n    - **hour**: 一小时内\n    - **day**: 一天内（24小时）\n    - **week**: 一周内\n    - **month**: 一个月内\n### 返回:\n- 搜索结果列表\n### 注意:\n- 此接口会自动生成游客Cookie，无需登录即可使用\n- 如遇到 432 错误，系统会自动重试\n\n# [English]\n### Purpose:\n- Search Weibo content\n### Parameters:\n- **keyword**: Search keyword\n    - Normal search: `game`, `news`\n    - Hashtag search: `#topic#` (e.g., `#TopicName#`)\n- **page**: Page number\n    - Starts from **1** and increments: 1, 2, 3, 4...\n    - Returns ~10-20 results per page\n    - **NOT** offset mode like 1, 10, 20\n- **search_type**: Search type\n    - **1**: Comprehensive (default, sorted by relevance)\n    - **61**: Real-time (sorted by time, newest first)\n    - **3**: Users (search user accounts)\n    - **60**: Hot (sorted by popularity)\n    - **64**: Video (video content only)\n    - **63**: Pictures (image content only)\n    - **21**: Articles (long articles only)\n- **time_scope**: Time range filter\n    - **null/empty**: No time limit (default)\n    - **hour**: Within one hour\n    - **day**: Within one day (24 hours)\n    - **week**: Within one week\n    - **month**: Within one month\n### Return:\n- Search results list\n### Note:\n- This endpoint auto-generates visitor cookies, no login required\n- Auto-retry on 432 error\n\n# [示例/Example]\nkeyword = \"游戏\"\npage = 1\nsearch_type = \"1\"\ntime_scope = null"
+  },
+  {
+    "path": "/api/v1/weibo/web/fetch_hot_search",
+    "summary": "获取热搜榜/Get hot search ranking",
+    "description": "# [中文]\n### 用途:\n- 获取微博实时热搜榜（Top 50）和实时上升热点\n### 返回:\n- 热搜榜列表，包含：\n    - **实时热搜榜**: 当前最热门的50个话题，按热度排序\n    - **实时上升热点**: 正在快速上升的热门话题\n### 说明:\n- 这是微博官方热搜榜数据\n- 每个热搜包含：排名、话题名、热度值、标签（如：新、热、沸）等\n- 与 `fetch_search_topics` 不同，此接口返回的是完整的热搜排行榜\n\n# [English]\n### Purpose:\n- Get Weibo real-time hot search ranking (Top 50) and rising trends\n### Return:\n- Hot search list, including:\n    - **Real-time Hot Search**: Top 50 hottest topics, sorted by popularity\n    - **Rising Trends**: Topics that are rapidly gaining attention\n### Note:\n- This is official Weibo hot search data\n- Each entry includes: rank, topic name, heat value, tags (new, hot, trending), etc.\n- Different from `fetch_search_topics`, this returns the complete hot search ranking"
+  },
+  {
+    "path": "/api/v1/weibo/web/fetch_search_topics",
+    "summary": "获取搜索页热搜词/Get search page hot topics",
+    "description": "# [中文]\n### 用途:\n- 获取搜索页的热搜词列表（搜索建议/热门话题）\n### 返回:\n- 搜索热词列表\n### 说明:\n- 这是搜索页面展示的热门搜索词\n- 通常用于搜索框下方的热门推荐\n- 与 `fetch_hot_search` 不同，此接口返回的是搜索建议词\n\n# [English]\n### Purpose:\n- Get search page hot topics list (search suggestions/trending topics)\n### Return:\n- Search hot topics list\n### Note:\n- These are hot search terms displayed on the search page\n- Usually used for trending recommendations below the search box\n- Different from `fetch_hot_search`, this returns search suggestion terms"
+  }
+]

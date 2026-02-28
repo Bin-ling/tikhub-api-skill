@@ -1,0 +1,26 @@
+{
+  "name": "tikhub-api-skill",
+  "version": "1.0.0",
+  "description": "短视频信息获取工具 - OpenClaw技能模块",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "openclaw",
+    "skill",
+    "tikhub",
+    "short-video",
+    "api"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.2",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.2"
+  }
+}
