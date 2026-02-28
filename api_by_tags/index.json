@@ -1,0 +1,100 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2026-03-01",
+  "platforms": {
+    "Douyin": {
+      "app": "Douyin-App-V3-API.json",
+      "billboard": "Douyin-Billboard-API.json",
+      "creator": "Douyin-Creator-API.json",
+      "creator_v2": "Douyin-Creator-V2-API.json",
+      "search": "Douyin-Search-API.json",
+      "web": "Douyin-Web-API.json",
+      "xingtu": "Douyin-Xingtu-API.json",
+      "xingtu_v2": "Douyin-Xingtu-V2-API.json"
+    },
+    "TikTok": {
+      "ads": "TikTok-Ads-API.json",
+      "analytics": "TikTok-Analytics-API.json",
+      "app": "TikTok-App-V3-API.json",
+      "creator": "TikTok-Creator-API.json",
+      "interaction": "TikTok-Interaction-API.json",
+      "shop": "TikTok-Shop-Web-API.json",
+      "web": "TikTok-Web-API.json"
+    },
+    "Bilibili": {
+      "app": "Bilibili-App-API.json",
+      "web": "Bilibili-Web-API.json"
+    },
+    "Xiaohongshu": {
+      "app": "Xiaohongshu-App-API.json",
+      "web": "Xiaohongshu-Web-API.json",
+      "web_v2": "Xiaohongshu-Web-V2-API.json"
+    },
+    "Kuaishou": {
+      "app": "Kuaishou-App-API.json",
+      "web": "Kuaishou-Web-API.json"
+    },
+    "Weibo": {
+      "app": "Weibo-App-API.json",
+      "web": "Weibo-Web-API.json",
+      "web_v2": "Weibo-Web-V2-API.json"
+    },
+    "WeChat": {
+      "channels": "WeChat-Channels-API.json",
+      "media_platform": "WeChat-Media-Platform-Web-API.json"
+    },
+    "Toutiao": {
+      "app": "Toutiao-App-API.json",
+      "web": "Toutiao-Web-API.json"
+    },
+    "Xigua": {
+      "app": "Xigua-App-V2-API.json"
+    },
+    "Instagram": {
+      "v1": "Instagram-V1-API.json",
+      "v2": "Instagram-V2-API.json",
+      "v3": "Instagram-V3-API.json"
+    },
+    "YouTube": {
+      "web": "YouTube-Web-API.json",
+      "web_v2": "YouTube-Web-V2-API.json"
+    },
+    "Twitter": {
+      "web": "Twitter-Web-API.json"
+    },
+    "Threads": {
+      "web": "Threads-Web-API.json"
+    },
+    "Reddit": {
+      "app": "Reddit-APP-API.json"
+    },
+    "LinkedIn": {
+      "web": "LinkedIn-Web-API.json"
+    },
+    "Lemon8": {
+      "app": "Lemon8-App-API.json"
+    },
+    "PiPiXia": {
+      "app": "PiPiXia-App-API.json"
+    },
+    "Sora2": {
+      "api": "Sora2-API.json"
+    },
+    "Temp-Mail": {
+      "v1": "Temp-Mail-API.json"
+    },
+    "TikHub": {
+      "downloader": "TikHub-Downloader-API.json",
+      "user": "TikHub-User-API.json"
+    },
+    "iOS": {
+      "shortcut": "iOS-Shortcut.json"
+    }
+  },
+  "utilities": {
+    "health_check": "Health-Check.json",
+    "hybrid_parsing": "Hybrid-Parsing.json"
+  },
+  "api_count": 50,
+  "platform_count": 24
+}

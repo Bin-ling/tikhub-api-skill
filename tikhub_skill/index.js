@@ -61,6 +61,68 @@ class ConfigManager {
   }
 }
 
+// 日志记录器
+class Logger {
+  static log(message, data = {}) {
+    const timestamp = new Date().toISOString();
+    console.log(`[${timestamp}] ${message}`, data);
+  }
+
+  static error(message, error = {}) {
+    const timestamp = new Date().toISOString();
+    console.error(`[${timestamp}] ERROR: ${message}`, error);
+  }
+
+  static debug(message, data = {}) {
+    const timestamp = new Date().toISOString();
+    console.debug(`[${timestamp}] DEBUG: ${message}`, data);
+  }
+}
+
+// 参数验证器
+class ParamValidator {
+  static validateTags(tags) {
+    if (!tags) return true;
+    
+    if (Array.isArray(tags)) {
+      return tags.every(tag => {
+        return typeof tag === 'object' && tag !== null && 
+               'value' in tag && 
+               (!('children' in tag) || Array.isArray(tag.children));
+      });
+    } else if (typeof tags === 'object' && tags !== null) {
+      return 'value' in tags && 
+             (!('children' in tags) || Array.isArray(tags.children));
+    }
+    return false;
+  }
+
+  static validateParams(params, endpointInfo) {
+    if (!params) return { valid: true, errors: [] };
+    
+    const errors = [];
+    
+    // 验证tags字段
+    if ('tags' in params) {
+      if (!this.validateTags(params.tags)) {
+        errors.push('tags字段格式错误，应为对象或对象数组');
+      }
+    }
+    
+    // 验证query_tag字段（如果存在）
+    if ('query_tag' in params) {
+      if (!this.validateTags(params.query_tag)) {
+        errors.push('query_tag字段格式错误，应为包含value和children的对象');
+      }
+    }
+    
+    return {
+      valid: errors.length === 0,
+      errors
+    };
+  }
+}
+
 // API客户端
 class APIClient {
   constructor(baseUrl, apiKey) {
@@ -78,6 +140,8 @@ class APIClient {
 
   async request(method, endpoint, params) {
     try {
+      Logger.log(`API请求: ${method} ${endpoint}`, { params });
+      
       let response;
       if (method.toUpperCase() === 'GET') {
         response = await this.client.get(endpoint, { params });
@@ -86,24 +150,50 @@ class APIClient {
       } else {
         throw new Error('Unsupported method');
       }
+      
+      Logger.log(`API响应: ${method} ${endpoint}`, { status: response.status, data: response.data });
+      
+      // 检查返回值是否为空
+      if (!response.data || (typeof response.data === 'object' && Object.keys(response.data).length === 0)) {
+        throw new Error('API返回为空');
+      }
+      
       return response.data;
     } catch (error) {
-      console.error('API request error:', error);
+      Logger.error(`API请求失败: ${method} ${endpoint}`, {
+        error: error.message,
+        stack: error.stack,
+        params
+      });
       throw error;
     }
   }
 }
 
+// 端点缓存
+let endpointsCache = null;
+let cacheTimestamp = 0;
+const CACHE_DURATION = 3600000; // 1小时缓存
+
 // 加载API端点信息
 const { loadApiEndpoints: loadApiEndpointsFromDir } = require('./apis');
 
 function loadApiEndpoints() {
+  // 检查缓存是否有效
+  const now = Date.now();
+  if (endpointsCache && (now - cacheTimestamp) < CACHE_DURATION) {
+    Logger.log('使用缓存的API端点');
+    return endpointsCache;
+  }
+  
   // 从目录加载API端点
+  Logger.log('加载API端点定义');
   const endpoints = loadApiEndpointsFromDir();
   
   // 如果没有加载到端点，使用默认端点
   if (Object.keys(endpoints).length === 0) {
-    return {
+    Logger.log('使用默认API端点');
+    endpointsCache = {
       douyin: {
         web: {
           get_video_detail: {
@@ -124,9 +214,20 @@ function loadApiEndpoints() {
         }
       }
     };
+  } else {
+    endpointsCache = endpoints;
   }
   
-  return endpoints;
+  cacheTimestamp = now;
+  Logger.log(`API端点加载完成，共${Object.keys(endpointsCache).length}个平台`);
+  return endpointsCache;
+}
+
+// 清除端点缓存
+function clearEndpointsCache() {
+  endpointsCache = null;
+  cacheTimestamp = 0;
+  Logger.log('API端点缓存已清除');
 }
 
 // 技能模块元数据
@@ -298,18 +399,62 @@ class TikhubSkill {
       const endpoint = endpointInfo.path;
       const httpMethod = endpointInfo.method;
 
+      // 验证请求参数
+      const validation = ParamValidator.validateParams(params, endpointInfo);
+      if (!validation.valid) {
+        throw new Error(validation.errors.join('; '));
+      }
+
       // 执行API调用
       const response = await this.apiClient.request(httpMethod, endpoint, params);
+
+      // 保存关键数据（这里可以根据需要实现具体的保存逻辑）
+      this.saveApiResponse({ platform, module, method, params, response });
 
       return {
         success: true,
         data: response
       };
     } catch (error) {
+      Logger.error('API调用失败', {
+        platform,
+        module,
+        method,
+        params,
+        error: error.message
+      });
       return {
         success: false,
         error: error.message
       };
+    }
+  }
+
+  // 保存API响应数据
+  saveApiResponse({ platform, module, method, params, response }) {
+    try {
+      // 这里可以实现具体的数据保存逻辑
+      // 例如保存到数据库、文件或缓存
+      Logger.log('保存API响应数据', {
+        platform,
+        module,
+        method,
+        response_size: response ? JSON.stringify(response).length : 0
+      });
+      
+      // 简单的内存缓存实现
+      if (!this.responseCache) {
+        this.responseCache = {};
+      }
+      const cacheKey = `${platform}_${module}_${method}`;
+      this.responseCache[cacheKey] = {
+        timestamp: Date.now(),
+        params,
+        response,
+        expiry: Date.now() + 3600000 // 1小时过期
+      };
+    } catch (error) {
+      Logger.error('保存API响应数据失败', error);
     }
   }
 

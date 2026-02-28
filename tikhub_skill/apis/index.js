@@ -22,8 +22,21 @@ function parseJsonEndpoints(filePath) {
             summary: info.summary || '',
             description: info.description || '',
             parameters: info.parameters || [],
-            requestBody: info.requestBody || null
+            requestBody: info.requestBody || null,
+            tags: info.tags || [],
+            responses: info.responses || {},
+            security: info.security || []
           };
+          
+          // 提取示例参数
+          if (info.parameters) {
+            endpointInfo.parameterExamples = {};
+            info.parameters.forEach(param => {
+              if (param.example !== undefined) {
+                endpointInfo.parameterExamples[param.name] = param.example;
+              }
+            });
+          }
           
           endpoints[operationId] = endpointInfo;
         }
@@ -44,6 +57,7 @@ function loadApiEndpoints() {
   
   if (fs.existsSync(apiGroupsDir)) {
     const files = fs.readdirSync(apiGroupsDir);
+    console.log(`Found ${files.length} API definition files`);
     
     for (const filename of files) {
       if (filename.endsWith('.json')) {
@@ -64,11 +78,16 @@ function loadApiEndpoints() {
             endpoints[platform][moduleType] = moduleEndpoints;
             console.log(`Loaded ${platform}_${moduleType} with ${Object.keys(moduleEndpoints).length} endpoints`);
           }
+        } else {
+          console.warn(`Skipping file with invalid format: ${filename}`);
         }
       }
     }
+  } else {
+    console.warn('api_groups directory not found');
   }
   
+  console.log(`Total platforms loaded: ${Object.keys(endpoints).length}`);
   return endpoints;
 }
 
