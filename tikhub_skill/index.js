@@ -419,7 +419,7 @@ class TikhubSkill {
       if (Array.isArray(apiData)) {
         apiData.forEach(api => {
           analysis.endpoints.push({
-            name: api.name || 'Unnamed API',
+            name: api.summary || api.name || 'Unnamed API',
             method: api.method || 'GET',
             path: api.path || '',
             description: api.description || 'No description',
@@ -454,7 +454,7 @@ class TikhubSkill {
       const apiData = JSON.parse(content);
       
       const targetApi = Array.isArray(apiData) ? 
-        apiData.find(api => api.name === api_name) : 
+        apiData.find(api => (api.summary === api_name) || (api.name === api_name)) : 
         null;
       
       if (!targetApi) {
@@ -462,7 +462,7 @@ class TikhubSkill {
       }
       
       const apiCall = {
-        name: targetApi.name,
+        name: targetApi.summary || targetApi.name,
         method: targetApi.method || 'GET',
         path: targetApi.path || '',
         parameters: parameters || {},
@@ -531,23 +531,24 @@ class TikhubSkill {
   // 生成使用建议
   generateUsageSuggestion(api) {
     const suggestions = [];
+    const apiName = api.summary || api.name || '';
     
-    if (api.name.includes('hot') || api.name.includes('trend')) {
+    if (apiName.includes('hot') || apiName.includes('trend')) {
       suggestions.push('Use this API to monitor current hot topics and trends');
       suggestions.push('Schedule regular calls to track trend changes over time');
     }
     
-    if (api.name.includes('user') || api.name.includes('profile')) {
+    if (apiName.includes('user') || apiName.includes('profile')) {
       suggestions.push('Use this API to analyze competitor profiles');
       suggestions.push('Integrate with user data analysis for audience insights');
     }
     
-    if (api.name.includes('video') || api.name.includes('content')) {
+    if (apiName.includes('video') || apiName.includes('content')) {
       suggestions.push('Use this API to analyze content performance');
       suggestions.push('Combine with other APIs to get comprehensive content insights');
     }
     
-    if (api.name.includes('comment')) {
+    if (apiName.includes('comment')) {
       suggestions.push('Use this API to understand audience feedback');
       suggestions.push('Analyze comment sentiment for content optimization');
     }

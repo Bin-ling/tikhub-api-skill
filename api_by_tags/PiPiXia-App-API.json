@@ -1,86 +1,103 @@
 [
   {
     "path": "/api/v1/pipixia/app/fetch_post_detail",
+    "method": "GET",
     "summary": "获取单个作品数据/Get single video data",
     "description": "# [中文]\n### 用途:\n- 获取单个作品数据，支持图文、视频等。\n### 参数:\n- cell_id: 作品id，可以从分享链接中获取。\n- cell_type: 作品类型，1为视频，多大数保持默认值即可。\n### 返回:\n- 作品数据\n\n# [English]\n### Purpose:\n- Get single video data, support photo, video, etc.\n### Parameters:\n- cell_id: AKA video id, can be obtained from the share link.\n- cell_type: Video type, 1 for video, keep the default value for other types.\n### Return:\n- Video data\n\n# [示例/Example]\ncell_id = \"7411193113223371043\""
   },
   {
     "path": "/api/v1/pipixia/app/fetch_increase_post_view_count",
+    "method": "GET",
     "summary": "增加作品浏览数/Increase post view count",
     "description": "# [中文]\n### 用途:\n- 增加作品浏览数。\n### 参数:\n- cell_id: 作品id，可以从分享链接中获取。\n- cell_type: 作品类型，1为视频，多大数保持默认值即可。\n### 返回:\n- 执行结果\n\n# [English]\n### Purpose:\n- Increase post view count.\n### Parameters:\n- cell_id: AKA video id, can be obtained from the share link.\n- cell_type: Video type, 1 for video, keep the default value for other types.\n### Return:\n- Execution result\n\n# [示例/Example]\ncell_id = \"7411193113223371043\"\ncell_type = 1"
   },
   {
     "path": "/api/v1/pipixia/app/fetch_post_statistics",
+    "method": "GET",
     "summary": "获取作品统计数据/Get post statistics",
     "description": "# [中文]\n### 用途:\n- 获取单个作品的统计数据，如点赞数、评论数、转发数等。\n### 参数:\n- cell_id: 作品id，可以从分享链接中获取。\n### 返回:\n- 作品统计数据\n\n# [English]\n### Purpose:\n- Get the statistics of a single post, such as the number of likes, comments, reposts, etc.\n### Parameters:\n- cell_id: AKA video id, can be obtained from the share link.\n### Return:\n- Post statistics\n\n# [示例/Example]\ncell_id = \"7411193113223371043\""
   },
   {
     "path": "/api/v1/pipixia/app/fetch_user_info",
+    "method": "GET",
     "summary": "获取用户信息/Get user information",
     "description": "# [中文]\n### 用途:\n- 获取用户信息，如昵称、性别、头像等。\n### 参数:\n- user_id: 用户id，可以从分享链接中获取。\n### 返回:\n- 用户信息\n\n# [English]\n### Purpose:\n- Get user information, such as nickname and avatar.\n### Parameters:\n- user_id: AKA user id, can be obtained from the share link.\n### Return:\n- User information\n\n# [示例/Example]\nuser_id = \"1310254082831248\""
   },
   {
     "path": "/api/v1/pipixia/app/fetch_user_post_list",
+    "method": "GET",
     "summary": "获取用户作品列表/Get user post list",
     "description": "# [中文]\n### 用途:\n- 获取用户作品列表，如视频、图文等。\n### 参数:\n- user_id: 用户id，可以从分享链接中获取。\n- cursor: 翻页游标，默认为0，后续页码从上一页返回的 `loadmore_cursor` Key中获取对应值。\n- feed_count: 翻页数量，默认为0，后续每次翻页加1，比如第一页为0，第二页为1，第三页为2，以此类推。\n### 返回:\n- 用户作品列表\n\n# [English]\n### Purpose:\n- Get user post list, such as videos, photos, etc.\n### Parameters:\n- user_id: AKA user id, can be obtained from the share link.\n- cursor: Page cursor, default is 0, get the corresponding value from the `loadmore_cursor` Key in the previous page.\n- feed_count: Page count, default is 0, add 1 for each page, such as 0 for the first page, 1 for the second page, 2 for the third page, and so on.\n### Return:\n- User post list\n\n# [示例/Example]\nuser_id = \"1310254082831248\"\ncursor = \"0\"\nfeed_count = \"0\""
   },
   {
     "path": "/api/v1/pipixia/app/fetch_user_follower_list",
+    "method": "GET",
     "summary": "获取用户粉丝列表/Get user follower list",
     "description": "# [中文]\n### 用途:\n- 获取用户的粉丝列表。\n### 参数:\n- user_id: 用户id，可以从分享链接中获取。\n- cursor: 翻页游标，默认为0，后续页码从上一页返回的 `loadmore_cursor` Key中获取对应值。\n### 返回:\n- 用户粉丝列表\n\n# [English]\n### Purpose:\n- Get user's follower list.\n### Parameters:\n- user_id: AKA user id, can be obtained from the share link.\n- cursor: Page cursor, default is 0, get the corresponding value from the `loadmore_cursor` Key in the previous page.\n### Return:\n- User follower list\n\n# [示例/Example]\nuser_id = \"1310254082831248\"\ncursor = \"0\""
   },
   {
     "path": "/api/v1/pipixia/app/fetch_user_following_list",
+    "method": "GET",
     "summary": "获取用户关注列表/Get user following list",
     "description": "# [中文]\n### 用途:\n- 获取用户的关注列表。\n### 参数:\n- user_id: 用户id，可以从分享链接中获取。\n- cursor: 翻页游标，默认为0，后续页码从上一页返回的 `loadmore_cursor` Key中获取对应值。\n### 返回:\n- 用户关注列表\n\n# [English]\n### Purpose:\n- Get user's following list.\n### Parameters:\n- user_id: AKA user id, can be obtained from the share link.\n- cursor: Page cursor, default is 0, get the corresponding value from the `loadmore_cursor` Key in the previous page.\n### Return:\n- User following list\n\n# [示例/Example]\nuser_id = \"1310254082831248\"\ncursor = \"0\""
   },
   {
     "path": "/api/v1/pipixia/app/fetch_post_comment_list",
+    "method": "GET",
     "summary": "获取作品评论列表/Get post comment list",
     "description": "# [中文]\n### 用途:\n- 获取作品的评论列表。\n### 参数:\n- cell_id: 作品id，可以从分享链接中获取。\n- cell_type: 作品类型，1为视频，多大数保持默认值即可。\n- offset: 翻页游标，默认为0，后续页码从上一页返回的 `offset` Key中获取对应值。\n### 返回:\n- 作品评论列表\n\n# [English]\n### Purpose:\n- Get the comment list of a post.\n### Parameters:\n- cell_id: AKA video id, can be obtained from the share link.\n- cell_type: Video type, 1 for video, keep the default value for other types.\n- offset: Page cursor, default is 0, get the corresponding value from the `offset` Key in the previous page.\n### Return:\n- Post comment list\n\n# [示例/Example]\ncell_id = \"7411193113223371043\"\ncell_type = 1\noffset = \"0\""
   },
   {
     "path": "/api/v1/pipixia/app/fetch_short_url",
+    "method": "GET",
     "summary": "生成短连接/Generate short URL",
     "description": "# [中文]\n### 用途:\n- 生成短连接。\n### 参数:\n- original_url: 原始链接，可以是任意链接。\n### 返回:\n- 短连接\n\n# [English]\n### Purpose:\n- Generate short URL.\n### Parameters:\n- original_url: Original URL, can be any link.\n### Return:\n- Short URL\n\n# [示例/Example]\noriginal_url = \"https://h5.pipix.com/item/7385813877985909043\""
   },
   {
     "path": "/api/v1/pipixia/app/fetch_home_feed",
+    "method": "GET",
     "summary": "获取首页推荐/Get home feed",
     "description": "# [中文]\n### 用途:\n- 获取首页推荐数据。\n### 参数:\n- cursor: 翻页游标，默认为0，后续页码从上一页返回的 `loadmore_cursor` Key中获取对应值。\n### 返回:\n- 首页推荐数据\n\n# [English]\n### Purpose:\n- Get home feed data.\n### Parameters:\n- cursor: Page cursor, default is 0, get the corresponding value from the `loadmore_cursor` Key in the previous page.\n### Return:\n- Home feed data\n\n# [示例/Example]\ncursor = \"0\""
   },
   {
     "path": "/api/v1/pipixia/app/fetch_hot_search_words",
+    "method": "GET",
     "summary": "获取热搜词条/Get hot search words",
     "description": "# [中文]\n### 用途:\n- 获取热搜词条数据。\n### 返回:\n- 热搜词条数据\n\n# [English]\n### Purpose:\n- Get hot search words data.\n### Return:\n- Hot search words data\n\n# [示例/Example]\n无/None"
   },
   {
     "path": "/api/v1/pipixia/app/fetch_hot_search_board_list",
+    "method": "GET",
     "summary": "获取热搜榜单列表/Get hot search board list",
     "description": "# [中文]\n### 用途:\n- 获取热搜榜单列表数据。\n### 返回:\n- 热搜榜单列表数据\n\n# [English]\n### Purpose:\n- Get hot search board list data.\n### Return:\n- Hot search board list data\n\n# [示例/Example]\n无/None"
   },
   {
     "path": "/api/v1/pipixia/app/fetch_hot_search_board_detail",
+    "method": "GET",
     "summary": "获取热搜榜单详情/Get hot search board detail",
     "description": "# [中文]\n### 用途:\n- 获取热搜榜单详情数据。\n### 参数:\n- block_type: 榜单类型，可以从`/fetch_hot_search_board_list`接口中获取。\n### 返回:\n- 热搜榜单详情数据\n\n# [English]\n### Purpose:\n- Get hot search board detail data.\n### Parameters:\n- block_type: Board type, can be obtained from the `/fetch_hot_search_board_list` interface.\n### Return:\n- Hot search board detail data\n\n# [示例/Example]\nblock_type = 12"
   },
   {
     "path": "/api/v1/pipixia/app/fetch_search",
+    "method": "GET",
     "summary": "搜索接口/Search API",
     "description": "# [中文]\n### 用途:\n- 搜索接口，支持搜索用户、作品等。\n### 参数:\n- keyword: 搜索关键词。\n- offset: 翻页游标，默认为0，后续页码从上一页返回的 `offset` Key中获取对应值。\n- search_type: 搜索类型，可用值如下：\n    - 1: 综合\n    - 8: 热门\n    - 9: 新鲜\n    - 2：视频\n    - 3：图文\n    - 4：用户\n    - 5：话题\n### 返回:\n- 搜索结果\n\n# [English]\n### Purpose:\n- Search API, support search user, post, etc.\n### Parameters:\n- keyword: Search keyword.\n- offset: Page cursor, default is 0, get the corresponding value from the `offset` Key in the previous page.\n- search_type: Search type, available values are as follows:\n    - 1: Comprehensive\n    - 8: Hot\n    - 9: Fresh\n    - 2: Video\n    - 3: Photo\n    - 4: User\n    - 5: Hashtag\n### Return:\n- Search result\n\n# [示例/Example]\nkeyword = \"皮皮虾\"\noffset = \"0\"\nsearch_type = \"1\""
   },
   {
     "path": "/api/v1/pipixia/app/fetch_hashtag_detail",
+    "method": "GET",
     "summary": "获取话题详情/Get hashtag detail",
     "description": "# [中文]\n### 用途:\n- 获取话题详情数据。\n### 参数:\n- hashtag_id: 话题id，可以从分享链接中获取。\n### 返回:\n- 话题详情数据\n\n# [English]\n### Purpose:\n- Get hashtag detail data.\n### Parameters:\n- hashtag_id: AKA hashtag id, can be obtained from the share link.\n### Return:\n- Hashtag detail data\n# [示例/Example]\nhashtag_id = \"129559\""
   },
   {
     "path": "/api/v1/pipixia/app/fetch_hashtag_post_list",
+    "method": "GET",
     "summary": "获取话题作品列表/Get hashtag post list",
     "description": "# [中文]\n### 用途:\n- 获取话题作品列表数据。\n### 参数:\n- hashtag_id: 话题id，可以从分享链接中获取。\n- cursor: 翻页游标，默认为0，后续页码从上一页返回的 `loadmore_cursor` Key中获取对应值。\n- feed_count: 翻页数量，默认为0，后续每次翻页加1，比如第一页为0，第二页为1，第三页为2，以此类推。\n- hashtag_request_type: 话题请求类型，默认为0，可用值如下：\n    - 0: 热门\n    - 1: 最新\n    - 2: 精华\n- hashtag_sort_type: 话题排序类型，默认为3，可用值如下：\n    - 3: 按热度\n    - 2: 按时间，从新到旧\n    - 1: 精华\n### 返回:\n- 话题作品列表数据\n\n# [English]\n### Purpose:\n- Get hashtag post list data.\n### Parameters:\n- hashtag_id: AKA hashtag id, can be obtained from the share link.\n- cursor: Page cursor, default is 0, get the corresponding value from the `loadmore_cursor` Key in the previous page.\n- feed_count: Page count, default is 0, add 1 for each page, such as 0 for the first page, 1 for the second page, 2 for the third page, and so on.\n### Return:\n- Hashtag post list data\n\n# [示例/Example]\nhashtag_id = \"129559\"\ncursor = \"0\"\nfeed_count = \"0\""
   },
   {
     "path": "/api/v1/pipixia/app/fetch_home_short_drama_feed",
+    "method": "GET",
     "summary": "获取首页短剧推荐/Get home short drama feed",
     "description": "# [中文]\n### 用途:\n- 获取首页短剧推荐数据。\n### 参数:\n- page: 页码，默认为1，每次翻页加1。\n### 返回:\n- 首页短剧推荐数据\n\n# [English]\n### Purpose:\n- Get home short drama feed data.\n### Parameters:\n- page: Page number, default is 1, add 1 for each page.\n### Return:\n- Home short drama feed data\n\n# [示例/Example]\npage = 1"
   }

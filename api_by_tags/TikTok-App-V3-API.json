@@ -1,376 +1,451 @@
 [
   {
     "path": "/api/v1/tiktok/app/v3/fetch_one_video",
+    "method": "GET",
     "summary": "获取单个作品数据/Get single video data",
     "description": "# [中文]\n### 用途:\n- 获取单个作品数据\n### 参数:\n- aweme_id: 作品id\n### 返回:\n- 作品数据\n\n# [English]\n### Purpose:\n- Get single video data\n### Parameters:\n- aweme_id: Video id\n### Return:\n- Video data\n\n# [示例/Example]\naweme_id = \"7350810998023949599\""
   },
   {
     "path": "/api/v1/tiktok/app/v3/fetch_one_video_v2",
+    "method": "GET",
     "summary": "获取单个作品数据 V2/Get single video data V2",
     "description": "# [中文]\n### 用途:\n- 获取单个作品数据 V2\n### 参数:\n- aweme_id: 作品id\n### 返回:\n- 作品数据\n\n# [English]\n### Purpose:\n- Get single video data V2\n### Parameters:\n- aweme_id: Video id\n### Return:\n- Video data\n\n# [示例/Example]\naweme_id = \"7350810998023949599\""
   },
   {
     "path": "/api/v1/tiktok/app/v3/fetch_one_video_v3",
+    "method": "GET",
     "summary": "获取单个作品数据 V3(支持国家参数)/Get single video data V3 (support country parameter)",
     "description": "# [中文]\n### 用途:\n- 获取单个作品数据 V3\n### 参数:\n- aweme_id: 作品id\n- region: 国家代码，默认US，支持ISO 3166-1 alpha-2国家代码，例如：US、GB、FR、DE、IN、JP等。\n- 备注：某些视频可能在特定国家/地区不可用，设置region参数可以尝试获取该国家/地区的视频数据。\n### 返回:\n- 作品数据\n\n# [English]\n### Purpose:\n- Get single video data V3\n### Parameters:\n- aweme_id: Video id\n- region: Country code, default is US, supports ISO 3166-1 alpha-2 country codes, such as: US, GB, FR, DE, IN, JP, etc.\n- Note: Some videos may not be available in certain countries/regions, setting the region parameter can try to get the video data for that country/region.\n### Return:\n- Video data\n\n# [示例/Example]\naweme_id = \"7350810998023949599\"\nregion = \"US\""
   },
   {
     "path": "/api/v1/tiktok/app/v3/fetch_multi_video",
+    "method": "POST",
     "summary": "批量获取视频信息/Batch Get Video Information",
     "description": "# [中文]\n### 用途:\n- 批量获取视频信息，支持图文、视频等，一次性最多支持10个视频，此接口收费固定价格为0.001$ * 10 = 0.01$一次。\n- 如果本接口报错，请使用 fetch_multi_video_v3 接口。\n### 参数:\n- aweme_ids: 作品id列表，最多支持10个作品id。\n### 返回:\n- 作品数据\n\n# [English]\n### Purpose:\n- Batch Get Video Information, support photo, video, etc., up to 10 videos at a time, this interface charges a fixed price of 0.001$ * 10 = 0.01$ each time.\n- If this interface reports an error, please use the fetch_multi_video_v3 interface.\n### Parameters:\n- aweme_ids: List of video ids, up to 10 video ids are supported.\n### Return:\n- Video data\n\n# [示例/Example]\naweme_ids = [\n        \"7339393672959757570\", \"7339393672959757570\", \"7339393672959757570\", \"7339393672959757570\", \"7339393672959757570\",\n        \"7339393672959757570\", \"7339393672959757570\", \"7339393672959757570\", \"7339393672959757570\", \"7339393672959757570\",\n    ]"
   },
   {
     "path": "/api/v1/tiktok/app/v3/fetch_multi_video_v2",
+    "method": "POST",
     "summary": "批量获取视频信息 V2/Batch Get Video Information V2",
     "description": "# [中文]\n### 用途:\n- 批量获取视频信息，支持图文、视频等，一次性最多支持25个视频，此接口收费固定价格为0.001$ * 25 = 0.025$一次。\n- 注意：此接口为V2版本，支持更多功能和更高效的数据获取，一秒可以获取25个视频数据。\n- 如果本接口报错，请使用 fetch_multi_video_v3 接口。\n### 参数:\n- aweme_ids: 作品id列表，最多支持25个作品id。\n### 返回:\n- 作品数据\n\n# [English]\n### Purpose:\n- Batch Get Video Information, support photo, video, etc., up to 25 videos at a time, this interface charges a fixed price of 0.001$ * 25 = 0.025$ each time.\n- Note: This interface is the V2 version, which supports more features and more efficient data retrieval, can retrieve 25 video data per second.\n- If this interface reports an error, please use the fetch_multi_video_v3 interface.\n### Parameters:\n- aweme_ids: List of video ids, up to 25 video ids are supported.\n### Return:\n- Video data\n\n# [示例/Example]\naweme_ids = [\n        \"7339393672959757570\", \"7339393672959757570\", \"7339393672959757570\", \"7339393672959757570\", \"7339393672959757570\",\n        \"7339393672959757570\", \"7339393672959757570\", \"7339393672959757570\", \"7339393672959757570\", \"7339393672959757570\",\n    ]"
   },
   {
     "path": "/api/v1/tiktok/app/v3/fetch_one_video_by_share_url_v2",
+    "method": "GET",
     "summary": "根据分享链接获取单个作品数据/Get single video data by sharing link",
     "description": "# [中文]\n### 用途:\n- 根据分享链接获取单个作品数据 V2，数据结构会有些不一样，会返回region字段。\n### 参数:\n- share_url: 分享链接\n### 返回:\n- 作品数据\n\n# [English]\n### Purpose:\n- Get single video data by sharing link V2, the data structure will be a bit different, and the region field will be returned.\n### Parameters:\n- share_url: Share link\n### Return:\n- Video data\n\n# [示例/Example]\nshare_url = \"https://www.tiktok.com/t/ZTFNEj8Hk/\""
   },
   {
     "path": "/api/v1/tiktok/app/v3/fetch_one_video_by_share_url",
+    "method": "GET",
     "summary": "根据分享链接获取单个作品数据/Get single video data by sharing link",
     "description": "# [中文]\n### 用途:\n- 根据分享链接获取单个作品数据\n### 参数:\n- share_url: 分享链接\n### 返回:\n- 作品数据\n\n# [English]\n### Purpose:\n- Get single video data by sharing link\n### Parameters:\n- share_url: Share link\n### Return:\n- Video data\n\n# [示例/Example]\nshare_url = \"https://www.tiktok.com/t/ZTFNEj8Hk/\""
   },
   {
     "path": "/api/v1/tiktok/app/v3/get_user_id_and_sec_user_id_by_username",
+    "method": "GET",
     "summary": "使用用户名获取用户 user_id 和 sec_user_id/Get user_id and sec_user_id by Username",
     "description": "# [中文]\n### 用途:\n- 使用用户名获取用户 user_id 和 sec_user_id\n### 参数:\n- username: 用户名\n### 返回:\n- 用户 user_id 和 sec_user_id\n\n# [English]\n### Purpose:\n- Get user_id and sec_user_id by Username\n### Parameters:\n- username: Username\n### Return:\n- User user_id and sec_user_id\n\n# [示例/Example]\nusername = \"tiktok\""
   },
   {
     "path": "/api/v1/tiktok/app/v3/handler_user_profile",
+    "method": "GET",
     "summary": "获取指定用户的信息/Get information of specified user",
     "description": "# [中文]\n### 用途:\n- 获取指定用户的信息\n### 参数:\n- sec_user_id: 用户sec_user_id，优先使用sec_user_id获取用户信息。\n- user_id: 用户uid，可选参数，纯数字，如果使用请保持sec_user_id以及unique_id为空。\n- unique_id: 用户unique_id，可选参数，如果sec_user_id为空，则使用unique_id获取用户信息，unique_id也是用户的用户名，如果使用请保持sec_user_id以及user_id为空。\n- 以上参数必须至少填写一个，优先级为sec_user_id > user_id > unique_id，优先级越高速度越快。\n### 返回:\n- 用户信息\n\n# [English]\n### Purpose:\n- Get information of specified user\n### Parameters:\n- sec_user_id: User sec_user_id\n- user_id: User uid, optional parameter, pure number, if used, please keep sec_user_id and unique_id empty.\n- unique_id: User unique_id, optional parameter, if sec_user_id is empty, use unique_id to get user information, unique_id is also the user's username, if used, please keep sec_user_id and user_id empty.\n- At least one of the above parameters must be filled in, the priority is sec_user_id > user_id > unique_id, the higher the priority, the faster the speed.\n### Return:\n- User information\n\n# [示例/Example]\nuser_id = \"107955\"\nsec_user_id = \"MS4wLjABAAAAv7iSuuXDJGDvJkmH_vz1qkDZYo1apxgzaxdBSeIuPiM\"\nunique_id = \"tiktok\""
   },
   {
     "path": "/api/v1/tiktok/app/v3/fetch_webcast_user_info",
+    "method": "GET",
     "summary": "获取指定 Webcast 用户的信息/Get information of specified Webcast user",
     "description": "# [中文]\n### 用途:\n- 获取指定用户的信息\n### 参数:\n- sec_user_id: 用户sec_user_id，优先使用sec_user_id获取用户信息。\n- user_id: 用户uid，可选参数，纯数字，如果使用请保持sec_user_id以及unique_id为空。\n- 以上参数必须至少填写一个，优先级为sec_user_id > user_id，优先级越高速度越快。\n### 返回:\n- 用户信息\n\n# [English]\n### Purpose:\n- Get information of specified user\n### Parameters:\n- sec_user_id: User sec_user_id\n- user_id: User uid, optional parameter, pure number, if used, please keep sec_user_id and unique_id empty.\n- At least one of the above parameters must be filled in, the priority is sec_user_id > user_id, the higher the priority, the faster the speed.\n### Return:\n- User information\n\n# [示例/Example]\nuser_id = \"107955\"\nsec_user_id = \"MS4wLjABAAAAv7iSuuXDJGDvJkmH_vz1qkDZYo1apxgzaxdBSeIuPiM\""
   },
   {
     "path": "/api/v1/tiktok/app/v3/fetch_user_country_by_username",
+    "method": "GET",
     "summary": "通过用户名获取用户账号国家地区/Get user account country by username",
     "description": "# [中文]\n### 用途:\n- 通过用户名获取用户账号国家地区\n### 参数:\n- username: 用户名，可以从用户主页链接中获取，例如：https://www.tiktok.com/@tiktok，用户名即为tiktok。\n### 返回:\n- 用户账号国家地区\n\n# [English]\n### Purpose:\n- Get user account country by username\n### Parameters:\n- username: Username, which can be obtained from the user's homepage link, for example: https://www.tiktok.com/@tiktok, the username is tiktok.\n### Return:\n- User account country\n\n# [示例/Example]\nusername = \"tiktok\"\n\n# 响应示例/Response Example\n```json\n{'username': 'tiktok', 'username_modify_time': 1760985494, 'user_id': '107955', 'sec_user_id': 'MS4wLjABAAAAv7iSuuXDJGDvJkmH_vz1qkDZYo1apxgzaxdBSeIuPiM', 'country': 'US', 'api_version': 'v1'}\n```"
   },
   {
     "path": "/api/v1/tiktok/app/v3/fetch_similar_user_recommendations",
+    "method": "GET",
     "summary": "获取类似用户推荐/Similar User Recommendations",
     "description": "# [中文]\n### 用途:\n- 获取类似用户推荐\n### 参数:\n- sec_uid: 用户sec_uid\n- page_token: 分页标记，第一次请求时不需要传递，后续请求时传递上一次响应中的next_page_token值。\n### 返回:\n- 类似用户推荐\n\n# [English]\n### Purpose:\n- Similar User Recommendations\n### Parameters:\n- sec_uid: User sec_uid\n- page_token: Page token, not required for the first request, for subsequent requests, pass the next_page_token value from the previous response.\n### Return:\n- Similar User Recommendations\n\n# [示例/Example]\nsec_uid = \"MS4wLjABAAAA2_YTgxz3kLb2XoyC3xOXnosim3gdiqMtFHnjRvckabZJFQ40XBOVttDCiB5cwa3b\"\npage_token = \"\""
   },
   {
     "path": "/api/v1/tiktok/app/v3/fetch_user_repost_videos",
+    "method": "GET",
     "summary": "获取用户转发的作品数据/Get user repost video data",
     "description": "# [中文]\n### 用途:\n- 获取用户转发的作品数据\n### 参数:\n- user_id: 用户id，可以通过 handler_user_profile 端点获取，响应中的关键字为uid。\n- offset: 偏移量\n- count: 数量\n### 返回:\n- 用户转发作品数据\n\n# [English]\n### Purpose:\n- Get user repost video data\n### Parameters:\n- user_id: User id, which can be obtained through the handler_user_profile endpoint, with the keyword uid in the response.\n- offset: Offset\n- count: Number\n### Return:\n- User repost video data\n\n# [示例/Example]\nuser_id = 107955\noffset = 0\ncount = 21"
   },
   {
     "path": "/api/v1/tiktok/app/v3/fetch_user_post_videos",
+    "method": "GET",
     "summary": "获取用户主页作品数据 V1/Get user homepage video data V1",
     "description": "# [中文]\n### 用途:\n- 获取用户主页作品数据\n### 参数:\n- sec_user_id: 用户sec_user_id，优先使用sec_user_id获取用户作品数据，如果sec_user_id为空，则使用unique_id获取用户作品数据。\n- max_cursor: 最大游标，用于翻页，第一页为0，第二页为第一次响应中的max_cursor值。\n- count: 最大数量，建议保持默认值20。\n- sort_type: 排序类型，0-最新，1-热门\n- unique_id: 用户unique_id，可选参数，如果sec_user_id为空，则使用unique_id获取用户作品数据，unique_id也是用户的用户名。\n- 关于用户ID的参数，优先级为sec_user_id > unique_id，优先级越高速度越快，并且建议只使用sec_user_id获取用户数据。\n### 返回:\n- 用户作品数据\n\n# [English]\n### Purpose:\n- Get user homepage video data\n### Parameters:\n- sec_user_id: User sec_user_id, use sec_user_id to get user video data first, if sec_user_id is empty, use unique_id to get user video data.\n- max_cursor: Maximum cursor, used for paging, the first page is 0, the second page is the max_cursor value in the first response.\n- count: Maximum count number\n- sort_type: Sort type, 0-Latest, 1-Hot\n- unique_id: User unique_id, optional parameter, if sec_user_id is empty, use unique_id to get user video data, unique_id is also the user's username.\n- About the parameters of user ID, the priority is sec_user_id > unique_id, the higher the priority, the faster the speed, and it is recommended to use only sec_user_id to get user data.\n### Return:\n- User video data\n\n# [示例/Example]\nsec_user_id = \"MS4wLjABAAAA5u9HhzjGAj-leViCcvZD6b4-qyqHHgr9lVJmcPMzcBUX_Q2NpBeCgz8Uh6KugkfS\"\nmax_cursor = 0\ncounts = 20\nsort_type = 0\nunique_id = \"tiktok\""
   },
   {
     "path": "/api/v1/tiktok/app/v3/fetch_user_post_videos_v2",
+    "method": "GET",
     "summary": "获取用户主页作品数据 V2/Get user homepage video data V2",
     "description": "# [中文]\n### 用途:\n- 获取用户主页作品数据\n### 参数:\n- sec_user_id: 用户sec_user_id，优先使用sec_user_id获取用户作品数据，如果sec_user_id为空，则使用unique_id获取用户作品数据。\n- max_cursor: 最大游标，用于翻页，第一页为0，第二页为第一次响应中的max_cursor值。\n- count: 最大数量，建议保持默认值20。\n- sort_type: 排序类型，0-最新，1-热门\n- unique_id: 用户unique_id，可选参数，如果sec_user_id为空，则使用unique_id获取用户作品数据，unique_id也是用户的用户名。\n- 关于用户ID的参数，优先级为sec_user_id > unique_id，优先级越高速度越快，并且建议只使用sec_user_id获取用户数据。\n### 返回:\n- 用户作品数据\n\n# [English]\n### Purpose:\n- Get user homepage video data\n### Parameters:\n- sec_user_id: User sec_user_id, use sec_user_id to get user video data first, if sec_user_id is empty, use unique_id to get user video data.\n- max_cursor: Maximum cursor, used for paging, the first page is 0, the second page is the max_cursor value in the first response.\n- count: Maximum count number\n- sort_type: Sort type, 0-Latest, 1-Hot\n- unique_id: User unique_id, optional parameter, if sec_user_id is empty, use unique_id to get user video data, unique_id is also the user's username.\n- About the parameters of user ID, the priority is sec_user_id > unique_id, the higher the priority, the faster the speed, and it is recommended to use only sec_user_id to get user data.\n### Return:\n- User video data\n\n# [示例/Example]\nsec_user_id = \"MS4wLjABAAAA5u9HhzjGAj-leViCcvZD6b4-qyqHHgr9lVJmcPMzcBUX_Q2NpBeCgz8Uh6KugkfS\"\nmax_cursor = 0\ncounts = 20\nsort_type = 0\nunique_id = \"tiktok\""
   },
   {
     "path": "/api/v1/tiktok/app/v3/fetch_user_post_videos_v3",
+    "method": "GET",
     "summary": "获取用户主页作品数据 V3（精简数据-更快速）/Get user homepage video data V3 (simplified data - faster)",
     "description": "# [中文]\n### 用途:\n- 获取用户主页作品数据\n### 参数:\n- sec_user_id: 用户sec_user_id，优先使用sec_user_id获取用户作品数据，如果sec_user_id为空，则使用unique_id获取用户作品数据。\n- max_cursor: 最大游标，用于翻页，第一页为0，第二页为第一次响应中的max_cursor值。\n- count: 最大数量，建议保持默认值20。\n- sort_type: 排序类型，0-最新，1-热门\n- unique_id: 用户unique_id，可选参数，如果sec_user_id为空，则使用unique_id获取用户作品数据，unique_id也是用户的用户名。\n- 关于用户ID的参数，优先级为sec_user_id > unique_id，优先级越高速度越快，并且建议只使用sec_user_id获取用户数据。\n### 返回:\n- 用户作品数据\n\n# [English]\n### Purpose:\n- Get user homepage video data\n### Parameters:\n- sec_user_id: User sec_user_id, use sec_user_id to get user video data first, if sec_user_id is empty, use unique_id to get user video data.\n- max_cursor: Maximum cursor, used for paging, the first page is 0, the second page is the max_cursor value in the first response.\n- count: Maximum count number\n- sort_type: Sort type, 0-Latest, 1-Hot\n- unique_id: User unique_id, optional parameter, if sec_user_id is empty, use unique_id to get user video data, unique_id is also the user's username.\n- About the parameters of user ID, the priority is sec_user_id > unique_id, the higher the priority, the faster the speed, and it is recommended to use only sec_user_id to get user data.\n### Return:\n- User video data\n\n# [示例/Example]\nsec_user_id = \"MS4wLjABAAAA5u9HhzjGAj-leViCcvZD6b4-qyqHHgr9lVJmcPMzcBUX_Q2NpBeCgz8Uh6KugkfS\"\nmax_cursor = 0\ncounts = 20\nsort_type = 0\nunique_id = \"tiktok\""
   },
   {
     "path": "/api/v1/tiktok/app/v3/fetch_user_like_videos",
+    "method": "GET",
     "summary": "获取用户喜欢作品数据/Get user like video data",
     "description": "# [中文]\n### 用途:\n- 获取用户喜欢作品数据\n### 参数:\n- sec_user_id: 用户sec_user_id\n- max_cursor: 最大游标，用于翻页，第一页为0，第二页为第一次响应中的max_cursor值。\n- count: 最大数量\n### 返回:\n- 用户作品数据\n\n# [English]\n### Purpose:\n- Get user like video data\n### Parameters:\n- sec_user_id: User sec_user_id\n- max_cursor: Maximum cursor, used for paging, the first page is 0, the second page is the max_cursor value in the first response.\n- count: Maximum count number\n### Return:\n- User video data\n\n# [示例/Example]\nsec_user_id = \"MS4wLjABAAAA-RkTGCGXLuLKRM5Xcuuwm7Mclg51I2ECO1RqOA7mJHuXFz99nztdi077Z2XmYHZV\"\nmax_cursor = 0\ncounts = 20"
   },
   {
     "path": "/api/v1/tiktok/app/v3/fetch_video_comments",
+    "method": "GET",
     "summary": "获取单个视频评论数据/Get single video comments data",
     "description": "# [中文]\n### 用途:\n- 获取单个视频评论数据\n### 参数:\n- aweme_id: 作品id\n- cursor: 游标，用于翻页，第一页为0，第二页为第一次响应中的cursor值。\n- count: 数量\n### 返回:\n- 评论数据\n\n# [English]\n### Purpose:\n- Get single video comments data\n### Parameters:\n- aweme_id: Video id\n- cursor: Cursor, used for paging, the first page is 0, the second page is the cursor value in the first response.\n- count: Number\n### Return:\n- Comments data\n\n# [示例/Example]\naweme_id = \"7326156045968067873\"\ncursor = 0\ncount = 20"
   },
   {
     "path": "/api/v1/tiktok/app/v3/fetch_video_comment_replies",
+    "method": "GET",
     "summary": "获取指定视频的评论回复数据/Get comment replies data of specified video",
     "description": "# [中文]\n### 用途:\n- 获取指定视频的评论回复数据\n### 参数:\n- item_id: 作品id\n- comment_id: 评论id\n- cursor: 游标，用于翻页，第一页为0，第二页为第一次响应中的cursor值。\n- count: 数量\n### 返回:\n- 评论回复数据\n\n# [English]\n### Purpose:\n- Get comment replies data of specified video\n### Parameters:\n- item_id: Video id\n- comment_id: Comment id\n- cursor: Cursor, used for paging, the first page is 0, the second page is the cursor value in the first response.\n- count: Number\n### Return:\n- Comment replies data\n\n# [示例/Example]\naweme_id = \"7326156045968067873\"\ncomment_id = \"7327061675382260482\"\ncursor = 0\ncount = 20"
   },
   {
     "path": "/api/v1/tiktok/app/v3/fetch_general_search_result",
+    "method": "GET",
     "summary": "获取指定关键词的综合搜索结果/Get comprehensive search results of specified keywords",
     "description": "# [中文]\n### 用途:\n- 获取指定关键词的综合搜索结果\n### 参数:\n- keyword: 关键词\n- offset: 偏移量\n- count: 数量\n- sort_type: 0-相关度，1-最多点赞\n- publish_time: 0-不限制，1-最近一天，7-最近一周，30-最近一个月，90-最近三个月，180-最近半年\n### 返回:\n- 综合搜索结果\n\n# [English]\n### Purpose:\n- Get comprehensive search results of specified keywords\n### Parameters:\n- keyword: Keyword\n- offset: Offset\n- count: Number\n- sort_type: 0-Relatedness, 1-Most likes\n- publish_time: 0-Unlimited, 1-Last day, 7-Last week, 30-Last month, 90-Last three months, 180-Last half year\n### Return:\n- Comprehensive search results\n\n# [示例/Example]\nkeyword = \"中华娘\"\noffset = 0\ncount = 20\nsort_type = 0\npublish_time = 0"
   },
   {
     "path": "/api/v1/tiktok/app/v3/fetch_video_search_result",
+    "method": "GET",
     "summary": "获取指定关键词的视频搜索结果/Get video search results of specified keywords",
     "description": "# [中文]\n### 用途:\n- 获取指定关键词的视频搜索结果\n### 参数:\n- keyword: 关键词\n- offset: 偏移量\n- count: 数量\n- sort_type: 0-相关度，1-最多点赞\n- publish_time: 0-不限制，1-最近一天，7-最近一周，30-最近一个月，90-最近三个月，180-最近半年\n- region: 地区，默认为US-美国，可选值请参考TikTok地区代码或ISO 3166-1 alpha-2国家代码。\n### 返回:\n- 视频搜索结果\n\n# [English]\n### Purpose:\n- Get video search results of specified keywords\n### Parameters:\n- keyword: Keyword\n- offset: Offset\n- count: Number\n- sort_type: 0-Relatedness, 1-Most likes\n- publish_time: 0-Unlimited, 1-Last day, 7-Last week, 30-Last month, 90-Last three months, 180-Last half year\n- region: Region, default is US-America, for optional values please refer to TikTok region codes or ISO 3166-1 alpha-2 country codes.\n### Return:\n- Video search results\n\n# [示例/Example]\nkeyword = \"中华娘\"\noffset = 0\ncount = 20\nsort_type = 0\npublish_time = 0\nregion = \"US\""
   },
   {
     "path": "/api/v1/tiktok/app/v3/fetch_user_search_result",
+    "method": "GET",
     "summary": "获取指定关键词的用户搜索结果/Get user search results of specified keywords",
     "description": "# [中文]\n### 用途:\n- 获取指定关键词的用户搜索结果\n### 参数:\n- keyword: 关键词\n- offset: 偏移量\n- count: 数量\n- user_search_follower_count（根据粉丝数排序）:\n    - 空-不限制，\n    - ZERO_TO_ONE_K = 0-1K，\n    - ONE_K_TO_TEN_K-1K = 1K-10K，\n    - TEN_K_TO_ONE_H_K = 10K-100K，\n    - ONE_H_K_PLUS = 100K以上\n- user_search_profile_type（根据账号类型排序）:\n    - 空-不限制，\n    - VERIFIED = 认证用户\n- user_search_other_pref（根据其他偏好排序）:\n    - USERNAME = 根据用户名相关性\n### 返回:\n- 用户搜索结果\n\n# [English]\n### Purpose:\n- Get user search results of specified keywords\n### Parameters:\n- keyword: Keyword\n- offset: Offset\n- count: Number\n- user_search_follower_count（Sort by number of followers）:\n    - Empty-Unlimited,\n    - ZERO_TO_ONE_K = 0-1K,\n    - ONE_K_TO_TEN_K-1K = 1K-10K,\n    - TEN_K_TO_ONE_H_K = 10K-100K,\n    - ONE_H_K_PLUS = 100K and above\n- user_search_profile_type（Sort by account type）:\n    - Empty-Unlimited,\n    - VERIFIED = Verified user\n- user_search_other_pref（Sort by other preferences）:\n    - USERNAME = Sort by username relevance\n### Return:\n- User search results\n\n# [示例/Example]\nkeyword = \"Cat\"\noffset = 0\ncount = 20\nuser_search_follower_count = \"\"\nuser_search_profile_type = \"\"\nuser_search_other_pref = \"\""
   },
   {
     "path": "/api/v1/tiktok/app/v3/fetch_music_search_result",
+    "method": "GET",
     "summary": "获取指定关键词的音乐搜索结果/Get music search results of specified keywords",
     "description": "# [中文]\n### 用途:\n- 获取指定关键词的音乐搜索结果\n### 参数:\n- keyword: 关键词\n- offset: 偏移量，从0开始，第二页从响应中获取cursor的值作为offset继续请求。\n- count: 数量，不要超过20\n- filter_by: 过滤类型，0-全部，1-标题，2-作者，默认为0-全部\n- sort_type: 排序类型，0-相关度，1-最多使用，2-最新，3-时长最短，4-时长最长，默认为0-相关度\n- region: 地区，默认为US-美国，可选值请参考TikTok地区代码或ISO 3166-1 alpha-2国家代码。\n### 返回:\n- 音乐搜索结果\n\n# [English]\n### Purpose:\n- Get music search results of specified keywords\n### Parameters:\n- keyword: Keyword\n- offset: Offset, starting from 0, the second page gets the cursor value from the response as the offset to continue the request.\n- count: Number, do not exceed 20\n- filter_by: Filter type, 0-All, 1-Title, 2-Author, default is 0-All\n- sort_type: Sort type, 0-Relatedness, 1-Most used, 2-Latest, 3-Shortest duration, 4-Longest duration, default is 0-Relatedness\n- region: Region, default is US-America, for optional values please refer to TikTok region codes or ISO 3166-1 alpha-2 country codes.\n### Return:\n- Music search results\n\n# [示例/Example]\nkeyword = \"Cat\"\noffset = 0\ncount = 20\nfilter_by = 0\nsort_type = 0\nregion = \"US\""
   },
   {
     "path": "/api/v1/tiktok/app/v3/fetch_hashtag_search_result",
+    "method": "GET",
     "summary": "获取指定关键词的话题搜索结果/Get hashtag search results of specified keywords",
     "description": "# [中文]\n### 用途:\n- 获取指定关键词的话题搜索结果\n### 参数:\n- keyword: 关键词\n- offset: 偏移量\n- count: 数量\n### 返回:\n- 话题搜索结果\n\n# [English]\n### Purpose:\n- Get hashtag search results of specified keywords\n### Parameters:\n- keyword: Keyword\n- offset: Offset\n- count: Number\n### Return:\n- Hashtag search results\n\n# [示例/Example]\nkeyword = \"Cat\"\noffset = 0\ncount = 20"
   },
   {
     "path": "/api/v1/tiktok/app/v3/fetch_live_search_result",
+    "method": "GET",
     "summary": "获取指定关键词的直播搜索结果/Get live search results of specified keywords",
     "description": "# [中文]\n### 用途:\n- 获取指定关键词的直播搜索结果\n### 参数:\n- keyword: 关键词\n- offset: 偏移量，从0开始，第二页从响应中获取cursor的值作为offset继续请求。\n- count: 数量，不要超过20\n- region: 地区，默认为US-美国，可选值请参考TikTok地区代码或ISO 3166-1 alpha-2国家代码。\n### 返回:\n- 直播搜索结果\n\n# [English]\n### Purpose:\n- Get live search results of specified keywords\n### Parameters:\n- keyword: Keyword\n- offset: Offset, starting from 0, the second page gets the cursor value from the response as the offset to continue the request.\n- count: Number, do not exceed 20\n- region: Region, default is US-America, for optional values please refer to TikTok region codes or ISO 3166-1 alpha-2 country codes.\n### Return:\n- Live search results\n\n# [示例/Example]\nkeyword = \"Cat\"\noffset = 0\ncount = 20\nregion = \"US\""
   },
   {
     "path": "/api/v1/tiktok/app/v3/fetch_location_search",
+    "method": "GET",
     "summary": "获取地点搜索结果/Get location search results",
     "description": "# [中文]\n### 用途:\n- 获取地点搜索结果\n### 参数:\n- keyword: 关键词\n- offset: 偏移量\n- count: 数量\n### 返回:\n- 地点搜索结果\n\n# [English]\n### Purpose:\n- Get location search results\n### Parameters:\n- keyword: Keyword\n- offset: Offset\n- count: Number\n### Return:\n- Location search results\n\n# [示例/Example]\nkeyword = \"Shanghai\"\noffset = 0\ncount = 20"
   },
   {
     "path": "/api/v1/tiktok/app/v3/fetch_music_detail",
+    "method": "GET",
     "summary": "获取指定音乐的详情数据/Get details of specified music",
     "description": "# [中文]\n### 用途:\n- 获取指定音乐的详情数据\n### 参数:\n- music_id: 音乐id\n### 返回:\n- 音乐详情数据\n\n# [English]\n### Purpose:\n- Get details of specified music\n### Parameters:\n- music_id: Music id\n### Return:\n- Music details data\n\n# [示例/Example]\nmusic_id = \"6943027371519772674\""
   },
   {
     "path": "/api/v1/tiktok/app/v3/fetch_music_video_list",
+    "method": "GET",
     "summary": "获取指定音乐的视频列表数据/Get video list of specified music",
     "description": "# [中文]\n### 用途:\n- 获取指定音乐的视频列表数据\n### 参数:\n- music_id: 音乐id\n- cursor: 游标，用于翻页，第一页为0，第二页为第一次响应中的cursor值。\n- count: 数量\n### 返回:\n- 音乐视频列表数据\n\n# [English]\n### Purpose:\n- Get video list of specified music\n### Parameters:\n- music_id: Music id\n- cursor: Cursor, used for paging, the first page is 0, the second page is the cursor value in the first response.\n- count: Number\n### Return:\n- Music video list data\n\n# [示例/Example]\nmusic_id = \"6943027371519772674\"\ncursor = 0\ncount = 10"
   },
   {
     "path": "/api/v1/tiktok/app/v3/fetch_hashtag_detail",
+    "method": "GET",
     "summary": "获取指定话题的详情数据/Get details of specified hashtag",
     "description": "# [中文]\n### 用途:\n- 获取指定话题的详情数据\n### 参数:\n- ch_id: 话题id\n### 返回:\n- 话题详情数据\n\n# [English]\n### Purpose:\n- Get details of specified hashtag\n### Parameters:\n- ch_id: Hashtag id\n### Return:\n- Hashtag details data\n\n# [示例/Example]\nch_id = \"7551\""
   },
   {
     "path": "/api/v1/tiktok/app/v3/fetch_hashtag_video_list",
+    "method": "GET",
     "summary": "获取指定话题的作品数据/Get video list of specified hashtag",
     "description": "# [中文]\n### 用途:\n- 获取指定话题的作品数据\n### 参数:\n- ch_id: 话题id\n- cursor: 游标，用于翻页，第一页为0，第二页为第一次响应中的cursor值。\n- count: 数量\n### 返回:\n- 话题作品数据\n\n# [English]\n### Purpose:\n- Get video list of specified hashtag\n### Parameters:\n- ch_id: Hashtag id\n- cursor: Cursor, used for paging, the first page is 0, the second page is the cursor value in the first response.\n- count: Number\n### Return:\n- Hashtag video list data\n\n# [示例/Example]\nch_id = \"7551\"\ncursor = 0\nsort_type = 0\ncount = 10"
   },
   {
     "path": "/api/v1/tiktok/app/v3/fetch_user_follower_list",
+    "method": "GET",
     "summary": "获取指定用户的粉丝列表数据/Get follower list of specified user",
     "description": "# [中文]\n### 用途:\n- 获取指定用户的粉丝列表数据\n### 参数:\n- user_id: 用户ID，这是一个纯数字版本的用户ID (与sec_user_id二选一/One of user_id and sec_user_id)\n- sec_user_id: 用户sec_user_id，这是一个混合字母和数字的版本ID (与user_id二选一/One of user_id and sec_user_id)\n- count: 数量，不要超过20，保持固定。\n- min_time: 最小时间，用于翻页，第一次请求使用默认值0，后续请求使用上一次请求返回的min_time值。\n- page_token: 翻页token，第一次请求使用默认值\"\"，后续请求使用上一次请求返回的page_token值。\n### 返回:\n- 粉丝列表数据\n\n# [English]\n### Purpose:\n- Get follower list of specified user\n### Parameters:\n- user_id: User ID, this is a pure numeric version of the user ID (one of user_id and sec_user_id)\n- sec_user_id: User sec_user_id, this is a mixed letter and number version ID (one of user_id and sec_user_id)\n- count: Number, do not exceed 20, keep it fixed.\n- min_time: Minimum time for paging, use default value 0 for the first request, and use the min_time value returned by the last request for subsequent requests.\n- page_token: Page token, use default value \"\" for the first request, and use the page_token value returned by the last request for subsequent requests.\n### Return:\n- Follower list data\n\n# [示例/Example]\nuser_id = \"7486586574684881927\"\nsec_user_id = \"MS4wLjABAAAA0lKrE0cVLLZCnVil-n-YEZlOoik9oeO3zOYQ08dqOEOw2pRSXWJdcSFw7lZeZcSP\"\ncount = 20\nmin_time = 0\npage_token = \"\""
   },
   {
     "path": "/api/v1/tiktok/app/v3/fetch_user_following_list",
+    "method": "GET",
     "summary": "获取指定用户的关注列表数据/Get following list of specified user",
     "description": "# [中文]\n### 用途:\n- 获取指定用户的关注列表数据\n### 参数:\n- user_id: 用户ID，这是一个纯数字版本的用户ID (与sec_user_id二选一/One of user_id and sec_user_id)\n- sec_user_id: 用户sec_user_id，这是一个混合字母和数字的版本ID (与user_id二选一/One of user_id and sec_user_id)\n- count: 数量，不要超过20，保持固定。\n- min_time: 最小时间，用于翻页，第一次请求使用默认值0，后续请求使用上一次请求返回的min_time值。\n- page_token: 翻页token，第一次请求使用默认值\"\"，后续请求使用上一次请求返回的page_token值。\n### 返回:\n- 关注列表数据\n\n# [English]\n### Purpose:\n- Get following list of specified user\n### Parameters:\n- user_id: User ID, this is a pure numeric version of the user ID (one of user_id and sec_user_id)\n- sec_user_id: User sec_user_id, this is a mixed letter and number version ID (one of user_id and sec_user_id)\n- count: Number, do not exceed 20, keep it fixed.\n- min_time: Minimum time for paging, use default value 0 for the first request, and use the min_time value returned by the last request for subsequent requests.\n- page_token: Page token, use default value \"\" for the first request, and use the page_token value returned by the last request for subsequent requests.\n### Return:\n- Following list data\n\n# [示例/Example]\nuser_id = \"7486586574684881927\"\nsec_user_id = \"MS4wLjABAAAA0lKrE0cVLLZCnVil-n-YEZlOoik9oeO3zOYQ08dqOEOw2pRSXWJdcSFw7lZeZcSP\"\ncount = 20\nmin_time = 0\npage_token = \"\""
   },
   {
     "path": "/api/v1/tiktok/app/v3/fetch_creator_search_insights",
+    "method": "GET",
     "summary": "创作者搜索洞察/Creator Search Insights",
     "description": "# [中文]\n### 用途:\n- 获取创作者搜索洞察数据，用于了解热门搜索趋势和创作灵感\n### 参数:\n- offset: 分页偏移量，默认0\n- limit: 每页数量，默认20\n- tab: 标签页类型，可选值:\n    - all: 全部\n    - content_gap: 内容差距\n    - follower_searched: 粉丝常搜\n    - life_style: 生活方式\n    - topics: 话题\n    - challenges: 挑战\n    - sounds: 声音\n    - hashtags: 标签\n- language_filters: 语言过滤器，多个用逗号分隔，可选值: id, de, en, es, fr, pt, vi, tr, ar, th, ja, ko\n- category_filters: 分类过滤器，多个用逗号分隔，可选值: Gaming, Fashion, Tourism, Science, Food, Sports\n- creator_source: 创作者来源，默认 \"general_search\"\n- force_refresh: 是否强制刷新，默认 False\n### 返回:\n- 创作者搜索洞察数据\n\n# [English]\n### Purpose:\n- Get creator search insights data, used to understand trending search topics and creative inspiration\n### Parameters:\n- offset: Pagination offset, default 0\n- limit: Number per page, default 20\n- tab: Tab type, options:\n    - all: All\n    - content_gap: Content gap\n    - follower_searched: Follower searched\n    - life_style: Life style\n    - topics: Topics\n    - challenges: Challenges\n    - sounds: Sounds\n    - hashtags: Hashtags\n- language_filters: Language filters, separated by comma, options: id, de, en, es, fr, pt, vi, tr, ar, th, ja, ko\n- category_filters: Category filters, separated by comma, options: Gaming, Fashion, Tourism, Science, Food, Sports\n- creator_source: Creator source, default \"general_search\"\n- force_refresh: Force refresh, default False\n### Return:\n- Creator search insights data\n\n# [示例/Example]\noffset = 0\nlimit = 20\ntab = \"all\"\nlanguage_filters = \"en\"\ncategory_filters = \"Gaming\""
   },
   {
     "path": "/api/v1/tiktok/app/v3/fetch_creator_search_insights_detail",
+    "method": "GET",
     "summary": "创作者搜索洞察详情/Creator Search Insights Detail",
     "description": "# [中文]\n### 用途:\n- 获取创作者搜索洞察详情数据，用于查询特定搜索词条的搜索统计数据\n### 参数:\n- query_id_str: 搜索词条ID，从 fetch_creator_search_insights 接口返回的数据中获取\n- time_range: 时间范围，可选值:\n    - past_7_days: 过去7天\n    - past_30_days: 过去30天（默认）\n    - past_60_days: 过去60天\n    - past_6_months: 过去6个月\n    - custom: 自定义时间（需配合 start_date 和 end_date 使用，不能超过6个月）\n- start_date: 开始时间戳（秒），仅当 time_range=custom 时生效\n- end_date: 结束时间戳（秒），仅当 time_range=custom 时生效\n- dimension_list: 维度列表，多个用逗号分隔，可选值: gender（性别）, age（年龄）, country（国家）\n### 返回:\n- 搜索洞察详情数据，包含搜索趋势、用户画像等\n\n# [English]\n### Purpose:\n- Get creator search insights detail data, used to query search statistics for specific query\n### Parameters:\n- query_id_str: Query ID, obtained from fetch_creator_search_insights response\n- time_range: Time range, options:\n    - past_7_days: Past 7 days\n    - past_30_days: Past 30 days (default)\n    - past_60_days: Past 60 days\n    - past_6_months: Past 6 months\n    - custom: Custom range (requires start_date and end_date, cannot exceed 6 months)\n- start_date: Start timestamp (seconds), only for custom range\n- end_date: End timestamp (seconds), only for custom range\n- dimension_list: Dimension list, separated by comma, options: gender, age, country\n### Return:\n- Search insights detail data, including search trends, user demographics, etc.\n\n# [示例/Example]\nquery_id_str = \"122991006\"\ntime_range = \"past_30_days\"\ndimension_list = \"gender,age,country\""
   },
   {
     "path": "/api/v1/tiktok/app/v3/fetch_creator_search_insights_trend",
+    "method": "GET",
     "summary": "创作者搜索洞察趋势/Creator Search Insights Trend",
     "description": "# [中文]\n### 用途:\n- 获取创作者搜索洞察趋势数据，包含地区和时间维度的搜索热度\n### 参数:\n- query_id_str: 搜索词条ID，从 fetch_creator_search_insights 接口返回的数据中获取\n- from_tab_path: 来源标签路径，默认 \"TRENDING,TOPICS\"\n- query_analysis_required: 是否需要查询分析，默认 True\n### 返回:\n- 搜索趋势数据，包含地区热度、时间趋势等\n\n# [English]\n### Purpose:\n- Get creator search insights trend data, including search popularity by region and time\n### Parameters:\n- query_id_str: Query ID, obtained from fetch_creator_search_insights response\n- from_tab_path: From tab path, default \"TRENDING,TOPICS\"\n- query_analysis_required: Whether query analysis is required, default True\n### Return:\n- Search trend data, including regional popularity, time trends, etc.\n\n# [示例/Example]\nquery_id_str = \"7555720035176562699\"\nfrom_tab_path = \"TRENDING,TOPICS\""
   },
   {
     "path": "/api/v1/tiktok/app/v3/fetch_creator_search_insights_videos",
+    "method": "GET",
     "summary": "创作者搜索洞察相关视频/Creator Search Insights Videos",
     "description": "# [中文]\n### 用途:\n- 获取创作者搜索洞察相关视频，查询该搜索词条下比较火的相关视频\n### 参数:\n- keyword: 搜索关键词，从 fetch_creator_search_insights 或 fetch_creator_search_insights_trend 接口获取\n- offset: 分页偏移量，默认0\n- count: 每页数量，默认20\n### 返回:\n- 相关热门视频列表\n\n# [English]\n### Purpose:\n- Get creator search insights related videos, query popular related videos for the search term\n### Parameters:\n- keyword: Search keyword, obtained from fetch_creator_search_insights or fetch_creator_search_insights_trend\n- offset: Pagination offset, default 0\n- count: Number per page, default 20\n### Return:\n- Related popular videos list\n\n# [示例/Example]\nkeyword = \"headshots 2 2 3\"\noffset = 0\ncount = 20"
   },
   {
     "path": "/api/v1/tiktok/app/v3/fetch_music_chart_list",
+    "method": "GET",
     "summary": "音乐排行榜/Music Chart List",
     "description": "# [中文]\n### 用途:\n- 获取TikTok音乐排行榜数据\n### 参数:\n- scene: 排行榜类型\n    - 0: Top 50 (热门前50)\n    - 1: Viral 50 (病毒式传播前50)\n- cursor: 分页游标，默认0\n- count: 每页数量，默认50，最大50\n### 返回:\n- 音乐排行榜数据，包含歌曲信息、排名变化等\n\n# [English]\n### Purpose:\n- Get TikTok music chart list data\n### Parameters:\n- scene: Chart type\n    - 0: Top 50 (Popular top 50)\n    - 1: Viral 50 (Viral top 50)\n- cursor: Pagination cursor, default 0\n- count: Number per page, default 50, max 50\n### Return:\n- Music chart data, including song info, ranking changes, etc.\n\n# [示例/Example]\nscene = 0  # Top 50\ncursor = 0\ncount = 50"
   },
   {
     "path": "/api/v1/tiktok/app/v3/search_follower_list",
+    "method": "GET",
     "summary": "搜索粉丝列表/Search follower list",
     "description": "# [中文]\n### 用途:\n- 搜索指定用户的粉丝列表，可以用于查找某个用户的粉丝中是否有特定昵称的用户。\n### 参数:\n- user_id: 用户ID，这是一个纯数字版本的用户ID，可以先通过获取用户信息接口获取。\n- keyword: 搜索关键词，用户的昵称中包含该关键词即可匹配\n### 返回:\n- 搜索结果列表\n\n# [English]\n### Purpose:\n- Search follower list of specified user, can be used to find whether there is a user with a specific nickname in the followers of a certain user.\n### Parameters:\n- user_id: User ID, this is a pure numeric version of the user ID, which can be obtained through the get user info API.\n- keyword: Search keyword, the user's nickname contains the keyword to match.\n### Return:\n- Search result list\n\n# [示例/Example]\nuser_id = \"7540849481009988663\"\nkeyword = \"a\""
   },
   {
     "path": "/api/v1/tiktok/app/v3/search_following_list",
+    "method": "GET",
     "summary": "搜索关注列表/Search following list",
     "description": "# [中文]\n### 用途:\n- 搜索指定用户的关注列表，可以用于查找某个用户的关注中是否有特定昵称的用户。\n### 参数:\n- user_id: 用户ID，这是一个纯数字版本的用户ID，可以先通过获取用户信息接口获取。\n- keyword: 搜索关键词，用户的昵称中包含该关键词即可匹配。\n### 返回:\n- 搜索结果列表\n\n# [English]\n### Purpose:\n- Search following list of specified user, can be used to find whether there is a user with a specific nickname in the following of a certain user.\n### Parameters:\n- user_id: User ID, this is a pure numeric version of the user ID, which can be obtained through the get user info API.\n- keyword: Search keyword, the user's nickname contains the keyword to match.\n### Return:\n- Search result list\n\n# [示例/Example]\nuser_id = \"7540849481009988663\"\nkeyword = \"a\""
   },
   {
     "path": "/api/v1/tiktok/app/v3/fetch_live_room_info",
+    "method": "GET",
     "summary": "获取指定直播间的数据/Get data of specified live room",
     "description": "# [中文]\n### 用途:\n- 获取指定直播间的数据\n### 参数:\n- room_id: 直播间id\n### 返回:\n- 直播间数据\n\n# [English]\n### Purpose:\n- Get data of specified live room\n### Parameters:\n- room_id: Live room id\n### Return:\n- Live room data\n\n# [示例/Example]\nroom_id = \"7385461256746060575\""
   },
   {
     "path": "/api/v1/tiktok/app/v3/fetch_live_ranking_list",
+    "method": "GET",
     "summary": "获取直播间排行榜数据/Get live room ranking list",
     "description": "# [中文]\n### 用途:\n- 获取直播间内观众的排行榜数据\n### 参数:\n- room_id: 直播间id\n- anchor_id: 主播id\n### 返回:\n- 排行榜数据\n\n# [English]\n### Purpose:\n- Get ranking list of audience in live room\n### Parameters:\n- room_id: Live room id\n- anchor_id: Anchor id\n### Return:\n- Ranking list data\n\n# [示例/Example]\nroom_id = \"7358603858249009962\"\nanchor_id = \"7222941468722758702\""
   },
   {
     "path": "/api/v1/tiktok/app/v3/check_live_room_online",
+    "method": "GET",
     "summary": "检测直播间是否在线/Check if live room is online",
     "description": "# [中文]\n### 用途:\n- 检测直播间是否在线\n- 直播间的Room ID可以通过直播间链接从`/api/v1/tiktok/web/get_live_room_id`接口获取\n### 参数:\n- room_id: 直播间id\n### 返回:\n- 是否在线\n\n# [English]\n### Purpose:\n- Check if live room is online\n- The Room ID of the live room can be obtained from the `/api/v1/tiktok/web/get_live_room_id` interface through the live room link\n### Parameters:\n- room_id: Live room id\n### Return:\n- Whether online\n\n# [示例/Example]\nroom_id = \"7358603858249009962\""
   },
   {
     "path": "/api/v1/tiktok/app/v3/check_live_room_online_batch",
+    "method": "POST",
     "summary": "批量检测直播间是否在线/Batch check if live rooms are online",
     "description": "# [中文]\n### 用途:\n- 批量检测多个 TikTok 直播间是否在线，最大支持50个直播间ID\n- Room ID 可以通过 `/api/v1/tiktok/web/get_live_room_id` 获取\n### 参数:\n- room_ids: 多个直播间 ID 的数组\n### 返回:\n- 每个直播间的在线状态\n\n# [English]\n### Purpose:\n- Batch check TikTok live rooms' online status, supports up to 50 room IDs\n- Room IDs can be retrieved from `/api/v1/tiktok/web/get_live_room_id`\n### Parameters:\n- room_ids: List of TikTok live room IDs\n### Return:\n- Online status per room\n\n# [示例/Example]\n```\npayload = {\n    \"room_ids\": [\n        \"7494491933781003054\",\n        \"7494514925034113835\"\n    ]\n}\n```"
   },
   {
     "path": "/api/v1/tiktok/app/v3/fetch_share_short_link",
+    "method": "GET",
     "summary": "获取分享短链接/Get share short link",
     "description": "# [中文]\n### 用途:\n- 获取分享短链接\n### 参数:\n- url: 长链接或想要转换的链接\n### 返回:\n- 短链接\n\n# [English]\n### Purpose:\n- Get share short link\n### Parameters:\n- url: Long link or link to convert\n### Return:\n- Short link\n\n# [示例/Example]\nurl = \"https://www.tiktok.com/passport/web/logout/\""
   },
   {
     "path": "/api/v1/tiktok/app/v3/fetch_share_qr_code",
+    "method": "GET",
     "summary": "获取分享二维码/Get share QR code",
     "description": "# [中文]\n### 用途:\n- 获取分享二维码\n### 参数:\n- object_id: 对象id，当前支持个人主页接口响应中的uid作为参数。\n### 返回:\n- 二维码图片\n\n# [English]\n### Purpose:\n- Get share QR code\n### Parameters:\n- object_id: Object id, currently supports the uid in the response of the personal homepage interface as a parameter.\n### Return:\n- QR code image\n\n# [示例/Example]\nurl = \"6762244951259661318\""
   },
   {
     "path": "/api/v1/tiktok/app/v3/fetch_product_search",
+    "method": "GET",
     "summary": "获取商品搜索结果/Get product search results",
     "description": "# [中文]\n### 用途:\n- 获取商品搜索结果\n### 参数:\n- keyword: 关键词\n- cursor: 游标，用于翻页，第一页为0，第二页为第一次响应中的cursor值。\n- count: 数量\n- sort_type: 商品排序条件\n    - 1: 综合排序\n    - 2: 销量排序\n    - 3: 价格从高到低\n    - 4: 价格从低到高\n    - 5: 最新发布\n- customer_review_four_star: 四星以上评价\n- have_discount: 有优惠\n- min_price: 最低价格\n- max_price: 最高价格\n### 返回:\n- 商品搜索结果\n\n# [English]\n### Purpose:\n- Get product search results\n### Parameters:\n- keyword: Keyword\n- cursor: Cursor, used for paging, the first page is 0, the second page is the cursor value in the first response.\n- count: Number\n- sort_type: Product sorting conditions\n    - 1: Comprehensive sorting\n    - 2: Sales volume sorting\n    - 3: Price high to low\n    - 4: Price low to high\n    - 5: Latest release\n- customer_review_four_star: Four-star or more reviews\n- have_discount: Having discount\n- min_price: Minimum price\n- max_price: Maximum price\n### Return:\n- Product search results\n\n# [示例/Example]\nkeyword = \"Cat Toy\"\ncursor = 0\ncount = 12\nsort_type = 1\ncustomer_review_four_star = False\nhave_discount = False\nmin_price = \"10\"\nmax_price = \"25\""
   },
   {
     "path": "/api/v1/tiktok/app/v3/fetch_creator_info",
+    "method": "GET",
     "summary": "获取带货创作者信息/Get shopping creator information",
     "description": "# [中文]\n### 用途:\n- 获取创作者信息，包括创作者的基本信息、粉丝数、橱窗商品数量、带货直播间等信息。\n### 参数:\n- creator_uid: 创作者uid\n### 返回:\n- 创作者信息\n\n# [English]\n### Purpose:\n- Get creator information, including the creator's basic information, number of fans, number of storefront products, shop live room and other information.\n### Parameters:\n- creator_uid: Creator uid\n### Return:\n- Creator information\n\n# [示例/Example]\ncreator_uid = \"6555451606845243393\"\n\n# [示例响应/Example Response]\nresponse = {\n    \"code\": 200,\n    \"request_id\": \"d5575d80-a8cc-44ab-a46a-b62c2e967829\",\n    \"router\": \"/api/v1/tiktok/app/v3/fetch_creator_info\",\n    \"params\": {\n        \"creator_uid\": \"6555451606845243393\"\n    },\n    \"data\": {\n        \"code\": 0,\n        \"data\": {\n            \"creator_info\": {\n                \"creator_id\": \"6555451606845243393\",\n                \"creator_name\": \"louissescarlettFamily's showcase\",\n                \"avatar\": {\n                    \"uri\": \"720x720/tos-alisg-avt-0068/28257cac3d733b5e4bc12655685fc248\",\n                    \"url_list\": [\n                        \"https://p19-common-sign-sg.tiktokcdn-us.com/tos-alisg-avt-0068/28257cac3d733b5e4bc12655685fc248~tplv-tiktokx-cropcenter:720:720.webp?dr=9640&refresh_token=fd81a69e&x-expires=1756022400&x-signature=neQwNv%2BxfA4YPnLFb51270Zi8Ps%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=85ba3243&idc=useast5\",\n                        \"https://p16-common-sign-sg.tiktokcdn-us.com/tos-alisg-avt-0068/28257cac3d733b5e4bc12655685fc248~tplv-tiktokx-cropcenter:720:720.webp?dr=9640&refresh_token=723df957&x-expires=1756022400&x-signature=9q4A2SUIO%2B42lqTsrVkkpks54dI%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=85ba3243&idc=useast5\",\n                        \"https://p19-common-sign-sg.tiktokcdn-us.com/tos-alisg-avt-0068/28257cac3d733b5e4bc12655685fc248~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=d63d422b&x-expires=1756022400&x-signature=sycMEH0640dpjl%2BK0nDy1ZPbtxs%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=85ba3243&idc=useast5\"\n                    ]\n                },\n                \"followers_info\": {\n                    \"count\": \"18017938\",\n                    \"count_info\": \"18.0M followers\",\n                    \"value\": 18017938,\n                    \"count_format\": \"18.0M\"\n                },\n                \"sold_count_info\": {\n                    \"count\": \"0\",\n                    \"value\": 0\n                },\n                \"bg_pic\": {\n                    \"uri\": \"tos-alisg-i-aphluv4xwc-sg/72edb551d7c77636678a5518cdddfd1c.jpg\",\n                    \"url_list\": [\n                        \"https://p19-oec-general.ttcdn-us.com/tos-alisg-i-aphluv4xwc-sg/72edb551d7c77636678a5518cdddfd1c.jpg~tplv-fhlh96nyum-resize-jpeg:1600:1600.jpeg?dr=12186&t=555f072d&ps=933b5bde&shp=4ee6669e&shcp=9b759fb9&idc=useast5&from=1323722398\",\n                        \"https://p16-oec-general.ttcdn-us.com/tos-alisg-i-aphluv4xwc-sg/72edb551d7c77636678a5518cdddfd1c.jpg~tplv-fhlh96nyum-resize-jpeg:1600:1600.jpeg?dr=12186&t=555f072d&ps=933b5bde&shp=4ee6669e&shcp=9b759fb9&idc=useast5&from=1323722398\"\n                    ]\n                },\n                \"is_banned\": false,\n                \"sec_user_id\": \"MS4wLjABAAAARujvKaVWqgbVCwuxQghA99TUa5I-4g6jVzMXZd9FJIXSdJwJM47vm4-2T1K3gsux\",\n                \"follow_status_extended\": 0,\n                \"show_follow_button\": false,\n                \"can_share\": false,\n                \"show_commission_paid\": \"Creator earns commission\",\n                \"product_count_info\": {\n                    \"count\": \"713\",\n                    \"count_info\": \"713 products\",\n                    \"value\": 713,\n                    \"count_format\": \"713\"\n                },\n                \"dark_bg_pic_new\": {\n                    \"uri\": \"tos-maliva-i-acgf4d7es9-us/showcase_header_v2_dark.png\",\n                    \"url_list\": [\n                        \"https://p16-oec-general.ttcdn-us.com/tos-maliva-i-acgf4d7es9-us/showcase_header_v2_dark.png~tplv-fhlh96nyum-resize-jpeg:1170:699.jpeg?dr=12186&t=555f072d&ps=933b5bde&shp=4ee6669e&shcp=9b759fb9&idc=useast5&from=1323722398\",\n                        \"https://p19-oec-general.ttcdn-us.com/tos-maliva-i-acgf4d7es9-us/showcase_header_v2_dark.png~tplv-fhlh96nyum-resize-jpeg:1170:699.jpeg?dr=12186&t=555f072d&ps=933b5bde&shp=4ee6669e&shcp=9b759fb9&idc=useast5&from=1323722398\"\n                    ]\n                },\n                \"light_bg_pic_new\": {\n                    \"uri\": \"tos-maliva-i-acgf4d7es9-us/showcase_header_v2_light.png\",\n                    \"url_list\": [\n                        \"https://p16-oec-general.ttcdn-us.com/tos-maliva-i-acgf4d7es9-us/showcase_header_v2_light.png~tplv-fhlh96nyum-resize-jpeg:1170:699.jpeg?dr=12186&t=555f072d&ps=933b5bde&shp=4ee6669e&shcp=9b759fb9&idc=useast5&from=1323722398\",\n                        \"https://p19-oec-general.ttcdn-us.com/tos-maliva-i-acgf4d7es9-us/showcase_header_v2_light.png~tplv-fhlh96nyum-resize-jpeg:1170:699.jpeg?dr=12186&t=555f072d&ps=933b5bde&shp=4ee6669e&shcp=9b759fb9&idc=useast5&from=1323722398\"\n                    ]\n                },\n                \"is_new_header\": true,\n                \"dynamic_header\": {\n                    \"is_dynamic\": false,\n                    \"delay_time\": 0\n                },\n                \"extra_val\": {\n                    \"showcase_no_product_show_less_screen\": \"0\",\n                    \"us_uk_show_voucher_info\": \"0\"\n                }\n            },\n            \"live_info\": {\n                \"room_id\": \"7541231942331566853\",\n                \"upcoming_event_time\": \"1756141200\"\n            },\n            \"diversion_module\": 0\n        },\n        \"message\": \"success\"\n    }\n}"
   },
   {
     "path": "/api/v1/tiktok/app/v3/fetch_creator_showcase_product_list",
+    "method": "GET",
     "summary": "获取创作者橱窗商品列表/Get creator showcase product list",
     "description": "# [中文]\n### 用途:\n- 获取创作者橱窗商品列表\n### 参数:\n- kol_id: 创作者的sec_user_id\n- count: 数量\n- next_scroll_param: 翻页参数，第一页为空字符串，后续请求使用上一次请求返回的next_scroll_param值。\n### 返回:\n- 创作者橱窗商品列表\n\n# [English]\n### Purpose:\n- Get creator showcase product list\n### Parameters:\n- kol_id: Creator's sec_user_id\n- count: Number\n- next_scroll_param: Page parameter, empty string for the first page, use the next_scroll_param value returned by the last request for subsequent requests.\n### Return:\n- Creator showcase product list\n\n# [示例/Example]\nkol_id = \"MS4wLjABAAAARujvKaVWqgbVCwuxQghA99TUa5I-4g6jVzMXZd9FJIXSdJwJM47vm4-2T1K3gsux\"\ncount = 20\nnext_scroll_param = \"\""
   },
   {
     "path": "/api/v1/tiktok/app/v3/fetch_shop_id_by_share_link",
+    "method": "GET",
     "summary": "通过分享链接获取店铺ID/Get Shop ID by Share Link",
     "description": "# [中文]\n### 用途:\n- 通过分享链接获取店铺ID\n### 参数:\n- share_link: 分享链接\n### 返回:\n- 店铺ID\n\n# [English]\n### Purpose:\n- Get Shop ID by Share Link\n### Parameters:\n- share_link: Share link\n### Return:\n- Shop ID\n\n# [示例/Example]\nshare_link = \"https://vt.tiktok.com/ZT2AHoGsE/\""
   },
   {
     "path": "/api/v1/tiktok/app/v3/fetch_product_id_by_share_link",
+    "method": "GET",
     "summary": "通过分享链接获取商品ID/Get Product ID by Share Link",
     "description": "# [中文]\n### 用途:\n- 通过分享链接获取商品ID\n### 参数:\n- share_link: 分享链接\n### 返回:\n- 商品ID\n\n# [English]\n### Purpose:\n- Get Product ID by Share Link\n### Parameters:\n- share_link: Share link\n### Return:\n- Product ID\n\n# [示例/Example]\nshare_link = \"https://www.tiktok.com/t/ZT2A9N1kw/\"\nshare_link2 = \"https://affiliate-us.tiktok.com/api/v1/share/AJ4hS3OdXmSg\""
   },
   {
     "path": "/api/v1/tiktok/app/v3/fetch_product_detail",
+    "method": "GET",
     "summary": "获取商品详情数据（即将弃用，使用 fetch_product_detail_v2 代替）/Get product detail data (will be deprecated, use fetch_product_detail_v2 instead)",
     "description": "# [中文]\n### 用途:\n- 获取商品详情数据\n- 即将弃用，使用 fetch_product_detail_v2 代替\n### 参数:\n- product_id: 商品id，有时候需要从product_id_str字段中获取。\n### 返回:\n- 商品详情数据\n\n# [English]\n### Purpose:\n- Get product detail data\n- Will be deprecated, use fetch_product_detail_v2 instead\n### Parameters:\n- product_id: Product id, sometimes need to get from the product_id_str field.\n### Return:\n- Product detail data\n\n# [示例/Example]\nproduct_id = \"1729385239712731370\""
   },
   {
     "path": "/api/v1/tiktok/app/v3/fetch_product_detail_v2",
+    "method": "GET",
     "summary": "获取商品详情数据V2/Get product detail data V2",
     "description": "# [中文]\n### 用途:\n- 获取商品详情数据V2\n### 参数:\n- product_id: 商品id，有时候需要从product_id_str字段中获取。\n### 返回:\n- 商品详情数据V2\n\n# [English]\n### Purpose:\n- Get product detail data V2\n### Parameters:\n- product_id: Product id, sometimes need to get from the product_id_str field.\n### Return:\n- Product detail data V2\n\n# [示例/Example]\nproduct_id = \"1729385239712731370\""
   },
   {
     "path": "/api/v1/tiktok/app/v3/fetch_product_detail_v3",
+    "method": "GET",
     "summary": "获取商品详情数据V3 / Get product detail data V3",
     "description": "# [中文]\n### 用途:\n- 获取商品详情数据V3。如果商品详情数据V2无法获取，可以尝试使用此接口。\n\n### 参数:\n- product_id: 商品id，有时候需要从 `product_id_str` 字段中获取，也可以从商品分享链接中获取。\n- region: 商品的国家/地区代码，默认值为 \"US\"。\n\n### 支持的国家/地区代码（按区域分组）：\n- 东南亚 Southeast Asia:\n  ID（印度尼西亚）, SG（新加坡）, MY（马来西亚）, PH（菲律宾）, TH（泰国）\n- 北美 North America:\n  US（美国）, MX（墨西哥）\n- 欧洲 Europe:\n  IE（爱尔兰）, GB（英国）, ES（西班牙）\n- 越南 Vietnam:\n  VN（越南）\n\n### 返回:\n- 商品详情数据V3\n\n# [English]\n### Purpose:\n- Get product detail data V3. If product detail data V2 cannot be retrieved, try this version.\n\n### Parameters:\n- product_id: Product ID. Sometimes needs to be extracted from `product_id_str` field, or can be obtained from the product share link.\n- region: Country code of the product, default is \"US\".\n\n### Supported region codes (grouped by area):\n- Southeast Asia:\n  ID (Indonesia), SG (Singapore), MY (Malaysia), PH (Philippines), TH (Thailand)\n- North America:\n  US (United States), MX (Mexico)\n- Europe:\n  IE (Ireland), GB (United Kingdom), ES (Spain)\n- Vietnam:\n  VN (Vietnam)\n\n### Return:\n- Product detail data V3\n\n# [示例 / Example]\nproduct_id = \"1729385239712731370\"\nregion = \"US\""
   },
   {
     "path": "/api/v1/tiktok/app/v3/fetch_product_detail_v4",
+    "method": "GET",
     "summary": "获取商品详情数据V4 / Get product detail data V4",
     "description": "# [中文]\n### 用途:\n- 获取商品详情数据V4。如果商品详情数据V3无法获取，可以尝试使用此接口。\n\n### 参数:\n- product_id: 商品id，有时候需要从 `product_id_str` 字段中获取，也可以从商品分享链接中获取。\n- region: 商品的国家/地区代码，默认值为 \"US\"。\n\n### 支持的国家/地区代码（按区域分组）：\n- 东南亚 Southeast Asia:\n  ID（印度尼西亚）, SG（新加坡）, MY（马来西亚）, PH（菲律宾）, TH（泰国）\n- 北美 North America:\n  US（美国）, MX（墨西哥）\n- 欧洲 Europe:\n  IE（爱尔兰）, GB（英国）, ES（西班牙）\n- 越南 Vietnam:\n  VN（越南）\n\n### 返回:\n- 商品详情数据V4\n\n# [English]\n### Purpose:\n- Get product detail data V4. If product detail data V3 cannot be retrieved, try this version.\n\n### Parameters:\n- product_id: Product ID. Sometimes needs to be extracted from `product_id_str` field, or can be obtained from the product share link.\n- region: Country code of the product, default is \"US\".\n\n### Supported region codes (grouped by area):\n- Southeast Asia:\n  ID (Indonesia), SG (Singapore), MY (Malaysia), PH (Philippines), TH (Thailand)\n- North America:\n  US (United States), MX (Mexico)\n- Europe:\n  IE (Ireland), GB (United Kingdom), ES (Spain)\n- Vietnam:\n  VN (Vietnam)\n\n### Return:\n- Product detail data V4\n\n# [示例 / Example]\nseller_id = \"8646929864612614278\"\nproduct_id = \"1729385239712731370\"\nregion = \"US\""
   },
   {
     "path": "/api/v1/tiktok/app/v3/fetch_product_review",
+    "method": "GET",
     "summary": "获取商品评价数据/Get product review data",
     "description": "# [中文]\n### 用途:\n- 获取商品评价数据\n### 参数:\n- product_id: 商品id\n- cursor: 游标，用于翻页，第一页为0，第二页为第一次响应中的cursor值。\n- size: 数量\n- filter_id: 筛选条件\n    - 0: 全部评价\n    - 1: 1星评价\n    - 2: 2星评价\n    - 3: 3星评价\n    - 4: 4星评价\n    - 5: 5星评价\n    - 102: 有图评价\n    - 104: 已购买的评价\n- sort_type: 排序条件\n    - 1: 相关度\n    - 2: 从新到旧\n### 返回:\n- 商品评价数据\n\n# [English]\n### Purpose:\n- Get product review data\n### Parameters:\n- product_id: Product id\n- cursor: Cursor, used for paging, the first page is 0, the second page is the cursor value in the first response.\n- size: Count number\n- filter_id: Filter condition\n    - 0: All reviews\n    - 1: 1-star review\n    - 2: 2-star review\n    - 3: 3-star review\n    - 4: 4-star review\n    - 5: 5-star review\n    - 102: Reviews with pictures\n    - 104: Reviews of purchased products\n- sort_type: Sorting conditions\n    - 1: Relevance\n    - 2: New to old\n### Return:\n- Product review data\n\n# [示例/Example]\nproduct_id = \"1729448812983194615\"\ncursor = 0\nsize = 10\nfilter_id = 0\nsort_type = 0"
   },
   {
     "path": "/api/v1/tiktok/app/v3/fetch_shop_home_page_list",
+    "method": "GET",
     "summary": "获取商家主页Page列表数据/Get shop home page list data",
     "description": "# [中文]\n### 用途:\n- 获取商家主页Page列表数据, 用于商家主页展示，以及爬取商家主页的商品数据\n### 参数:\n- seller_id: 商家id,店铺id\n### 返回:\n- 商家主页Page列表数据\n\n# [English]\n### Purpose:\n- Get shop home page list data, used for shop home page display, and crawling shop home page product data\n### Parameters:\n- seller_id: Seller id, shop id\n### Return:\n- Shop home page list data\n\n# [示例/Example]\nseller_id = \"8646929864612614278\""
   },
   {
     "path": "/api/v1/tiktok/app/v3/fetch_shop_home",
+    "method": "GET",
     "summary": "获取商家主页数据/Get shop home page data",
     "description": "# [中文]\n### 用途:\n- 获取商家主页的商品数据\n### 参数:\n- page_id: 爬取的商家主页Page id，可以从`fetch_shop_home_page_list`这个接口获取\n- seller_id: 商家id,店铺id\n### 返回:\n- 商家主页数据\n\n# [English]\n### Purpose:\n- Get product data of the shop home page\n### Parameters:\n- page_id: Page id of the crawled shop home page, which can be obtained from the interface `fetch_shop_home_page_list`\n- seller_id: Seller id, shop id\n### Return:\n- Shop home page data\n\n# [示例/Example]\npage_id = \"7314705727611930410\"\nseller_id = \"8646929864612614278\""
   },
   {
     "path": "/api/v1/tiktok/app/v3/fetch_shop_product_recommend",
+    "method": "GET",
     "summary": "获取商家商品推荐数据/Get shop product recommend data",
     "description": "# [中文]\n### 用途:\n- 获取商家商品推荐数据\n### 参数:\n- seller_id: 商家id,店铺id\n- scroll_param: 滚动参数，用于加载更多商品数据\n- page_size: 每页数量\n### 返回:\n- 商家商品推荐数据\n\n# [English]\n### Purpose:\n- Get shop product recommend data\n### Parameters:\n- seller_id: Seller id, shop id\n- scroll_param: Scroll parameter, used to load more product data\n- page_size: Number per page\n### Return:\n- Shop product recommend data\n\n# [示例/Example]\nseller_id = \"8646929864612614278\"\nscroll_param = \"\"\npage_size = 10"
   },
   {
     "path": "/api/v1/tiktok/app/v3/fetch_shop_product_list",
+    "method": "GET",
     "summary": "获取商家商品列表数据/Get shop product list data",
     "description": "# [中文]\n### 用途:\n- 获取商家商品列表数据\n### 参数:\n- seller_id: 商家id,店铺id\n- scroll_params: 滚动参数，用于加载更多商品数据\n- page_size: 每页数量\n- sort_field: 排序字段\n    - 1: 综合排序\n    - 3: 最新发布\n    - 4: 销量最好\n    - 5: 价格排序\n- sort_order: 排序方式\n    - 0: 默认价格排序\n    - 1: 价格从高到低\n    - 2: 价格从低到高\n### 返回:\n- 商家商品列表数据\n\n# [English]\n### Purpose:\n- Get shop product list data\n### Parameters:\n- seller_id: Seller id, shop id\n- scroll_params: Scroll parameter, used to load more product data\n- page_size: Number per page\n- sort_field: Sorting field\n    - 1: Comprehensive sorting\n    - 3: Latest release\n    - 4: Best sales\n    - 5: Price sorting\n- sort_order: Sorting method\n    - 0: Default price sorting\n    - 1: Price high to low\n    - 2: Price low to high\n### Return:\n- Shop product list data\n\n# [示例/Example]\nseller_id = \"8646929864612614278\"\nscroll_params = \"\"\npage_size = 10\nsort_field = 1\nsort_order = 0"
   },
   {
     "path": "/api/v1/tiktok/app/v3/fetch_shop_product_list_v2",
+    "method": "GET",
     "summary": "获取商家商品列表数据 V2/Get shop product list data V2",
     "description": "# [中文]\n### 用途:\n- 获取商家商品列表数据\n### 参数:\n- seller_id: 商家id,店铺id\n- scroll_params: 滚动参数，用于加载更多商品数据\n- page_size: 每页数量\n- sort_field: 排序字段\n    - 1: 综合排序\n    - 3: 最新发布\n    - 4: 销量最好\n    - 5: 价格排序\n- sort_order: 排序方式\n    - 0: 默认价格排序\n    - 1: 价格从高到低\n    - 2: 价格从低到高\n### 返回:\n- 商家商品列表数据\n\n# [English]\n### Purpose:\n- Get shop product list data\n### Parameters:\n- seller_id: Seller id, shop id\n- scroll_params: Scroll parameter, used to load more product data\n- page_size: Number per page\n- sort_field: Sorting field\n    - 1: Comprehensive sorting\n    - 3: Latest release\n    - 4: Best sales\n    - 5: Price sorting\n- sort_order: Sorting method\n    - 0: Default price sorting\n    - 1: Price high to low\n    - 2: Price low to high\n### Return:\n- Shop product list data\n\n# [示例/Example]\nseller_id = \"8646929864612614278\"\nscroll_params = \"\"\npage_size = 10\nsort_field = 1\nsort_order = 0"
   },
   {
     "path": "/api/v1/tiktok/app/v3/fetch_shop_info",
+    "method": "GET",
     "summary": "获取商家信息数据/Get shop information data",
     "description": "# [中文]\n### 用途:\n- 获取商家信息数据\n### 参数:\n- shop_id: 商家id,店铺id\n### 返回:\n- 商家信息数据\n\n# [English]\n### Purpose:\n- Get shop information data\n### Parameters:\n- shop_id: Seller id, shop id\n### Return:\n- Shop information data\n\n# [示例/Example]\nshop_id = \"8646942781241463007\""
   },
   {
     "path": "/api/v1/tiktok/app/v3/fetch_shop_product_category",
+    "method": "GET",
     "summary": "获取商家产品分类数据/Get shop product category data",
     "description": "# [中文]\n### 用途:\n- 获取商家产品分类数据\n### 参数:\n- seller_id: 商家id,店铺id\n### 返回:\n- 商家产品分类数据\n\n# [English]\n### Purpose:\n- Get shop product category data\n### Parameters:\n- seller_id: Seller id, shop id\n### Return:\n- Shop product category data\n\n# [示例/Example]\nseller_id = \"7495294980909468039\""
   },
   {
     "path": "/api/v1/tiktok/app/v3/fetch_live_daily_rank",
+    "method": "GET",
     "summary": "获取直播每日榜单数据/Get live daily rank data",
     "description": "# [中文]\n### 用途:\n- 获取直播每日榜单数据\n### 参数:\n- anchor_id: 主播id，可以从直播间信息接口获取，使用默认值即可，该参数会影响返回的数据，你可以尝试不同直播间的主播id。\n- room_id: 直播间id，可以从直播间信息接口获取，使用默认值即可，该参数会影响返回的数据，你可以尝试不同直播间的id。\n- rank_type: 榜单类型，参数值如下表：\n\n    | type | rankName | 分组类型 | 说明 |\n    |------|----------|----------|------|\n    | 0 | `hourly_rank` | GIFT_RANK | 小时榜 |\n    | 1 | `weekly_rank` | GIFT_RANK | 周榜 |\n    | 5 | `rookie_star_rank` | GIFT_RANK | 新星榜 |\n    | 6 | `sale_rank` | E_COMMERCE | 带货榜 |\n    | 8 | `daily_rank` | GIFT_RANK | 日榜 |\n    | 10 | `weekly_game_rank` | GAME_RANK | 周游戏榜 |\n    | 11 | `daily_game_rank` | GAME_RANK | 日游戏榜 |\n    | 12 | `hall_of_fame_rank` | GIFT_RANK | 名人堂 |\n    | 13 | `champion_tournament` | GIFT_RANK | 冠军赛（含phase_one/two/three） |\n    | 14 | `daily_rookie_star_rank` | GIFT_RANK | 日新星榜 |\n    | 15 | `fans_team_rank` | GIFT_RANK | 粉丝团榜 |\n    | 16 | `ranking_league` | GIFT_RANK | 排位联赛（App内显示: D5段位榜） |\n    | 20 | `pubg` | GAME_RANK | PUBG游戏榜 |\n    | 21 | `mlbb` | GAME_RANK | MLBB游戏榜（Mobile Legends: Bang Bang） |\n    | 22 | `free_fire` | GAME_RANK | Free Fire游戏榜 |\n    | 23 | `sub_weekly_game_rank1` | GAME_RANK | 子周游戏榜1 |\n    | 24 | `sub_weekly_game_rank2` | GAME_RANK | 子周游戏榜2 |\n    | 25 | `sub_weekly_game_rank3` | GAME_RANK | 子周游戏榜3 |\n    | 26 | `collectibles` | E_COMMERCE | 收藏品榜 |\n    | 27 | `beauty` | E_COMMERCE | 美妆榜 |\n    | 28 | `women_wear` | E_COMMERCE | 女装榜 |\n    | 29 | `sale_rank_daily` | E_COMMERCE | 日带货榜 |\n    | 1001 | `league_campaign_rank` | GIFT_RANK | 联赛活动榜 |\n    | -1 | `unknown` | DEFAULT | 未知 |\n\n- region_type: 地区类型，使用默认值即可，具体含义不明。\n- gap_interval: 时间间隔，使用默认值代表当天，使用-1代表排名记录。\n- cookie: 用户自己的cookie，可选参数，用于接口不可用时使用。\n### 返回:\n- 直播每日榜单数据\n\n# [English]\n### Purpose:\n- Get live daily rank data\n### Parameters:\n- anchor_id: Anchor id, which can be obtained from the live room information interface, use the default value, this parameter will affect the returned data, you can try different anchor ids of different live rooms.\n- room_id: Live room id, which can be obtained from the live room information interface, use the default value, this parameter will affect the returned data, you can try different room ids of different live rooms.\n- rank_type: Rank type, parameter values are as follows:\n\n    | type | rankName | Group Type | Description |\n    |------|----------|------------|-------------|\n    | 0 | `hourly_rank` | GIFT_RANK | Hourly Rank |\n    | 1 | `weekly_rank` | GIFT_RANK | Weekly Rank |\n    | 5 | `rookie_star_rank` | GIFT_RANK | Rookie Star Rank |\n    | 6 | `sale_rank` | E_COMMERCE | Sale Rank |\n    | 8 | `daily_rank` | GIFT_RANK | Daily Rank |\n    | 10 | `weekly_game_rank` | GAME_RANK | Weekly Game Rank |\n    | 11 | `daily_game_rank` | GAME_RANK | Daily Game Rank |\n    | 12 | `hall_of_fame_rank` | GIFT_RANK | Hall of Fame Rank |\n    | 13 | `champion_tournament` | GIFT_RANK | Champion Tournament (includes phase_one/two/three) |\n    | 14 | `daily_rookie_star_rank` | GIFT_RANK | Daily Rookie Star Rank |\n    | 15 | `fans_team_rank` | GIFT_RANK | Fans Team Rank |\n    | 16 | `ranking_league` | GIFT_RANK | Ranking League (App display: D5 Level Rank) |\n    | 20 | `pubg` | GAME_RANK | PUBG Rank |\n    | 21 | `mlbb` | GAME_RANK | MLBB Rank (Mobile Legends: Bang Bang) |\n    | 22 | `free_fire` | GAME_RANK | Free Fire Rank |\n    | 23 | `sub_weekly_game_rank1` | GAME_RANK | Sub Weekly Game Rank 1 |\n    | 24 | `sub_weekly_game_rank2` | GAME_RANK | Sub Weekly Game Rank 2 |\n    | 25 | `sub_weekly_game_rank3` | GAME_RANK | Sub Weekly Game Rank 3 |\n    | 26 | `collectibles` | E_COMMERCE | Collectibles Rank |\n    | 27 | `beauty` | E_COMMERCE | Beauty Rank |\n    | 28 | `women_wear` | E_COMMERCE | Women Wear Rank |\n    | 29 | `sale_rank_daily` | E_COMMERCE | Daily Sale Rank |\n    | 1001 | `league_campaign_rank` | GIFT_RANK | League Campaign Rank |\n    | -1 | `unknown` | DEFAULT | Unknown |\n\n- region_type: Region type, use the default value, the specific meaning is unknown.\n- gap_interval: Time interval, use the default value to represent the current day, use -1 to represent the ranking record.\n- cookie: User's own cookie, optional parameter, used when the interface is not available.\n### Return:\n- Live daily rank data"
   },
   {
     "path": "/api/v1/tiktok/app/v3/fetch_user_music_list",
+    "method": "GET",
     "summary": "获取用户音乐列表数据/Get user music list data",
     "description": "# [中文]\n### 用途:\n- 获取用户音乐列表数据\n### 参数:\n- sec_uid: 用户sec_uid\n- cursor: 游标，用于翻页，第一页为0，第二页为第一次响应中的cursor值。\n- count: 数量\n### 返回:\n- 用户音乐列表数据\n\n# [English]\n### Purpose:\n- Get user music list data\n### Parameters:\n- sec_uid: User sec_uid\n- cursor: Cursor, used for paging, the first page is 0, the second page is the cursor value in the first response.\n- count: Number\n\n# [示例/Example]\nsec_uid = \"MS4wLjABAAAAqB08cUbXaDWqbD6MCga2RbGTuhfO2EsHayBYx08NDrN7IE3jQuRDNNN6YwyfH6_6\"\ncursor = 0\ncount = 10"
   },
   {
     "path": "/api/v1/tiktok/app/v3/fetch_content_translate",
+    "method": "POST",
     "summary": "获取内容翻译数据/Get content translation data",
     "description": "# [中文]\n### 用途:\n- 获取内容翻译数据\n### 参数:\n- trg_lang: 目标语言\n    - zh-Hans: 简体中文\n    - zh-Hant: 繁体中文\n    - en: 英语\n    - ja: 日语\n    - ko: 韩语\n    - fr: 法语\n    - de: 德语\n    - ru: 俄语\n    - es: 西班牙语\n    - pt: 葡萄牙语\n    - vi: 越南语\n    - th: 泰语\n    - id: 印尼语\n    - ar: 阿拉伯语\n    - it: 意大利语\n    - tr: 土耳其语\n    - he: 希伯来语\n    - pl: 波兰语\n    - nl: 荷兰语\n    - sv: 瑞典语\n    - da: 丹麦语\n    - fi: 芬兰语\n    - no: 挪威语\n    - cs: 捷克语\n    - hu: 匈牙利语\n- src_content: 源内容，也就是需要翻译的内容，长度不超过5000个字符，如果超过5000个字符，只会翻译前5000个字符。\n### 返回:\n- 内容翻译数据\n\n# [English]\n### Purpose:\n- Get content translation data\n### Parameters:\n- trg_lang: Target language\n    - zh-Hans: Simplified Chinese\n    - zh-Hant: Traditional Chinese\n    - en: English\n    - ja: Japanese\n    - ko: Korean\n    - fr: French\n    - de: German\n    - ru: Russian\n    - es: Spanish\n    - pt: Portuguese\n    - vi: Vietnamese\n    - th: Thai\n    - id: Indonesian\n    - ar: Arabic\n    - it: Italian\n    - tr: Turkish\n    - he: Hebrew\n    - pl: Polish\n    - nl: Dutch\n    - sv: Swedish\n    - da: Danish\n    - fi: Finnish\n    - no: Norwegian\n    - cs: Czech\n    - hu: Hungarian\n- src_content: Source content, that is, the content that needs to be translated, the length does not exceed 5000 characters, if it exceeds 5000 characters, only the first 5000 characters will be translated.\n### Return:\n- Content translation data\n\n# [示例/Example]\ntrg_lang = \"zh-Hans\"\nsrc_content = \"Hello, welcome to TikHub!\""
   },
   {
     "path": "/api/v1/tiktok/app/v3/fetch_home_feed",
+    "method": "POST",
     "summary": "获取主页视频推荐数据/Get home feed(recommend) video data",
     "description": "# [中文]\n### 用途:\n- 获取主页视频推荐数据\n### 参数:\n- cookie: 用户自己的cookie，可选参数，用于接口返回数据的个性化推荐。\n### 返回:\n- 视频推荐数据\n\n# [English]\n### Purpose:\n- Get home feed(recommend) video data\n### Parameters:\n- cookie: User's own cookie, optional parameter, used for personalized recommendation of interface returned data.\n### Return:\n- Video recommend data"
   },
   {
     "path": "/api/v1/tiktok/app/v3/TTencrypt_algorithm",
+    "method": "POST",
     "summary": "TikTok APP加密算法/TikTok APP encryption algorithm",
     "description": "# [中文]\n### 用途:\n- TikTok APP加密算法，用于生成请求头中的加密参数。\n- 生成的加密参数列表：\n    - `x-ladon`\n    - `x-khronos`\n    - `x-argus`\n    - `x-gorgon` （8404）\n\n### 参数:\n- url: 需要加密的完整URL\n- data: 如果接口是POST请求，请填写POST请求的数据参与加密计算，GET请求时传入空字符串即可。\n- device_info: 设备信息，可选参数，如果不填写则使用默认设备信息，设备信息会修改传入的URL中的参数。\n\n### 返回:\n- 加密参数列表\n\n# [English]\n### Purpose:\n- TikTok APP encryption algorithm, used to generate encrypted parameters in the request header.\n- The generated encrypted parameter list:\n    - `x-ladon`\n    - `x-khronos`\n    - `x-argus`\n    - `x-gorgon` (8404)\n\n### Parameters:\n- url: Full URL to be encrypted\n- data: If the interface is a POST request, please fill in the data of the POST request to participate in the encryption calculation. For GET requests, pass an empty string.\n- device_info: Device information, optional parameter, if not filled in, the default device information will be used, and the device information will modify the parameters in the URL passed in.\n\n### Return:\n- Encrypted parameter list"
   },
   {
     "path": "/api/v1/tiktok/app/v3/fetch_live_room_product_list",
+    "method": "GET",
     "summary": "获取直播间商品列表数据/Get live room product list data",
     "description": "# [中文]\n### 用途:\n- 获取直播间商品列表数据\n### 参数:\n- room_id: 直播间id，必填参数。\n- author_id: 主播id，必填参数。\n- page_size: 每页数量，可选参数，默认为15。\n- offset: 翻页游标，可选参数，默认为0，每次翻页增加15。\n- region: 地区，可选参数，默认为`US`，如果使用其他地区，如：`VN`，请自行携带Cookie，否则无法获取数据。\n- cookie: 用户自己的cookie，可选参数，用于爬取除`US`以外的地区数据。\n### 参数获取:\n- 第一步：使用接口`f\"{TikHub_Domain}/api/v1/tiktok/web/get_live_room_id\"`接口获取直播间id（room_id）。\n- 第二步：使用接口`f\"{TikHub_Domain}/api/v1/tiktok/app/v3/fetch_live_room_info\"`接口获取直播间信息。\n- 第三步：使用第二步返回的JSON数据中使用JSONPATH获取`$.data.data.owner.id_str`字段的值作为主播id（author_id）。\n### 返回:\n- 直播间商品列表数据\n\n# [English]\n### Purpose:\n- Get live room product list data\n### Parameters:\n- room_id: Live room id, required parameter.\n- author_id: Anchor id, required parameter.\n- page_size: Number per page, optional parameter, default is 15.\n- offset: Page turning cursor, optional parameter, default is 0, increasing by 15 each time.\n- region: Region, optional parameter, default is `US`, if you use other regions, such as: `VN`, please bring your own Cookie, otherwise you will not be able to get data.\n- cookie: User's own cookie, optional parameter, used to crawl data from regions other than `US`.\n### Get Parameters:\n- Step 1: Use the interface `f\"{TikHub_Domain}/api/v1/tiktok/web/get_live_room_id\"` to get the live room id (room_id).\n- Step 2: Use the interface `f\"{TikHub_Domain}/api/v1/tiktok/app/v3/fetch_live_room_info\"` to get the live room information.\n- Step 3: Use the JSONPATH in the JSON data returned in the second step to get the value of the field `$.data.data.owner.id_str` as the anchor id (author_id).\n### Return:\n- Live room product list data\n\n# [示例/Example]\nroom_id = \"7420741353250507562\"\nauthor_id = \"7408859677050274859\"\npage_size = 15\noffset = 0"
   },
   {
     "path": "/api/v1/tiktok/app/v3/fetch_live_room_product_list_v2",
+    "method": "GET",
     "summary": "获取直播间商品列表数据 V2 /Get live room product list data V2",
     "description": "# [中文]\n### 用途:\n- 获取直播间商品列表数据 V2\n### 参数:\n- room_id: 直播间id，必填参数。\n- author_id: 主播id，必填参数。\n- page_size: 每页数量，可选参数，默认为15。\n- offset: 翻页游标，可选参数，默认为0，每次翻页增加15。\n- region: 地区，可选参数，默认为`US`，如果使用其他地区，如：`VN`，请自行携带Cookie，否则无法获取数据。\n- cookie: 用户自己的cookie，可选参数，用于爬取除`US`以外的地区数据。\n### 参数获取:\n- 第一步：使用接口`f\"{TikHub_Domain}/api/v1/tiktok/web/get_live_room_id\"`接口获取直播间id（room_id）。\n- 第二步：使用接口`f\"{TikHub_Domain}/api/v1/tiktok/app/v3/fetch_live_room_info\"`接口获取直播间信息。\n- 第三步：使用第二步返回的JSON数据中使用JSONPATH获取`$.data.data.owner.id_str`字段的值作为主播id（author_id）。\n### 返回:\n- 直播间商品列表数据\n\n# [English]\n### Purpose:\n- Get live room product list data V2\n### Parameters:\n- room_id: Live room id, required parameter.\n- author_id: Anchor id, required parameter.\n- page_size: Number per page, optional parameter, default is 15.\n- offset: Page turning cursor, optional parameter, default is 0, increasing by 15 each time.\n- region: Region, optional parameter, default is `US`, if you use other regions, such as: `VN`, please bring your own Cookie, otherwise you will not be able to get data.\n- cookie: User's own cookie, optional parameter, used to crawl data from regions other than `US`.\n### Get Parameters:\n- Step 1: Use the interface `f\"{TikHub_Domain}/api/v1/tiktok/web/get_live_room_id\"` to get the live room id (room_id).\n- Step 2: Use the interface `f\"{TikHub_Domain}/api/v1/tiktok/app/v3/fetch_live_room_info\"` to get the live room information.\n- Step 3: Use the JSONPATH in the JSON data returned in the second step to get the value of the field `$.data.data.owner.id_str` as the anchor id (author_id).\n### Return:\n- Live room product list data\n\n# [示例/Example]\nroom_id = \"7420741353250507562\"\nauthor_id = \"7408859677050274859\"\npage_size = 15\noffset = 0"
   },
   {
     "path": "/api/v1/tiktok/app/v3/add_video_play_count",
+    "method": "GET",
     "summary": "根据视频ID来增加作品的播放数/Increase the number of plays of the work according to the video ID",
     "description": "# [中文]\n### 用途:\n- 根据视频ID来增加作品的播放数\n### 参数:\n- aweme_type: 作品类型，0:视频 1:图文，可以从单一作品数据接口中获取。\n- item_id: 作品id，别名为aweme_id\n- invite_code: 邀请码，此接口需要邀请码才能使用。\n### 返回:\n- 当前时间戳和状态码，状态码为200时表示成功，否则为失败，可以尝试更换一个作品id再次调用，或者等待一段时间后再次调用。\n\n# [English]\n### Purpose:\n- Increase the number of plays of the work according to the video ID\n### Parameters:\n- aweme_type: Video type, 0: Video 1: Graphic and text, can be obtained from the single work data interface.\n- item_id: Video id, alias aweme_id\n- invite_code: Invite code, this interface requires an invite code to use.\n### Return:\n- The current timestamp and status code. When the status code is 200, it means success, otherwise it is a failure. You can try to change another work id and call it again, or wait for a period of time and call it again.\n\n# [示例/Example]\naweme_type = 0\nitem_id = \"7419966340443819295\"\ncookie = None"
   },
   {
     "path": "/api/v1/tiktok/app/v3/encrypt_decrypt_login_request",
+    "method": "POST",
     "summary": "加密或解密 TikTok APP 登录请求体/Encrypt or Decrypt TikTok APP login request body",
     "description": "# [中文]\n### 用途:\n- 加密/解密 TikTok APP 登录请求体，用于登录接口的请求体加密和解密。\n### 参数:\n- username: 用户名，可以是密文或明文。\n- password: 密码，可以是密文或明文。\n- mode: 模式\n    - `encrypt`: 加密\n    - `decrypt`: 解密\n### 返回:\n- 加密/解密后的请求体\n\n# [English]\n### Purpose:\n- Encrypt/decrypt the TikTok APP login request body, used for encrypting and decrypting the request body of the login interface.\n### Parameters:\n- username: Username, can be ciphertext or plaintext.\n- password: Password, can be ciphertext or plaintext.\n- mode: Mode\n    - `encrypt`: Encrypt\n    - `decrypt`: Decrypt\n### Return:\n- Encrypted/decrypted request body\n\n# [示例/Example]\n```json\n{\n    \"username\": \"example_username\",\n    \"password\": \"example_password\",\n    \"mode\": \"encrypt\"\n}\n```"
   },
   {
     "path": "/api/v1/tiktok/app/v3/open_tiktok_app_to_video_detail",
+    "method": "GET",
     "summary": "生成TikTok分享链接，唤起TikTok APP，跳转指定作品详情页/Generate TikTok share link, call TikTok APP, and jump to the specified video details page",
     "description": "# [中文]\n### 用途:\n- 生成TikTok分享链接，唤起TikTok APP，跳转指定作品详情页。\n\n### 参数:\n- aweme_id: 作品id\n- 注意: 如果未能跳转，请确保APP已经在后台运行。\n\n### 返回:\n- 分享链接\n\n# [English]\n### Purpose:\n- Generate TikTok share link, call TikTok APP, and jump to the specified video\n\n### Parameters:\n- aweme_id: Video id\n- Note: If you cannot jump, please make sure that the APP is running in the background\n\n### Return:\n- Share link\n\n# [示例/Example]\naweme_id = \"7440436579409153311\""
   },
   {
     "path": "/api/v1/tiktok/app/v3/open_tiktok_app_to_user_profile",
+    "method": "GET",
     "summary": "生成TikTok分享链接，唤起TikTok APP，跳转指定用户主页/Generate TikTok share link, call TikTok APP, and jump to the specified user profile",
     "description": "# [中文]\n### 用途:\n- 生成TikTok分享链接，唤起TikTok APP，跳转指定用户主页。\n\n### 参数:\n- uid: 用户id，从用户主页接口中获取。\n- 注意: 如果未能跳转，请确保APP已经在后台运行。\n\n### 返回:\n- 分享链接\n\n# [English]\n### Purpose:\n- Generate TikTok share link, call TikTok APP, and jump to the specified user profile\n\n### Parameters:\n- uid: User id, obtained from the user profile interface.\n- Note: If you cannot jump, please make sure that the APP is running in the background.\n\n### Return:\n- Share link\n\n# [示例/Example]\nuid = \"7059867056504407087\""
   },
   {
     "path": "/api/v1/tiktok/app/v3/open_tiktok_app_to_keyword_search",
+    "method": "GET",
     "summary": "生成TikTok分享链接，唤起TikTok APP，跳转指定关键词搜索结果/Generate TikTok share link, call TikTok APP, and jump to the specified keyword search result",
     "description": "# [中文]\n### 用途:\n- 生成TikTok分享链接，唤起TikTok APP，跳转指定关键词搜索结果。\n\n### 参数:\n- keyword: 关键词\n- 注意: 如果未能跳转，请确保APP已经在后台运行。\n\n### 返回:\n- 分享链接\n\n# [English]\n### Purpose:\n- Generate TikTok share link, call TikTok APP, and jump to the specified keyword search result\n\n### Parameters:\n- keyword: Keyword\n- Note: If you cannot jump, please make sure that the APP is running in the background\n\n### Return:\n- Share link\n\n# [示例/Example]\nkeyword = \"Evil0ctal\""
   },
   {
     "path": "/api/v1/tiktok/app/v3/open_tiktok_app_to_send_private_message",
+    "method": "GET",
     "summary": "生成TikTok分享链接，唤起TikTok APP，给指定用户发送私信/Generate TikTok share link, call TikTok APP, and send private messages to specified users",
     "description": "# [中文]\n### 用途:\n- 生成TikTok分享链接，唤起TikTok APP，给指定用户发送私信。\n\n### 参数:\n- uid: 用户id，从用户主页接口中获取。\n- 注意: 如果未能跳转，请确保APP已经在后台运行。\n\n### 返回:\n- 分享链接\n\n# [English]\n### Purpose:\n- Generate TikTok share link, call TikTok APP, and send private messages to specified users\n\n### Parameters:\n- uid: User id, obtained from the user profile interface.\n- Note: If you cannot jump, please make sure that the APP is running in the background.\n\n### Return:\n- Share link\n\n# [示例/Example]\nuid = \"7059867056504407087\""
   }

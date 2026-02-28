@@ -1,56 +1,67 @@
 [
   {
     "path": "/api/v1/bilibili/app/fetch_one_video",
+    "method": "GET",
     "summary": "获取单个视频详情信息/Get single video data",
     "description": "# [中文]\n### 用途:\n- 获取单个视频详情信息（APP接口）\n### 参数:\n- av_id: AV号（与bv_id二选一）\n- bv_id: BV号（与av_id二选一）\n### 返回:\n- 视频详情信息\n\n# [English]\n### Purpose:\n- Get single video data (APP API)\n### Parameters:\n- av_id: AV ID (choose one of av_id or bv_id)\n- bv_id: BV ID (choose one of av_id or bv_id)\n### Return:\n- Video data\n\n# [示例/Example]\nav_id = \"115568241811221\"\nbv_id = \"BV18SCrBGE9E\""
   },
   {
     "path": "/api/v1/bilibili/app/fetch_video_comments",
+    "method": "GET",
     "summary": "获取视频评论列表/Get video comments",
     "description": "# [中文]\n### 用途:\n- 获取视频评论列表\n### 参数:\n- av_id: AV号（与bv_id二选一）\n- bv_id: BV号（与av_id二选一）\n- mode: 排序模式（3=热门, 2=时间）\n- next_offset: 分页游标\n### 返回:\n- 评论列表数据\n\n# [English]\n### Purpose:\n- Get video comments\n### Parameters:\n- av_id: AV ID (choose one of av_id or bv_id)\n- bv_id: BV ID (choose one of av_id or bv_id)\n- mode: Sort mode (3=hot, 2=time)\n- next_offset: Pagination cursor\n### Return:\n- Comments data\n\n# [示例/Example]\nbv_id = \"BV18SCrBGE9E\"\nmode = 3\nnext_offset = 1"
   },
   {
     "path": "/api/v1/bilibili/app/fetch_reply_detail",
+    "method": "GET",
     "summary": "获取二级评论回复/Get reply detail",
     "description": "# [中文]\n### 用途:\n- 获取二级评论回复\n### 参数:\n- root: 一级评论ID（必填）\n- av_id: AV号（与bv_id二选一）\n- bv_id: BV号（与av_id二选一）\n- next_offset: 下一页游标\n- ps: 每页数量\n### 返回:\n- 二级评论列表数据\n\n# [English]\n### Purpose:\n- Get reply detail (second level comments)\n### Parameters:\n- root: Root comment ID (required)\n- av_id: AV ID (choose one of av_id or bv_id)\n- bv_id: BV ID (choose one of av_id or bv_id)\n- next_offset: Next page cursor\n- ps: Page size\n### Return:\n- Reply data\n\n# [示例/Example]\nroot = \"241743663521\"\nav_id = \"113100682434775\""
   },
   {
     "path": "/api/v1/bilibili/app/fetch_user_videos",
+    "method": "GET",
     "summary": "获取用户投稿视频/Get user videos",
     "description": "# [中文]\n### 用途:\n- 获取用户投稿视频列表\n### 参数:\n- user_id: 用户ID（必填）\n- post_filter: 过滤类型（archive=投稿, season=合集, contribute=贡献）\n- page: 页码\n- ps: 每页数量\n### 返回:\n- 用户投稿视频列表\n\n# [English]\n### Purpose:\n- Get user uploaded videos\n### Parameters:\n- user_id: User ID (required)\n- post_filter: Filter type (archive/season/contribute)\n- page: Page number\n- ps: Page size\n### Return:\n- User videos data\n\n# [示例/Example]\nuser_id = \"203680252\"\npost_filter = \"archive\""
   },
   {
     "path": "/api/v1/bilibili/app/fetch_user_info",
+    "method": "GET",
     "summary": "获取用户信息/Get user info",
     "description": "# [中文]\n### 用途:\n- 获取用户信息\n### 参数:\n- user_id: 用户ID（必填）\n### 返回:\n- 用户信息（包含粉丝数、关注数、投稿数等）\n\n# [English]\n### Purpose:\n- Get user info\n### Parameters:\n- user_id: User ID (required)\n### Return:\n- User info (including followers, following, videos count, etc.)\n\n# [示例/Example]\nuser_id = \"203680252\""
   },
   {
     "path": "/api/v1/bilibili/app/fetch_home_feed",
+    "method": "GET",
     "summary": "获取主页推荐视频流/Get home feed",
     "description": "# [中文]\n### 用途:\n- 获取主页推荐视频流\n### 参数:\n- idx: 页面索引，默认使用当前时间戳\n- flush: 刷新标记（0=普通加载, 1=刷新）\n- pull: 是否下拉刷新\n### 返回:\n- 推荐视频流数据\n\n# [English]\n### Purpose:\n- Get home feed (recommended videos)\n### Parameters:\n- idx: Page index, defaults to current timestamp\n- flush: Flush flag (0=normal load, 1=refresh)\n- pull: Pull to refresh\n### Return:\n- Home feed data"
   },
   {
     "path": "/api/v1/bilibili/app/fetch_popular_feed",
+    "method": "GET",
     "summary": "获取热门推荐/Get popular feed",
     "description": "# [中文]\n### 用途:\n- 获取热门推荐视频\n### 参数:\n- idx: 页面索引（从1开始）\n- last_param: 上一页最后一个视频的ID（用于分页）\n### 返回:\n- 热门推荐视频数据\n\n# [English]\n### Purpose:\n- Get popular feed\n### Parameters:\n- idx: Page index (starting from 1)\n- last_param: Last video ID from previous page (for pagination)\n### Return:\n- Popular feed data\n\n# [示例/Example]\nidx = 1"
   },
   {
     "path": "/api/v1/bilibili/app/fetch_search_all",
+    "method": "GET",
     "summary": "综合搜索/search all",
     "description": "# [中文]\n### 用途:\n- 综合搜索（返回所有类型的搜索结果）\n### 参数:\n- keyword: 搜索关键词（必填）\n- page: 页码，从1开始\n- page_size: 每页结果数量\n- order: 排序方式（0=综合排序）\n### 返回:\n- 搜索结果，包含nav（分类导航）、item（搜索结果）、pagination（分页信息）等\n\n# [English]\n### Purpose:\n-  search all (returns all types of search results)\n### Parameters:\n- keyword: Search keyword (required)\n- page: Page number, starting from 1\n- page_size: Results per page\n- order: Sort order (0=comprehensive)\n### Return:\n- Search results including nav (category navigation), item (results), pagination, etc.\n\n# [示例/Example]\nkeyword = \"原神\"\npage = 1\npage_size = 20"
   },
   {
     "path": "/api/v1/bilibili/app/fetch_search_by_type",
+    "method": "GET",
     "summary": "分类搜索/ search by type",
     "description": "# [中文]\n### 用途:\n- 分类搜索（按类型搜索）\n### 参数:\n- keyword: 搜索关键词（必填）\n- search_type: 搜索类型\n    - video: 视频\n    - bangumi: 番剧\n    - pgc: 影视\n    - live: 直播\n    - article: 专栏\n    - user: 用户\n- page: 页码，从1开始\n- page_size: 每页结果数量\n- order: 排序方式\n    - 0: 综合排序\n    - 1: 最新发布\n    - 2: 播放量\n    - 3: 弹幕数\n### 返回:\n- 搜索结果\n\n# [English]\n### Purpose:\n-  search by type\n### Parameters:\n- keyword: Search keyword (required)\n- search_type: Search type\n    - video: Videos\n    - bangumi: Anime\n    - pgc: Movies/TV\n    - live: Live streams\n    - article: Articles\n    - user: Users\n- page: Page number, starting from 1\n- page_size: Results per page\n- order: Sort order\n    - 0: Comprehensive\n    - 1: Latest\n    - 2: Play count\n    - 3: Danmaku count\n### Return:\n- Search results\n\n# [示例/Example]\nkeyword = \"原神\"\nsearch_type = \"video\""
   },
   {
     "path": "/api/v1/bilibili/app/fetch_cinema_tab",
+    "method": "GET",
     "summary": "获取影视推荐/Get cinema tab",
     "description": "# [中文]\n### 用途:\n- 获取主页影视推荐\n### 返回:\n- 影视推荐数据\n\n# [English]\n### Purpose:\n- Get cinema tab (movies/TV recommendations)\n### Return:\n- Cinema tab data"
   },
   {
     "path": "/api/v1/bilibili/app/fetch_bangumi_tab",
+    "method": "GET",
     "summary": "获取番剧推荐/Get bangumi tab",
     "description": "# [中文]\n### 用途:\n- 获取主页番剧推荐\n### 返回:\n- 番剧推荐数据\n\n# [English]\n### Purpose:\n- Get bangumi tab (anime recommendations)\n### Return:\n- Bangumi tab data"
   }

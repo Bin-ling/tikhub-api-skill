@@ -1,26 +1,31 @@
 [
   {
     "path": "/api/v1/toutiao/app/get_article_info",
+    "method": "GET",
     "summary": "获取指定文章的信息/Get information of specified article",
     "description": "# [中文]\n### 用途:\n- 获取指定文章的信息\n### 参数:\n- group_id: 作品ID，可以从链接中获取\n    - 例如: https://www.toutiao.com/article/7450114952884503059/\n### 返回:\n- 作品信息\n\n# [English]\n### Purpose:\n- Get information of specified post\n### Parameters:\n- group_id: Post ID, can be obtained from the link\n    - For example: https://www.toutiao.com/article/7450114952884503059/\n### Return:\n- Post information\n\n# [示例/Example]\ngroup_id = \"7450114952884503059\""
   },
   {
     "path": "/api/v1/toutiao/app/get_video_info",
+    "method": "GET",
     "summary": "获取指定视频的信息/Get information of specified video",
     "description": "# [中文]\n### 用途:\n- 获取指定视频的信息\n### 参数:\n- group_id: 作品ID，可以从链接中获取\n    - 例如: https://www.toutiao.com/video/7431543350882206242/\n### 返回:\n- 作品信息\n\n# [English]\n### Purpose:\n- Get information of specified video\n### Parameters:\n- group_id: Post ID, can be obtained from the link\n    - For example: https://www.toutiao.com/video/7431543350882206242/\n### Return:\n- Post information\n\n# [示例/Example]\ngroup_id = \"7431543350882206242\""
   },
   {
     "path": "/api/v1/toutiao/app/get_comments",
+    "method": "GET",
     "summary": "获取指定作品的评论/Get comments of specified post",
     "description": "# [中文]\n### 用途:\n- 获取指定作品的评论\n### 参数:\n- group_id: 作品ID，可以从链接中获取\n    - 例如: https://www.toutiao.com/i7453372680222523931/\n- offset: 偏移量，用于分页，默认为0，然后每次加20\n### 返回:\n- 评论列表\n\n# [English]\n### Purpose:\n- Get comments of specified post\n### Parameters:\n- group_id: Post ID, can be obtained from the link\n    - For example: https://www.toutiao.com/i7453372680222523931/\n- offset: Offset, used for pagination, default is 0, then add 20 each time\n### Return:\n- Comment list\n\n# [示例/Example]\ngroup_id = \"7453372680222523931\"\noffset = \"0\""
   },
   {
     "path": "/api/v1/toutiao/app/get_user_info",
+    "method": "GET",
     "summary": "获取指定用户的信息/Get information of specified user",
     "description": "# [中文]\n### 用途:\n- 获取指定用户的信息\n### 参数:\n- user_id: 用户ID，可以从以下接口获取：\n    - `/api/v1/toutiao/app/get_user_id`\n### 返回:\n- 用户信息\n\n# [English]\n### Purpose:\n- Get information of specified user\n### Parameters:\n- user_id: User ID, can be obtained from the following API:\n    - `/api/v1/toutiao/app/get_user_id`\n### Return:\n- User information\n\n# [示例/Example]\nuser_id = \"1352838578180211\""
   },
   {
     "path": "/api/v1/toutiao/app/get_user_id",
+    "method": "GET",
     "summary": "从头条用户主页获取用户user_id/Get user_id from user profile",
     "description": "# [中文]\n### 用途:\n- 从头条用户主页获取用户user_id\n### 参数:\n- user_profile_url: 用户主页链接\n    - 例如: https://www.toutiao.com/c/user/token/MS4wLjABAAAAwK6echNksY69R8l2vcZudupfhTItbGSGt-8ineO5UaB4L-djqkYDgB6TkAdMvrmW/\n### 返回:\n- 用户ID\n\n# [English]\n### Purpose:\n- Get user_id from user profile\n### Parameters:\n- user_profile_url: User profile URL\n    - For example: https://www.toutiao.com/c/user/token/MS4wLjABAAAAwK6echNksY69R8l2vcZudupfhTItbGSGt-8ineO5UaB4L-djqkYDgB6TkAdMvrmW/\n### Return:\n- User ID\n\n# [示例/Example]\nuser_profile_url = \"https://www.toutiao.com/c/user/token/MS4wLjABAAAAwK6echNksY69R8l2vcZudupfhTItbGSGt-8ineO5UaB4L-djqkYDgB6TkAdMvrmW/\""
   }

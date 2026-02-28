@@ -1,126 +1,151 @@
 [
   {
     "path": "/api/v1/linkedin/web/get_user_profile",
+    "method": "GET",
     "summary": "获取用户资料/Get user profile",
     "description": "# [中文]\n### 用途:\n- 获取LinkedIn用户资料信息\n\n### 参数:\n- username: LinkedIn用户名（必填），可以从个人资料URL中获取，例如：https://www.linkedin.com/in/jack 则用户名为 jack\n- include_follower_and_connection: 包含粉丝和连接数（可选，额外消耗1次请求）\n- include_experiences: 包含工作经历（可选，额外消耗1次请求）\n- include_skills: 包含技能（可选，额外消耗1次请求）\n- include_certifications: 包含认证（可选，额外消耗1次请求）\n- include_publications: 包含出版物（可选，额外消耗1次请求）\n- include_educations: 包含教育背景（可选，额外消耗1次请求）\n- include_volunteers: 包含志愿者经历（可选，额外消耗1次请求）\n- include_honors: 包含荣誉奖项（可选，额外消耗1次请求）\n- include_interests: 包含兴趣（可选，额外消耗1次请求）\n- include_bio: 包含个人简介（可选，额外消耗1次请求）\n\n### 返回:\n- 用户资料数据，包含：\n    - id: 用户ID\n    - urn: 用户URN\n    - public_identifier: 公开标识符\n    - first_name: 名\n    - last_name: 姓\n    - full_name: 全名\n    - headline: 头衔/职位描述\n    - is_premium: 是否高级会员\n    - is_open_to_work: 是否开放工作机会\n    - is_hiring: 是否在招聘\n    - location: 位置信息\n    - cover: 封面图片\n    - 以及根据参数选择的其他信息\n\n# [English]\n### Purpose:\n- Get LinkedIn user profile information\n\n### Parameters:\n- username: LinkedIn username (required), can be obtained from profile URL, e.g., for https://www.linkedin.com/in/jack, the username is jack\n- include_follower_and_connection: Include follower and connection count (optional, +1 request)\n- include_experiences: Include work experiences (optional, +1 request)\n- include_skills: Include skills (optional, +1 request)\n- include_certifications: Include certifications (optional, +1 request)\n- include_publications: Include publications (optional, +1 request)\n- include_educations: Include educational background (optional, +1 request)\n- include_volunteers: Include volunteer experiences (optional, +1 request)\n- include_honors: Include honors and awards (optional, +1 request)\n- include_interests: Include interests (optional, +1 request)\n- include_bio: Include bio/about (optional, +1 request)\n\n### Returns:\n- User profile data including:\n    - id: User ID\n    - urn: User URN\n    - public_identifier: Public identifier\n    - first_name: First name\n    - last_name: Last name\n    - full_name: Full name\n    - headline: Headline/job description\n    - is_premium: Premium member status\n    - is_open_to_work: Open to work status\n    - is_hiring: Hiring status\n    - location: Location information\n    - cover: Cover images\n    - And other information based on selected parameters\n\n# [示例/Example]\nusername = \"jack\""
   },
   {
     "path": "/api/v1/linkedin/web/get_user_posts",
+    "method": "GET",
     "summary": "获取用户帖子/Get user posts",
     "description": "# [中文]\n### 用途:\n- 获取LinkedIn用户发布的帖子\n\n### 参数:\n- urn: 用户URN（必填），可通过get_user_profile接口获取\n- page: 页码（可选），默认为1\n- pagination_token: 分页令牌（可选）\n\n### 返回:\n- 用户帖子列表数据\n\n# [English]\n### Purpose:\n- Get posts published by LinkedIn user\n\n### Parameters:\n- urn: User URN (required), can be obtained from get_user_profile endpoint\n- page: Page number (optional), default is 1\n- pagination_token: Pagination token (optional)\n\n### Returns:\n- User posts list data\n\n# [示例/Example]\nurn = \"ACoAABCtiL8B26nfi3Nbpo_AM8ngg4LeClT1Wh8\"\npage = 1"
   },
   {
     "path": "/api/v1/linkedin/web/get_user_comments",
+    "method": "GET",
     "summary": "获取用户评论/Get user comments",
     "description": "# [中文]\n### 用途:\n- 获取LinkedIn用户的评论\n\n### 参数:\n- urn: 用户URN（必填），可通过get_user_profile接口获取\n- page: 页码（可选），默认为1\n- pagination_token: 分页令牌（可选）\n\n### 返回:\n- 用户评论列表数据\n\n# [English]\n### Purpose:\n- Get comments made by LinkedIn user\n\n### Parameters:\n- urn: User URN (required), can be obtained from get_user_profile endpoint\n- page: Page number (optional), default is 1\n- pagination_token: Pagination token (optional)\n\n### Returns:\n- User comments list data\n\n# [示例/Example]\nurn = \"ACoAABCtiL8B26nfi3Nbpo_AM8ngg4LeClT1Wh8\"\npage = 1"
   },
   {
     "path": "/api/v1/linkedin/web/get_user_contact",
+    "method": "GET",
     "summary": "获取用户联系信息/Get user contact information",
     "description": "# [中文]\n### 用途:\n- 获取LinkedIn用户的联系信息\n\n### 参数:\n- username: LinkedIn用户名（必填）\n\n### 返回:\n- 用户联系信息数据\n\n# [English]\n### Purpose:\n- Get LinkedIn user contact information\n\n### Parameters:\n- username: LinkedIn username (required)\n\n### Returns:\n- User contact information data\n\n# [示例/Example]\nusername = \"shubhangi-shrivastava-39161bb7\""
   },
   {
     "path": "/api/v1/linkedin/web/get_user_recommendations",
+    "method": "GET",
     "summary": "获取用户推荐信/Get user recommendations",
     "description": "# [中文]\n### 用途:\n- 获取LinkedIn用户的推荐信\n\n### 参数:\n- urn: 用户URN（必填），可通过get_user_profile接口获取\n- page: 页码（可选），默认为1\n- type: 推荐类型（可选），默认为received\n    - received: 收到的推荐信\n    - given: 给出的推荐信\n- pagination_token: 分页令牌（可选）\n\n### 返回:\n- 用户推荐信列表数据\n\n# [English]\n### Purpose:\n- Get LinkedIn user recommendations\n\n### Parameters:\n- urn: User URN (required), can be obtained from get_user_profile endpoint\n- page: Page number (optional), default is 1\n- type: Recommendation type (optional), default is received\n    - received: Recommendations received\n    - given: Recommendations given\n- pagination_token: Pagination token (optional)\n\n### Returns:\n- User recommendations list data\n\n# [示例/Example]\nurn = \"ACoAAC3iNKcB3qbWJrP7K5Z3i89AF5c1snr8bhc\"\npage = 1\ntype = \"received\""
   },
   {
     "path": "/api/v1/linkedin/web/get_user_videos",
+    "method": "GET",
     "summary": "获取用户视频/Get user videos",
     "description": "# [中文]\n### 用途:\n- 获取LinkedIn用户发布的视频\n\n### 参数:\n- urn: 用户URN（必填），可通过get_user_profile接口获取\n- page: 页码（可选），默认为1\n- pagination_token: 分页令牌（可选）\n\n### 返回:\n- 用户视频列表数据\n\n# [English]\n### Purpose:\n- Get videos published by LinkedIn user\n\n### Parameters:\n- urn: User URN (required), can be obtained from get_user_profile endpoint\n- page: Page number (optional), default is 1\n- pagination_token: Pagination token (optional)\n\n### Returns:\n- User videos list data\n\n# [示例/Example]\nurn = \"ACoAABCtiL8B26nfi3Nbpo_AM8ngg4LeClT1Wh8\"\npage = 1"
   },
   {
     "path": "/api/v1/linkedin/web/get_user_images",
+    "method": "GET",
     "summary": "获取用户图片/Get user images",
     "description": "# [中文]\n### 用途:\n- 获取LinkedIn用户发布的图片\n\n### 参数:\n- urn: 用户URN（必填），可通过get_user_profile接口获取\n- page: 页码（可选），默认为1\n- pagination_token: 分页令牌（可选）\n\n### 返回:\n- 用户图片列表数据\n\n# [English]\n### Purpose:\n- Get images published by LinkedIn user\n\n### Parameters:\n- urn: User URN (required), can be obtained from get_user_profile endpoint\n- page: Page number (optional), default is 1\n- pagination_token: Pagination token (optional)\n\n### Returns:\n- User images list data\n\n# [示例/Example]\nurn = \"ACoAABCtiL8B26nfi3Nbpo_AM8ngg4LeClT1Wh8\"\npage = 1"
   },
   {
     "path": "/api/v1/linkedin/web/get_company_profile",
+    "method": "GET",
     "summary": "获取公司资料/Get company profile",
     "description": "# [中文]\n### 用途:\n- 获取LinkedIn公司资料信息\n\n### 参数:\n- company: 公司名称（可选）\n- company_id: 公司ID（可选，额外消耗1次请求）\n\n### 注意:\n- company和company_id至少需要提供一个\n\n### 返回:\n- 公司资料数据\n\n# [English]\n### Purpose:\n- Get LinkedIn company profile information\n\n### Parameters:\n- company: Company name (optional)\n- company_id: Company ID (optional, +1 request)\n\n### Note:\n- At least one of company or company_id must be provided\n\n### Returns:\n- Company profile data\n\n# [示例/Example]\ncompany = \"rapidapi\""
   },
   {
     "path": "/api/v1/linkedin/web/get_company_people",
+    "method": "GET",
     "summary": "获取公司员工/Get company people",
     "description": "# [中文]\n### 用途:\n- 获取LinkedIn公司员工列表\n\n### 参数:\n- company_id: 公司ID（必填）\n- page: 页码（可选），默认为1\n\n### 返回:\n- 公司员工列表数据\n\n# [English]\n### Purpose:\n- Get LinkedIn company people/employees list\n\n### Parameters:\n- company_id: Company ID (required)\n- page: Page number (optional), default is 1\n\n### Returns:\n- Company people list data\n\n# [示例/Example]\ncompany_id = \"1066442\"\npage = 1"
   },
   {
     "path": "/api/v1/linkedin/web/get_company_posts",
+    "method": "GET",
     "summary": "获取公司帖子/Get company posts",
     "description": "# [中文]\n### 用途:\n- 获取LinkedIn公司发布的帖子\n\n### 参数:\n- company_id: 公司ID（必填）\n- page: 页码（可选），默认为1\n- sort_by: 排序方式（可选），默认为top\n    - top: 热门帖子\n    - recent: 最新帖子\n\n### 返回:\n- 公司帖子列表数据\n\n# [English]\n### Purpose:\n- Get posts published by LinkedIn company\n\n### Parameters:\n- company_id: Company ID (required)\n- page: Page number (optional), default is 1\n- sort_by: Sort by (optional), default is top\n    - top: Top posts\n    - recent: Recent posts\n\n### Returns:\n- Company posts list data\n\n# [示例/Example]\ncompany_id = \"10649600\"\npage = 1\nsort_by = \"top\""
   },
   {
     "path": "/api/v1/linkedin/web/get_company_jobs",
+    "method": "GET",
     "summary": "获取公司职位/Get company jobs",
     "description": "# [中文]\n### 用途:\n- 获取LinkedIn公司职位列表\n\n### 参数:\n- company_id: 公司ID（必填）\n- page: 页码（可选），默认为1\n- sort_by: 排序方式（可选）：recent(最新), relevant(相关)\n- date_posted: 发布时间过滤（可选）：anytime, past_month, past_week, past_24_hours\n- experience_level: 经验级别（可选）：internship, entry_level, associate, mid_senior, director, executive\n- remote: 工作地点类型（可选）：onsite, remote, hybrid\n- job_type: 工作类型（可选）：full_time, part_time, contract, temporary, volunteer, internship, other\n- easy_apply: 是否易申请（可选）\n- under_10_applicants: 是否少于10个申请者（可选）\n- fair_chance_employer: 是否公平机会雇主（可选）\n\n### 返回:\n- 公司职位列表数据\n\n# [English]\n### Purpose:\n- Get LinkedIn company jobs list\n\n### Parameters:\n- company_id: Company ID (required)\n- page: Page number (optional), default is 1\n- sort_by: Sort by (optional): recent, relevant\n- date_posted: Date posted filter (optional): anytime, past_month, past_week, past_24_hours\n- experience_level: Experience level (optional): internship, entry_level, associate, mid_senior, director, executive\n- remote: Remote filter (optional): onsite, remote, hybrid\n- job_type: Job type (optional): full_time, part_time, contract, temporary, volunteer, internship, other\n- easy_apply: Easy apply filter (optional)\n- under_10_applicants: Under 10 applicants filter (optional)\n- fair_chance_employer: Fair chance employer filter (optional)\n\n### Returns:\n- Company jobs list data\n\n# [示例/Example]\ncompany_id = \"783611\"\npage = 1"
   },
   {
     "path": "/api/v1/linkedin/web/get_company_job_count",
+    "method": "GET",
     "summary": "获取公司职位数量/Get company job count",
     "description": "# [中文]\n### 用途:\n- 获取LinkedIn公司职位数量\n\n### 参数:\n- company_id: 公司ID（必填）\n\n### 返回:\n- 公司职位数量数据\n\n# [English]\n### Purpose:\n- Get LinkedIn company job count\n\n### Parameters:\n- company_id: Company ID (required)\n\n### Returns:\n- Company job count data\n\n# [示例/Example]\ncompany_id = \"783611\""
   },
   {
     "path": "/api/v1/linkedin/web/get_user_about",
+    "method": "GET",
     "summary": "获取用户简介/Get user about",
     "description": "# [中文]\n### 用途:\n- 获取LinkedIn用户简介/关于信息\n\n### 参数:\n- urn: 用户URN（必填），可通过get_user_profile接口获取\n\n### 返回:\n- 用户简介数据\n\n# [English]\n### Purpose:\n- Get LinkedIn user about/bio information\n\n### Parameters:\n- urn: User URN (required), can be obtained from get_user_profile endpoint\n\n### Returns:\n- User about data\n\n# [示例/Example]\nurn = \"ACoAAA8BYqEBCGLg_vT_ca6mMEqkpp9nVffJ3hc\""
   },
   {
     "path": "/api/v1/linkedin/web/get_user_follower_and_connection",
+    "method": "GET",
     "summary": "获取用户粉丝和连接数/Get user follower and connection",
     "description": "# [中文]\n### 用途:\n- 获取LinkedIn用户粉丝和连接数\n\n### 参数:\n- username: LinkedIn用户名（必填）\n\n### 返回:\n- 用户粉丝和连接数数据\n\n# [English]\n### Purpose:\n- Get LinkedIn user follower and connection count\n\n### Parameters:\n- username: LinkedIn username (required)\n\n### Returns:\n- User follower and connection data\n\n# [示例/Example]\nusername = \"zoranmilosevic\""
   },
   {
     "path": "/api/v1/linkedin/web/get_user_experience",
+    "method": "GET",
     "summary": "获取用户工作经历/Get user experience",
     "description": "# [中文]\n### 用途:\n- 获取LinkedIn用户工作经历\n\n### 参数:\n- urn: 用户URN（必填），可通过get_user_profile接口获取\n- page: 页码（可选），默认为1\n\n### 返回:\n- 用户工作经历列表数据\n\n# [English]\n### Purpose:\n- Get LinkedIn user work experience\n\n### Parameters:\n- urn: User URN (required), can be obtained from get_user_profile endpoint\n- page: Page number (optional), default is 1\n\n### Returns:\n- User experience list data\n\n# [示例/Example]\nurn = \"ACoAAAjpjWIBMh1iBR4OgSPK5GXetlQ6dYUT-qo\"\npage = 1"
   },
   {
     "path": "/api/v1/linkedin/web/get_user_skills",
+    "method": "GET",
     "summary": "获取用户技能/Get user skills",
     "description": "# [中文]\n### 用途:\n- 获取LinkedIn用户技能\n\n### 参数:\n- urn: 用户URN（必填），可通过get_user_profile接口获取\n- page: 页码（可选），默认为1\n\n### 返回:\n- 用户技能列表数据\n\n# [English]\n### Purpose:\n- Get LinkedIn user skills\n\n### Parameters:\n- urn: User URN (required), can be obtained from get_user_profile endpoint\n- page: Page number (optional), default is 1\n\n### Returns:\n- User skills list data\n\n# [示例/Example]\nurn = \"ACoAACkphDcBDruPBdXiAnqyc834jkTkd_4kRnU\"\npage = 1"
   },
   {
     "path": "/api/v1/linkedin/web/get_user_educations",
+    "method": "GET",
     "summary": "获取用户教育背景/Get user educations",
     "description": "# [中文]\n### 用途:\n- 获取LinkedIn用户教育背景\n\n### 参数:\n- urn: 用户URN（必填），可通过get_user_profile接口获取\n- page: 页码（可选），默认为1\n\n### 返回:\n- 用户教育背景列表数据\n\n# [English]\n### Purpose:\n- Get LinkedIn user educations\n\n### Parameters:\n- urn: User URN (required), can be obtained from get_user_profile endpoint\n- page: Page number (optional), default is 1\n\n### Returns:\n- User educations list data\n\n# [示例/Example]\nurn = \"ACoAAARpiwIBp_SzoeHPlUfOvmtibe08Ea1iCh4\"\npage = 1"
   },
   {
     "path": "/api/v1/linkedin/web/get_user_publications",
+    "method": "GET",
     "summary": "获取用户出版物/Get user publications",
     "description": "# [中文]\n### 用途:\n- 获取LinkedIn用户出版物\n\n### 参数:\n- urn: 用户URN（必填），可通过get_user_profile接口获取\n- page: 页码（可选），默认为1\n\n### 返回:\n- 用户出版物列表数据\n\n# [English]\n### Purpose:\n- Get LinkedIn user publications\n\n### Parameters:\n- urn: User URN (required), can be obtained from get_user_profile endpoint\n- page: Page number (optional), default is 1\n\n### Returns:\n- User publications list data\n\n# [示例/Example]\nurn = \"ACoAAB8rG_UB7cstjC__gk5318uYsZOIVkyysi4\"\npage = 1"
   },
   {
     "path": "/api/v1/linkedin/web/get_user_certifications",
+    "method": "GET",
     "summary": "获取用户认证/Get user certifications",
     "description": "# [中文]\n### 用途:\n- 获取LinkedIn用户认证\n\n### 参数:\n- urn: 用户URN（必填），可通过get_user_profile接口获取\n- page: 页码（可选），默认为1\n\n### 返回:\n- 用户认证列表数据\n\n# [English]\n### Purpose:\n- Get LinkedIn user certifications\n\n### Parameters:\n- urn: User URN (required), can be obtained from get_user_profile endpoint\n- page: Page number (optional), default is 1\n\n### Returns:\n- User certifications list data\n\n# [示例/Example]\nurn = \"ACoAAARpiwIBp_SzoeHPlUfOvmtibe08Ea1iCh4\"\npage = 1"
   },
   {
     "path": "/api/v1/linkedin/web/get_user_honors",
+    "method": "GET",
     "summary": "获取用户荣誉奖项/Get user honors",
     "description": "# [中文]\n### 用途:\n- 获取LinkedIn用户荣誉奖项\n\n### 参数:\n- urn: 用户URN（必填），可通过get_user_profile接口获取\n- page: 页码（可选），默认为1\n\n### 返回:\n- 用户荣誉奖项列表数据\n\n# [English]\n### Purpose:\n- Get LinkedIn user honors and awards\n\n### Parameters:\n- urn: User URN (required), can be obtained from get_user_profile endpoint\n- page: Page number (optional), default is 1\n\n### Returns:\n- User honors list data\n\n# [示例/Example]\nurn = \"ACoAAC41xVEBx77koDz3k1eJ5E9t8UZ7g0IVGj4\"\npage = 1"
   },
   {
     "path": "/api/v1/linkedin/web/get_user_interests_groups",
+    "method": "GET",
     "summary": "获取用户感兴趣的群组/Get user interests groups",
     "description": "# [中文]\n### 用途:\n- 获取LinkedIn用户感兴趣的群组\n\n### 参数:\n- urn: 用户URN（必填），可通过get_user_profile接口获取\n- page: 页码（可选），默认为1\n\n### 返回:\n- 用户感兴趣的群组列表数据\n\n# [English]\n### Purpose:\n- Get LinkedIn user interests - groups\n\n### Parameters:\n- urn: User URN (required), can be obtained from get_user_profile endpoint\n- page: Page number (optional), default is 1\n\n### Returns:\n- User interests groups list data\n\n# [示例/Example]\nurn = \"ACoAAAjpjWIBMh1iBR4OgSPK5GXetlQ6dYUT-qo\"\npage = 1"
   },
   {
     "path": "/api/v1/linkedin/web/get_user_interests_companies",
+    "method": "GET",
     "summary": "获取用户感兴趣的公司/Get user interests companies",
     "description": "# [中文]\n### 用途:\n- 获取LinkedIn用户感兴趣的公司\n\n### 参数:\n- urn: 用户URN（必填），可通过get_user_profile接口获取\n- page: 页码（可选），默认为1\n\n### 返回:\n- 用户感兴趣的公司列表数据\n\n# [English]\n### Purpose:\n- Get LinkedIn user interests - companies\n\n### Parameters:\n- urn: User URN (required), can be obtained from get_user_profile endpoint\n- page: Page number (optional), default is 1\n\n### Returns:\n- User interests companies list data\n\n# [示例/Example]\nurn = \"ACoAAEDH77YBEVIYXAaEwTicp5CcB_hR7DfFL9o\"\npage = 1"
   },
   {
     "path": "/api/v1/linkedin/web/get_job_detail",
+    "method": "GET",
     "summary": "获取职位详情/Get job detail",
     "description": "# [中文]\n### 用途:\n- 获取LinkedIn职位详情\n\n### 参数:\n- job_id: 职位ID（必填）\n- include_skills: 包含职位技能要求（可选，额外消耗1次请求）\n\n### 返回:\n- 职位详情数据\n\n# [English]\n### Purpose:\n- Get LinkedIn job detail\n\n### Parameters:\n- job_id: Job ID (required)\n- include_skills: Include job skills (optional, +1 request)\n\n### Returns:\n- Job detail data\n\n# [示例/Example]\njob_id = \"4172815660\""
   },
   {
     "path": "/api/v1/linkedin/web/search_jobs",
+    "method": "GET",
     "summary": "搜索职位/Search jobs",
     "description": "# [中文]\n### 用途:\n- 搜索LinkedIn职位\n\n### 参数:\n- keyword: 搜索关键词（必填）\n- page: 页码（可选），默认为1\n- sort_by: 排序方式（可选）：recent(最新), relevant(相关)\n- date_posted: 发布时间过滤（可选）：anytime, past_month, past_week, past_24_hours\n- geocode: 地理位置代码（可选）\n- company: 公司ID过滤（可选）\n- experience_level: 经验级别（可选）：internship, entry_level, associate, mid_senior, director, executive\n- remote: 工作地点类型（可选）：onsite, remote, hybrid\n- job_type: 工作类型（可选）：full_time, part_time, contract, temporary, volunteer, internship, other\n- easy_apply: 是否易申请（可选）\n- has_verifications: 是否有公司认证（可选）\n- under_10_applicants: 是否少于10个申请者（可选）\n- fair_chance_employer: 是否公平机会雇主（可选）\n\n### 返回:\n- 职位搜索结果列表数据\n\n# [English]\n### Purpose:\n- Search LinkedIn jobs\n\n### Parameters:\n- keyword: Search keyword (required)\n- page: Page number (optional), default is 1\n- sort_by: Sort by (optional): recent, relevant\n- date_posted: Date posted filter (optional): anytime, past_month, past_week, past_24_hours\n- geocode: Geocode for location (optional)\n- company: Company ID filter (optional)\n- experience_level: Experience level (optional): internship, entry_level, associate, mid_senior, director, executive\n- remote: Remote filter (optional): onsite, remote, hybrid\n- job_type: Job type (optional): full_time, part_time, contract, temporary, volunteer, internship, other\n- easy_apply: Easy apply filter (optional)\n- has_verifications: Has verifications filter (optional)\n- under_10_applicants: Under 10 applicants filter (optional)\n- fair_chance_employer: Fair chance employer filter (optional)\n\n### Returns:\n- Job search results list data\n\n# [示例/Example]\nkeyword = \"backend\"\npage = 1"
   },
   {
     "path": "/api/v1/linkedin/web/search_people",
+    "method": "GET",
     "summary": "搜索用户/Search people",
     "description": "# [中文]\n### 用途:\n- 搜索LinkedIn用户\n\n### 参数:\n- name: 搜索关键词（可选）\n- first_name: 名（可选）\n- last_name: 姓（可选）\n- title: 职位（可选）\n- company: 公司（可选）\n- school: 学校（可选）\n- page: 页码（可选），默认为1\n- geocode_location: 地理位置代码（可选）\n- current_company: 当前公司ID（可选）\n- profile_language: 个人资料语言（可选）\n- industry: 行业ID（可选）\n- service_category: 服务类别ID（可选）\n\n### 返回:\n- 用户搜索结果列表数据\n\n# [English]\n### Purpose:\n- Search LinkedIn people\n\n### Parameters:\n- name: Search keyword (optional)\n- first_name: First name (optional)\n- last_name: Last name (optional)\n- title: Title (optional)\n- company: Company (optional)\n- school: School (optional)\n- page: Page number (optional), default is 1\n- geocode_location: Geocode for location (optional)\n- current_company: Current company ID (optional)\n- profile_language: Profile language (optional)\n- industry: Industry ID (optional)\n- service_category: Service category ID (optional)\n\n### Returns:\n- People search results list data\n\n# [示例/Example]\nname = \"john\"\nfirst_name = \"john\"\nlast_name = \"oliver\"\ntitle = \"manager\"\npage = 1"
   }

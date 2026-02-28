@@ -1,66 +1,79 @@
 [
   {
     "path": "/api/v1/twitter/web/fetch_tweet_detail",
+    "method": "GET",
     "summary": "获取单个推文数据/Get single tweet data",
     "description": "# [中文]\n### 用途:\n- 获取单个推文数据\n### 参数:\n- tweet_id: 推文ID，可以从推文链接中获取。例如：https://x.com/elonmusk/status/1808168603721650364 中的 1808168603721650364。\n### 返回:\n- 推文数据\n\n# [English]\n### Purpose:\n- Get single tweet data\n### Parameters:\n- tweet_id: Tweet ID, can be obtained from the tweet link. For example: 1808168603721650364 in https://x.com/elonmusk/status/1808168603721650364\n### Return:\n- Tweet data\n\n# [示例/Example]\ntweet_id = \"1808168603721650364\""
   },
   {
     "path": "/api/v1/twitter/web/fetch_user_profile",
+    "method": "GET",
     "summary": "获取用户资料/Get user profile",
     "description": "# [中文]\n### 用途:\n- 获取用户资料\n### 参数:\n- screen_name: 用户名，例如：elonmusk，可以从用户主页链接中获取，例如：https://twitter.com/elonmusk 中的 elonmusk。\n- rest_id: 用户ID，例如：44196397，如果使用用户ID则会忽略用户名，两者只能选其一。\n### 返回:\n- 用户资料\n\n# [English]\n### Purpose:\n- Get user profile\n### Parameters:\n- screen_name: Screen Name, for example: elonmusk, can be obtained from the user's homepage link, for example: elonmusk in https://twitter.com/elonmusk\n- rest_id: User ID, for example: 44196397, if the user ID is used, the username will be ignored, only one of them can be selected.\n### Return:\n- User profile\n\n# [示例/Example]\nscreen_name = \"elonmusk\""
   },
   {
     "path": "/api/v1/twitter/web/fetch_user_post_tweet",
+    "method": "GET",
     "summary": "获取用户发帖/Get user post",
     "description": "# [中文]\n### 用途:\n- 获取用户发帖\n### 参数:\n- screen_name: 用户名，例如：elonmusk，可以从用户主页链接中获取，例如：https://twitter.com/elonmusk 中的 elonmusk。\n- rest_id: 用户ID，例如：44196397，如果使用用户ID则会忽略用户名，两者只能选其一。\n- cursor: 游标，默认为None，用于翻页，后续从上一次请求的返回结果中的JSON中获取。\n### 返回:\n- 用户发帖\n\n# [English]\n### Purpose:\n- Get user post\n### Parameters:\n- screen_name: Screen Name, for example: elonmusk, can be obtained from the user's homepage link, for example: elonmusk in https://twitter.com/elonmusk\n- rest_id: User ID, for example: 44196397, if the user ID is used, the username will be ignored, only one of them can be selected.\n- cursor: Cursor, default is None, used for paging, obtained from the JSON in the last request.\n\n# [示例/Example]\nscreen_name = \"elonmusk\"\nrest_id = 44196397\ncursor = None"
   },
   {
     "path": "/api/v1/twitter/web/fetch_search_timeline",
+    "method": "GET",
     "summary": "搜索/Search",
     "description": "# [中文]\n### 用途:\n- 搜索\n### 参数:\n- keyword: 搜索关键字\n- search_type: 搜索类型，默认为Top，其他可选值为Latest，Media，People, Lists\n- cursor: 游标，默认为None，用于翻页，后续从上一次请求的返回结果中获取\n### 返回:\n- 搜索结果\n\n# [English]\n### Purpose:\n- Search\n### Parameters:\n- keyword: Search keyword\n- search_type: Search type, default is Top, other optional values are Latest, Media, People, Lists\n- cursor: Cursor, default is None, used for paging, obtained from the last request\n### Return:\n- Search results\n\n# [示例/Example]\nkeyword = \"Elon Musk\"\nsearch_type = \"Top\"\ncursor = None"
   },
   {
     "path": "/api/v1/twitter/web/fetch_post_comments",
+    "method": "GET",
     "summary": "获取评论/Get comments",
     "description": "# [中文]\n### 用途:\n- 获取推文下的评论\n### 参数:\n- tweet_id: 推文ID\n- cursor: 游标，默认为None，用于翻页，后续从上一次请求的返回结果中获取\n### 返回:\n- 评论\n\n# [English]\n### Purpose:\n- Get comments under the tweet\n### Parameters:\n- tweet_id: Tweet ID\n- cursor: Cursor, default is None, used for paging, obtained from the last request\n### Return:\n- Comments\n\n# [示例/Example]\ntweet_id = \"1808168603721650364\"\ncursor = None"
   },
   {
     "path": "/api/v1/twitter/web/fetch_latest_post_comments",
+    "method": "GET",
     "summary": "获取最新的推文评论/Get the latest tweet comments",
     "description": "# [中文]\n### 用途:\n- 获取最新的推文评论\n### 参数:\n- tweet_id: 推文ID\n- cursor: 游标，默认为None，用于翻页，后续从上一次请求的返回结果中获取\n### 返回:\n- 推文评论\n\n# [English]\n### Purpose:\n- Get the latest tweet comments\n### Parameters:\n- tweet_id: Tweet ID\n- cursor: Cursor, default is None, used for paging, obtained from the last request\n### Return:\n- Tweet comments\n\n# [示例/Example]\ntweet_id = \"1808168603721650364\"\ncursor = None"
   },
   {
     "path": "/api/v1/twitter/web/fetch_user_tweet_replies",
+    "method": "GET",
     "summary": "获取用户推文回复/Get user tweet replies",
     "description": "# [中文]\n### 用途:\n- 获取用户推文回复\n### 参数:\n- screen_name: 用户名，例如：elonmusk，可以从用户主页链接中获取，例如：https://twitter.com/elonmusk 中的 elonmusk。\n- cursor: 游标，默认为None，用于翻页，后续从上一次请求的返回结果中获取\n### 返回:\n- 用户推文回复\n\n# [English]\n### Purpose:\n- Get user tweet replies\n### Parameters:\n- screen_name: Screen Name, for example: elonmusk, can be obtained from the user's homepage link, for example: elonmusk in https://twitter.com/elonmusk\n- cursor: Cursor, default is None, used for paging, obtained from the last request\n### Return:\n- User tweet replies\n\n# [示例/Example]\nscreen_name = \"elonmusk\"\ncursor = None"
   },
   {
     "path": "/api/v1/twitter/web/fetch_user_highlights_tweets",
+    "method": "GET",
     "summary": "获取用户高光推文/Get user highlights tweets",
     "description": "# [中文]\n### 用途:\n- 获取用户高光推文\n### 参数:\n- userId: 用户ID\n- count: 数量，默认为20\n- cursor: 游标，默认为None，用于翻页，后续从上一次请求的返回结果中获取\n    - JSONPath: $.data.data.user.result.timeline_v2.timeline.instructions.[1].entries.[-1].content.value\n### 返回:\n- 用户高光推文\n\n# [English]\n### Purpose:\n- Get user highlights tweets\n### Parameters:\n- userId: User ID\n- count: Count, default is 20\n- cursor: Cursor, default is None, used for paging, obtained from the last request\n    - JSONPath: $.data.data.user.result.timeline_v2.timeline.instructions.[1].entries.[-1].content.value\n### Return:\n- User highlights tweets\n\n# [示例/Example]\nuserId = \"44196397\"\ncount = 20\ncursor = None"
   },
   {
     "path": "/api/v1/twitter/web/fetch_user_media",
+    "method": "GET",
     "summary": "获取用户媒体/Get user media",
     "description": "# [中文]\n### 用途:\n- 获取用户媒体\n### 参数:\n- screen_name: 用户名，例如：elonmusk，可以从用户主页链接中获取，例如：https://twitter.com/elonmusk 中的 elonmusk。\n- rest_id: 用户ID，例如：44196397，如果使用用户ID则会忽略用户名，两者只能选其一。\n- cursor: 游标，默认为None，用于翻页，后续从上一次请求的返回结果中的 `next_cursor` 获取\n### 返回:\n- 用户媒体\n\n# [English]\n### Purpose:\n- Get user media\n### Parameters:\n- screen_name: Screen Name, for example: elonmusk, can be obtained from the user's homepage link, for example: elonmusk in https://twitter.com/elonmusk\n- rest_id: User ID, for example: 44196397, if the user ID is used, the username will be ignored, only one of them can be selected.\n- cursor: Cursor, default is None, used for paging, obtained from the `next_cursor` in the last request\n### Return:\n- User media\n\n# [示例/Example]\nscreen_name = \"elonmusk\"\ncursor = \"\""
   },
   {
     "path": "/api/v1/twitter/web/fetch_retweet_user_list",
+    "method": "GET",
     "summary": "转推用户列表/ReTweet User list",
     "description": "# [中文]\n### 用途:\n- 获取转推用户列表\n### 参数:\n- tweet_id: 推文ID，可以从推文链接中获取。例如：https://x.com/elonmusk/status/1808168603721650364 中的 1808168603721650364。\n- cursor: 游标，默认为None，用于翻页，后续从上一次请求的返回结果中获取\n### 返回:\n- 转推用户列表\n\n# [English]\n### Purpose:\n- Get ReTweet User list\n### Parameters:\n- tweet_id: Tweet ID, can be obtained from the tweet link. For example: 1808168603721650364 in https://x.com/elonmusk/status/1808168603721650364\n- cursor: Cursor, default is None, used for paging, obtained from the last request\n### Return:\n- ReTweet User list\n\n# [示例/Example]\ntweet_id = \"1808168603721650364\"\ncursor = None"
   },
   {
     "path": "/api/v1/twitter/web/fetch_trending",
+    "method": "GET",
     "summary": "趋势/Trending",
     "description": "# [中文]\n### 用途:\n- 获取趋势\n### 参数:\n- country: 国家，默认为UnitedStates，其他可选值见下方\n    - China\n    - India\n    - Japan\n    - Russia\n    - Germany\n    - Indonesia\n    - Brazil\n    - France\n    - UnitedKingdom\n    - Turkey\n    - Italy\n    - Mexico\n    - SouthKorea\n    - Canada\n    - Spain\n    - SaudiArabia\n    - Egypt\n    - Australia\n    - Poland\n    - Iran\n    - Pakistan\n    - Vietnam\n    - Nigeria\n    - Bangladesh\n    - Netherlands\n    - Argentina\n    - Philippines\n    - Malaysia\n    - Colombia\n    - UniteArabEmirates\n    - Romania\n    - Belgium\n    - Switzerland\n    - Singapore\n    - Sweden\n    - Norway\n    - Austria\n    - Kazakhstan\n    - Algeria\n    - Chile\n    - Czechia\n    - Peru\n    - Iraq\n    - Israel\n    - Ukraine\n    - Denmark\n    - Portugal\n    - Hungary\n    - Greece\n    - Finland\n    - NewZealand\n    - Belarus\n    - Slovakia\n    - Serbia\n    - Lithuania\n    - Luxembourg\n    - Estonia\n\n### 返回:\n- 趋势\n\n# [English]\n### Purpose:\n- Get Trending\n### Parameters:\n- country: Country, default is UnitedStates, other optional values are as follows\n    - China\n    - India\n    - Japan\n    - Russia\n    - Germany\n    - Indonesia\n    - Brazil\n    - France\n    - UnitedKingdom\n    - Turkey\n    - Italy\n    - Mexico\n    - SouthKorea\n    - Canada\n    - Spain\n    - SaudiArabia\n    - Egypt\n    - Australia\n    - Poland\n    - Iran\n    - Pakistan\n    - Vietnam\n    - Nigeria\n    - Bangladesh\n    - Netherlands\n    - Argentina\n    - Philippines\n    - Malaysia\n    - Colombia\n    - UniteArabEmirates\n    - Romania\n    - Belgium\n    - Switzerland\n    - Singapore\n    - Sweden\n    - Norway\n    - Austria\n    - Kazakhstan\n    - Algeria\n    - Chile\n    - Czechia\n    - Peru\n\n### Return:\n- Trending\n\n# [示例/Example]\ncountry = \"UnitedStates\""
   },
   {
     "path": "/api/v1/twitter/web/fetch_user_followings",
+    "method": "GET",
     "summary": "用户关注/User Followings",
     "description": "# [中文]\n### 用途:\n- 获取用户关注\n### 参数:\n- screen_name: 用户名，例如：elonmusk，可以从用户主页链接中获取，例如：https://twitter.com/elonmusk 中的 elonmusk。\n- cursor: 游标，默认为None，用于翻页，后续从上一次请求的返回结果中获取\n### 返回:\n- 用户关注\n\n# [English]\n### Purpose:\n- Get User Followings\n### Parameters:\n- screen_name: Screen Name, for example: elonmusk, can be obtained from the user's homepage link, for example: elonmusk in https://twitter.com/elonmusk\n- cursor: Cursor, default is None, used for paging, obtained from the last request\n### Return:\n- User Followings\n\n# [示例/Example]\nscreen_name = \"elonmusk\""
   },
   {
     "path": "/api/v1/twitter/web/fetch_user_followers",
+    "method": "GET",
     "summary": "用户粉丝/User Followers",
     "description": "# [中文]\n### 用途:\n- 获取用户粉丝\n### 参数:\n- screen_name: 用户名，例如：elonmusk，可以从用户主页链接中获取，例如：https://twitter.com/elonmusk 中的 elonmusk。\n- cursor: 游标，默认为None，用于翻页，后续从上一次请求的返回结果中获取\n### 返回:\n- 用户粉丝\n\n# [English]\n### Purpose:\n- Get User Followers\n### Parameters:\n- screen_name: Screen Name, for example: elonmusk, can be obtained from the user's homepage link, for example: elonmusk in https://twitter.com/elonmusk\n- cursor: Cursor, default is None, used for paging, obtained from the last request\n### Return:\n- User Followers\n\n# [示例/Example]\nscreen_name = \"elonmusk\""
   }

@@ -1,36 +1,43 @@
 [
   {
     "path": "/api/v1/xigua/app/v2/fetch_one_video",
+    "method": "GET",
     "summary": "获取单个作品数据/Get single video data",
     "description": "# [中文]\n### 用途:\n- 获取单个作品数据（信息较少，不包含标题等信息，但是包含相关视频的信息）\n### 参数:\n- item_id: 作品id\n### 返回:\n- 作品数据，其中包含视频链接的Base64编码播放地址，需要前端解码后使用，或者使用 /fetch_one_video_play_url 获取播放链接。\n\n# [English]\n### Purpose:\n- Get single video data (less information, does not include title and other information, but includes information about related videos)\n### Parameters:\n- item_id: Video id\n### Return:\n- Video data, which contains the Base64 encoded playback address of the video link, which needs to be decoded and used by the front end, or use /fetch_one_video_play_url to get the playback link.\n\n# [示例/Example]\nitem_id: \"7354954305222377999\""
   },
   {
     "path": "/api/v1/xigua/app/v2/fetch_one_video_v2",
+    "method": "GET",
     "summary": "获取单个作品数据 V2/Get single video data V2",
     "description": "# [中文]\n### 用途:\n- 获取单个作品数据（信息全面，包含标题等信息，但是不包含相关视频推荐信息）\n### 参数:\n- item_id: 作品id\n### 返回:\n- 作品数据，其中包含视频链接的Base64编码播放地址，需要前端解码后使用，或者使用 /fetch_one_video_play_url 获取播放链接。\n\n# [English]\n### Purpose:\n- Get single video data (more comprehensive information, including title and other information, but not including information about related video recommendations)\n### Parameters:\n- item_id: Video id\n### Return:\n- Video data, which contains the Base64 encoded playback address of the video link, which needs to be decoded and used by the front end, or use /fetch_one_video_play_url to get the playback link.\n\n# [示例/Example]\nitem_id: \"7354954305222377999\""
   },
   {
     "path": "/api/v1/xigua/app/v2/fetch_one_video_play_url",
+    "method": "GET",
     "summary": "获取单个作品的播放链接/Get single video play URL",
     "description": "# [中文]\n### 用途:\n- 获取单个作品的播放链接，此接口返回的是已经解码后的播放链接，可以直接使用。\n### 参数:\n- item_id: 作品id\n### 返回:\n- 作品的播放链接的明文链接。\n\n# [English]\n### Purpose:\n- Get single video play URL, the interface returns the decoded play URL, which can be used directly.\n### Parameters:\n- item_id: Video id\n### Return:\n- Play URL of the video, plaintext link.\n\n# [示例/Example]\nitem_id: \"7354954305222377999\""
   },
   {
     "path": "/api/v1/xigua/app/v2/fetch_video_comment_list",
+    "method": "GET",
     "summary": "视频评论列表/Video comment list",
     "description": "# [中文]\n### 用途:\n- 视频评论列表\n### 参数:\n- item_id: 作品id\n- offset: 偏移量，第一次请求传0，后续请求传上一次请求返回的offset\n- count: 数量，默认20，建议保持默认。\n### 返回:\n- 评论列表\n\n# [English]\n### Purpose:\n- Video comment list\n### Parameters:\n- item_id: Video id\n- offset: Offset, pass 0 for the first request, pass the offset returned by the previous request for subsequent requests\n- count: Quantity, default 20, it is recommended to keep the default.\n### Return:\n- Comment list\n\n# [示例/Example]\nitem_id: \"7354954305222377999\""
   },
   {
     "path": "/api/v1/xigua/app/v2/search_video",
+    "method": "GET",
     "summary": "搜索视频/Search video",
     "description": "# [中文]\n### 用途:\n- 搜索视频\n### 参数:\n- keyword: 关键词\n- offset: 偏移量，第一次请求传0，后续请求传上一次请求返回的offset\n- order_type: 排序方式，为空时按照默认排序，以下为可选排序方式。\n    - 最新: publish_time\n    - 最热: play_count\n- min_duration: 最小时长，默认空，单位秒。\n- max_duration: 最大时长，默认空，单位秒。\n### 返回:\n- 视频列表\n\n# [English]\n### Purpose:\n- Search video\n### Parameters:\n- keyword: Keyword\n- offset: Offset, pass 0 for the first request, pass the offset returned by the previous request for subsequent requests\n- order_type: Order type, empty for default sorting, the following are optional sorting methods.\n    - Newest: publish_time\n    - Hottest: play_count\n- min_duration: Minimum duration, default empty, in seconds.\n- max_duration: Maximum duration, default empty, in seconds.\n### Return:\n- Video list\n\n# [示例/Example]\n> 搜索关键字为“抖音”的视频，按照播放量排序，时长1-180秒(1-3分钟)\n> Search for videos with the keyword \"抖音\", sorted by play count, duration 1-180 seconds (1-3 minutes)\nkeyword: \"抖音\"\norder_type: \"play_count\"\nmin_duration: 1\nmax_duration: 180"
   },
   {
     "path": "/api/v1/xigua/app/v2/fetch_user_info",
+    "method": "GET",
     "summary": "个人信息/Personal information",
     "description": "# [中文]\n### 用途:\n- 个人信息\n### 参数:\n- user_id: 用户id\n### 返回:\n- 个人信息\n\n# [English]\n### Purpose:\n- Personal information\n### Parameters:\n- user_id: User id\n### Return:\n- Personal information\n\n# [示例/Example]\nuser_id: \"52712347586\""
   },
   {
     "path": "/api/v1/xigua/app/v2/fetch_user_post_list",
+    "method": "GET",
     "summary": "获取个人作品列表/Get user post list",
     "description": "# [中文]\n### 用途:\n- 获取个人作品列表\n### 参数:\n- user_id: 用户id\n- max_behot_time: 最大行为时间，默认空，第一次请求传空，后续请求传上一次请求返回数据中的JSON中的值。\n- max_behot_time的值可以是JSON路径为：$.data.data.[-1].behot_time\n- 也就是data中的最后一个元素的cursor值\n### 返回:\n- 作品列表\n\n# [English]\n### Purpose:\n- Get user post list\n### Parameters:\n- user_id: User id\n- max_behot_time: Maximum behavior time, default empty, pass empty for the first request, pass the max_behot_time returned by the previous request for subsequent requests\n- The value of max_behot_time can be the JSON path: $.data.data.[-1].behot_time\n- That is, the cursor value of the last element in data\n### Return:\n- Post list\n\n# [示例/Example]\nuser_id = \"1922379661976311\"\nmax_behot_time = \"\""
   }

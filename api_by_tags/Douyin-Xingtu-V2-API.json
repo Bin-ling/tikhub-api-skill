@@ -1,106 +1,127 @@
 [
   {
     "path": "/api/v1/douyin/xingtu_v2/get_ranking_list_catalog",
+    "method": "GET",
     "summary": "获取星图热榜分类/Get Ranking List Catalog",
     "description": "# [中文]\n### 用途:\n- 获取星图热榜分类列表，返回qualifier_id等分类信息\n- 价格：0.001$ / 次\n### 参数:\n- codes: 分类代码，默认为空字符串\n- biz_scene: 业务场景\n    - `douyin_flow_split_video_author_ranks`: 短视频达人热榜\n    - `douyin_flow_split_live_author_ranks`: 直播达人热榜\n### 返回:\n- 热榜分类数据\n\n# [English]\n### Purpose:\n- Get XingTu hot ranking list catalog, returns qualifier_id and other category information\n- Price: 0.001$ / time\n### Parameters:\n- codes: Classification codes, default is empty string\n- biz_scene: Business scene\n    - `douyin_flow_split_video_author_ranks`: Video creator ranking\n    - `douyin_flow_split_live_author_ranks`: Live streamer ranking\n### Return:\n- Hot ranking catalog data\n\n# [示例/Example]\ncodes = \"\"\nbiz_scene = \"douyin_flow_split_video_author_ranks\""
   },
   {
     "path": "/api/v1/douyin/xingtu_v2/get_ranking_list_data",
+    "method": "GET",
     "summary": "获取星图达人商业榜数据/Get Ranking List Data",
     "description": "# [中文]\n### 用途:\n- 获取星图达人商业榜数据\n- qualifier可以从`get_ranking_list_catalog`接口获取\n- 价格：0.001$ / 次\n### 参数:\n- code: 榜单类型代码\n    - 短视频-达人商业榜: 1=品牌优选榜, 2=A3种草榜, 3=看后搜榜, 4=带货榜, 5=投流榜, 6=高潜榜\n    - 短视频-达人内容榜: 17=涨粉黑马榜, 18=头部必选榜\n    - 直播达人榜-主播类型: 23=游戏主播, 30=其他主播, 37=带货主播 (version=base)\n    - 直播达人榜-榜单类型: 23=游戏行业品牌优选榜, 24=非游戏行业品牌优选榜, 25=组件点击榜, 26=下载转化榜, 27=线索收集榜, 28=投流榜, 29=高潜榜\n- qualifier: 榜单分类ID，从`get_ranking_list_catalog`获取\n- version: 版本，`flow_split`=短视频榜单默认，`base`=直播榜单常用\n- period: 统计周期，7=周榜，30=月榜\n- date: 统计日期，格式YYYYMMDD\n- limit: 返回数量，默认100\n### 返回:\n- 达人商业榜数据\n\n# [English]\n### Purpose:\n- Get XingTu creator business ranking list data\n- qualifier can be obtained from `get_ranking_list_catalog` API\n- Price: 0.001$ / time\n### Parameters:\n- code: Ranking type code\n    - Video business ranking: 1=Brand Premium, 2=A3 Seeding, 3=Search After Watch, 4=E-commerce, 5=Ad Flow, 6=High Potential\n    - Video content ranking: 17=Follower Growth Dark Horse, 18=Top Must-Pick\n    - Live streamer type: 23=Game Streamer, 30=Other Streamer, 37=E-commerce Streamer (version=base)\n    - Live ranking type: 23=Game Brand Premium, 24=Non-game Brand Premium, 25=Component Click, 26=Download Conversion, 27=Lead Collection, 28=Ad Flow, 29=High Potential\n- qualifier: Category qualifier_id from `get_ranking_list_catalog`\n- version: `flow_split`=default for video rankings, `base`=commonly used for live rankings\n- period: 7=weekly, 30=monthly\n- date: Date, format YYYYMMDD\n- limit: Result limit, default 100\n### Return:\n- Creator business ranking data\n\n# [示例/Example]\ncode = 1\nqualifier = \"1901\"\nversion = \"flow_split\"\nperiod = 30\ndate = \"20260131\"\nlimit = 100"
   },
   {
     "path": "/api/v1/douyin/xingtu_v2/get_playlet_actor_rank_catalog",
+    "method": "POST",
     "summary": "获取短剧演员热榜分类/Get Playlet Actor Rank Catalog",
     "description": "# [中文]\n### 用途:\n- 获取短剧演员热榜分类列表\n- 价格：0.001$ / 次\n### 返回:\n- 短剧演员热榜分类数据\n\n# [English]\n### Purpose:\n- Get XingTu playlet actor ranking catalog\n- Price: 0.001$ / time\n### Return:\n- Playlet actor ranking catalog data"
   },
   {
     "path": "/api/v1/douyin/xingtu_v2/get_playlet_actor_rank_list",
+    "method": "GET",
     "summary": "获取短剧演员热榜/Get Playlet Actor Rank List",
     "description": "# [中文]\n### 用途:\n- 获取短剧演员热榜数据\n- 价格：0.001$ / 次\n### 参数:\n- category: 分类，默认`playlet_actor_list`\n- name: 榜单名称，`playlet_actor_composite_list`=综合榜\n- qualifier: 达人类型，空字符串=不限\n- period: 统计周期，7=周榜，30=月榜\n- date: 统计日期，格式YYYYMMDD\n- limit: 返回数量，默认100\n### 返回:\n- 短剧演员热榜数据\n\n# [English]\n### Purpose:\n- Get XingTu playlet actor ranking list data\n- Price: 0.001$ / time\n### Parameters:\n- category: Category, default `playlet_actor_list`\n- name: Ranking name, `playlet_actor_composite_list`=composite list\n- qualifier: Actor type, empty=all\n- period: 7=weekly, 30=monthly\n- date: Date, format YYYYMMDD\n- limit: Result limit, default 100\n### Return:\n- Playlet actor ranking data\n\n# [示例/Example]\ncategory = \"playlet_actor_list\"\nname = \"playlet_actor_composite_list\"\nperiod = 30\ndate = \"20251130\"\nlimit = 100"
   },
   {
     "path": "/api/v1/douyin/xingtu_v2/get_author_market_fields",
+    "method": "GET",
     "summary": "获取达人广场筛选字段/Get Author Market Fields",
     "description": "# [中文]\n### 用途:\n- 获取达人广场所有筛选字段选项\n- 价格：0.001$ / 次\n### 参数:\n- market_scene: 市场场景，1=默认场景\n### 返回:\n- 达人广场筛选字段数据\n\n# [English]\n### Purpose:\n- Get all filter field options for the creator marketplace\n- Price: 0.001$ / time\n### Parameters:\n- market_scene: Market scene, 1=default\n### Return:\n- Creator marketplace filter fields data\n\n# [示例/Example]\nmarket_scene = 1"
   },
   {
     "path": "/api/v1/douyin/xingtu_v2/get_author_base_info",
+    "method": "GET",
     "summary": "获取创作者基本信息/Get Author Base Info",
     "description": "# [中文]\n### 用途:\n- 获取创作者基本信息\n- 价格：0.001$ / 次\n### 参数:\n- o_author_id: 创作者ID\n- platform_source: 平台来源，默认1\n- platform_channel: 平台渠道，默认1\n- recommend: 是否返回推荐信息，默认True\n- need_sec_uid: 是否返回sec_uid，默认True\n- need_linkage_info: 是否返回联动信息，默认True\n### 返回:\n- 创作者基本信息数据\n\n# [English]\n### Purpose:\n- Get creator/author base information\n- Price: 0.001$ / time\n### Parameters:\n- o_author_id: Creator/author ID\n- platform_source: Platform source, default 1\n- platform_channel: Platform channel, default 1\n- recommend: Whether to return recommendation info, default True\n- need_sec_uid: Whether to return sec_uid, default True\n- need_linkage_info: Whether to return linkage info, default True\n### Return:\n- Creator base info data\n\n# [示例/Example]\no_author_id = \"7589271892177518598\""
   },
   {
     "path": "/api/v1/douyin/xingtu_v2/get_author_business_card_info",
+    "method": "GET",
     "summary": "获取创作者商业卡片信息/Get Author Business Card Info",
     "description": "# [中文]\n### 用途:\n- 获取创作者商业卡片信息\n- 价格：0.001$ / 次\n### 参数:\n- o_author_id: 创作者ID\n### 返回:\n- 创作者商业卡片信息数据\n\n# [English]\n### Purpose:\n- Get creator/author business card information\n- Price: 0.001$ / time\n### Parameters:\n- o_author_id: Creator/author ID\n### Return:\n- Creator business card info data\n\n# [示例/Example]\no_author_id = \"7589271892177518598\""
   },
   {
     "path": "/api/v1/douyin/xingtu_v2/get_author_local_info",
+    "method": "GET",
     "summary": "获取创作者位置信息/Get Author Local Info",
     "description": "# [中文]\n### 用途:\n- 获取创作者位置信息\n- 价格：0.001$ / 次\n### 参数:\n- o_author_id: 创作者ID\n- platform_source: 平台来源，默认1\n- platform_channel: 平台渠道，默认1\n- time_range: 时间范围(天)，默认30\n### 返回:\n- 创作者位置信息数据\n\n# [English]\n### Purpose:\n- Get creator/author location information\n- Price: 0.001$ / time\n### Parameters:\n- o_author_id: Creator/author ID\n- platform_source: Platform source, default 1\n- platform_channel: Platform channel, default 1\n- time_range: Time range in days, default 30\n### Return:\n- Creator location info data\n\n# [示例/Example]\no_author_id = \"7146074596666507300\""
   },
   {
     "path": "/api/v1/douyin/xingtu_v2/get_author_show_items",
+    "method": "GET",
     "summary": "获取创作者视频列表/Get Author Show Items",
     "description": "# [中文]\n### 用途:\n- 获取创作者视频列表\n- 价格：0.001$ / 次\n### 参数:\n- o_author_id: 创作者ID\n- platform_source: 平台来源，默认1\n- platform_channel: 平台渠道，默认1\n- limit: 返回数量，默认10\n- only_assign: 仅看指派视频（只针对星图视频生效），默认False\n- flow_type: 流量类型，默认0\n### 返回:\n- 创作者视频列表数据\n\n# [English]\n### Purpose:\n- Get creator/author video list\n- Price: 0.001$ / time\n### Parameters:\n- o_author_id: Creator/author ID\n- platform_source: Platform source, default 1\n- platform_channel: Platform channel, default 1\n- limit: Result limit, default 10\n- only_assign: Only show assigned videos (only for XingTu videos), default False\n- flow_type: Flow type, default 0\n### Return:\n- Creator video list data\n\n# [示例/Example]\no_author_id = \"7589271892177518598\""
   },
   {
     "path": "/api/v1/douyin/xingtu_v2/get_author_hot_comment_tokens",
+    "method": "GET",
     "summary": "获取创作者评论热词/Get Author Hot Comment Tokens",
     "description": "# [中文]\n### 用途:\n- 获取创作者评论热词\n- 价格：0.001$ / 次\n### 参数:\n- author_id: 创作者ID\n- num: 返回热词数量，默认10\n- without_emoji: 是否排除emoji，默认True\n### 返回:\n- 创作者评论热词数据\n\n# [English]\n### Purpose:\n- Get creator/author hot comment tokens/keywords\n- Price: 0.001$ / time\n### Parameters:\n- author_id: Creator/author ID\n- num: Number of hot tokens, default 10\n- without_emoji: Whether to exclude emoji, default True\n### Return:\n- Creator hot comment tokens data\n\n# [示例/Example]\nauthor_id = \"7589271892177518598\""
   },
   {
     "path": "/api/v1/douyin/xingtu_v2/get_author_content_hot_keywords",
+    "method": "GET",
     "summary": "获取创作者内容热词/Get Author Content Hot Keywords",
     "description": "# [中文]\n### 用途:\n- 获取创作者内容热词\n- 价格：0.001$ / 次\n### 参数:\n- author_id: 创作者ID\n- keyword_type: 热词类型，默认0\n### 返回:\n- 创作者内容热词数据\n\n# [English]\n### Purpose:\n- Get creator/author content hot keywords\n- Price: 0.001$ / time\n### Parameters:\n- author_id: Creator/author ID\n- keyword_type: Keyword type, default 0\n### Return:\n- Creator content hot keywords data\n\n# [示例/Example]\nauthor_id = \"7589271892177518598\""
   },
   {
     "path": "/api/v1/douyin/xingtu_v2/get_recommend_for_star_authors",
+    "method": "POST",
     "summary": "获取相似创作者推荐/Get Recommend Similar Star Authors",
     "description": "# [中文]\n### 用途:\n- 获取相似创作者推荐\n- 价格：0.001$ / 次\n### 参数:\n- author_ids: 创作者ID列表\n- similar_type: 相似类型\n    - `comprehension`: 综合相似\n    - `content`: 内容相似\n    - `audience`: 用户相似\n    - `commercial`: 商业能力相似\n- page: 页码，默认1\n- limit: 每页数量，默认12\n### 返回:\n- 相似创作者推荐数据\n\n# [English]\n### Purpose:\n- Get similar creator recommendation\n- Price: 0.001$ / time\n### Parameters:\n- author_ids: List of creator/author IDs\n- similar_type: Similarity type\n    - `comprehension`: Comprehensive similarity\n    - `content`: Content similarity\n    - `audience`: Audience similarity\n    - `commercial`: Commercial capability similarity\n- page: Page number, default 1\n- limit: Page size, default 12\n### Return:\n- Similar creator recommendation data\n\n# [示例/Example]\nauthor_ids = [\"7589271892177518598\"]\nsimilar_type = \"content\""
   },
   {
     "path": "/api/v1/douyin/xingtu_v2/get_excellent_case_category_list",
+    "method": "GET",
     "summary": "获取优秀行业分类列表/Get Excellent Case Category List",
     "description": "# [中文]\n### 用途:\n- 获取连接用户漏斗中的优秀行业分类列表\n- 价格：0.001$ / 次\n### 参数:\n- platform_source: 平台来源，默认1\n### 返回:\n- 优秀行业分类列表数据\n\n# [English]\n### Purpose:\n- Get the excellent case category list in the user connection funnel\n- Price: 0.001$ / time\n### Parameters:\n- platform_source: Platform source, default 1\n### Return:\n- Excellent case category list data\n\n# [示例/Example]\nplatform_source = 1"
   },
   {
     "path": "/api/v1/douyin/xingtu_v2/get_author_spread_info",
+    "method": "GET",
     "summary": "获取创作者传播价值/Get Author Spread Info",
     "description": "# [中文]\n### 用途:\n- 获取创作者商业能力的传播价值信息\n- 价格：0.001$ / 次\n### 参数:\n- o_author_id: 创作者ID\n- platform_source: 平台来源，默认1\n- platform_channel: 平台渠道，默认1\n- type: 视频类型，1=个人视频\n- flow_type: 流量类型，默认0\n- only_assign: 仅看指派视频，默认False\n- range: 时间范围，2=近30天，3=近90天\n### 返回:\n- 创作者传播价值数据\n\n# [English]\n### Purpose:\n- Get creator/author spread value information (commercial capability)\n- Price: 0.001$ / time\n### Parameters:\n- o_author_id: Creator/author ID\n- platform_source: Platform source, default 1\n- platform_channel: Platform channel, default 1\n- type: Video type, 1=personal video\n- flow_type: Flow type, default 0\n- only_assign: Only assigned videos, default False\n- range: Time range, 2=last 30 days, 3=last 90 days\n### Return:\n- Creator spread value data\n\n# [示例/Example]\no_author_id = \"7589271892177518598\"\nrange = 2"
   },
   {
     "path": "/api/v1/douyin/xingtu_v2/get_user_profile_qrcode",
+    "method": "GET",
     "summary": "获取用户主页二维码/Get User Profile QRCode",
     "description": "# [中文]\n### 用途:\n- 生成用户主页二维码\n- core_user_id和sec_uid二选一传入即可\n- 价格：0.001$ / 次\n### 参数:\n- core_user_id: 用户核心ID（与sec_uid二选一）\n- sec_uid: 用户sec_uid（与core_user_id二选一）\n### 返回:\n- 用户主页二维码数据\n\n# [English]\n### Purpose:\n- Generate user profile QR code\n- Either core_user_id or sec_uid is required\n- Price: 0.001$ / time\n### Parameters:\n- core_user_id: User core ID (pick one with sec_uid)\n- sec_uid: User sec_uid (pick one with core_user_id)\n### Return:\n- User profile QR code data\n\n# [示例/Example]\ncore_user_id = \"1113181577281568\""
   },
   {
     "path": "/api/v1/douyin/xingtu_v2/get_content_trend_guide",
+    "method": "GET",
     "summary": "获取内容趋势指南/Get Content Trend Guide",
     "description": "# [中文]\n### 用途:\n- 获取内容趋势指南数据（CDN静态JSON，无需Cookie）\n- 价格：0.001$ / 次\n### 返回:\n- 内容趋势指南数据\n\n# [English]\n### Purpose:\n- Get content trend guide data (CDN static JSON, no cookie needed)\n- Price: 0.001$ / time\n### Return:\n- Content trend guide data"
   },
   {
     "path": "/api/v1/douyin/xingtu_v2/get_ip_activity_industry_list",
+    "method": "GET",
     "summary": "获取星图IP日历行业列表/Get IP Activity Industry List",
     "description": "# [中文]\n### 用途:\n- 获取星图IP日历的行业列表\n- 价格：0.001$ / 次\n### 返回:\n- 行业列表数据\n\n# [English]\n### Purpose:\n- Get the industry list for XingTu IP calendar\n- Price: 0.001$ / time\n### Return:\n- Industry list data"
   },
   {
     "path": "/api/v1/douyin/xingtu_v2/get_ip_activity_list",
+    "method": "POST",
     "summary": "获取星图IP日历活动列表/Get IP Activity List",
     "description": "# [中文]\n### 用途:\n- 获取星图IP日历活动列表\n- 价格：0.001$ / 次\n### 参数:\n- query_start_time: 查询开始时间戳，如`1767196800`\n- query_end_time: 查询结束时间戳，如`1774972799`\n- industry_id_list (可选): 行业ID列表，从`get_ip_activity_industry_list`获取\n    - 例：`[\"1930\"]`=美妆, `[\"1901\"]`=3C及电器, `[\"1903\"]`=食品饮料\n- category_list (可选): IP类型列表\n    - 1=星图大事件, 2=电商节点, 3=情绪节点, 4=创意营销, 5=行业活动\n- status_list (可选): IP状态列表\n    - 40=筹备中, 50=招商中, 30=资源上线, 20=已结束\n### 返回:\n- IP日历活动列表数据\n\n# [English]\n### Purpose:\n- Get XingTu IP calendar activity list\n- Price: 0.001$ / time\n### Parameters:\n- query_start_time: Query start timestamp, e.g. `1767196800`\n- query_end_time: Query end timestamp, e.g. `1774972799`\n- industry_id_list (optional): Industry ID list from `get_ip_activity_industry_list`\n    - Example: `[\"1930\"]`=Beauty, `[\"1901\"]`=3C & Electronics, `[\"1903\"]`=Food & Beverage\n- category_list (optional): IP category list\n    - 1=XingTu Big Event, 2=E-commerce Node, 3=Emotion Node, 4=Creative Marketing, 5=Industry Activity\n- status_list (optional): IP status list\n    - 40=Preparing, 50=Recruiting, 30=Resources Online, 20=Ended\n### Return:\n- IP calendar activity list data\n\n# [示例/Example]\nquery_start_time = \"1767196800\"\nquery_end_time = \"1774972799\""
   },
   {
     "path": "/api/v1/douyin/xingtu_v2/get_ip_activity_detail",
+    "method": "GET",
     "summary": "获取星图IP活动详情/Get IP Activity Detail",
     "description": "# [中文]\n### 用途:\n- 获取星图IP日历活动详情\n- 价格：0.001$ / 次\n### 参数:\n- id: 活动ID，从`get_ip_activity_list`获取\n### 返回:\n- IP活动详情数据\n\n# [English]\n### Purpose:\n- Get XingTu IP calendar activity detail\n- Price: 0.001$ / time\n### Parameters:\n- id: Activity ID, from `get_ip_activity_list`\n### Return:\n- IP activity detail data\n\n# [示例/Example]\nid = 347"
   },
   {
     "path": "/api/v1/douyin/xingtu_v2/get_resource_list",
+    "method": "GET",
     "summary": "获取营销活动案例/Get Resource List",
     "description": "# [中文]\n### 用途:\n- 获取营销活动案例列表\n- 价格：0.001$ / 次\n### 参数:\n- resource_id: 资源ID\n### 返回:\n- 营销活动案例数据\n\n# [English]\n### Purpose:\n- Get marketing activity resource list\n- Price: 0.001$ / time\n### Parameters:\n- resource_id: Resource ID\n### Return:\n- Marketing activity resource data\n\n# [示例/Example]\nresource_id = 1052"
   },
   {
     "path": "/api/v1/douyin/xingtu_v2/get_demander_mcn_list",
+    "method": "GET",
     "summary": "搜索MCN机构列表/Get Demander MCN List",
     "description": "# [中文]\n### 用途:\n- 搜索MCN机构列表\n- 价格：0.001$ / 次\n### 参数:\n- mcn_name: MCN机构名称，支持模糊搜索\n- page: 页码，默认1\n- limit: 每页数量，默认20\n- order_by: 排序方式，`platform_scores`=平台评分\n### 返回:\n- MCN机构列表数据\n\n# [English]\n### Purpose:\n- Search MCN organization list\n- Price: 0.001$ / time\n### Parameters:\n- mcn_name: MCN name, supports fuzzy search\n- page: Page number, default 1\n- limit: Page size, default 20\n- order_by: Sort by, `platform_scores`=platform scores\n### Return:\n- MCN organization list data\n\n# [示例/Example]\nmcn_name = \"\"\npage = 1\nlimit = 20"
   }

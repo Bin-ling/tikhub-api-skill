@@ -1,161 +1,193 @@
 [
   {
     "path": "/api/v1/zhihu/web/fetch_column_articles",
+    "method": "GET",
     "summary": "获取知乎专栏文章列表/Get Zhihu Column Articles",
     "description": "# [中文]\n### 用途:\n- 获取知乎专栏文章列表\n### 参数:\n- column_id: 专栏ID\n- limit: 每页文章数量\n- offset: 偏移量\n### 返回:\n- 知乎专栏文章列表\n\n# [English]\n### Purpose:\n- Get Zhihu Column Articles\n### Parameters:\n- column_id: Column ID\n- limit: Number of articles per page\n- offset: Offset\n### Returns:\n- Zhihu Column Articles\n\n# [示例/Example]\ncolumn_id = \"zhangjiawei\"\nlimit = \"10\"\noffset = \"0\""
   },
   {
     "path": "/api/v1/zhihu/web/fetch_column_article_detail",
+    "method": "GET",
     "summary": "获取知乎专栏文章详情/Get Zhihu Column Article Detail",
     "description": "# [中文]\n### 用途:\n- 获取知乎专栏文章详情\n### 参数:\n- article_id: 文章ID\n### 返回:\n- 知乎专栏文章详情\n\n# [English]\n### Purpose:\n- Get Zhihu Column Article Detail\n### Parameters:\n- article_id: Article ID\n### Returns:\n- Zhihu Column Article Detail\n\n# [示例/Example]\narticle_id = \"669214677\""
   },
   {
     "path": "/api/v1/zhihu/web/fetch_column_recommend",
+    "method": "GET",
     "summary": "获取知乎相似专栏推荐/Get Zhihu Similar Column Recommend",
     "description": "# [中文]\n### 用途:\n- 获取知乎相似专栏推荐\n### 参数:\n- article_id: 文章ID\n- limit: 每页专栏数量\n- offset: 偏移量\n### 返回:\n- 知乎相似专栏推荐\n\n# [English]\n### Purpose:\n- Get Zhihu Similar Column Recommend\n### Parameters:\n- article_id: Article ID\n- limit: Number of columns per page\n- offset: Offset\n### Returns:\n- Zhihu Similar Column Recommend\n\n# [示例/Example]\narticle_id = \"669214677\"\nlimit = \"12\"\noffset = \"0\""
   },
   {
     "path": "/api/v1/zhihu/web/fetch_column_relationship",
+    "method": "GET",
     "summary": "获取知乎专栏文章互动关系/Get Zhihu Column Article Relationship",
     "description": "# [中文]\n### 用途:\n- 获取知乎专栏文章互动关系\n### 参数:\n- article_id: 文章ID\n### 返回:\n- 知乎专栏互动关系\n\n# [English]\n### Purpose:\n- Get Zhihu Column Relationship\n### Parameters:\n- article_id: Article ID\n### Returns:\n- Zhihu Column Relationship\n\n# [示例/Example]\narticle_id = \"669214677\""
   },
   {
     "path": "/api/v1/zhihu/web/fetch_column_comment_config",
+    "method": "GET",
     "summary": "获取知乎专栏评论区配置/Get Zhihu Column Comment Config",
     "description": "# [中文]\n### 用途:\n- 获取知乎专栏评论区配置\n### 参数:\n- article_id: 文章ID\n### 返回:\n- 知乎专栏评论区配置\n\n# [English]\n### Purpose:\n- Get Zhihu Column Comment Config\n### Parameters:\n- article_id: Article ID\n### Returns:\n- Zhihu Column Comment Config\n\n# [示例/Example]\narticle_id = \"669214677\""
   },
   {
     "path": "/api/v1/zhihu/web/fetch_hot_recommend",
+    "method": "GET",
     "summary": "获取知乎首页推荐/Get Zhihu Hot Recommend",
     "description": "# [中文]\n### 用途:\n- 获取知乎首页推荐\n### 参数:\n- offset: 偏移量\n- page_number: 页码\n- session_token: 会话令牌\n### 返回:\n- 知乎首页推荐\n\n# [English]\n### Purpose:\n- Get Zhihu Hot Recommend\n### Parameters:\n- offset: Offset\n- page_number: Page Number\n- session_token: Session Token\n\n# [示例/Example]\noffset = \"0\"\npage_number = \"1\"\nsession_token = \"\""
   },
   {
     "path": "/api/v1/zhihu/web/fetch_hot_list",
+    "method": "GET",
     "summary": "获取知乎首页热榜/Get Zhihu Hot List",
     "description": "# [中文]\n### 用途:\n- 获取知乎首页热榜\n### 参数:\n- limit: 每页文章数量\n- desktop: 是否为桌面端\n### 返回:\n- 知乎首页热榜\n\n# [English]\n### Purpose:\n- Get Zhihu Hot List\n### Parameters:\n- limit: Number of articles per page\n- desktop: Is it a desktop\n### Returns:\n- Zhihu Hot List\n\n# [示例/Example]\nlimit = \"50\"\ndesktop = \"true\""
   },
   {
     "path": "/api/v1/zhihu/web/fetch_video_list",
+    "method": "GET",
     "summary": "获取知乎首页视频榜/Get Zhihu Video List",
     "description": "# [中文]\n### 用途:\n- 获取知乎首页视频榜\n### 参数:\n- offset: 偏移量\n- limit: 每页视频数量\n### 返回:\n- 知乎首页视频榜\n\n# [English]\n### Purpose:\n- Get Zhihu Video List\n### Parameters:\n- offset: Offset\n- limit: Number of videos per page\n### Returns:\n- Zhihu Video List\n\n# [示例/Example]\noffset = \"\"\nlimit = \"12\""
   },
   {
     "path": "/api/v1/zhihu/web/fetch_article_search_v3",
+    "method": "GET",
     "summary": "获取知乎文章搜索V3/Get Zhihu Article Search V3",
     "description": "# [中文]\n### 用途:\n- 获取知乎文章搜索V3\n### 参数:\n- keyword: 搜索关键词\n- offset: 偏移量\n- limit: 每页文章数量\n- show_all_topics: 显示所有主题，\n    - 0 不显示话题\n    - 1 显示话题\n- search_source: 搜索来源\n    - Filter 过滤参数生效\n    - Normal 为普通结果\n- search_hash_id: 搜索哈希ID，用于过滤重复搜索结果\n- vertical: 空 不限类型\n    - answer 只看回答\n    - article 只看文章\n    - zvideo 只看视频\n- sort: 空 综合排序\n    - upvoted_count 最多赞同\n    - created_time 最新发布\n- time_interval: 时间间隔\n    - 空 不限时间\n    - a_day 一天内\n    - a_week 一周内\n    - a_month 一个月内\n    - three_months 三个月内\n    - half_a_year 半年内\n    - a_year 一年内\n- vertical_info: 垂类信息\n    - 0,0,0,0,0,0,0,0,0,0,0,0 不限类型，不会设置勿填\n### 返回:\n- 知乎文章搜索V3\n\n# [English]\n### Purpose:\n- Get Zhihu Article Search V3\n### Parameters:\n- keyword: Search Keywords\n- offset: Offset\n- limit: Number of articles per page\n- show_all_topics: Show all topics\n    - 0 Do not show topics\n    - 1 Show topics\n- search_source: Search Source\n    - Filter parameter takes effect\n    - Normal is normal result\n- search_hash_id: Search Hash ID, used to filter duplicate search results\n- vertical: Empty unlimited type\n    - answer only see answers\n    - article only see articles\n    - zvideo only see videos\n- sort: Empty comprehensive sorting\n    - upvoted_count most upvoted\n    - created_time latest release\n- time_interval: Time interval\n    - Empty unlimited time\n    - a_day within a day\n    - a_week within a week\n    - a_month within a month\n    - three_months within three months\n    - half_a_year within half a year\n    - a_year within a year\n- vertical_info: Vertical information\n    - 0,0,0,0,0,0,0,0,0,0,0,0 unlimited type, do not set do not fill\n### Returns:\n- Zhihu Article Search V3\n\n# [示例/Example]\n# 默认搜索，综合排序，不限时间\nkeyword = \"deepseek\"\noffset = \"0\"\nlimit = \"20\"\nshow_all_topics = 0\nsearch_source = \"Normal\"\nsearch_hash_id = \"\"\nvertical = \"\"\nsort = \"\"\ntime_interval = \"\"\nvertical_info = \"\"\n\n# 只看回答，最多赞同，三月内\nkeyword = \"deepseek\"\noffset = \"0\"\nlimit = \"20\"\nshow_all_topics = 0\nsearch_source = \"Filter\"\nsearch_hash_id = \"\"\nvertical = \"answer\"\nsort = \"upvoted_count\"\ntime_interval = \"three_months\"\nvertical_info = \"0,0,0,0,0,0,0,0,0,0,0,0\""
   },
   {
     "path": "/api/v1/zhihu/web/fetch_user_search_v3",
+    "method": "GET",
     "summary": "获取知乎用户搜索V3/Get Zhihu User Search V3",
     "description": "# [中文]\n### 用途:\n- 获取知乎用户搜索V3\n### 参数:\n- keyword: 搜索关键词\n- offset: 偏移量\n- limit: 每页用户数量\n### 返回:\n- 知乎用户搜索V3\n\n# [English]\n### Purpose:\n- Get Zhihu User Search V3\n### Parameters:\n- keyword: Search Keywords\n- offset: Offset\n- limit: Number of users per page\n### Returns:\n- Zhihu User Search V3\n\n# [示例/Example]\nkeyword = \"deepseek\"\noffset = \"0\"\nlimit = \"25\""
   },
   {
     "path": "/api/v1/zhihu/web/fetch_topic_search_v3",
+    "method": "GET",
     "summary": "获取知乎话题搜索V3/Get Zhihu Topic Search V3",
     "description": "# [中文]\n### 用途:\n- 获取知乎话题搜索V3\n### 参数:\n- keyword: 搜索关键词\n- offset: 偏移量\n- limit: 每页话题数量\n### 返回:\n- 知乎话题搜索V3\n\n# [English]\n### Purpose:\n- Get Zhihu Topic Search V3\n### Parameters:\n- keyword: Search Keywords\n- offset: Offset\n- limit: Number of topics per page\n### Returns:\n- Zhihu Topic Search V3\n\n# [示例/Example]\nkeyword = \"deepseek\"\noffset = \"0\"\nlimit = \"25\""
   },
   {
     "path": "/api/v1/zhihu/web/fetch_scholar_search_v3",
+    "method": "POST",
     "summary": "获取知乎论文搜索V3/Get Zhihu Scholar Search V3",
     "description": "# [中文]\n### 用途:\n- 获取知乎论文搜索V3\n### 参数:\n- keyword: 搜索关键词\n- offset: 偏移量\n- limit: 每页论文数量\n- filter_fields: 过滤字段\n### 返回:\n- 知乎论文搜索V3\n\n# [English]\n### Purpose:\n- Get Zhihu Scholar Search V3\n### Parameters:\n- keyword: Search Keywords\n- offset: Offset\n- limit: Number of papers per page\n- filter_fields: Filter Fields\n### Returns:\n- Zhihu Scholar Search V3\n\n# [示例/Example]\nkeyword = \"人工智能\"\noffset = \"0\"\nlimit = \"25\""
   },
   {
     "path": "/api/v1/zhihu/web/fetch_ai_search",
+    "method": "GET",
     "summary": "获取知乎AI搜索/Get Zhihu AI Search",
     "description": "# [中文]\n### 用途:\n- 获取知乎AI搜索\n### 参数:\n- message_content: 搜索内容\n### 返回:\n- 知乎AI搜索消息ID，用于请求搜索结果\n\n# [English]\n### Purpose:\n- Get Zhihu AI Search\n### Parameters:\n- message_content: Search Content\n### Returns:\n- Zhihu AI Search Message ID for requesting search results\n\n# [示例/Example]\nmessage_content = \"deepseek\""
   },
   {
     "path": "/api/v1/zhihu/web/fetch_ai_search_result",
+    "method": "GET",
     "summary": "获取知乎AI搜索结果/Get Zhihu AI Search Result",
     "description": "# [中文]\n### 用途:\n- 获取知乎AI搜索结果\n### 参数:\n- message_id: 消息ID\n### 返回:\n- 知乎AI搜索结果\n\n# [English]\n### Purpose:\n- Get Zhihu AI Search Result\n### Parameters:\n- message_id: Message ID\n### Returns:\n- Zhihu AI Search Result\n\n# [示例/Example]\nmessage_id = \"5f8b4f4a-0b7c-4d1b-8c4f-2e5c0d6c1b9d\""
   },
   {
     "path": "/api/v1/zhihu/web/fetch_video_search_v3",
+    "method": "GET",
     "summary": "获取知乎视频搜索V3/Get Zhihu Video Search V3",
     "description": "# [中文]\n### 用途:\n- 获取知乎视频搜索V3\n### 参数:\n- keyword: 搜索关键词\n- limit: 每页视频数量\n- offset: 偏移量\n- search_hash_id: 搜索哈希ID\n### 返回:\n- 知乎视频搜索V3\n\n# [English]\n### Purpose:\n- Get Zhihu Video Search V3\n### Parameters:\n- keyword: Search Keywords\n- limit: Number of videos per page\n- offset: Offset\n- search_hash_id: Search Hash ID\n### Returns:\n- Zhihu Video Search V3\n\n# [示例/Example]\nkeyword = \"deepseek\"\nlimit = \"20\"\noffset = \"0\"\nsearch_hash_id = \"\""
   },
   {
     "path": "/api/v1/zhihu/web/fetch_column_search_v3",
+    "method": "GET",
     "summary": "获取知乎专栏搜索V3/Get Zhihu Column Search V3",
     "description": "# [中文]\n### 用途:\n- 获取知乎专栏搜索V3\n### 参数:\n- keyword: 搜索关键词\n- offset: 偏移量\n- limit: 每页专栏数量\n- search_hash_id: 搜索哈希ID\n### 返回:\n- 知乎专栏搜索V3\n\n# [English]\n### Purpose:\n- Get Zhihu Column Search V3\n### Parameters:\n- keyword: Search Keywords\n- offset: Offset\n- limit: Number of columns per page\n- search_hash_id: Search Hash ID\n### Returns:\n- Zhihu Column Search V3\n\n# [示例/Example]\nkeyword = \"deepseek\"\nlimit = \"20\"\noffset = \"0\"\nsearch_hash_id = \"\""
   },
   {
     "path": "/api/v1/zhihu/web/fetch_salt_search_v3",
+    "method": "GET",
     "summary": "获取知乎盐选内容搜索V3/Get Zhihu Salt Search V3",
     "description": "# [中文]\n### 用途:\n- 获取知乎盐选内容搜索V3\n### 参数:\n- keyword: 搜索关键词\n- offset: 偏移量\n- limit: 每页内容数量\n- search_hash_id: 搜索哈希ID\n### 返回:\n- 知乎盐选内容搜索V3\n\n# [English]\n### Purpose:\n- Get Zhihu Salt Search V3\n### Parameters:\n- keyword: Search Keywords\n- offset: Offset\n- limit: Number of contents per page\n- search_hash_id: Search Hash ID\n### Returns:\n- Zhihu Salt Search V3\n\n# [示例/Example]\nkeyword = \"deepseek\"\nlimit = \"20\"\noffset = \"0\"\nsearch_hash_id = \"\""
   },
   {
     "path": "/api/v1/zhihu/web/fetch_ebook_search_v3",
+    "method": "GET",
     "summary": "获取知乎电子书搜索V3/Get Zhihu Ebook Search V3",
     "description": "# [中文]\n### 用途:\n- 获取知乎电子书搜索V3\n### 参数:\n- keyword: 搜索关键词\n- offset: 偏移量\n- limit: 每页电子书数量\n- search_hash_id: 搜索哈希ID\n### 返回:\n- 知乎电子书搜索V3\n\n# [English]\n### Purpose:\n- Get Zhihu Ebook Search V3\n### Parameters:\n- keyword: Search Keywords\n- offset: Offset\n- limit: Number of ebooks per page\n- search_hash_id: Search Hash ID\n### Returns:\n- Zhihu Ebook Search V3\n\n# [示例/Example]\nkeyword = \"deepseek\"\nlimit = \"20\"\noffset = \"0\"\nsearch_hash_id = \"\""
   },
   {
     "path": "/api/v1/zhihu/web/fetch_preset_search",
+    "method": "GET",
     "summary": "获取知乎搜索预设词/Get Zhihu Preset Search",
     "description": "# [中文]\n### 用途:\n- 获取知乎搜索预设词\n### 参数:\n- 无\n### 返回:\n- 知乎搜索预设词\n\n# [English]\n### Purpose:\n- Get Zhihu Preset Search\n### Parameters:\n- None\n### Returns:\n- Zhihu Preset Search"
   },
   {
     "path": "/api/v1/zhihu/web/fetch_search_recommend",
+    "method": "GET",
     "summary": "获取知乎搜索发现/Get Zhihu Search Recommend",
     "description": "# [中文]\n### 用途:\n- 获取知乎搜索发现\n### 参数:\n- 无\n### 返回:\n- 知乎搜索发现\n\n# [English]\n### Purpose:\n- Get Zhihu Search Recommend\n### Parameters:\n- None\n### Returns:\n- Zhihu Search Recommend"
   },
   {
     "path": "/api/v1/zhihu/web/fetch_search_suggest",
+    "method": "GET",
     "summary": "知乎搜索预测词/Get Zhihu Search Suggest",
     "description": "# [中文]\n### 用途:\n- 知乎搜索预测词\n### 参数:\n- keyword: 搜索关键词\n### 返回:\n- 知乎搜索预测词\n\n# [English]\n### Purpose:\n- Get Zhihu Search Suggest\n### Parameters:\n- keyword: Search Keywords\n### Returns:\n- Zhihu Search Suggest\n\n# [示例/Example]\nkeyword = \"deepseek\""
   },
   {
     "path": "/api/v1/zhihu/web/fetch_comment_v5",
+    "method": "GET",
     "summary": "获取知乎评论区V5/Get Zhihu Comment V5",
     "description": "# [中文]\n### 用途:\n- 获取知乎评论区V5\n### 参数:\n- answer_id: 回答ID\n- order_by: 排序\n    - score 最热排序\n    - ts 最新排序\n- limit: 每页评论数量\n- offset: 偏移量/页码\n### 返回:\n- 知乎评论区V5\n\n# [English]\n### Purpose:\n- Get Zhihu Comment V5\n### Parameters:\n- answer_id: Answer ID\n- order_by: Sort\n    - score Hottest Sort\n    - ts Latest Sort\n- limit: Number of comments per page\n- offset: Offset/Page Number\n### Returns:\n- Zhihu Comment V5\n\n# [示例/Example]\nanswer_id = \"89226347214\"\norder_by = \"score\"\nlimit = \"20\"\noffset = \"\" # 1739257701_11108372663_0"
   },
   {
     "path": "/api/v1/zhihu/web/fetch_sub_comment_v5",
+    "method": "GET",
     "summary": "获取知乎子评论区V5/Get Zhihu Sub Comment V5",
     "description": "# [中文]\n### 用途:\n- 获取知乎子评论区V5\n### 参数:\n- comment_id: 评论ID\n- order_by: 排序\n    - score 最热排序\n    - ts 最新排序\n- limit: 每页评论数量\n- offset: 偏移量/页码\n### 返回:\n- 知乎子评论区V5\n\n# [English]\n### Purpose:\n- Get Zhihu Sub Comment V5\n### Parameters:\n- comment_id: Comment ID\n- order_by: Sort\n    - score Hottest Sort\n    - ts Latest Sort\n- limit: Number of comments per page\n- offset: Offset/Page Number\n### Returns:\n- Zhihu Sub Comment V5\n\n# [示例/Example]\ncomment_id = \"11100789728\"\norder_by = \"score\"\nlimit = \"20\"\noffset = \"\""
   },
   {
     "path": "/api/v1/zhihu/web/fetch_user_info",
+    "method": "GET",
     "summary": "获取知乎用户信息/Get Zhihu User Info",
     "description": "# [中文]\n### 用途:\n- 获取知乎用户信息\n### 参数:\n- user_url_token: 用户ID\n### 返回:\n- 知乎用户信息\n\n# [English]\n### Purpose:\n- Get Zhihu User Info\n### Parameters:\n- user_url_token: User ID\n### Returns:\n- Zhihu User Info\n\n# [示例/Example]\nuser_url_token = \"ming-he-43-93\""
   },
   {
     "path": "/api/v1/zhihu/web/fetch_user_followees",
+    "method": "GET",
     "summary": "获取知乎用户关注列表/Get Zhihu User Following",
     "description": "# [中文]\n### 用途:\n- 获取知乎用户关注列表\n### 参数:\n- user_url_token: 用户ID\n- offset: 偏移量\n- limit: 每页用户数量\n### 返回:\n- 知乎用户关注列表\n\n# [English]\n### Purpose:\n- Get Zhihu User Following\n### Parameters:\n- user_url_token: User ID\n- offset: Offset\n- limit: Number of users per page\n### Returns:\n- Zhihu User Following\n\n# [示例/Example]\nuser_url_token = \"ming-he-43-93\"\noffset = \"0\"\nlimit = \"20\""
   },
   {
     "path": "/api/v1/zhihu/web/fetch_user_followers",
+    "method": "GET",
     "summary": "获取知乎用户粉丝列表/Get Zhihu User Followers",
     "description": "# [中文]\n### 用途:\n- 获取知乎用户粉丝列表\n### 参数:\n- user_url_token: 用户ID\n- offset: 偏移量\n- limit: 每页用户数量\n### 返回:\n- 知乎用户粉丝列表\n\n# [English]\n### Purpose:\n- Get Zhihu User Followers\n### Parameters:\n- user_url_token: User ID\n- offset: Offset\n- limit: Number of users per page\n### Returns:\n- Zhihu User Followers\n\n# [示例/Example]\nuser_url_token = \"ming-he-43-93\"\noffset = \"0\"\nlimit = \"20\""
   },
   {
     "path": "/api/v1/zhihu/web/fetch_user_follow_columns",
+    "method": "GET",
     "summary": "获取知乎用户订阅的专栏/Get Zhihu User Columns",
     "description": "# [中文]\n### 用途:\n- 获取知乎用户订阅的专栏\n### 参数:\n- user_url_token: 用户ID\n- offset: 偏移量\n- limit: 每页专栏数量\n### 返回:\n- 知乎用户订阅的专栏\n\n# [English]\n### Purpose:\n- Get Zhihu User Columns\n### Parameters:\n- user_url_token: User ID\n- offset: Offset\n- limit: Number of columns per page\n### Returns:\n- Zhihu User Columns\n\n# [示例/Example]\nuser_url_token = \"ming-he-43-93\"\noffset = \"0\"\nlimit = \"20\""
   },
   {
     "path": "/api/v1/zhihu/web/fetch_user_follow_questions",
+    "method": "GET",
     "summary": "获取知乎用户关注的问题/Get Zhihu User Follow Questions",
     "description": "# [中文]\n### 用途:\n- 获取知乎用户关注的问题\n### 参数:\n- user_url_token: 用户ID\n- offset: 偏移量\n- limit: 每页问题数量\n### 返回:\n- 知乎用户关注的问题\n\n# [English]\n### Purpose:\n- Get Zhihu User Follow Questions\n### Parameters:\n- user_url_token: User ID\n- offset: Offset\n- limit: Number of questions per page\n### Returns:\n- Zhihu User Follow Questions\n\n# [示例/Example]\nuser_url_token = \"ming-he-43-93\"\noffset = \"0\"\nlimit = \"20\""
   },
   {
     "path": "/api/v1/zhihu/web/fetch_user_follow_collections",
+    "method": "GET",
     "summary": "获取知乎用户关注的收藏/Get Zhihu User Follow Collections",
     "description": "# [中文]\n### 用途:\n- 获取知乎用户关注的收藏\n### 参数:\n- user_url_token: 用户ID\n- offset: 偏移量\n- limit: 每页收藏数量\n### 返回:\n- 知乎用户关注的收藏\n\n# [English]\n### Purpose:\n- Get Zhihu User Follow Collections\n### Parameters:\n- user_url_token: User ID\n- offset: Offset\n- limit: Number of collections per page\n### Returns:\n- Zhihu User Follow Collections\n\n# [示例/Example]\nuser_url_token = \"ming-he-43-93\"\noffset = \"0\"\nlimit = \"20\""
   },
   {
     "path": "/api/v1/zhihu/web/fetch_user_follow_topics",
+    "method": "GET",
     "summary": "获取知乎用户关注的话题/Get Zhihu User Follow Topics",
     "description": "# [中文]\n### 用途:\n- 获取知乎用户关注的话题\n### 参数:\n- user_url_token: 用户ID\n- offset: 偏移量\n- limit: 每页话题数量\n### 返回:\n- 知乎用户关注的话题\n\n# [English]\n### Purpose:\n- Get Zhihu User Follow Topics\n### Parameters:\n- user_url_token: User ID\n- offset: Offset\n- limit: Number of topics per page\n### Returns:\n- Zhihu User Follow Topics\n\n# [示例/Example]\nuser_url_token = \"ming-he-43-93\"\noffset = \"0\"\nlimit = \"20\""
   },
   {
     "path": "/api/v1/zhihu/web/fetch_recommend_followees",
+    "method": "GET",
     "summary": "获取知乎推荐关注列表/Get Zhihu Recommend Followees",
     "description": "# [中文]\n### 用途:\n- 获取知乎推荐关注列表\n### 参数:\n- 无\n### 返回:\n- 知乎推荐关注列表\n\n# [English]\n### Purpose:\n- Get Zhihu Recommend Followees\n### Parameters:\n- None\n### Returns:\n- Zhihu Recommend Followees"
   },
   {
     "path": "/api/v1/zhihu/web/fetch_question_answers",
+    "method": "GET",
     "summary": "获取知乎问题回答列表/Get Zhihu Question Answers",
     "description": "# [中文]\n### 用途:\n- 获取知乎问题的回答列表\n### 参数:\n- question_id: 问题ID\n- cursor: 分页游标，用于获取下一页数据，从返回的字段里提取\n- limit: 每页回答数量，默认5\n- offset: 偏移量，默认0\n- order: 排序方式，default=默认排序，updated=按时间排序\n- session_id: 会话ID，用于分页时保持状态，从返回的字段里提取\n### 返回:\n- 知乎问题回答列表数据\n\n# [English]\n### Purpose:\n- Get Zhihu Question Answers List\n### Parameters:\n- question_id: Question ID\n- cursor: Pagination cursor for next page, extracted from response fields\n- limit: Number of answers per page, default 5\n- offset: Offset, default 0\n- order: Sort order, default=default sort, updated=sort by time\n- session_id: Session ID for pagination state, extracted from response fields\n### Returns:\n- Zhihu Question Answers List Data\n\n# [示例/Example]\nquestion_id = \"37811449\"\ncursor = \"\"\nlimit = 5\noffset = 0\norder = \"default\"  # 或 \"updated\" 按时间排序\nsession_id = \"\"\n\n# 获取下一页 (Get next page):\ncursor = \"d88f09569eba20b966bcf15076977430\"\noffset = 1\nsession_id = \"1757928778451769939\"\n\n# 按时间排序 (Sort by time):\norder = \"updated\""
   }

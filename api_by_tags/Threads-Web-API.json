@@ -1,56 +1,67 @@
 [
   {
     "path": "/api/v1/threads/web/fetch_user_info",
+    "method": "GET",
     "summary": "获取用户信息/Get user info",
     "description": "# [中文]\n### 用途:\n- 获取Threads用户信息\n- 价格：0.002$ / 次\n### 参数:\n- username: 用户名，例如：lilbieber，可以从用户主页链接中获取，例如：https://www.threads.net/@lilbieber 中的 lilbieber。\n### 返回:\n- 用户信息数据，包含:\n    - pk: 用户ID\n    - username: 用户名\n    - full_name: 全名\n    - biography: 个人简介\n    - profile_pic_url: 头像URL\n    - follower_count: 粉丝数\n    - is_verified: 是否认证\n    - 等等...\n\n# [English]\n### Purpose:\n- Get Threads user information\n- Price: 0.002$ / time\n### Parameters:\n- username: Username, for example: lilbieber, can be obtained from the user's homepage link, for example: lilbieber in https://www.threads.net/@lilbieber\n### Return:\n- User information data, including:\n    - pk: User ID\n    - username: Username\n    - full_name: Full name\n    - biography: Biography\n    - profile_pic_url: Profile picture URL\n    - follower_count: Follower count\n    - is_verified: Is verified\n    - etc...\n\n# [示例/Example]\nusername = \"lilbieber\""
   },
   {
     "path": "/api/v1/threads/web/fetch_user_info_by_id",
+    "method": "GET",
     "summary": "根据用户ID获取用户信息/Get user info by ID",
     "description": "# [中文]\n### 用途:\n- 根据用户ID获取Threads用户信息\n- 价格：0.002$ / 次\n### 参数:\n- user_id: 用户ID，例如：67027868801，可以从用户主页API或帖子数据中获取。\n### 返回:\n- 用户信息数据，包含:\n    - pk: 用户ID\n    - username: 用户名\n    - full_name: 全名\n    - biography: 个人简介\n    - profile_pic_url: 头像URL\n    - follower_count: 粉丝数\n    - is_verified: 是否认证\n    - 等等...\n\n# [English]\n### Purpose:\n- Get Threads user information by user ID\n- Price: 0.002$ / time\n### Parameters:\n- user_id: User ID, for example: 67027868801, can be obtained from user profile API or post data\n### Return:\n- User information data, including:\n    - pk: User ID\n    - username: Username\n    - full_name: Full name\n    - biography: Biography\n    - profile_pic_url: Profile picture URL\n    - follower_count: Follower count\n    - is_verified: Is verified\n    - etc...\n\n# [示例/Example]\nuser_id = \"67027868801\""
   },
   {
     "path": "/api/v1/threads/web/fetch_user_posts",
+    "method": "GET",
     "summary": "获取用户帖子列表/Get user posts",
     "description": "# [中文]\n### 用途:\n- 获取Threads用户的帖子列表\n- 价格：0.002$ / 次\n### 参数:\n- user_id: 用户ID，例如：63625256886，可以从用户主页API获取。\n- end_cursor: 分页游标（可选），用于获取下一页数据\n### 返回:\n- 用户帖子列表数据，包含:\n    - threads: 帖子列表数组\n    - next_cursor: 下一页游标\n    - has_more: 是否有更多数据\n    - 每个帖子包含:\n        - id: 帖子ID\n        - text: 帖子文本内容\n        - user: 发布者信息\n        - image_versions2: 图片信息\n        - video_versions: 视频信息\n        - like_count: 点赞数\n        - text_post_app_info: 帖子应用信息\n        - 等等...\n\n# [English]\n### Purpose:\n- Get Threads user's post list\n- Price: 0.002$ / time\n### Parameters:\n- user_id: User ID, for example: 63625256886, can be obtained from user profile API\n- end_cursor: Pagination cursor (optional), used to get next page data\n### Return:\n- User post list data, including:\n    - threads: Post list array\n    - next_cursor: Next page cursor\n    - has_more: Has more data\n    - Each post contains:\n        - id: Post ID\n        - text: Post text content\n        - user: Publisher information\n        - image_versions2: Image information\n        - video_versions: Video information\n        - like_count: Like count\n        - text_post_app_info: Post app information\n        - etc...\n\n# [示例/Example]\nuser_id = \"63625256886\"\nend_cursor = None  # or a cursor string from previous response"
   },
   {
     "path": "/api/v1/threads/web/fetch_user_reposts",
+    "method": "GET",
     "summary": "获取用户转发列表/Get user reposts",
     "description": "# [中文]\n### 用途:\n- 获取Threads用户的转发列表\n- 价格：0.002$ / 次\n### 参数:\n- user_id: 用户ID，例如：63625256886\n- end_cursor: 分页游标（可选），用于获取下一页数据\n### 返回:\n- 用户转发列表数据，包含:\n    - threads: 转发列表\n    - next_cursor: 下一页游标\n    - has_more: 是否有更多数据\n\n# [English]\n### Purpose:\n- Get Threads user's repost list\n- Price: 0.002$ / time\n### Parameters:\n- user_id: User ID, for example: 63625256886\n- end_cursor: Pagination cursor (optional), used to get next page data\n### Return:\n- User repost list data, including:\n    - threads: Repost list\n    - next_cursor: Next page cursor\n    - has_more: Has more data\n\n# [示例/Example]\nuser_id = \"63625256886\"\nend_cursor = None  # or a cursor string from previous response"
   },
   {
     "path": "/api/v1/threads/web/fetch_user_replies",
+    "method": "GET",
     "summary": "获取用户回复列表/Get user replies",
     "description": "# [中文]\n### 用途:\n- 获取Threads用户的回复列表\n- 价格：0.002$ / 次\n### 参数:\n- user_id: 用户ID，例如：63625256886\n- end_cursor: 分页游标（可选），用于获取下一页数据\n### 返回:\n- 用户回复列表数据，包含:\n    - threads: 回复列表\n    - next_cursor: 下一页游标\n    - has_more: 是否有更多数据\n\n# [English]\n### Purpose:\n- Get Threads user's reply list\n- Price: 0.002$ / time\n### Parameters:\n- user_id: User ID, for example: 63625256886\n- end_cursor: Pagination cursor (optional), used to get next page data\n### Return:\n- User reply list data, including:\n    - threads: Reply list\n    - next_cursor: Next page cursor\n    - has_more: Has more data\n\n# [示例/Example]\nuser_id = \"63625256886\"\nend_cursor = None  # or a cursor string from previous response"
   },
   {
     "path": "/api/v1/threads/web/fetch_post_detail",
+    "method": "GET",
     "summary": "获取帖子详情/Get post detail",
     "description": "# [中文]\n### 用途:\n- 获取Threads帖子详情\n- 价格：0.002$ / 次\n### 参数:\n- post_id: 帖子ID（纯数字），例如：3349029093483693129，可以从其他接口获取，如果是使用URL获取，去调用 /fetch_post_detail_v2 接口。\n### 返回:\n- 帖子详情数据，包含:\n    - id: 帖子ID\n    - text: 帖子文本内容\n    - user: 发布者信息\n    - image_versions2: 图片信息\n    - video_versions: 视频信息\n    - like_count: 点赞数\n    - text_post_app_info: 帖子应用信息\n    - 等等...\n\n# [English]\n### Purpose:\n- Get Threads post detail\n- Price: 0.002$ / time\n### Parameters:\n- post_id: Post ID (numeric only), for example: 3349029093483693129, can be obtained from other APIs. If using URL to get, call /fetch_post_detail_v2 API.\n### Return:\n- Post detail data, including:\n    - id: Post ID\n    - text: Post text content\n    - user: Publisher information\n    - image_versions2: Image information\n    - video_versions: Video information\n    - like_count: Like count\n    - text_post_app_info: Post app information\n    - etc...\n\n# [示例/Example]\npost_id = \"3349029093483693129\""
   },
   {
     "path": "/api/v1/threads/web/fetch_post_detail_v2",
+    "method": "GET",
     "summary": "获取帖子详情 V2(支持链接)/Get post detail V2(supports URL)",
     "description": "# [中文]\n### 用途:\n- 获取Threads帖子详情（支持短代码和完整URL）\n- 价格：0.002$ / 次\n### 参数:\n- post_id: 帖子短代码（可选），例如：DPVUglOjOUu，可以从帖子URL中提取，例如：https://www.threads.com/@taylorswift/post/DPVUglOjOUu 中的 DPVUglOjOUu\n- url: 完整的帖子URL（可选），例如：https://www.threads.com/@taylorswift/post/DPVUglOjOUu\n- 注意：post_id 和 url 至少提供一个参数\n### 返回:\n- 帖子详情数据，包含:\n    - post_id: 帖子ID\n    - text: 帖子文本内容\n    - user: 发布者信息\n    - media: 媒体信息（图片、视频）\n    - like_count: 点赞数\n    - reply_count: 回复数\n    - repost_count: 转发数\n    - timestamp: 发布时间\n    - 等等...\n\n# [English]\n### Purpose:\n- Get Threads post detail (supports short code and full URL)\n- Price: 0.002$ / time\n### Parameters:\n- post_id: Post short code (optional), for example: DPVUglOjOUu, can be extracted from post URL, e.g., DPVUglOjOUu in https://www.threads.com/@taylorswift/post/DPVUglOjOUu\n- url: Full post URL (optional), for example: https://www.threads.com/@taylorswift/post/DPVUglOjOUu\n- Note: At least one of post_id or url must be provided\n### Return:\n- Post detail data, including:\n    - post_id: Post ID\n    - text: Post text content\n    - user: Publisher information\n    - media: Media information (images, videos)\n    - like_count: Like count\n    - reply_count: Reply count\n    - repost_count: Repost count\n    - timestamp: Publish timestamp\n    - etc...\n\n# [示例/Example]\npost_id = \"DPVUglOjOUu\"\n# or\nurl = \"https://www.threads.com/@taylorswift/post/DPVUglOjOUu\""
   },
   {
     "path": "/api/v1/threads/web/fetch_post_comments",
+    "method": "GET",
     "summary": "获取帖子评论/Get post comments",
     "description": "# [中文]\n### 用途:\n- 获取Threads帖子评论列表\n- 价格：0.002$ / 次\n### 参数:\n- post_id: 帖子ID，例如：3390920896561588969\n- end_cursor: 分页游标（可选），用于获取下一页数据\n### 返回:\n- 帖子评论列表数据，包含:\n    - comments: 评论列表\n    - next_cursor: 下一页游标\n    - has_more: 是否有更多数据\n\n# [English]\n### Purpose:\n- Get Threads post comments list\n- Price: 0.002$ / time\n### Parameters:\n- post_id: Post ID, for example: 3390920896561588969\n- end_cursor: Pagination cursor (optional), used to get next page data\n### Return:\n- Post comments list data, including:\n    - comments: Comment list\n    - next_cursor: Next page cursor\n    - has_more: Has more data\n\n# [示例/Example]\npost_id = \"3390920896561588969\"\nend_cursor = None  # or a cursor string from previous response"
   },
   {
     "path": "/api/v1/threads/web/search_top",
+    "method": "GET",
     "summary": "搜索热门内容/Search top content",
     "description": "# [中文]\n### 用途:\n- 搜索Threads热门内容\n- 价格：0.002$ / 次\n### 参数:\n- query: 搜索关键词，例如：bitcoin\n- end_cursor: 分页游标（可选），用于获取下一页数据\n### 返回:\n- 搜索结果数据，包含:\n    - threads: 帖子列表\n    - next_cursor: 下一页游标\n    - has_more: 是否有更多数据\n\n# [English]\n### Purpose:\n- Search Threads top content\n- Price: 0.002$ / time\n### Parameters:\n- query: Search query, for example: bitcoin\n- end_cursor: Pagination cursor (optional), used to get next page data\n### Return:\n- Search result data, including:\n    - threads: Post list\n    - next_cursor: Next page cursor\n    - has_more: Has more data\n\n# [示例/Example]\nquery = \"bitcoin\"\nend_cursor = None  # or a cursor string from previous response"
   },
   {
     "path": "/api/v1/threads/web/search_recent",
+    "method": "GET",
     "summary": "搜索最新内容/Search recent content",
     "description": "# [中文]\n### 用途:\n- 搜索Threads最新内容\n- 价格：0.002$ / 次\n### 参数:\n- query: 搜索关键词，例如：bitcoin\n- end_cursor: 分页游标（可选），用于获取下一页数据\n### 返回:\n- 搜索结果数据，包含:\n    - threads: 帖子列表\n    - next_cursor: 下一页游标\n    - has_more: 是否有更多数据\n\n# [English]\n### Purpose:\n- Search Threads recent content\n- Price: 0.002$ / time\n### Parameters:\n- query: Search query, for example: bitcoin\n- end_cursor: Pagination cursor (optional), used to get next page data\n### Return:\n- Search result data, including:\n    - threads: Post list\n    - next_cursor: Next page cursor\n    - has_more: Has more data\n\n# [示例/Example]\nquery = \"bitcoin\"\nend_cursor = None  # or a cursor string from previous response"
   },
   {
     "path": "/api/v1/threads/web/search_profiles",
+    "method": "GET",
     "summary": "搜索用户档案/Search profiles",
     "description": "# [中文]\n### 用途:\n- 搜索Threads用户档案\n- 价格：0.002$ / 次\n### 参数:\n- query: 搜索关键词，例如：mark\n### 返回:\n- 搜索结果数据，包含:\n    - users: 用户列表\n    - 每个用户包含:\n        - pk: 用户ID\n        - username: 用户名\n        - full_name: 全名\n        - profile_pic_url: 头像URL\n        - is_verified: 是否认证\n        - follower_count: 粉丝数\n        - 等等...\n\n# [English]\n### Purpose:\n- Search Threads user profiles\n- Price: 0.002$ / time\n### Parameters:\n- query: Search query, for example: mark\n### Return:\n- Search result data, including:\n    - users: User list\n    - Each user contains:\n        - pk: User ID\n        - username: Username\n        - full_name: Full name\n        - profile_pic_url: Profile picture URL\n        - is_verified: Is verified\n        - follower_count: Follower count\n        - etc...\n\n# [示例/Example]\nquery = \"mark\""
   }

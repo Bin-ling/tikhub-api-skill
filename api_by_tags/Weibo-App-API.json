@@ -1,101 +1,121 @@
 [
   {
     "path": "/api/v1/weibo/app/fetch_user_info",
+    "method": "GET",
     "summary": "获取用户信息/Get user information",
     "description": "# [中文]\n### 用途:\n- 获取微博用户的基本信息，包括昵称、头像、简介、关注数、粉丝数等。\n### 参数:\n- uid: 用户ID（必填）\n### 返回:\n- 用户基本信息数据\n### 注意:\n- 如果用户设置了隐私保护，部分信息可能无法获取\n\n# [English]\n### Purpose:\n- Get basic information of Weibo users, including nickname, avatar, bio, following count, followers count, etc.\n### Parameters:\n- uid: User ID (required)\n### Return:\n- User basic information data\n### Note:\n- Some information may not be available if user has set privacy protection\n\n# [示例/Example]\nuid = \"7648703289\""
   },
   {
     "path": "/api/v1/weibo/app/fetch_user_info_detail",
+    "method": "GET",
     "summary": "获取用户详细信息/Get user detail information",
     "description": "# [中文]\n### 用途:\n- 获取微博用户的详细信息，比基本信息更加完整，包括认证信息、标签、等级等。\n### 参数:\n- uid: 用户ID（必填）\n### 返回:\n- 用户详细信息数据\n### 注意:\n- 如果用户设置了隐私保护，部分信息可能无法获取\n\n# [English]\n### Purpose:\n- Get detailed information of Weibo users, more complete than basic info, including verification info, tags, level, etc.\n### Parameters:\n- uid: User ID (required)\n### Return:\n- User detailed information data\n### Note:\n- Some information may not be available if user has set privacy protection\n\n# [示例/Example]\nuid = \"7648703289\""
   },
   {
     "path": "/api/v1/weibo/app/fetch_user_timeline",
+    "method": "GET",
     "summary": "获取用户发布的微博/Get user timeline",
     "description": "# [中文]\n### 用途:\n- 获取指定用户发布的微博列表，支持分页和多种内容筛选。\n### 参数:\n- uid: 用户ID（必填）\n- page: 页码，从1开始（默认1）\n- filter_type: 筛选类型（默认\"all\"）\n    - all: 全部微博\n    - original: 原创微博\n    - likes: 她/他的赞\n    - video: 视频微博\n    - pic: 图片微博\n    - location: 签到足迹\n    - month: 按时间筛选（需要同时传入month参数）\n- month: 时间筛选参数，格式YYYYMMDD（仅当filter_type=month时使用）\n### 返回:\n- 微博列表数据，包含微博内容、图片、视频等信息\n### 注意:\n- 如果用户设置了隐私保护，可能无法获取微博列表\n- 每页返回数量约为20条微博\n- 使用时间筛选时必须同时指定filter_type=month和month参数\n\n# [English]\n### Purpose:\n- Get the list of posts published by specified user, support pagination and multiple content filters.\n### Parameters:\n- uid: User ID (required)\n- page: Page number, starts from 1 (default 1)\n- filter_type: Filter type (default \"all\")\n    - all: All posts\n    - original: Original posts\n    - likes: Liked posts\n    - video: Video posts\n    - pic: Picture posts\n    - location: Location check-in posts\n    - month: Filter by time (must pass month parameter)\n- month: Time filter parameter, format YYYYMMDD (only used when filter_type=month)\n### Return:\n- Post list data, including post content, images, videos, etc.\n### Note:\n- If user has set privacy protection, post list may not be available\n- About 20 posts per page\n- When using time filter, must specify both filter_type=month and month parameter\n\n# [示例/Example]\nuid = \"7648703289\"\npage = 1\nfilter_type = \"all\"\n# or filter_type = \"video\" for videos only\n# or filter_type = \"month\" with month = \"20251010\" for time filter"
   },
   {
     "path": "/api/v1/weibo/app/fetch_user_videos",
+    "method": "GET",
     "summary": "获取用户视频列表/Get user videos",
     "description": "# [中文]\n### 用途:\n- 获取指定用户发布的视频列表（瀑布流展示）。\n### 参数:\n- uid: 用户ID（必填）\n- since_id: 翻页游标，初次请求不传，后续请求使用返回的since_id值\n### 返回:\n- 视频列表数据，包含视频标题、封面、播放量等信息\n- 包含 moreInfo.params.since_id 字段用于翻页\n### 注意:\n- 只返回包含视频的微博\n- 使用游标翻页（since_id），不使用页码翻页\n\n# [English]\n### Purpose:\n- Get the video list published by specified user (waterfall layout).\n### Parameters:\n- uid: User ID (required)\n- since_id: Pagination cursor, don't pass for first request, use returned since_id for subsequent requests\n### Return:\n- Video list data, including video title, cover, views, etc.\n- Contains moreInfo.params.since_id field for pagination\n### Note:\n- Only returns posts with videos\n- Uses cursor pagination (since_id), not page numbers\n\n# [示例/Example]\n# First page\nuid = \"7648703289\"\nsince_id = None\n\n# Next page (use since_id from previous response)\n# since_id = \"4763250669650541\""
   },
   {
     "path": "/api/v1/weibo/app/fetch_user_super_topics",
+    "method": "GET",
     "summary": "获取用户参与的超话列表/Get user super topics",
     "description": "# [中文]\n### 用途:\n- 获取指定用户参与的超话列表。\n### 参数:\n- uid: 用户ID（必填）\n- page: 页码，从1开始（默认1）\n### 返回:\n- 用户参与的超话列表数据\n### 注意:\n- 如果用户设置了隐私保护，可能无法获取超话列表\n\n# [English]\n### Purpose:\n- Get the super topics list that user participated in.\n### Parameters:\n- uid: User ID (required)\n- page: Page number, starts from 1 (default 1)\n### Return:\n- User's super topics list data\n### Note:\n- If user has set privacy protection, super topics list may not be available\n\n# [示例/Example]\nuid = \"7648703289\"\npage = 1"
   },
   {
     "path": "/api/v1/weibo/app/fetch_user_album",
+    "method": "GET",
     "summary": "获取用户相册/Get user album",
     "description": "# [中文]\n### 用途:\n- 获取指定用户的相册内容。\n### 参数:\n- uid: 用户ID（必填）\n- since_id: 翻页游标，初次请求不传，后续请求使用返回的since_id值\n### 返回:\n- 用户相册数据，包含图片列表等信息\n### 注意:\n- 如果用户设置了隐私保护，可能无法获取相册\n- 使用游标翻页（since_id），不使用页码翻页\n\n# [English]\n### Purpose:\n- Get the album content of specified user.\n### Parameters:\n- uid: User ID (required)\n- since_id: Pagination cursor, don't pass for first request, use returned since_id for subsequent requests\n### Return:\n- User album data, including image list, etc.\n### Note:\n- If user has set privacy protection, album may not be available\n- Uses cursor pagination (since_id), not page numbers\n\n# [示例/Example]\nuid = \"7648703289\"\nsince_id = None  # First page\n# since_id = \"5012154263666753_4990205358511630|1034:4990204960768042_20240328_-1\"  # Next page"
   },
   {
     "path": "/api/v1/weibo/app/fetch_user_articles",
+    "method": "GET",
     "summary": "获取用户文章列表/Get user articles",
     "description": "# [中文]\n### 用途:\n- 获取指定用户发布的文章列表。\n### 参数:\n- uid: 用户ID（必填）\n- since_id: 翻页游标，初次请求不传，后续请求使用返回的since_id值\n### 返回:\n- 用户文章列表数据\n### 注意:\n- 如果用户没有发布过文章，返回空列表\n- 使用游标翻页（since_id），不使用页码翻页\n\n# [English]\n### Purpose:\n- Get the article list published by specified user.\n### Parameters:\n- uid: User ID (required)\n- since_id: Pagination cursor, don't pass for first request, use returned since_id for subsequent requests\n### Return:\n- User article list data\n### Note:\n- If user has not published any articles, returns empty list\n- Uses cursor pagination (since_id), not page numbers\n\n# [示例/Example]\nuid = \"1725941200\"\nsince_id = None  # First page"
   },
   {
     "path": "/api/v1/weibo/app/fetch_user_audios",
+    "method": "GET",
     "summary": "获取用户音频列表/Get user audios",
     "description": "# [中文]\n### 用途:\n- 获取指定用户发布的音频列表。\n### 参数:\n- uid: 用户ID（必填）\n- since_id: 翻页游标，初次请求不传，后续请求使用返回的since_id值\n### 返回:\n- 用户音频列表数据\n### 注意:\n- 如果用户没有发布过音频，返回空列表\n- 使用游标翻页（since_id），不使用页码翻页\n\n# [English]\n### Purpose:\n- Get the audio list published by specified user.\n### Parameters:\n- uid: User ID (required)\n- since_id: Pagination cursor, don't pass for first request, use returned since_id for subsequent requests\n### Return:\n- User audio list data\n### Note:\n- If user has not published any audios, returns empty list\n- Uses cursor pagination (since_id), not page numbers\n\n# [示例/Example]\nuid = \"1725941200\"\nsince_id = None  # First page"
   },
   {
     "path": "/api/v1/weibo/app/fetch_user_profile_feed",
+    "method": "GET",
     "summary": "获取用户主页动态/Get user profile feed",
     "description": "# [中文]\n### 用途:\n- 获取指定用户主页的动态流。\n### 参数:\n- uid: 用户ID（必填）\n- since_id: 翻页游标，初次请求不传，后续请求使用返回的since_id值\n### 返回:\n- 用户主页动态数据\n### 注意:\n- 如果用户设置了隐私保护，可能无法获取动态\n- 使用游标翻页（since_id），不使用页码翻页\n\n# [English]\n### Purpose:\n- Get the profile feed of specified user.\n### Parameters:\n- uid: User ID (required)\n- since_id: Pagination cursor, don't pass for first request, use returned since_id for subsequent requests\n### Return:\n- User profile feed data\n### Note:\n- If user has set privacy protection, feed may not be available\n- Uses cursor pagination (since_id), not page numbers\n\n# [示例/Example]\nuid = \"6580994757\"\nsince_id = None  # First page\n# since_id = \"2|1769360821762|5258923930289595,,,,,,1768788000,,,,,-1,-1\"  # Next page"
   },
   {
     "path": "/api/v1/weibo/app/fetch_status_detail",
+    "method": "GET",
     "summary": "获取微博详情/Get post detail",
     "description": "# [中文]\n### 用途:\n- 获取指定微博的详细信息。\n### 参数:\n- status_id: 微博ID（必填）\n### 返回:\n- 微博详细数据，包含完整文本、图片、视频、点赞数、评论数、转发数等\n### 注意:\n- 如果微博已被删除或设置为私密，可能无法获取\n\n# [English]\n### Purpose:\n- Get detailed information of specified post.\n### Parameters:\n- status_id: Post ID (required)\n### Return:\n- Post detailed data, including full text, images, videos, likes, comments, reposts count, etc.\n### Note:\n- May not be available if post has been deleted or set to private\n\n# [示例/Example]\nstatus_id = \"5016922058656962\""
   },
   {
     "path": "/api/v1/weibo/app/fetch_status_comments",
+    "method": "GET",
     "summary": "获取微博评论/Get post comments",
     "description": "# [中文]\n### 用途:\n- 获取指定微博的一级评论列表（也适用于视频评论）。\n### 参数:\n- status_id: 微博ID或视频ID（必填）\n- max_id: 翻页游标，首次请求不传，后续请求使用返回的max_id值\n- sort_type: 评论排序类型\n    - 0: 按热度排序（默认）\n    - 1: 按时间排序\n### 返回:\n- 评论列表数据，包含评论内容、评论者信息、点赞数等\n- 包含 max_id 字段用于翻页\n### 注意:\n- 每次返回约20条评论\n- 当没有更多评论时，max_id 为空或相同\n\n# [English]\n### Purpose:\n- Get the first-level comment list of specified post (also works for video comments).\n### Parameters:\n- status_id: Post ID or Video ID (required)\n- max_id: Pagination cursor, don't pass for first request, use returned max_id for subsequent requests\n- sort_type: Comment sort type\n    - 0: Sort by popularity (default)\n    - 1: Sort by time\n### Return:\n- Comment list data, including comment content, commenter info, likes count, etc.\n- Contains max_id field for pagination\n### Note:\n- About 20 comments per page\n- When no more comments, max_id is empty or same\n\n# [示例/Example]\nstatus_id = \"5258708168476831\"\nmax_id = None  # First page\nsort_type = \"0\"  # Sort by popularity"
   },
   {
     "path": "/api/v1/weibo/app/fetch_status_reposts",
+    "method": "GET",
     "summary": "获取微博转发列表/Get post reposts",
     "description": "# [中文]\n### 用途:\n- 获取指定微博的转发列表（也适用于视频转发）。\n### 参数:\n- status_id: 微博ID或视频ID（必填）\n- max_id: 翻页游标，首次请求不传，后续请求使用返回的max_id值\n### 返回:\n- 转发列表数据，包含转发内容、转发者信息等\n- 包含 max_id 字段用于翻页\n### 注意:\n- 每次返回约20条转发\n- 当没有更多转发时，max_id 为空或相同\n\n# [English]\n### Purpose:\n- Get the repost list of specified post (also works for video reposts).\n### Parameters:\n- status_id: Post ID or Video ID (required)\n- max_id: Pagination cursor, don't pass for first request, use returned max_id for subsequent requests\n### Return:\n- Repost list data, including repost content, reposter info, etc.\n- Contains max_id field for pagination\n### Note:\n- About 20 reposts per page\n- When no more reposts, max_id is empty or same\n\n# [示例/Example]\nstatus_id = \"5016922058656962\"\nmax_id = None  # First page"
   },
   {
     "path": "/api/v1/weibo/app/fetch_status_likes",
+    "method": "GET",
     "summary": "获取微博点赞列表/Get post likes",
     "description": "# [中文]\n### 用途:\n- 获取指定微博的点赞列表（也适用于视频点赞）。\n### 参数:\n- status_id: 微博ID或视频ID（必填）\n- attitude_type: 点赞类型筛选\n    - 0: 全部（默认）\n    - 1: 点赞\n    - 2: 开心\n    - 3: 惊讶\n    - 4: 伤心\n    - 5: 愤怒\n    - 6: 打赏\n    - 8: 抱抱\n### 返回:\n- 点赞列表数据，包含点赞者信息、点赞类型等\n### 注意:\n- 每次返回约50条点赞记录\n\n# [English]\n### Purpose:\n- Get the like list of specified post (also works for video likes).\n### Parameters:\n- status_id: Post ID or Video ID (required)\n- attitude_type: Like type filter\n    - 0: All (default)\n    - 1: Like\n    - 2: Happy\n    - 3: Surprise\n    - 4: Sad\n    - 5: Angry\n    - 6: Reward\n    - 8: Hug\n### Return:\n- Like list data, including liker info, like type, etc.\n### Note:\n- About 50 likes per page\n\n# [示例/Example]\nstatus_id = \"5016922058656962\"\nattitude_type = \"0\"  # All types"
   },
   {
     "path": "/api/v1/weibo/app/fetch_video_detail",
+    "method": "GET",
     "summary": "获取视频详情/Get video detail",
     "description": "# [中文]\n### 用途:\n- 获取单个视频的详细信息，包括视频播放地址。\n- **重要**: 从微博视频链接（如 https://weibo.com/tv/show/1034:5232127105761312）获取真实视频ID的必需步骤\n### 参数:\n- mid: 视频微博ID或链接中的ID（必填）\n### 返回:\n- 视频详细数据，包含视频播放地址、封面、时长、标题等\n- **items[0].data.idstr**: 真实的视频微博ID，可用于获取评论等操作\n### 注意:\n- 返回的视频地址可能有时效性\n- 支持获取高清视频地址\n- **获取评论前必须先调用此接口**: 链接中的ID不能直接用于获取评论，需要先通过此接口获取 items[0].data.idstr 中的真实ID\n\n# [English]\n### Purpose:\n- Get detailed information of single video, including video play URL.\n- **Important**: Required step to get real video ID from Weibo video link (e.g., https://weibo.com/tv/show/1034:5232127105761312)\n### Parameters:\n- mid: Video post ID or ID from link (required)\n### Return:\n- Video detailed data, including video play URL, cover, duration, title, etc.\n- **items[0].data.idstr**: Real video post ID, can be used for fetching comments\n### Note:\n- Returned video URL may have expiration time\n- Support getting HD video URL\n- **Must call this API before fetching comments**: ID from link cannot be used directly for comments, must get real ID from items[0].data.idstr first\n\n# [示例/Example]\nmid = \"5242977759006596\""
   },
   {
     "path": "/api/v1/weibo/app/fetch_video_featured_feed",
+    "method": "GET",
     "summary": "获取短视频精选Feed流/Get video featured feed",
     "description": "# [中文]\n### 用途:\n- 获取微博短视频精选页的Feed流。\n### 参数:\n- page: 页码，首页不传或传空，第二页传\"2\"，依次递增\n### 返回:\n- 短视频精选Feed流数据，包含视频列表等\n### 注意:\n- 每页返回约20条视频\n\n# [English]\n### Purpose:\n- Get the featured video feed from Weibo video section.\n### Parameters:\n- page: Page number, don't pass for first page, pass \"2\" for second page, and so on\n### Return:\n- Featured video feed data, including video list, etc.\n### Note:\n- About 20 videos per page\n\n# [示例/Example]\npage = None  # First page\n# page = \"2\"  # Second page"
   },
   {
     "path": "/api/v1/weibo/app/fetch_search_all",
+    "method": "GET",
     "summary": "综合搜索/Comprehensive search",
     "description": "# [中文]\n### 用途:\n- 在微博中进行综合搜索，返回相关内容。支持多种搜索类型。\n### 参数:\n- query: 搜索关键词（必填）\n- page: 页码，从1开始（默认1）\n- search_type: 搜索类型\n    - 1: 综合（默认）\n    - 61: 实时\n    - 3: 用户\n    - 64: 视频\n    - 63: 图片\n    - 62: 关注\n    - 60: 热门\n    - 21: 全网\n    - 38: 话题\n    - 98: 超话\n    - 92: 地点\n    - 97: 商品\n### 返回:\n- 搜索结果列表，包含微博内容、作者信息、图片、视频等\n### 注意:\n- 搜索结果按相关度排序\n- 仅使用 page 参数进行翻页\n\n# [English]\n### Purpose:\n- Comprehensive search in Weibo, return related content. Supports multiple search types.\n### Parameters:\n- query: Search keyword (required)\n- page: Page number, starts from 1 (default 1)\n- search_type: Search type\n    - 1: General/All (default)\n    - 61: Realtime\n    - 3: Users\n    - 64: Videos\n    - 63: Images\n    - 62: Following\n    - 60: Hot\n    - 21: Whole network\n    - 38: Topics\n    - 98: Super topics\n    - 92: Places/Locations\n    - 97: Products/Goods\n### Return:\n- Search result list, including post content, author info, images, videos, etc.\n### Note:\n- Search results sorted by relevance\n- Only use page parameter for pagination\n\n# [示例/Example]\nquery = \"NVIDIA\"\npage = 1\nsearch_type = 1  # General search\n# search_type = 3  # Search users\n# search_type = 64  # Search videos"
   },
   {
     "path": "/api/v1/weibo/app/fetch_ai_smart_search",
+    "method": "GET",
     "summary": "AI智搜/AI Smart Search",
     "description": "# [中文]\n### 用途:\n- 使用微博AI智搜功能进行搜索，返回AI增强的搜索结果。\n### 参数:\n- query: 搜索关键词（必填）\n- page: 页码，从1开始（默认1）\n### 返回:\n- AI智搜结果，包含AI增强的搜索内容\n### 注意:\n- 此接口为AI增强搜索，返回结果经过AI处理\n\n# [English]\n### Purpose:\n- Use Weibo AI Smart Search to search, return AI-enhanced search results.\n### Parameters:\n- query: Search keyword (required)\n- page: Page number, starts from 1 (default 1)\n### Return:\n- AI smart search results, including AI-enhanced search content\n### Note:\n- This is AI-enhanced search, results are processed by AI\n\n# [示例/Example]\nquery = \"人工智能\"\npage = 1"
   },
   {
     "path": "/api/v1/weibo/app/fetch_home_recommend_feed",
+    "method": "GET",
     "summary": "获取首页推荐Feed流/Get home recommend feed",
     "description": "# [中文]\n### 用途:\n- 获取微博首页推荐Feed流。\n### 参数:\n- page: 页码，首页不传或传空，第二页传\"2\"，依次递增\n- count: 每页数量，默认15，最大50\n### 返回:\n- 首页推荐Feed流数据\n### 注意:\n- 推荐内容基于热门话题和热点事件\n\n# [English]\n### Purpose:\n- Get the home recommend feed from Weibo.\n### Parameters:\n- page: Page number, don't pass for first page, pass \"2\" for second page, and so on\n- count: Items per page, default 15, max 50\n### Return:\n- Home recommend feed data\n### Note:\n- Recommended content based on hot topics and trending events\n\n# [示例/Example]\npage = None  # First page\ncount = 15"
   },
   {
     "path": "/api/v1/weibo/app/fetch_hot_search",
+    "method": "GET",
     "summary": "获取热搜榜/Get hot search",
     "description": "# [中文]\n### 用途:\n- 获取微博热搜榜，支持多个分类。\n### 参数:\n- category: 热搜分类\n    - mineband: 我的热搜\n    - realtimehot: 实时热搜（默认）\n    - social: 社会热搜\n    - fun: 文娱热搜\n    - technologynav: 科技热搜\n    - lifenav: 生活热搜\n    - region: 同城热搜\n    - sportnav: 体育热搜\n    - gamenav: ACG热搜\n- page: 页码，从1开始（默认1）\n- count: 每页数量，默认20，最大50\n### 返回:\n- 热搜榜数据，包含热搜词条、热度等\n### 注意:\n- 热搜榜实时更新\n\n# [English]\n### Purpose:\n- Get Weibo hot search ranking, supports multiple categories.\n### Parameters:\n- category: Hot search category\n    - mineband: My hot search\n    - realtimehot: Realtime hot search (default)\n    - social: Social hot search\n    - fun: Entertainment hot search\n    - technologynav: Technology hot search\n    - lifenav: Life hot search\n    - region: Local hot search\n    - sportnav: Sports hot search\n    - gamenav: ACG hot search\n- page: Page number, starts from 1 (default 1)\n- count: Items per page, default 20, max 50\n### Return:\n- Hot search ranking data, including search terms, popularity, etc.\n### Note:\n- Hot search ranking updates in real-time\n\n# [示例/Example]\ncategory = \"realtimehot\"\npage = 1\ncount = 20"
   },
   {
     "path": "/api/v1/weibo/app/fetch_hot_search_categories",
+    "method": "GET",
     "summary": "获取热搜分类列表/Get hot search categories",
     "description": "# [中文]\n### 用途:\n- 获取微博热搜榜的所有可用分类列表。\n### 参数:\n- 无\n### 返回:\n- 热搜分类列表数据，包含各分类名称和标识\n### 注意:\n- 返回的分类可用于 fetch_hot_search 接口的 category 参数\n\n# [English]\n### Purpose:\n- Get all available hot search category list from Weibo.\n### Parameters:\n- None\n### Return:\n- Hot search category list data, including category names and identifiers\n### Note:\n- Returned categories can be used for category parameter in fetch_hot_search endpoint\n\n# [示例/Example]\n# No parameters required"
   }

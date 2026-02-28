@@ -1,11 +1,13 @@
 [
   {
     "path": "/api/v1/tikhub/downloader/version",
+    "method": "GET",
     "summary": "检查TikHub下载器的版本更新 / Check for TikHub Downloader version updates",
     "description": "# [中文]\n\n### 用途说明:\n\n- 检查TikHub下载器的版本更新。\n\n### 参数说明:\n\n- 无参数。\n\n### 返回结果:\n\n- `latest_version`: 最新版本号。\n- `update_date`: 更新日期。\n- `download_url`: 下载链接。\n- `upload_note`: 更新说明。\n\n# [English]\n\n### Purpose:\n\n- Check for TikHub Downloader version updates.\n\n### Parameter Description:\n\n- No parameters.\n\n### Return Result:\n\n- `latest_version`: Latest version number.\n- `update_date`: Update date.\n- `download_url`: Download link.\n- `upload_note`: Update note."
   },
   {
     "path": "/api/v1/tikhub/downloader/redirect_download",
+    "method": "GET",
     "summary": "重定向到最新版本的下载链接 / Redirect to the latest version download link",
     "description": "# [中文]\n\n### 用途说明:\n\n- 该接口用于检测客户端操作系统，并重定向到相应的 GitHub Release 直链，方便用户请求后直接开始下载最新版本的文件。\n\n### 参数说明:\n\n- 无参数。\n\n### 返回结果:\n\n- Windows 用户：重定向到 `.exe` 下载地址。\n- Mac 用户：重定向到 `.zip` 下载地址。\n- 其他用户：重定向到 GitHub Release 页面。\n\n# [English]\n\n### Purpose:\n\n- This endpoint detects the client operating system and redirects to the corresponding GitHub Release direct link, allowing users to start downloading the latest version file immediately.\n\n### Parameter Description:\n\n- No parameters.\n\n### Return Result:\n\n- Windows users: Redirect to `.exe` download URL.\n- Mac users: Redirect to `.zip` download URL.\n- Other users: Redirect to the GitHub Release page."
   }

@@ -1,86 +1,103 @@
 [
   {
     "path": "/api/v1/xiaohongshu/web/get_home_recommend",
+    "method": "POST",
     "summary": "获取首页推荐/Get home recommend",
     "description": "# [中文]\n### 用途:\n- 获取首页推荐\n### 参数:\n- feed_type: 推荐类型\n    - 全部: 0\n    - 穿搭: 1\n    - 美食: 2\n    - 彩妆: 3\n    - 影视: 4\n    - 职场: 5\n    - 情感: 6\n    - 家居: 7\n    - 游戏: 8\n    - 旅行: 9\n    - 健身: 10\n- need_filter_image: 是否只看图文笔记，默认为 False\n- cookie: 可选参数，用户自行提供的已登录的网页Cookie获取个性化推荐，如果不提供，则使用游客模式\n- proxy: 可选参数，网络代理，可降低封号概率，格式：http://用户名:密码@IP:端口/Proxy, format: http://username:password@IP:port\n### 返回:\n- 推荐列表\n\n# [English]\n### Purpose:\n- Get home recommend\n### Parameters:\n- feed_type: Feed type\n    - Dress: 1\n    - Food: 2\n    - Makeup: 3\n    - Film: 4\n    - Workplace: 5\n    - Emotion: 6\n    - Home: 7\n    - Game: 8\n    - Travel: 9\n    - Fitness: 10\n- need_filter_image: Whether to view only image notes, default is False\n- cookie: Optional parameter, user-provided logged-in web Cookie to get personalized recommendations, if not provided, use visitor mode\n- proxy: Optional parameter, network proxy, can reduce the probability of account ban, format: http://username:password@IP:port\n### Return:\n- Recommend list\n\n# [示例/Example]\nfeed_type=\"0\"\nneed_filter_image=False"
   },
   {
     "path": "/api/v1/xiaohongshu/web/get_note_info_v2",
+    "method": "GET",
     "summary": "获取笔记信息 V2/Get note info V2",
     "description": "# [中文]\n### 用途:\n- 获取笔记信息 V2\n### 参数:\n- note_id: 笔记ID，可以从小红书的分享链接中获取\n- share_text: 小红书分享链接（支持APP和Web端分享链接）\n- 优先使用`note_id`，如果没有则使用`share_text`，两个参数二选一，如都携带则以`note_id`为准。\n### 返回:\n- 笔记信息\n\n# [English]\n### Purpose:\n- Get note info V2\n### Parameters:\n- note_id: Note ID, can be obtained from the sharing link of Xiaohongshu website.\n- share_text: Xiaohongshu sharing link (support APP and Web sharing link)\n- Prefer to use `note_id`, if not, use `share_text`, one of the two parameters is required, if both are carried, `note_id` shall prevail.\n### Return:\n- Note info\n\n# [示例/Example]\nnote_id=\"665f95200000000006005624\""
   },
   {
     "path": "/api/v1/xiaohongshu/web/get_note_info_v4",
+    "method": "GET",
     "summary": "获取笔记信息 V4/Get note info V4",
     "description": "# [中文]\n### 用途:\n- 获取笔记信息V4\n### 参数:\n- note_id: 笔记ID，可以从小红书的分享链接中获取\n- share_text: 小红书分享链接（支持APP和Web端分享链接）\n- 优先使用`note_id`，如果没有则使用`share_text`，两个参数二选一，如都携带则以`note_id`为准。\n### 返回:\n- 笔记信息\n\n# [English]\n### Purpose:\n- Get note info V4\n### Parameters:\n- note_id: Note ID, can be obtained from the sharing link of Xiaohongshu website.\n- share_text: Xiaohongshu sharing link (support APP and Web sharing link)\n- Prefer to use `note_id`, if not, use `share_text`, one of the two parameters is required, if both are carried, `note_id` shall prevail.\n### Return:\n- Note info\n\n# [示例/Example]\nnote_id=\"665f95200000000006005624\""
   },
   {
     "path": "/api/v1/xiaohongshu/web/get_note_info_v5",
+    "method": "POST",
     "summary": "获取笔记信息 V5 (自带Cookie)/Get note info V5 (Self-provided Cookie)",
     "description": "# [中文]\n### 用途:\n- 获取笔记信息V5，用户自行提供Cookie来获取笔记信息\n- 此接口收费0.001$\n### 参数:\n- note_id: 笔记ID，可以从小红书的分享链接中获取\n- xsec_token: X-Sec-Token，可以从搜索接口中获取，分享链接中也有/X-Sec-Token, can be obtained from the search interface, also in the sharing link\n- cookie: 用户自行提供的已登录的网页Cookie\n- proxy: 代理，格式：http://用户名:密码@IP:端口/Proxy, format: http://username:password@IP:port\n- 最好使用代理，避免被封号或其他未知问题。\n\n### 返回:\n- 笔记信息\n\n# [English]\n### Purpose:\n- Get note info V5, user provides Cookie to get note info\n- This interface charges 0.001$\n### Parameters:\n- note_id: Note ID, can be obtained from the sharing link of Xiaohongshu website.\n- xsec_token: X-Sec-Token, can be obtained from the search interface, also in the sharing link\n- cookie: User provided logged-in web Cookie\n- proxy: Proxy, format: http://username:password@IP:port\n- It is recommended to use a proxy to avoid being banned or other unknown issues.\n### Return:\n- Note info\n\n# [示例/Example]\nnote_id = \"67855d09000000001703d449\"\nxsec_token = \"ABfpRSESmZDRbX-EX7lzEztktMngxPVC9kU-dgQmuQoNo=\"\ncookie = \"Your Cookie\"\nproxy = \"http://username:password@IP:port\""
   },
   {
     "path": "/api/v1/xiaohongshu/web/get_note_info_v7",
+    "method": "GET",
     "summary": "获取笔记信息 V7/Get note info V7",
     "description": "# [中文]\n### 用途:\n- 获取笔记信息V7\n### 参数:\n- note_id: 笔记ID，可以从小红书的分享链接中获取\n- share_text: 小红书分享链接（支持APP和Web端分享链接）\n- 优先使用`note_id`，如果没有则使用`share_text`，两个参数二选一，如都携带则以`note_id`为准。\n### 返回:\n- 笔记信息\n\n# [English]\n### Purpose:\n- Get note info V7\n### Parameters:\n- note_id: Note ID, can be obtained from the sharing link of Xiaohongshu website.\n- share_text: Xiaohongshu sharing link (support APP and Web sharing link)\n- Prefer to use `note_id`, if not, use `share_text`, one of the two parameters is required, if both are carried, `note_id` shall prevail.\n### Return:\n- Note info\n\n# [示例/Example]\nnote_id=\"665f95200000000006005624\""
   },
   {
     "path": "/api/v1/xiaohongshu/web/get_note_comments",
+    "method": "GET",
     "summary": "获取笔记评论 V1/Get note comments V1",
     "description": "# [中文]\n### 用途:\n- 获取笔记评论 V1\n### 参数:\n- note_id: 笔记ID，可以从小红书的分享链接中获取\n- lastCursor: 第一次请求时为空，之后请求时使用上一次请求响应中返回的游标\n### 返回:\n- 笔记评论列表\n\n# [English]\n### Purpose:\n- Get note comments V1\n### Parameters:\n- note_id: Note ID, can be obtained from the sharing link of Xiaohongshu website.\n- lastCursor: Last cursor, empty for the first request, use the cursor returned in the last response for subsequent requests\n### Return:\n- Note comments list\n\n# [示例/Example]\nnote_id=\"6683b283000000001f0052bf\"\nlastCursor=None"
   },
   {
     "path": "/api/v1/xiaohongshu/web/get_note_comment_replies",
+    "method": "GET",
     "summary": "获取笔记评论回复 V1/Get note comment replies V1",
     "description": "# [中文]\n### 用途:\n- 获取笔记评论回复 V1\n### 参数:\n- note_id: 笔记ID，可以从小红书的分享链接中获取\n- comment_id: 评论ID\n- lastCursor: 第一次请求时为空，之后请求时使用上一次请求响应中返回的游标\n### 返回:\n- 笔记评论回复列表\n\n# [English]\n### Purpose:\n- Get note comment replies V1\n### Parameters:\n- note_id: Note ID, can be obtained from the sharing link of Xiaohongshu website.\n- comment_id: Comment ID\n- lastCursor: Last cursor, empty for the first request, use the cursor returned in the last response for subsequent requests\n### Return:\n- Note comment replies list\n\n# [示例/Example]\nnote_id=\"6683b283000000001f0052bf\"\ncomment_id=\"6683ec5b000000000303b91a\"\nlastCursor=None"
   },
   {
     "path": "/api/v1/xiaohongshu/web/get_user_info",
+    "method": "GET",
     "summary": "获取用户信息 V1/Get user info V1",
     "description": "# [中文]\n### 用途:\n- 获取用户信息 V1\n### 参数:\n- user_id: 用户ID，可以从小红书的分享链接中获取\n### 返回:\n- 用户信息\n\n# [English]\n### Purpose:\n- Get user info V1\n### Parameters:\n- user_id: User ID, can be obtained from the sharing link of Xiaohongshu website.\n### Return:\n- User info\n\n# [示例/Example]\nuser_id=\"5f4a10070000000001006fc7\""
   },
   {
     "path": "/api/v1/xiaohongshu/web/get_user_info_v2",
+    "method": "GET",
     "summary": "获取用户信息 V2/Get user info V2",
     "description": "# [中文]\n### 用途:\n- 获取用户信息 V2\n### 参数:\n- user_id: 用户ID，可以从小红书的分享链接中获取\n- share_text: 小红书分享文本或链接（支持APP和Web端分享链接）\n- 优先使用`user_id`，如果没有则使用`share_text`，两个参数二选一，如都携带则以`user_id`为准。\n### 返回:\n- 用户信息\n\n# [English]\n### Purpose:\n- Get user info V2\n### Parameters:\n- user_id: User ID, can be obtained from the sharing link of Xiaohongshu website.\n- share_text: Xiaohongshu sharing text or link (support APP and Web sharing link)\n- Prefer to use `user_id`, if not, use `share_text`, one of the two parameters is required, if both are carried, `user_id` shall prevail.\n### Return:\n- User info\n\n# [示例/Example]\nuser_id = \"5f4a10070000000001006fc7\"\nshare_text = \"@Noo 在小红书收获了15.3万次赞与收藏，查看Ta的主页>> https://xhslink.com/m/7XkrlCXbL38\""
   },
   {
     "path": "/api/v1/xiaohongshu/web/search_notes",
+    "method": "GET",
     "summary": "搜索笔记/Search notes",
     "description": "# [中文]\n### 用途:\n- 搜索笔记\n### 参数:\n- keyword: 搜索关键词\n- page: 页码，默认为1\n- sort: 排序方式\n    - 综合排序（默认参数）: general\n    - 最热排序: popularity_descending\n    - 最新排序: time_descending\n    - 最多评论: comment_descending\n    - 最多收藏: collect_descending\n- noteType: 笔记类型\n    - 综合笔记（默认参数）: _0\n    - 视频笔记: _1\n    - 图文笔记: _2\n    - 直播: _3\n- noteTime: 发布时间\n    - 不限: \"\"\n    - 一天内 :一天内\n    - 一周内 :一周内\n    - 半年内 :半年内\n### 返回:\n- 笔记列表\n\n# [English]\n### Purpose:\n- Search notes\n### Parameters:\n- keyword: Keyword\n- page: Page, default is 1\n- sort: Sort\n    - General sort (default): general\n    - Popularity sort: popularity_descending\n    - Latest sort: time_descending\n    - Most comments: comment_descending\n    - Most favorites: collect_descending\n- noteType: Note type\n    - General note (default): _0\n    - Video note: _1\n    - Image note: _2\n    - Live: _3\n- noteTime: Release time\n    - No limit: \"\"\n    - Within one day: 一天内\n    - Within one week: 一周内\n    - Within half a year: 半年内\n### Return:\n- Note list\n\n# [示例/Example]\nkeyword=\"美食\"\npage=1\nsort=\"general\"\nnoteType=\"_0\""
   },
   {
     "path": "/api/v1/xiaohongshu/web/search_notes_v3",
+    "method": "GET",
     "summary": "搜索笔记 V3/Search notes V3",
     "description": "# [中文]\n### 用途:\n- 搜索笔记 V3\n### 参数:\n- keyword: 搜索关键词\n- page: 页码，默认为1\n- sort: 排序方式\n    - 综合排序（默认参数）: general\n    - 最热排序: popularity_descending\n    - 最新排序: time_descending\n    - 最多评论: comment_descending\n    - 最多收藏: collect_descending\n- noteType: 笔记类型\n    - 综合笔记（默认参数）: _0\n    - 视频笔记: _1\n    - 图文笔记: _2\n    - 直播: _3\n- noteTime: 发布时间\n    - 不限: \"\"\n    - 一天内 :一天内\n    - 一周内 :一周内\n    - 半年内 :半年内\n### 返回:\n- 笔记列表\n\n# [English]\n### Purpose:\n- Search notes V3\n### Parameters:\n- keyword: Keyword\n- page: Page, default is 1\n- sort: Sort\n    - General sort (default): general\n    - Popularity sort: popularity_descending\n    - Latest sort: time_descending\n    - Most comments: comment_descending\n    - Most favorites: collect_descending\n- noteType: Note type\n    - General note (default): _0\n    - Video note: _1\n    - Image note: _2\n    - Live: _3\n- noteTime: Release time\n    - No limit: \"\"\n    - Within one day: 一天内\n    - Within one week: 一周内\n    - Within half a year: 半年内\n### Return:\n- Note list\n\n# [示例/Example]\nkeyword=\"美食\"\npage=1\nsort=\"general\"\nnoteType=\"_0\""
   },
   {
     "path": "/api/v1/xiaohongshu/web/search_users",
+    "method": "GET",
     "summary": "搜索用户/Search users",
     "description": "# [中文]\n### 用途:\n- 搜索用户\n### 参数:\n- keyword: 搜索关键词\n- page: 页码，默认为1\n### 返回:\n- 用户列表\n\n# [English]\n### Purpose:\n- Search users\n### Parameters:\n- keyword: Keyword\n- page: Page, default is 1\n### Return:\n- User list\n\n# [示例/Example]\nkeyword=\"美食\"\npage=1"
   },
   {
     "path": "/api/v1/xiaohongshu/web/get_user_notes_v2",
+    "method": "GET",
     "summary": "获取用户的笔记 V2/Get user notes V2",
     "description": "# [中文]\n### 用途:\n- 获取用户的笔记\n### 参数:\n- user_id: 用户ID，可以从小红书的分享链接中获取\n- lastCursor: 第一次请求时为空，之后请求时使用上一次请求响应中返回的最后一个NoteID\n    - 例如: \"662908190000000001007366\"\n    - JSON Path: $.data.data.notes.[-1].id\n### 返回:\n- 用户的笔记列表\n\n# [English]\n### Purpose:\n- Get user notes\n### Parameters:\n- user_id: User ID, can be obtained from the sharing link of Xiaohongshu website.\n- lastCursor: Last cursor, empty for the first request, use the last NoteID returned in the last response for subsequent requests\n    - Example: \"662908190000000001007366\"\n    - JSON Path: $.data.data.notes.[-1].id\n### Return:\n- User notes list\n\n# [示例/Example]\nuser_id=\"5f4a10070000000001006fc7\"\nlastCursor=None"
   },
   {
     "path": "/api/v1/xiaohongshu/web/get_visitor_cookie",
+    "method": "GET",
     "summary": "获取游客Cookie/Get visitor cookie",
     "description": "# [中文]\n### 用途:\n- 获取小红书网页版的游客Cookie，可以用于爬取小红书的一些数据。\n### 参数:\n- proxy: 代理，例如: http://username:password@host:port\n- 代理格式支持HTTP和SOCKS5，若不需要代理则留空\n### 返回:\n- 游客Cookie\n\n# [English]\n### Purpose:\n- Get Xiaohongshu web visitor cookie, which can be used to crawl some data of Xiaohongshu.\n### Parameters:\n- proxy: Proxy, e.g. http://username:password@host:port\n### Return:\n- Visitor cookie"
   },
   {
     "path": "/api/v1/xiaohongshu/web/sign",
+    "method": "POST",
     "summary": "小红书Web签名/Xiaohongshu Web sign",
     "description": "# [中文]\n### 用途:\n- 小红书Web签名，用于获取小红书的一些数据。\n- 生成 `X-s`, `X-t`, `X-s-common` 等签名参数。\n- 价格：0.001$/次\n### 参数:\n- sign_request: 签名请求模型\n    - path: 请求接口的路径，例如: `/api/sns/web/v1/homefeed`\n    - data: 请求API的荷载数据\n    - cookie: 请求接口的Cookie\n### 返回:\n- 签名参数(X-s, X-t, X-s-common等)\n\n# [English]\n### Purpose:\n- Xiaohongshu Web sign, used to get some data of Xiaohongshu.\n- Generate `X-s`, `X-t`, `X-s-common` and other signature parameters.\n- Price: 0.001$/time\n### Parameters:\n- sign_request: Sign request model\n    - path: Request API path, e.g. `/api/sns/web/v1/homefeed`\n    - data: Payload data of request API\n    - cookie: Request API cookie\n### Return:\n- Signature parameters(X-s, X-t, X-s-common, etc.)\n\n# [示例/Example]\n{\n    \"path\": \"/api/sns/web/v1/homefeed\",\n    \"data\": {\n        \"cursor_score\": \"\",\n        \"num\": 35,\n        \"refresh_type\": 1,\n        \"note_index\": 35,\n        \"unread_begin_note_id\": \"\",\n        \"unread_end_note_id\": \"\",\n        \"unread_note_count\": 0,\n        \"category\": \"homefeed_recommend\",\n        \"search_key\": \"\",\n        \"need_num\": 10,\n        \"image_formats\": [\n            \"jpg\",\n            \"webp\",\n            \"avif\"\n        ],\n        \"need_filter_image\": False\n    },\n    \"cookie\": \"web_session=030037a04eafd37791e6e4bd05204a8cf2af05;acw_tc=0a00d79f17363096679345838efb77751cc087fb039dd1691dc954824410f6;abRequestId=384480ae-5196-5818-a835-42e6278de9f0;webBuild=4.47.1;xsecappid=xhs-pc-web;a1=194441ef694PayUbdUvgp0dSHfIcACsNsLud0Lgru50000354513;webId=6cf10a564b9b07d129729b65e0d1785a;sec_poison_id=32964532-d414-4beb-914f-98811853b75f\"\n}"
   },
   {
     "path": "/api/v1/xiaohongshu/web/get_note_id_and_xsec_token",
+    "method": "GET",
     "summary": "通过分享链接获取小红书的Note ID 和 xsec_token/Get Xiaohongshu Note ID and xsec_token by share link",
     "description": "# [中文]\n### 用途:\n- 通过分享链接获取小红书的Note ID 和 xsec_token\n### 参数:\n- share_text: 小红书分享链接（支持APP和Web端分享链接）\n### 返回:\n- Note ID 和 xsec_token\n\n# [English]\n### Purpose:\n- Get Xiaohongshu Note ID and xsec_token by share link\n### Parameters:\n- share_text: Xiaohongshu sharing link (support APP and Web sharing link)\n### Return:\n- Note ID and xsec_token\n\n# [示例/Example]\nshare_text=\"https://xhslink.com/a/EZ4M9TwMA6c3\""
   },
   {
     "path": "/api/v1/xiaohongshu/web/get_product_info",
+    "method": "GET",
     "summary": "获取小红书商品信息/Get Xiaohongshu product info",
     "description": "# [中文]\n### 用途:\n- 通过分享链接获取小红书的商品信息\n### 参数:\n- share_text: 小红书分享链接（支持APP和Web端分享链接）\n- item_id: 商品ID\n- xsec_token: X-Sec-Token\n- 如果share_text不为空，则item_id和xsec_token会被忽略\n- 如果share_text为空，则item_id和xsec_token不能为空\n### 返回:\n- 商品信息\n\n# [English]\n### Purpose:\n- Get Xiaohongshu product info by share link\n### Parameters:\n- share_text: Xiaohongshu sharing link (support APP and Web sharing link)\n- item_id: Item ID\n- xsec_token: X-Sec-Token\n- If share_text is not empty, item_id and xsec_token will be ignored\n- If share_text is empty, item_id and xsec_token cannot be empty\n### Return:\n- Product info\n\n# [示例/Example]\nitem_id=\"65fc2e6d6b92310001d24efb\"\nxsec_token=\"XBC6LTqeaEDeJETMoXo436Eg-74GxFemVnNHeONYobv7k=\""
   }

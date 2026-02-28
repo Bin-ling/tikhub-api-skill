@@ -1,81 +1,97 @@
 [
   {
     "path": "/api/v1/lemon8/app/fetch_user_profile",
+    "method": "GET",
     "summary": "获取指定用户的信息/Get information of specified user",
     "description": "# [中文]\n### 用途:\n- 获取指定用户的信息\n### 参数:\n- user_id: 用户ID，可以从接口`/lemon8/app/get_user_id`获取\n### 返回:\n- 用户信息\n\n# [English]\n### Purpose:\n- Get information of specified user\n### Parameters:\n- user_id: User ID, can be obtained from the interface `/lemon8/app/get_user_id`\n### Return:\n- User information\n\n# [示例/Example]\nuser_id = \"7217844966059656197\""
   },
   {
     "path": "/api/v1/lemon8/app/fetch_post_detail",
+    "method": "GET",
     "summary": "获取指定作品的信息/Get information of specified post",
     "description": "# [中文]\n### 用途:\n- 获取指定作品的信息\n### 参数:\n- item_id: 作品ID，可以从接口`/lemon8/app/get_item_id`获取\n### 返回:\n- 作品信息\n\n# [English]\n### Purpose:\n- Get information of specified post\n### Parameters:\n- item_id: Post ID, can be obtained from the interface `/lemon8/app/get_item_id`\n### Return:\n- Post information\n\n# [示例/Example]\nitem_id = \"7361926875709129222\""
   },
   {
     "path": "/api/v1/lemon8/app/fetch_user_follower_list",
+    "method": "GET",
     "summary": "获取指定用户的粉丝列表/Get fans list of specified user",
     "description": "# [中文]\n### 用途:\n- 获取指定用户的粉丝列表\n### 参数:\n- user_id: 用户ID，可以从接口`/lemon8/app/get_user_id`获取\n- cursor: 翻页参数，可以从上一次请求的返回结果中获取，第一次请求为空，后续请求使用上一次请求返回的cursor进行翻页。\n### 返回:\n- 粉丝列表\n\n# [English]\n### Purpose:\n- Get fans list of specified user\n### Parameters:\n- user_id: User ID, can be obtained from the interface `/lemon8/app/get_user_id`\n- cursor: Pagination parameter, can be obtained from the return result of the last request. It is empty for the first request, and the cursor returned by the last request is used for subsequent requests.\n### Return:\n- Fans list\n\n# [示例/Example]\nuser_id = \"7428056850216862763\""
   },
   {
     "path": "/api/v1/lemon8/app/fetch_user_following_list",
+    "method": "GET",
     "summary": "获取指定用户的关注列表/Get following list of specified user",
     "description": "# [中文]\n### 用途:\n- 获取指定用户的关注列表\n### 参数:\n- user_id: 用户ID，可以从接口`/lemon8/app/get_user_id`获取\n- cursor: 翻页参数，可以从上一次请求的返回结果中获取，第一次请求为空，后续请求使用上一次请求返回的cursor进行翻页。\n### 返回:\n- 关注列表\n\n# [English]\n### Purpose:\n- Get following list of specified user\n### Parameters:\n- user_id: User ID, can be obtained from the interface `/lemon8/app/get_user_id`\n- cursor: Pagination parameter, can be obtained from the return result of the last request. It is empty for the first request, and the cursor returned by the last request is used for subsequent requests.\n### Return:\n- Following list\n\n# [示例/Example]\nuser_id = \"7428056850216862763\""
   },
   {
     "path": "/api/v1/lemon8/app/fetch_post_comment_list",
+    "method": "GET",
     "summary": "获取指定作品的评论列表/Get comments list of specified post",
     "description": "# [中文]\n### 用途:\n- 获取指定作品的评论列表\n### 参数:\n- group_id: 作品的group_id，可以从接口`/lemon8/app/fetch_post_detail`获取\n- item_id: 作品的item_id，可以从接口`/lemon8/app/fetch_post_detail` 或 `/lemon8/app/get_item_id`获取\n- media_id: 作品的media_id，可以从接口`/lemon8/app/fetch_post_detail`获取\n- offset: 翻页参数，可以从上一次请求的返回结果中获取，第一次请求为空，后续请求使用上一次请求返回的offset进行翻页。\n### 返回:\n- 评论列表\n\n# [English]\n### Purpose:\n- Get comments list of specified post\n### Parameters:\n- group_id: Post's group_id, can be obtained from the interface `/lemon8/app/fetch_post_detail`\n- item_id: Post's item_id, can be obtained from the interface `/lemon8/app/fetch_post_detail` or `/lemon8/app/get_item_id`\n- media_id: Post's media_id, can be obtained from the interface `/lemon8/app/fetch_post_detail`\n- offset: Pagination parameter, can be obtained from the return result of the last request. It is empty for the first request, and the offset returned by the last request is used for subsequent requests.\n### Return:\n- Comments list\n\n# [示例/Example]\ngroup_id = \"7361926875709129222\"\nitem_id = \"7361926875709129222\"\nmedia_id = \"7428056850216862763\""
   },
   {
     "path": "/api/v1/lemon8/app/fetch_discover_banners",
+    "method": "GET",
     "summary": "获取发现页Banner/Get banners of discover page",
     "description": "# [中文]\n### 用途:\n- 获取发现页Banner（搜索页上方的滚动内容）\n### 返回:\n- Banner列表\n\n# [English]\n### Purpose:\n- Get banners of discover page\n### Return:\n- Banners list\n\n# [示例/Example]"
   },
   {
     "path": "/api/v1/lemon8/app/fetch_discover_tab",
+    "method": "GET",
     "summary": "获取发现页主体内容/Get main content of discover page",
     "description": "# [中文]\n### 用途:\n- 获取发现页（搜索页主体内容）\n### 返回:\n- 主体内容\n\n# [English]\n### Purpose:\n- Get main content of discover page\n### Return:\n- Main content\n\n# [示例/Example]"
   },
   {
     "path": "/api/v1/lemon8/app/fetch_discover_tab_information_tabs",
+    "method": "GET",
     "summary": "获取发现页的 Editor's Picks/Get Editor's Picks of discover page",
     "description": "# [中文]\n### 用途:\n- 获取发现页（搜索页下方的推荐内容 - Editor's Picks）\n### 返回:\n- 推荐内容\n\n# [English]\n### Purpose:\n- Get Editor's Picks of discover page\n### Return:\n- Editor's Picks\n\n# [示例/Example]"
   },
   {
     "path": "/api/v1/lemon8/app/fetch_hot_search_keywords",
+    "method": "GET",
     "summary": "获取热搜关键词/Get hot search keywords",
     "description": "# [中文]\n### 用途:\n- 获取热搜关键词\n### 返回:\n- 热搜关键词列表\n\n# [English]\n### Purpose:\n- Get hot search keywords\n### Return:\n- Hot search keywords list\n\n# [示例/Example]"
   },
   {
     "path": "/api/v1/lemon8/app/fetch_topic_info",
+    "method": "GET",
     "summary": "获取话题信息/Get topic information",
     "description": "# [中文]\n### 用途:\n- 获取话题信息\n### 参数:\n- forum_id: 话题ID，可以从下面的接口获取\n    - 获取指定作品的信息：`/lemon8/app/fetch_post_detail`\n    - 获取发现页的 Editor's Picks：`/lemon8/app/fetch_discover_tab_information_tabs`\n    - 通过接口搜索 Hashtag：`/lemon8/app/fetch_search?search_tab=hashtag&keyword=lemon8`\n### 返回:\n- 话题信息\n\n# [English]\n### Purpose:\n- Get topic information\n### Parameters:\n- forum_id: Topic ID, can be obtained from the following interfaces\n    - Get information of specified post: `/lemon8/app/fetch_post_detail`\n    - Get Editor's Picks of discover page: `/lemon8/app/fetch_discover_tab_information_tabs`\n    - Search Hashtag through interface: `/lemon8/app/fetch_search?search_tab=hashtag&keyword=lemon8`\n### Return:\n- Topic information\n\n# [示例/Example]\nforum_id = \"7174447913778593798\""
   },
   {
     "path": "/api/v1/lemon8/app/fetch_topic_post_list",
+    "method": "GET",
     "summary": "获取话题作品列表/Get topic post list",
     "description": "# [中文]\n### 用途:\n- 获取话题作品列表\n### 参数:\n- category: 话题分类 ID，可以从接口`/lemon8/app/fetch_topic_info`获取\n- max_behot_time: 翻页参数，可以从上一次请求的返回结果中获取，第一次请求为空，后续请求使用上一次请求返回的max_behot_time进行翻页。\n- category_parameter: 分类参数ID，可以从接口`/lemon8/app/fetch_topic_info`获取\n- hashtag_name: Hashtag名称，可以从接口`/lemon8/app/fetch_topic_info`获取\n- sort_type: 排序方式，0为默认排序，当前只支持使用默认排序，请不要传入其他值。\n### 返回:\n- 作品列表\n\n# [English]\n### Purpose:\n- Get topic post list\n### Parameters:\n- category: Topic category ID, can be obtained from the interface `/lemon8/app/fetch_topic_info`\n- max_behot_time: Pagination parameter, can be obtained from the return result of the last request. It is empty for the first request, and the max_behot_time returned by the last request is used for subsequent requests.\n- category_parameter: Category parameter ID, can be obtained from the interface `/lemon8/app/fetch_topic_info`\n- hashtag_name: Hashtag name, can be obtained from the interface `/lemon8/app/fetch_topic_info`\n- sort_type: Sort type, 0 for default sort, currently only support default sort, please do not pass other values.\n### Return:\n- Post list\n\n# [示例/Example]\ncategory = \"590\"\nmax_behot_time = \"\"\ncategory_parameter = \"7174447913778593798\"\nhashtag_name = \"lemon8christmas\"\nsort_type = \"0\""
   },
   {
     "path": "/api/v1/lemon8/app/fetch_search",
+    "method": "GET",
     "summary": "搜索接口/Search API",
     "description": "# [中文]\n### 用途:\n- 搜索接口\n### 参数:\n- query: 搜索关键词\n- max_cursor: 翻页参数，可以从上一次请求的返回结果中获取，第一次请求为空，后续请求使用上一次请求返回的`max_cursor`进行翻页，可以通过返回结果的`has_more`字段判断是否还有更多数据。\n- filter_type: 搜索过滤类型，默认为空字符串，可选值如下：\n    - 空字符串：All（全部，默认使用此参数搜索）\n    - video：只搜索视频作品\n    - posts：只搜索文章作品\n- order_by: 搜索排序方式，默认为空字符串，可选值如下：\n    - 空字符串：Relevance（相关度，默认使用此参数排序）\n    - popular：流行度排序\n    - recent：从新到旧排序\n- search_tab: 搜索类型，默认为`main`，可选值如下：\n    - main：APP中显示为 `Top`（综合搜索，默认使用此参数搜索）\n    - user：APP中显示为 `Accounts` （搜索用户账号）\n    - hashtag：APP中显示为 `Hashtags`（搜索话题）\n    - article：APP中显示为 `Posts`（搜索文章）\n### 返回:\n- 搜索结果\n\n# [English]\n### Purpose:\n- Search API\n### Parameters:\n- query: Search keyword\n- max_cursor: Pagination parameter, can be obtained from the return result of the last request. It is empty for the first request, and the `max_cursor` returned by the last request is used for subsequent requests. You can judge whether there is more data by the `has_more` field in the return result.\n- filter_type: Search filter type, default is an empty string, optional values are as follows:\n    - Empty string: All (default using this parameter to search)\n    - video: Search only video\n    - posts: Search only posts\n- order_by: Search sort type, default is an empty string, optional values are as follows:\n    - Empty string: Relevance (default using this parameter to sort)\n    - popular: Sort by popularity\n    - recent: Sort from new to old\n- search_tab: Search type, default is `main`, optional values are as follows:\n    - main: Display as `Top` in the APP (comprehensive search, default using this parameter to search)\n    - user: Display as `Accounts` in the APP (search user accounts)\n    - hashtag: Display as `Hashtags` in the APP (search hashtags)\n    - article: Display as `Posts` in the APP (search articles)\n### Return:\n- Search results\n\n# [示例/Example]\nquery = \"lemon8\"\nmax_cursor = \"\"\nfilter_type = \"\"\norder_by = \"\"\nsearch_tab = \"main\""
   },
   {
     "path": "/api/v1/lemon8/app/get_item_id",
+    "method": "GET",
     "summary": "通过分享链接获取作品ID/Get post ID through sharing link",
     "description": "# [中文]\n### 用途:\n- 通过分享链接获取作品ID\n### 参数:\n- share_text: 分享链接，支持长链接和短链接，可以从网页端以及APP中的分享按钮获取并复制。\n### 返回:\n- 作品ID\n\n# [English]\n### Purpose:\n- Get post ID through sharing link\n### Parameters:\n- share_text: Share link, supports long links and short links, can be obtained and copied from the share button on the web and APP.\n### Return:\n- Post ID\n\n# [示例/Example]\nshare_text = \"https://www.lemon8-app.com/@deathlabs_/7445613324903006766\"\nshare_text = \"https://v.lemon8-app.com/al/OghwFTppx\""
   },
   {
     "path": "/api/v1/lemon8/app/get_user_id",
+    "method": "GET",
     "summary": "通过分享链接获取用户ID/Get user ID through sharing link",
     "description": "# [中文]\n### 用途:\n- 通过分享链接获取用户ID\n### 参数:\n- share_text: 分享链接，支持长链接和短链接，可以从网页端以及APP中的分享按钮获取并复制。\n### 返回:\n- 用户ID\n\n# [English]\n### Purpose:\n- Get user ID through sharing link\n### Parameters:\n- share_text: Share link, supports long links and short links, can be obtained and copied from the share button on the web and APP.\n### Return:\n- User ID\n\n# [示例/Example]\nshare_text = \"https://www.lemon8-app.com/lemon8cars?region=us\"\nshare_text = \"https://v.lemon8-app.com/al/OgZrsUppx\""
   },
   {
     "path": "/api/v1/lemon8/app/get_item_ids",
+    "method": "POST",
     "summary": "通过分享链接批量获取作品ID/Get post IDs in batch through sharing links",
     "description": "# [中文]\n### 用途:\n- 通过分享链接批量获取作品ID，一次最多获取10个\n### 参数:\n- share_texts: 分享链接列表，支持长链接和短链接，可以从网页端以及APP中的分享按钮获取并复制。\n### 返回:\n- 作品ID列表\n\n# [English]\n### Purpose:\n- Get post IDs in batch through sharing links, up to 10 at a time\n### Parameters:\n- share_texts: Share links list, supports long links and short links, can be obtained and copied from the share button on the web and APP.\n### Return:\n- Post IDs list\n\n# [示例/Example]\nshare_texts = [\n    \"https://www.lemon8-app.com/@deathlabs_/7445613324903006766\",\n    \"https://v.lemon8-app.com/al/OghwFTppx\"\n]"
   },
   {
     "path": "/api/v1/lemon8/app/get_user_ids",
+    "method": "POST",
     "summary": "通过分享链接批量获取用户ID/Get user IDs in batch through sharing links",
     "description": "# [中文]\n### 用途:\n- 通过分享链接批量获取用户ID，一次最多获取10个\n### 参数:\n- share_texts: 分享链接列表，支持长链接和短链接，可以从网页端以及APP中的分享按钮获取并复制。\n### 返回:\n- 用户ID列表\n\n# [English]\n### Purpose:\n- Get user IDs in batch through sharing links, up to 10 at a time\n### Parameters:\n- share_texts: Share links list, supports long links and short links, can be obtained and copied from the share button on the web and APP.\n### Return:\n- User IDs list\n\n# [示例/Example]\nshare_texts = [\n    \"https://www.lemon8-app.com/lemon8cars?region=us\",\n    \"https://v.lemon8-app.com/al/OgZrsUppx\"\n]"
   }

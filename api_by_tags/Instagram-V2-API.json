@@ -1,136 +1,163 @@
 [
   {
     "path": "/api/v1/instagram/v2/shortcode_to_media_id",
+    "method": "GET",
     "summary": "Shortcode转Media ID/Convert shortcode to media ID",
     "description": "# [中文]\n### 用途:\n- 将Instagram帖子的Shortcode转换为Media ID\n- Shortcode是帖子URL中的唯一标识，如 instagram.com/p/DRhvwVLAHAG/ 中的 DRhvwVLAHAG\n### 参数:\n- shortcode: 帖子的Shortcode\n### 返回:\n- `status`: 转换状态\n- `shortcode`: 原始Shortcode\n- `media_id`: 转换后的Media ID\n### 价格:\n- 0.002 USD/请求\n\n# [English]\n### Purpose:\n- Convert Instagram post shortcode to media ID\n- Shortcode is the unique identifier in post URL, e.g., DRhvwVLAHAG in instagram.com/p/DRhvwVLAHAG/\n### Parameters:\n- shortcode: Post shortcode\n### Return:\n- `status`: Conversion status\n- `shortcode`: Original shortcode\n- `media_id`: Converted media ID\n### Price:\n- 0.002 USD/request\n\n# [示例/Example]\nshortcode = \"DRhvwVLAHAG\""
   },
   {
     "path": "/api/v1/instagram/v2/media_id_to_shortcode",
+    "method": "GET",
     "summary": "Media ID转Shortcode/Convert media ID to shortcode",
     "description": "# [中文]\n### 用途:\n- 将Instagram帖子的Media ID转换为Shortcode\n- Shortcode可用于构建帖子URL：instagram.com/p/{shortcode}/\n### 参数:\n- media_id: 帖子的Media ID\n### 返回:\n- `status`: 转换状态\n- `media_id`: 原始Media ID\n- `shortcode`: 转换后的Shortcode\n### 价格:\n- 0.002 USD/请求\n\n# [English]\n### Purpose:\n- Convert Instagram post media ID to shortcode\n- Shortcode can be used to construct post URL: instagram.com/p/{shortcode}/\n### Parameters:\n- media_id: Post media ID\n### Return:\n- `status`: Conversion status\n- `media_id`: Original media ID\n- `shortcode`: Converted shortcode\n### Price:\n- 0.002 USD/request\n\n# [示例/Example]\nmedia_id = \"3774507992167247878\""
   },
   {
     "path": "/api/v1/instagram/v2/user_id_to_username",
+    "method": "GET",
     "summary": "用户ID转用户信息/Get user info by user ID",
     "description": "# [中文]\n### 用途:\n- 通过Instagram用户ID获取用户信息\n- 可用于将用户ID转换为用户名及获取完整用户资料\n### 参数:\n- user_id: 用户ID\n### 返回:\n- `pk`/`pk_id`: 用户ID\n- `username`: 用户名\n- `full_name`: 用户全名\n- `is_private`: 是否私密账户\n- `is_verified`: 是否已认证\n- `profile_pic_url`: 头像URL\n- `biography`: 个人简介\n- `follower_count`: 粉丝数\n- `following_count`: 关注数\n- `media_count`: 帖子数\n### 价格:\n- 0.002 USD/请求\n\n# [English]\n### Purpose:\n- Get user info by Instagram user ID\n- Can be used to convert user ID to username and get full profile\n### Parameters:\n- user_id: User ID\n### Return:\n- `pk`/`pk_id`: User ID\n- `username`: Username\n- `full_name`: Full name\n- `is_private`: Whether account is private\n- `is_verified`: Whether account is verified\n- `profile_pic_url`: Profile picture URL\n- `biography`: Bio\n- `follower_count`: Followers count\n- `following_count`: Following count\n- `media_count`: Posts count\n### Price:\n- 0.002 USD/request\n\n# [示例/Example]\nuser_id = \"18527\""
   },
   {
     "path": "/api/v1/instagram/v2/fetch_user_info",
+    "method": "GET",
     "summary": "获取用户信息/Get user info",
     "description": "# [中文]\n### 用途:\n- 获取Instagram用户的详细信息\n- 支持通过用户名或用户ID查询\n### 参数:\n- username: 用户名（与user_id二选一）\n- user_id: 用户ID（与username二选一）\n### 返回:\n- `data`: 用户信息，包含用户名、头像、简介、粉丝数、关注数、帖子数等\n- 此接口会返回用户的关于信息，包括国家，加入时间，是否认证等信息。\n### 价格:\n- 0.002 USD/请求\n\n# [English]\n### Purpose:\n- Get detailed Instagram user information\n- Support query by username or user ID\n### Parameters:\n- username: Username (either username or user_id required)\n- user_id: User ID (either username or user_id required)\n### Return:\n- `data`: User info including username, avatar, bio, followers, following, posts count, etc.\n- This endpoint returns user's about info including country, join date, verification status, etc.\n### Price:\n- 0.002 USD/request\n\n# [示例/Example]\nusername = \"instagram\""
   },
   {
     "path": "/api/v1/instagram/v2/fetch_user_posts",
+    "method": "GET",
     "summary": "获取用户帖子/Get user posts",
     "description": "# [中文]\n### 用途:\n- 获取Instagram用户发布的帖子列表\n- 支持分页获取\n### 参数:\n- username: 用户名（与user_id二选一）\n- user_id: 用户ID（与username二选一）\n- pagination_token: 分页token，从上一次响应获取\n### 返回:\n- `data.items`: 帖子列表\n- `pagination_token`: 下一页token\n### 价格:\n- 0.002 USD/请求\n\n# [English]\n### Purpose:\n- Get list of posts published by Instagram user\n- Support pagination\n### Parameters:\n- username: Username (either username or user_id required)\n- user_id: User ID (either username or user_id required)\n- pagination_token: Pagination token from previous response\n### Return:\n- `data.items`: List of posts\n- `pagination_token`: Next page token\n### Price:\n- 0.002 USD/request\n\n# [示例/Example]\nusername = \"instagram\""
   },
   {
     "path": "/api/v1/instagram/v2/fetch_user_reels",
+    "method": "GET",
     "summary": "获取用户Reels/Get user reels",
     "description": "# [中文]\n### 用途:\n- 获取Instagram用户发布的Reels短视频列表\n- 支持分页获取\n### 参数:\n- username: 用户名（与user_id二选一）\n- user_id: 用户ID（与username二选一）\n- pagination_token: 分页token，从上一次响应获取\n### 返回:\n- `data.items`: Reels列表\n- `pagination_token`: 下一页token\n### 价格:\n- 0.002 USD/请求\n\n# [English]\n### Purpose:\n- Get list of Reels published by Instagram user\n- Support pagination\n### Parameters:\n- username: Username (either username or user_id required)\n- user_id: User ID (either username or user_id required)\n- pagination_token: Pagination token from previous response\n### Return:\n- `data.items`: List of reels\n- `pagination_token`: Next page token\n### Price:\n- 0.002 USD/request\n\n# [示例/Example]\nusername = \"instagram\""
   },
   {
     "path": "/api/v1/instagram/v2/fetch_user_followers",
+    "method": "GET",
     "summary": "获取用户粉丝/Get user followers",
     "description": "# [中文]\n### 用途:\n- 获取Instagram用户的粉丝列表\n- 支持分页获取\n### 参数:\n- username: 用户名（与user_id二选一）\n- user_id: 用户ID（与username二选一）\n- pagination_token: 分页token，从上一次响应获取\n### 返回:\n- `data.items`: 粉丝列表\n- `pagination_token`: 下一页token\n### 价格:\n- 0.002 USD/请求\n\n# [English]\n### Purpose:\n- Get list of followers of Instagram user\n- Support pagination\n### Parameters:\n- username: Username (either username or user_id required)\n- user_id: User ID (either username or user_id required)\n- pagination_token: Pagination token from previous response\n### Return:\n- `data.items`: List of followers\n- `pagination_token`: Next page token\n### Price:\n- 0.002 USD/request\n\n# [示例/Example]\nusername = \"instagram\""
   },
   {
     "path": "/api/v1/instagram/v2/fetch_user_following",
+    "method": "GET",
     "summary": "获取用户关注/Get user following",
     "description": "# [中文]\n### 用途:\n- 获取Instagram用户关注的用户列表\n- 支持分页获取\n### 参数:\n- username: 用户名（与user_id二选一）\n- user_id: 用户ID（与username二选一）\n- pagination_token: 分页token，从上一次响应获取\n### 返回:\n- `data.items`: 关注列表\n- `pagination_token`: 下一页token\n### 价格:\n- 0.002 USD/请求\n\n# [English]\n### Purpose:\n- Get list of users that Instagram user is following\n- Support pagination\n### Parameters:\n- username: Username (either username or user_id required)\n- user_id: User ID (either username or user_id required)\n- pagination_token: Pagination token from previous response\n### Return:\n- `data.items`: List of following\n- `pagination_token`: Next page token\n### Price:\n- 0.002 USD/request\n\n# [示例/Example]\nusername = \"instagram\""
   },
   {
     "path": "/api/v1/instagram/v2/fetch_user_stories",
+    "method": "GET",
     "summary": "获取用户故事/Get user stories",
     "description": "# [中文]\n### 用途:\n- 获取Instagram用户当前发布的故事（Stories）\n- 故事在24小时后过期\n### 参数:\n- username: 用户名（与user_id二选一）\n- user_id: 用户ID（与username二选一）\n### 返回:\n- `data.items`: 故事列表，包含图片/视频URL、发布时间等\n### 价格:\n- 0.002 USD/请求\n\n# [English]\n### Purpose:\n- Get current stories published by Instagram user\n- Stories expire after 24 hours\n### Parameters:\n- username: Username (either username or user_id required)\n- user_id: User ID (either username or user_id required)\n### Return:\n- `data.items`: List of stories with image/video URLs, publish time, etc.\n### Price:\n- 0.002 USD/request\n\n# [示例/Example]\nusername = \"instagram\""
   },
   {
     "path": "/api/v1/instagram/v2/fetch_user_highlights",
+    "method": "GET",
     "summary": "获取用户精选/Get user highlights",
     "description": "# [中文]\n### 用途:\n- 获取Instagram用户的精选故事（Highlights）列表\n- 精选是用户保存的故事合集\n### 参数:\n- username: 用户名（与user_id二选一）\n- user_id: 用户ID（与username二选一）\n### 返回:\n- `data.items`: 精选列表，包含精选ID、标题、封面等\n### 价格:\n- 0.002 USD/请求\n\n# [English]\n### Purpose:\n- Get Instagram user's highlights list\n- Highlights are saved story collections\n### Parameters:\n- username: Username (either username or user_id required)\n- user_id: User ID (either username or user_id required)\n### Return:\n- `data.items`: List of highlights with ID, title, cover, etc.\n### Price:\n- 0.002 USD/request\n\n# [示例/Example]\nusername = \"instagram\""
   },
   {
     "path": "/api/v1/instagram/v2/fetch_highlight_stories",
+    "method": "GET",
     "summary": "获取精选故事详情/Get highlight stories",
     "description": "# [中文]\n### 用途:\n- 获取指定精选（Highlight）中的所有故事\n- 需要先通过fetch_user_highlights获取精选ID\n### 参数:\n- highlight_id: 精选ID（可带或不带\"highlight:\"前缀）\n### 返回:\n- `data.items`: 故事列表，包含图片/视频URL、发布时间等\n### 价格:\n- 0.002 USD/请求\n\n# [English]\n### Purpose:\n- Get all stories in a specific highlight\n- Need to get highlight ID from fetch_user_highlights first\n### Parameters:\n- highlight_id: Highlight ID (with or without \"highlight:\" prefix)\n### Return:\n- `data.items`: List of stories with image/video URLs, publish time, etc.\n### Price:\n- 0.002 USD/request\n\n# [示例/Example]\nhighlight_id = \"17895069621772257\""
   },
   {
     "path": "/api/v1/instagram/v2/fetch_user_tagged_posts",
+    "method": "GET",
     "summary": "获取用户被标记的帖子/Get user tagged posts",
     "description": "# [中文]\n### 用途:\n- 获取其他用户标记了该用户的帖子列表\n- 支持分页获取\n### 参数:\n- username: 用户名（与user_id二选一）\n- user_id: 用户ID（与username二选一）\n- pagination_token: 分页token，从上一次响应获取\n### 返回:\n- `data.items`: 帖子列表\n- `pagination_token`: 下一页token\n### 价格:\n- 0.002 USD/请求\n\n# [English]\n### Purpose:\n- Get posts where the user is tagged by others\n- Support pagination\n### Parameters:\n- username: Username (either username or user_id required)\n- user_id: User ID (either username or user_id required)\n- pagination_token: Pagination token from previous response\n### Return:\n- `data.items`: List of posts\n- `pagination_token`: Next page token\n### Price:\n- 0.002 USD/request\n\n# [示例/Example]\nusername = \"instagram\""
   },
   {
     "path": "/api/v1/instagram/v2/fetch_similar_users",
+    "method": "GET",
     "summary": "获取相似用户/Get similar users",
     "description": "# [中文]\n### 用途:\n- 获取与指定用户相似的用户推荐列表\n- 基于Instagram的推荐算法\n### 参数:\n- username: 用户名（与user_id二选一）\n- user_id: 用户ID（与username二选一）\n### 返回:\n- `data.items`: 相似用户列表\n### 价格:\n- 0.002 USD/请求\n\n# [English]\n### Purpose:\n- Get recommended similar users\n- Based on Instagram's recommendation algorithm\n### Parameters:\n- username: Username (either username or user_id required)\n- user_id: User ID (either username or user_id required)\n### Return:\n- `data.items`: List of similar users\n### Price:\n- 0.002 USD/request\n\n# [示例/Example]\nusername = \"instagram\""
   },
   {
     "path": "/api/v1/instagram/v2/search_users",
+    "method": "GET",
     "summary": "搜索用户/Search users",
     "description": "# [中文]\n### 用途:\n- 根据关键词搜索Instagram用户\n### 参数:\n- keyword: 搜索关键词\n### 返回:\n- `data.items`: 用户列表\n### 价格:\n- 0.002 USD/请求\n\n# [English]\n### Purpose:\n- Search Instagram users by keyword\n### Parameters:\n- keyword: Search keyword\n### Return:\n- `data.items`: List of users\n### Price:\n- 0.002 USD/request\n\n# [示例/Example]\nkeyword = \"instagram\""
   },
   {
     "path": "/api/v1/instagram/v2/general_search",
+    "method": "GET",
     "summary": "综合搜索/General search",
     "description": "# [中文]\n### 用途:\n- 根据关键词进行Instagram综合搜索\n- 支持分页获取\n### 参数:\n- keyword: 搜索关键词\n- pagination_token: 分页token，从上一次响应获取\n### 返回:\n- `data.items`: 综合搜索结果列表，包含用户、帖子、Reels等\n- `pagination_token`: 下一页token\n### 价格:\n- 0.002 USD/请求\n\n# [English]\n### Purpose:\n- Perform general search on Instagram by keyword\n- Support pagination\n### Parameters:\n- keyword: Search keyword\n- pagination_token: Pagination token from previous response\n### Return:\n- `data.items`: List of general search results including users, posts, reels, etc.\n- `pagination_token`: Next page token\n### Price:\n- 0.002 USD/request\n\n# [示例/Example]\nkeyword = \"cat\""
   },
   {
     "path": "/api/v1/instagram/v2/search_reels",
+    "method": "GET",
     "summary": "搜索Reels/Search reels",
     "description": "# [中文]\n### 用途:\n- 根据关键词搜索Instagram Reels短视频\n- 支持分页获取\n### 参数:\n- keyword: 搜索关键词\n- pagination_token: 分页token，从上一次响应获取\n### 返回:\n- `data.items`: Reels列表\n- `pagination_token`: 下一页token\n### 价格:\n- 0.002 USD/请求\n\n# [English]\n### Purpose:\n- Search Instagram Reels by keyword\n- Support pagination\n### Parameters:\n- keyword: Search keyword\n- pagination_token: Pagination token from previous response\n### Return:\n- `data.items`: List of reels\n- `pagination_token`: Next page token\n### Price:\n- 0.002 USD/request\n\n# [示例/Example]\nkeyword = \"cat\""
   },
   {
     "path": "/api/v1/instagram/v2/search_music",
+    "method": "GET",
     "summary": "搜索音乐/Search music",
     "description": "# [中文]\n### 用途:\n- 根据关键词搜索Instagram上可用的音乐\n### 参数:\n- keyword: 搜索关键词\n### 返回:\n- `data.items`: 音乐列表，包含标题、艺术家、时长、音频ID等\n### 价格:\n- 0.002 USD/请求\n\n# [English]\n### Purpose:\n- Search available music on Instagram by keyword\n### Parameters:\n- keyword: Search keyword\n### Return:\n- `data.items`: List of music with title, artist, duration, audio ID, etc.\n### Price:\n- 0.002 USD/request\n\n# [示例/Example]\nkeyword = \"happy\""
   },
   {
     "path": "/api/v1/instagram/v2/search_hashtags",
+    "method": "GET",
     "summary": "搜索话题标签/Search hashtags",
     "description": "# [中文]\n### 用途:\n- 根据关键词搜索Instagram话题标签\n### 参数:\n- keyword: 搜索关键词\n### 返回:\n- `data.items`: 话题标签列表，包含名称、帖子数量等\n### 价格:\n- 0.002 USD/请求\n\n# [English]\n### Purpose:\n- Search Instagram hashtags by keyword\n### Parameters:\n- keyword: Search keyword\n### Return:\n- `data.items`: List of hashtags with name, post count, etc.\n### Price:\n- 0.002 USD/request\n\n# [示例/Example]\nkeyword = \"cat\""
   },
   {
     "path": "/api/v1/instagram/v2/search_locations",
+    "method": "GET",
     "summary": "搜索地点/Search locations",
     "description": "# [中文]\n### 用途:\n- 根据关键词搜索Instagram地点\n### 参数:\n- keyword: 搜索关键词（地点名称、城市等）\n### 返回:\n- `data.items`: 地点列表，包含名称、地址、坐标等\n### 价格:\n- 0.002 USD/请求\n\n# [English]\n### Purpose:\n- Search Instagram locations by keyword\n### Parameters:\n- keyword: Search keyword (location name, city, etc.)\n### Return:\n- `data.items`: List of locations with name, address, coordinates, etc.\n### Price:\n- 0.002 USD/request\n\n# [示例/Example]\nkeyword = \"paris\""
   },
   {
     "path": "/api/v1/instagram/v2/search_by_coordinates",
+    "method": "GET",
     "summary": "根据坐标搜索地点/Search locations by coordinates",
     "description": "# [中文]\n### 用途:\n- 根据GPS坐标搜索附近的Instagram地点\n### 参数:\n- latitude: 纬度\n- longitude: 经度\n### 返回:\n- `data.items`: 附近地点列表，包含名称、地址、分类等\n### 价格:\n- 0.002 USD/请求\n\n# [English]\n### Purpose:\n- Search nearby Instagram locations by GPS coordinates\n### Parameters:\n- latitude: Latitude\n- longitude: Longitude\n### Return:\n- `data.items`: List of nearby locations with name, address, category, etc.\n### Price:\n- 0.002 USD/request\n\n# [示例/Example]\nlatitude = 40.7\nlongitude = -74"
   },
   {
     "path": "/api/v1/instagram/v2/fetch_post_info",
+    "method": "GET",
     "summary": "获取帖子详情/Get post info",
     "description": "# [中文]\n### 用途:\n- 获取Instagram帖子的详细信息\n- 支持Shortcode或完整URL\n### 参数:\n- code_or_url: 帖子Shortcode或完整URL\n### 返回:\n- `data`: 帖子详情，包含媒体资源、描述、点赞数、评论数等\n### 价格:\n- 0.002 USD/请求\n\n# [English]\n### Purpose:\n- Get detailed information of Instagram post\n- Support shortcode or full URL\n### Parameters:\n- code_or_url: Post shortcode or full URL\n### Return:\n- `data`: Post details including media, caption, likes, comments, etc.\n### Price:\n- 0.002 USD/request\n\n# [示例/Example]\ncode_or_url = \"DRhvwVLAHAG\""
   },
   {
     "path": "/api/v1/instagram/v2/fetch_post_likes",
+    "method": "GET",
     "summary": "获取帖子点赞列表/Get post likes",
     "description": "# [中文]\n### 用途:\n- 获取帖子的点赞用户列表\n- 支持分页获取\n### 参数:\n- code_or_url: 帖子Shortcode或完整URL\n- end_cursor: 分页游标，从上一次响应获取\n### 返回:\n- `data.items`: 点赞用户列表\n- `end_cursor`: 下一页游标\n### 价格:\n- 0.002 USD/请求\n\n# [English]\n### Purpose:\n- Get list of users who liked the post\n- Support pagination\n### Parameters:\n- code_or_url: Post shortcode or full URL\n- end_cursor: Pagination cursor from previous response\n### Return:\n- `data.items`: List of users who liked\n- `end_cursor`: Next page cursor\n### Price:\n- 0.002 USD/request\n\n# [示例/Example]\ncode_or_url = \"DRhvwVLAHAG\""
   },
   {
     "path": "/api/v1/instagram/v2/fetch_post_comments",
+    "method": "GET",
     "summary": "获取帖子评论/Get post comments",
     "description": "# [中文]\n### 用途:\n- 获取帖子的评论列表\n- 支持按最新或热门排序\n- 支持分页获取\n### 参数:\n- code_or_url: 帖子Shortcode或完整URL\n- sort_by: 排序方式，\"recent\"（最新）或\"popular\"（热门），默认recent\n- pagination_token: 分页token，从上一次响应获取\n### 返回:\n- `data.items`: 评论列表\n- `pagination_token`: 下一页token\n### 价格:\n- 0.002 USD/请求\n\n# [English]\n### Purpose:\n- Get list of comments on the post\n- Support sorting by recent or popular\n- Support pagination\n### Parameters:\n- code_or_url: Post shortcode or full URL\n- sort_by: Sort by \"recent\" or \"popular\", default recent\n- pagination_token: Pagination token from previous response\n### Return:\n- `data.items`: List of comments\n- `pagination_token`: Next page token\n### Price:\n- 0.002 USD/request\n\n# [示例/Example]\ncode_or_url = \"DRhvwVLAHAG\""
   },
   {
     "path": "/api/v1/instagram/v2/fetch_comment_replies",
+    "method": "GET",
     "summary": "获取评论回复/Get comment replies",
     "description": "# [中文]\n### 用途:\n- 获取评论的回复列表\n- 需要先通过fetch_post_comments获取评论ID\n- 支持分页获取\n### 参数:\n- code_or_url: 帖子Shortcode或完整URL\n- comment_id: 评论ID\n- pagination_token: 分页token，从上一次响应获取\n### 返回:\n- `data.items`: 回复列表\n- `pagination_token`: 下一页token\n### 价格:\n- 0.002 USD/请求\n\n# [English]\n### Purpose:\n- Get list of replies to a comment\n- Need to get comment ID from fetch_post_comments first\n- Support pagination\n### Parameters:\n- code_or_url: Post shortcode or full URL\n- comment_id: Comment ID\n- pagination_token: Pagination token from previous response\n### Return:\n- `data.items`: List of replies\n- `pagination_token`: Next page token\n### Price:\n- 0.002 USD/request\n\n# [示例/Example]\ncode_or_url = \"DRhvwVLAHAG\"\ncomment_id = \"18067775592012345\""
   },
   {
     "path": "/api/v1/instagram/v2/fetch_music_posts",
+    "method": "GET",
     "summary": "获取音乐帖子/Get music posts",
     "description": "# [中文]\n### 用途:\n- 获取使用指定音乐的帖子列表\n- 音频ID可从帖子详情中获取\n- 支持分页获取\n### 参数:\n- audio_canonical_id: 音频ID\n- pagination_token: 分页token，从上一次响应获取\n### 返回:\n- `data.items`: 帖子列表\n- `pagination_token`: 下一页token\n### 价格:\n- 0.002 USD/请求\n\n# [English]\n### Purpose:\n- Get posts using specified music\n- Audio ID can be obtained from post details\n- Support pagination\n### Parameters:\n- audio_canonical_id: Audio ID\n- pagination_token: Pagination token from previous response\n### Return:\n- `data.items`: List of posts\n- `pagination_token`: Next page token\n### Price:\n- 0.002 USD/request\n\n# [示例/Example]\naudio_canonical_id = \"564058920086577\""
   },
   {
     "path": "/api/v1/instagram/v2/fetch_location_posts",
+    "method": "GET",
     "summary": "获取地点帖子/Get location posts",
     "description": "# [中文]\n### 用途:\n- 获取指定地点的帖子列表\n- 地点ID可通过search_locations获取\n- 支持分页获取\n### 参数:\n- location_id: 地点ID\n- pagination_token: 分页token，从上一次响应获取\n### 返回:\n- `data.items`: 帖子列表\n- `pagination_token`: 下一页token\n### 价格:\n- 0.002 USD/请求\n\n# [English]\n### Purpose:\n- Get posts at specified location\n- Location ID can be obtained from search_locations\n- Support pagination\n### Parameters:\n- location_id: Location ID\n- pagination_token: Pagination token from previous response\n### Return:\n- `data.items`: List of posts\n- `pagination_token`: Next page token\n### Price:\n- 0.002 USD/request\n\n# [示例/Example]\nlocation_id = \"331004901\""
   },
   {
     "path": "/api/v1/instagram/v2/fetch_hashtag_posts",
+    "method": "GET",
     "summary": "获取话题帖子/Get hashtag posts",
     "description": "# [中文]\n### 用途:\n- 获取指定话题标签下的帖子列表\n- 支持按热门、最新或仅Reels筛选\n- 支持分页获取\n### 参数:\n- keyword: 话题关键词（不含#号）\n- feed_type: 帖子类型，\"top\"（热门）、\"recent\"（最新）或\"reels\"（仅Reels），默认top\n- pagination_token: 分页token，从上一次响应获取\n### 返回:\n- `data.items`: 帖子列表\n- `pagination_token`: 下一页token\n### 价格:\n- 0.002 USD/请求\n\n# [English]\n### Purpose:\n- Get posts under specified hashtag\n- Support filtering by top, recent, or reels only\n- Support pagination\n### Parameters:\n- keyword: Hashtag keyword (without #)\n- feed_type: Feed type \"top\", \"recent\", or \"reels\", default top\n- pagination_token: Pagination token from previous response\n### Return:\n- `data.items`: List of posts\n- `pagination_token`: Next page token\n### Price:\n- 0.002 USD/request\n\n# [示例/Example]\nkeyword = \"cat\"\nfeed_type = \"top\""
   }

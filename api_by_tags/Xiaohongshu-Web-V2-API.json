@@ -1,91 +1,109 @@
 [
   {
     "path": "/api/v1/xiaohongshu/web_v2/fetch_feed_notes",
+    "method": "GET",
     "summary": "获取单一笔记和推荐笔记 V1 (已弃用)/Fetch one note and feed notes V1 (deprecated)",
     "description": "# [中文]\n### 用途:\n- 获取单一笔记和推荐笔记\n### 参数:\n- note_id: 笔记ID，可以从小红书的分享链接中获取\n### 返回:\n- 单一笔记和推荐笔记\n\n# [English]\n### Purpose:\n- Get one note and feed notes\n### Parameters:\n- note_id: Note ID, can be obtained from the sharing link of Xiaohongshu website.\n### Return:\n- One note and feed notes\n\n# [示例/Example]\nnote_id = \"66c9cc31000000001f03a4bc\""
   },
   {
     "path": "/api/v1/xiaohongshu/web_v2/fetch_feed_notes_v2",
+    "method": "GET",
     "summary": "获取单一笔记和推荐笔记 V2/Fetch one note and feed notes V2(v2稳定, 推荐使用此接口)",
     "description": "# [中文]\n### 用途:\n- 获取单一笔记和推荐笔记\n### 参数:\n- note_id: 笔记ID，可以从小红书的分享链接中获取\n### 返回:\n- 单一笔记和推荐笔记\n\n# [English]\n### Purpose:\n- Get one note and feed notes\n### Parameters:\n- note_id: Note ID, can be obtained from the sharing link of Xiaohongshu website.\n### Return:\n- One note and feed notes\n\n# [示例/Example]\nnote_id = \"66c9cc31000000001f03a4bc\""
   },
   {
     "path": "/api/v1/xiaohongshu/web_v2/fetch_feed_notes_v3",
+    "method": "GET",
     "summary": "获取单一笔记和推荐笔记 V3/Fetch one note and feed notes V3(通过短链获取笔记详情)",
     "description": "# [中文]\n### 用途:\n- 获取单一笔记和推荐笔记\n### 参数:\n- short_url: 短链，可以从小红书的分享链接中获取\n### 返回:\n- 单一笔记和推荐笔记\n\n# [English]\n### Purpose:\n- Get one note and feed notes\n### Parameters:\n- short_url: Short URL, can be obtained from the sharing link of Xiaohongshu website.\n### Return:\n- One note and feed notes\n\n# [示例/Example]\nshort_url = \"http://xhslink.com/a/tyoREa3ciaAeb\""
   },
   {
     "path": "/api/v1/xiaohongshu/web_v2/fetch_feed_notes_v4",
+    "method": "GET",
     "summary": "获取单一笔记和推荐笔记 V4 (互动量有延迟)/Fetch one note and feed notes V4 (interaction volume has a delay)",
     "description": "# [中文]\n### 用途:\n- 获取单一笔记和推荐笔记，结构不同互动量有延时\n### 参数:\n- note_id: 笔记ID，可以从小红书的分享链接中获取\n### 返回:\n- 单一笔记和推荐笔记\n\n# [English]\n### Purpose:\n- Get one note and feed notes, the structure is different and the interaction volume has a delay\n### Parameters:\n- note_id: Note ID, can be obtained from the sharing link of Xiaohongshu website.\n### Return:\n- One note and feed notes\n\n# [示例/Example]\nnote_id = \"66c9cc31000000001f03a4bc\""
   },
   {
     "path": "/api/v1/xiaohongshu/web_v2/fetch_feed_notes_v5",
+    "method": "GET",
     "summary": "获取单一笔记和推荐笔记 V5 (互动量有缺失)/Fetch one note and feed notes V5 (interaction volume has a missing)",
     "description": "# [中文]\n### 用途:\n- 获取单一笔记和推荐笔记，结构不同互动量有缺失\n### 参数:\n- note_id: 笔记ID，可以从小红书的分享链接中获取\n### 返回:\n- 单一笔记和推荐笔记\n### 备注:\n- 互动数据仅有点赞数，没有评论数与收藏数\n\n# [English]\n### Purpose:\n- Get one note and feed notes, the structure is different and the interaction volume has a missing\n### Parameters:\n- note_id: Note ID, can be obtained from the sharing link of Xiaohongshu website.\n### Return:\n- One note and feed notes\n### Notes:\n- Interaction data only includes likes, without comments and favorites.\n\n# [示例/Example]\nnote_id = \"66c9cc31000000001f03a4bc\""
   },
   {
     "path": "/api/v1/xiaohongshu/web_v2/fetch_note_image",
+    "method": "GET",
     "summary": "获取小红书笔记图片/Fetch Xiaohongshu note image",
     "description": "# [中文]\n### 用途:\n- 获取小红书笔记图片\n### 参数:\n- note_id: 笔记ID，可以从小红书的分享链接中获取\n### 返回:\n- 小红书笔记图片\n\n# [English]\n### Purpose:\n- Get Xiaohongshu note image\n### Parameters:\n- note_id: Note ID, can be obtained from the sharing link of Xiaohongshu website.\n### Return:\n- Xiaohongshu note image\n\n# [示例/Example]\nnote_id = \"66c9cc31000000001f03a4bc\""
   },
   {
     "path": "/api/v1/xiaohongshu/web_v2/fetch_search_notes",
+    "method": "GET",
     "summary": "获取搜索笔记/Fetch search notes",
     "description": "# [中文]\n### 用途:\n- 获取搜索笔记\n### 参数:\n- keywords：搜索关键词\n- sort_type：排序方式\n    - general：综合\n    - time_descending：最新\n    - popularity_descending：最热\n- note_type: 笔记类型\n    - 0：全部\n    - 1：视频\n    - 2：图文\n### 返回:\n- 搜索笔记\n\n# [English]\n### Purpose:\n- Get search notes\n### Parameters:\n- keywords: Search keywords\n- sort_type: Sort type\n    - general: General\n    - time_descending: Latest\n    - popularity_descending: Popular\n- note_type: Note type\n    - 0: All\n    - 1: Video\n    - 2: Note\n### Return:\n- Search notes\n\n# [示例/Example]\nkeywords = \"口红\"\npage = 1\nsort_type = \"general\"\nnote_type = \"1\""
   },
   {
     "path": "/api/v1/xiaohongshu/web_v2/fetch_search_users",
+    "method": "GET",
     "summary": "获取搜索用户/Fetch search users",
     "description": "# [中文]\n### 用途:\n- 获取搜索用户\n### 参数:\n- keywords：搜索关键词\n- page：页码\n### 返回:\n- 搜索用户\n\n# [English]\n### Purpose:\n- Get search users\n### Parameters:\n- keywords: Search keywords\n- page: Page number\n### Return:\n- Search users\n\n# [示例/Example]\nkeywords = \"口红\"\npage = 1"
   },
   {
     "path": "/api/v1/xiaohongshu/web_v2/fetch_home_notes",
+    "method": "GET",
     "summary": "获取Web用户主页笔记/Fetch web user profile notes",
     "description": "# [中文]\n### 用途:\n- 获取主页笔记\n### 参数:\n- user_id: 用户ID\n- cursor: 游标\n### 返回:\n- 主页笔记\n\n# [English]\n### Purpose:\n- Get home notes\n### Parameters:\n- user_id: User ID\n- cursor: Cursor\n### Return:\n- Home notes\n\n# [示例/Example]\nuser_id = \"5f3e0d00000000001f03a4bc\"\ncursor = \"\""
   },
   {
     "path": "/api/v1/xiaohongshu/web_v2/fetch_home_notes_app",
+    "method": "GET",
     "summary": "获取App用户主页笔记/Fetch App user home notes",
     "description": "# [中文]\n### 用途:\n- 获取App主页笔记\n### 参数:\n- user_id: 用户ID\n- cursor: 游标\n### 返回:\n- 主页笔记\n\n# [English]\n### Purpose:\n- Get home notes\n### Parameters:\n- user_id: User ID\n- cursor: Cursor\n### Return:\n- Home notes\n\n# [示例/Example]\nuser_id = \"5f3e0d00000000001f03a4bc\""
   },
   {
     "path": "/api/v1/xiaohongshu/web_v2/fetch_note_comments",
+    "method": "GET",
     "summary": "获取笔记评论/Fetch note comments",
     "description": "# [中文]\n### 用途:\n- 获取笔记评论\n### 参数:\n- note_id: 笔记ID\n- cursor: 游标\n### 返回:\n- 笔记评论\n\n# [English]\n### Purpose:\n- Get note comments\n### Parameters:\n- note_id: Note ID\n- cursor: Cursor\n### Return:\n- Note comments\n\n# [示例/Example]\nnote_id = \"651ccaa9000000001f03d7f7\"\ncursor = \"\""
   },
   {
     "path": "/api/v1/xiaohongshu/web_v2/fetch_sub_comments",
+    "method": "GET",
     "summary": "获取子评论/Fetch sub comments",
     "description": "# [中文]\n### 用途:\n- 获取子评论\n### 参数:\n- note_id: 笔记ID\n- comment_id: 评论ID\n- cursor: 游标\n### 返回:\n- 子评论\n\n# [English]\n### Purpose:\n- Get sub comments\n### Parameters:\n- note_id: Note ID\n- comment_id: Comment ID\n- cursor: Cursor\n### Return:\n- Sub comments\n\n# [示例/Example]\nnote_id = \"673c894c0000000007033f92\"\ncomment_id = \"673ecdfc000000001503bf8b\"\ncursor = \"\""
   },
   {
     "path": "/api/v1/xiaohongshu/web_v2/fetch_user_info",
+    "method": "GET",
     "summary": "获取用户信息/Fetch user info",
     "description": "# [中文]\n### 用途:\n- 获取用户信息\n### 参数:\n- user_id: 用户ID\n### 返回:\n- 用户信息\n\n# [English]\n### Purpose:\n- Get user info\n### Parameters:\n- user_id: User ID\n### Return:\n- User info\n\n# [示例/Example]\nuser_id = \"5e3a8ee700000000010070c6\""
   },
   {
     "path": "/api/v1/xiaohongshu/web_v2/fetch_user_info_app",
+    "method": "GET",
     "summary": "获取App用户信息/Fetch App user info",
     "description": "# [中文]\n### 用途:\n- 获取用户信息\n### 参数:\n- user_id: 用户ID\n### 返回:\n- 用户信息\n\n# [English]\n### Purpose:\n- Get user info\n### Parameters:\n- user_id: User ID\n### Return:\n- User info\n\n# [示例/Example]\nuser_id = \"5e3a8ee700000000010070c6\""
   },
   {
     "path": "/api/v1/xiaohongshu/web_v2/fetch_follower_list",
+    "method": "GET",
     "summary": "获取用户粉丝列表/Fetch follower list",
     "description": "# [中文]\n### 用途:\n- 获取用户粉丝列表\n### 参数:\n- user_id: 用户ID\n- cursor: 游标\n### 返回:\n- 用户粉丝列表\n\n# [English]\n### Purpose:\n- Get follower list\n### Parameters:\n- user_id: User ID\n- cursor: Cursor\n### Return:\n- Follower list\n\n# [示例/Example]\nuser_id = \"604a28420000000001005211\"\ncursor = \"\""
   },
   {
     "path": "/api/v1/xiaohongshu/web_v2/fetch_following_list",
+    "method": "GET",
     "summary": "获取用户关注列表/Fetch following list",
     "description": "# [中文]\n### 用途:\n- 获取用户关注列表\n### 参数:\n- user_id: 用户ID\n- cursor: 游标\n### 返回:\n- 用户关注列表\n\n# [English]\n### Purpose:\n- Get following list\n### Parameters:\n- user_id: User ID\n- cursor: Cursor\n### Return:\n- Following list\n\n# [示例/Example]\nuser_id = \"604a28420000000001005211\"\ncursor = \"\""
   },
   {
     "path": "/api/v1/xiaohongshu/web_v2/fetch_product_list",
+    "method": "GET",
     "summary": "获取小红书商品列表/Fetch Xiaohongshu product list",
     "description": "# [中文]\n### 用途:\n- 获取小红书商品列表\n### 参数:\n- user_id: 用户ID\n- page: 页码\n### 返回:\n- 小红书商品列表\n\n# [English]\n### Purpose:\n- Get Xiaohongshu product list\n### Parameters:\n- user_id: User ID\n- page: Page number\n### Return:\n- Xiaohongshu product list\n\n# [示例/Example]\nuser_id = \"627e35aa00000000210275ae\"\npage = \"1\""
   },
   {
     "path": "/api/v1/xiaohongshu/web_v2/fetch_hot_list",
+    "method": "GET",
     "summary": "获取小红书热榜/Fetch Xiaohongshu hot list",
     "description": "# [中文]\n### 用途:\n- 获取小红书热榜\n### 返回:\n- 小红书热榜\n\n# [English]\n### Purpose:\n- Get Xiaohongshu hot list\n### Return:\n- Xiaohongshu hot list\n\n# [示例/Example]"
   }

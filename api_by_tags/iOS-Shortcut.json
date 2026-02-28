@@ -1,6 +1,7 @@
 [
   {
     "path": "/api/v1/ios_shortcut/shortcut",
+    "method": "GET",
     "summary": "用于iOS快捷指令的版本更新信息/Version update information for iOS shortcuts",
     "description": ""
   }

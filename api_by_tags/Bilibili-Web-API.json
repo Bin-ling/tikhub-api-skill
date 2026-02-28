@@ -1,136 +1,163 @@
 [
   {
     "path": "/api/v1/bilibili/web/fetch_one_video",
+    "method": "GET",
     "summary": "获取单个视频详情信息/Get single video data",
     "description": "# [中文]\n### 用途:\n- 获取单个视频详情信息\n### 参数:\n- bv_id: 作品id\n### 返回:\n- 视频详情信息\n\n# [English]\n### Purpose:\n- Get single video data\n### Parameters:\n- bv_id: Video id\n### Return:\n- Video data\n\n# [示例/Example]\nbv_id = \"BV1M1421t7hT\""
   },
   {
     "path": "/api/v1/bilibili/web/fetch_one_video_v2",
+    "method": "GET",
     "summary": "获取单个视频详情信息V2/Get single video data V2",
     "description": "# [中文]\n### 用途:\n- 获取单个视频详情信息V2\n### 参数:\n- a_id: 作品id\n- c_id: 作品cid\n### 返回:\n- 视频详情信息V2\n\n# [English]\n### Purpose:\n- Get single video data V2\n### Parameters:\n- a_id: Video id\n- c_id: Video cid\n### Return:\n- Video data V2\n\n# [示例/Example]\na_id = \"114006081739452\"\nc_id = \"28400484458\""
   },
   {
     "path": "/api/v1/bilibili/web/fetch_one_video_v3",
+    "method": "GET",
     "summary": "获取单个视频详情信息V3/Get single video data V3",
     "description": "# [中文]\n### 用途:\n- 获取单个视频详情信息V3\n### 参数:\n- url: 视频链接\n### 返回:\n- 视频详情信息V3\n\n# [English]\n### Purpose:\n- Get single video data V3\n### Parameters:\n- url: Video URL\n### Return:\n- Video data V3\n\n# [示例/Example]\nurl = \"https://www.bilibili.com/video/BV1S5uKzzE4r\""
   },
   {
     "path": "/api/v1/bilibili/web/fetch_video_detail",
+    "method": "GET",
     "summary": "获取单个视频详情/Get single video detail",
     "description": "# [中文]\n### 用途:\n- 获取单个视频详情\n### 参数:\n- aid: 作品id\n### 返回:\n- 视频详情\n\n# [English]\n### Purpose:\n- Get single video detail\n### Parameters:\n- aid: Video id\n### Return:\n- Video detail\n\n# [示例/Example]\naid = \"114902186396822\""
   },
   {
     "path": "/api/v1/bilibili/web/fetch_video_play_info",
+    "method": "GET",
     "summary": "获取单个视频播放信息/Get single video play info",
     "description": "# [中文]\n### 用途:\n- 获取单个视频播放信息\n### 参数:\n- url: 视频链接\n### 返回:\n- 视频播放信息\n\n# [English]\n### Purpose:\n- Get single video play info\n### Parameters:\n- url: Video URL\n### Return:\n- Video data\n\n# [示例/Example]\nurl = \"https://www.bilibili.com/video/BV1S5uKzzE4r\""
   },
   {
     "path": "/api/v1/bilibili/web/fetch_hot_search",
+    "method": "GET",
     "summary": "获取热门搜索信息/Get hot search data",
     "description": "# [中文]\n### 用途:\n- 获取热门搜索信息\n### 参数:\n- limit: 返回数量\n### 返回:\n- 热门搜索信息\n### 说明:\n- limit默认为10，上限为50\n\n# [English]\n### Purpose:\n- Get hot search data\n### Parameters:\n- limit: Return number\n### Return:\n- Hot search data\n### Note:\n- limit default is 10, maximum is 50\n\n# [示例/Example]\nlimit = 10"
   },
   {
     "path": "/api/v1/bilibili/web/fetch_general_search",
+    "method": "GET",
     "summary": "获取综合搜索信息/Get general search data",
     "description": "# [中文]\n### 用途:\n- 获取综合搜索信息\n### 参数:\n- keyword: 搜索关键词\n- order: 排序方式\n    - totalrank 综合排序\n    - click 最多播放\n    - pubdate 最新发布\n    - dm 最多弹幕\n    - stow 最多收藏\n- page: 页码\n- page_size: 每页数量\n- duration: 时长筛选\n    - 0 全部时长\n    - 1 10分钟以下\n    - 2 10-30分钟\n    - 3 30分钟-60分钟\n    - 4 60分钟以上\n- pubtime_begin_s: 开始日期，10位时间戳，需要小于结束日期\n- pubtime_end_s: 结束日期，10位时间戳，需要大于开始日期\n### 返回:\n- 综合搜索信息\n\n# [English]\n### Purpose:\n- Get general search data\n### Parameters:\n- keyword: Search keyword\n- order: Order method\n    - totalrank Comprehensive sorting\n    - click Most played\n    - pubdate Latest release\n    - dm Most barrage\n    - stow Most collection\n- page: Page number\n- page_size: Number per page\n- duration: Duration filter\n    - 0 All durations\n    - 1 Under 10 minutes\n    - 2 10-30 minutes\n    - 3 30-60 minutes\n    - 4 Over 60 minutes\n- pubtime_begin_s: Start date, 10-digit timestamp, must be less than end date\n- pubtime_end_s: End date, 10-digit timestamp, must be greater than start date\n### Return:\n- General search data\n\n# [示例/Example]\nkeyword = \"火影忍者\"\norder = \"totalrank\"\npage = 1\npage_size = 42\nduration = 0\npubtime_begin_s = 0\npubtime_end_s = 0"
   },
   {
     "path": "/api/v1/bilibili/web/fetch_video_playurl",
+    "method": "GET",
     "summary": "获取视频流地址/Get video playurl",
     "description": "# [中文]\n### 用途:\n- 获取视频流地址\n### 参数:\n- bv_id: 作品id\n- cid: 作品cid\n### 返回:\n- 视频流地址\n\n# [English]\n### Purpose:\n- Get video playurl\n### Parameters:\n- bv_id: Video id\n- cid: Video cid\n### Return:\n- Video playurl\n\n# [示例/Example]\nbv_id = \"BV1y7411Q7Eq\"\ncid = \"171776208\""
   },
   {
     "path": "/api/v1/bilibili/web/fetch_vip_video_playurl",
+    "method": "POST",
     "summary": "获取大会员清晰度视频流地址/Get VIP video playurl",
     "description": "# [中文]\n### 用途:\n- 获取大会员清晰度视频流地址\n### 参数:\n- bv_id: 作品id\n- cid: 作品cid\n- cookie: 大会员用户Cookie\n### 返回:\n- 大会员清晰度视频流地址\n\n# [English]\n### Purpose:\n- Get VIP video playurl\n### Parameters:\n- bv_id: Video id\n- cid: Video cid\n- cookie: VIP User Cookie\n### Return:\n- VIP video playurl\n\n# [示例/Example]\nbv_id = \"BV1y7411Q7Eq\"\ncid = \"171776208\"\ncookie = \"your_vip_bilibili_cookie\""
   },
   {
     "path": "/api/v1/bilibili/web/fetch_user_post_videos",
+    "method": "GET",
     "summary": "获取用户主页作品数据/Get user homepage video data",
     "description": "# [中文]\n### 用途:\n- 获取用户发布的视频数据\n### 参数:\n- uid: 用户UID\n- pn: 页码\n- order: 排序方式\n    - pubdate 最新发布\n    - click 最多播放\n    - stow 最多收藏\n### 返回:\n- 用户发布的视频数据\n\n# [English]\n### Purpose:\n- Get user post video data\n### Parameters:\n- uid: User UID\n- pn: Page number\n- order: Order method\n    - pubdate Latest release\n    - click Most played\n    - stow Most collection\n### Return:\n- User posted video data\n\n# [示例/Example]\nuid = \"178360345\"\npn = 1\norder = \"pubdate\""
   },
   {
     "path": "/api/v1/bilibili/web/fetch_collect_folders",
+    "method": "GET",
     "summary": "获取用户所有收藏夹信息/Get user collection folders",
     "description": "# [中文]\n### 用途:\n- 获取用户收藏作品数据\n### 参数:\n- uid: 用户UID\n### 返回:\n- 用户收藏夹信息\n\n# [English]\n### Purpose:\n- Get user collection folders\n### Parameters:\n- uid: User UID\n### Return:\n- user collection folders\n\n# [示例/Example]\nuid = \"178360345\""
   },
   {
     "path": "/api/v1/bilibili/web/fetch_user_collection_videos",
+    "method": "GET",
     "summary": "获取指定收藏夹内视频数据/Gets video data from a collection folder",
     "description": "# [中文]\n### 用途:\n- 获取指定收藏夹内视频数据\n### 参数:\n- folder_id: 用户UID\n- pn: 页码\n### 返回:\n- 指定收藏夹内视频数据\n\n# [English]\n### Purpose:\n- Gets video data from a collection folder\n### Parameters:\n- folder_id: collection folder id\n- pn: Page number\n### Return:\n- video data from collection folder\n\n# [示例/Example]\nfolder_id = \"1756059545\"\npn = 1"
   },
   {
     "path": "/api/v1/bilibili/web/fetch_user_profile",
+    "method": "GET",
     "summary": "获取指定用户的信息/Get information of specified user",
     "description": "# [中文]\n### 用途:\n- 获取指定用户的信息\n### 参数:\n- uid: 用户UID\n### 返回:\n- 指定用户的个人信息\n\n# [English]\n### Purpose:\n- Get information of specified user\n### Parameters:\n- uid: User UID\n### Return:\n- information of specified user\n\n# [示例/Example]\nuid = \"178360345\""
   },
   {
     "path": "/api/v1/bilibili/web/fetch_user_up_stat",
+    "method": "GET",
     "summary": "获取UP主状态统计/Get UP stat (total likes and views)",
     "description": "# [中文]\n### 用途:\n- 获取UP主状态统计信息（总获赞数、总播放数）\n### 参数:\n- uid: 用户UID\n### 返回:\n- UP主状态统计数据\n    - archive: 视频相关统计\n        - view: 总播放数\n    - likes: 总获赞数\n\n# [English]\n### Purpose:\n- Get UP stat (total likes and total views)\n### Parameters:\n- uid: User UID\n### Return:\n- UP stat data\n    - archive: Video statistics\n        - view: Total views\n    - likes: Total likes\n\n# [示例/Example]\nuid = \"178360345\""
   },
   {
     "path": "/api/v1/bilibili/web/fetch_user_relation_stat",
+    "method": "GET",
     "summary": "获取用户关系状态统计/Get user relation stat (following and followers)",
     "description": "# [中文]\n### 用途:\n- 获取用户关系状态统计信息（关注数、粉丝数）\n### 参数:\n- uid: 用户UID\n### 返回:\n- 用户关系状态统计数据\n    - following: 关注数\n    - follower: 粉丝数\n\n# [English]\n### Purpose:\n- Get user relation stat (following count and follower count)\n### Parameters:\n- uid: User UID\n### Return:\n- User relation stat data\n    - following: Following count\n    - follower: Follower count\n\n# [示例/Example]\nuid = \"178360345\""
   },
   {
     "path": "/api/v1/bilibili/web/fetch_com_popular",
+    "method": "GET",
     "summary": "获取综合热门视频信息/Get comprehensive popular video information",
     "description": "# [中文]\n### 用途:\n- 获取综合热门视频信息\n### 参数:\n- pn: 页码\n### 返回:\n- 综合热门视频信息\n\n# [English]\n### Purpose:\n- Get comprehensive popular video information\n### Parameters:\n- pn: Page number\n### Return:\n- comprehensive popular video information\n\n# [示例/Example]\npn = 1"
   },
   {
     "path": "/api/v1/bilibili/web/fetch_video_comments",
+    "method": "GET",
     "summary": "获取指定视频的评论/Get comments on the specified video",
     "description": "# [中文]\n### 用途:\n- 获取指定视频的评论\n### 参数:\n- bv_id: 作品id\n- pn: 页码\n### 返回:\n- 指定视频的评论数据\n\n# [English]\n### Purpose:\n- Get comments on the specified video\n### Parameters:\n- bv_id: Video id\n- pn: Page number\n### Return:\n- comments of the specified video\n\n# [示例/Example]\nbv_id = \"BV1M1421t7hT\"\npn = 1"
   },
   {
     "path": "/api/v1/bilibili/web/fetch_comment_reply",
+    "method": "GET",
     "summary": "获取视频下指定评论的回复/Get reply to the specified comment",
     "description": "# [中文]\n### 用途:\n- 获取视频下指定评论的回复\n### 参数:\n- bv_id: 作品id\n- pn: 页码\n- rpid: 回复id\n### 返回:\n- 指定评论的回复数据\n\n# [English]\n### Purpose:\n- Get reply to the specified comment\n### Parameters:\n- bv_id: Video id\n- pn: Page number\n- rpid: Reply id\n### Return:\n- Reply of the specified comment\n\n# [示例/Example]\nbv_id = \"BV1M1421t7hT\"\npn = 1\nrpid = \"237109455120\""
   },
   {
     "path": "/api/v1/bilibili/web/fetch_user_dynamic",
+    "method": "GET",
     "summary": "获取指定用户动态/Get dynamic information of specified user",
     "description": "# [中文]\n### 用途:\n- 获取指定用户动态\n### 参数:\n- uid: 用户UID\n- offset: 开始索引\n### 返回:\n- 指定用户动态数据\n\n# [English]\n### Purpose:\n- Get dynamic information of specified user\n### Parameters:\n- uid: User UID\n- offset: offset\n### Return:\n- dynamic information of specified user\n\n# [示例/Example]\nuid = \"178360345\"\noffset = \"953154282154098691\""
   },
   {
     "path": "/api/v1/bilibili/web/fetch_video_danmaku",
+    "method": "GET",
     "summary": "获取视频实时弹幕/Get Video Danmaku",
     "description": "# [中文]\n### 用途:\n- 获取视频实时弹幕\n### 参数:\n- cid: 作品cid\n### 返回:\n- 视频实时弹幕\n\n# [English]\n### Purpose:\n- Get Video Danmaku\n### Parameters:\n- cid: Video cid\n### Return:\n- Video Danmaku\n\n# [示例/Example]\ncid = \"1639235405\""
   },
   {
     "path": "/api/v1/bilibili/web/fetch_live_room_detail",
+    "method": "GET",
     "summary": "获取指定直播间信息/Get information of specified live room",
     "description": "# [中文]\n### 用途:\n- 获取指定直播间信息\n### 参数:\n- room_id: 直播间ID\n### 返回:\n- 指定直播间信息\n\n# [English]\n### Purpose:\n- Get information of specified live room\n### Parameters:\n- room_id: Live room ID\n### Return:\n- information of specified live room\n\n# [示例/Example]\nroom_id = \"22816111\""
   },
   {
     "path": "/api/v1/bilibili/web/fetch_live_videos",
+    "method": "GET",
     "summary": "获取直播间视频流/Get live video data of specified room",
     "description": "# [中文]\n### 用途:\n- 获取指定直播间视频流\n### 参数:\n- room_id: 直播间ID\n### 返回:\n- 指定直播间视频流\n\n# [English]\n### Purpose:\n- Get live video data of specified room\n### Parameters:\n- room_id: Live room ID\n### Return:\n- live video data of specified room\n\n# [示例/Example]\nroom_id = \"1815229528\""
   },
   {
     "path": "/api/v1/bilibili/web/fetch_live_streamers",
+    "method": "GET",
     "summary": "获取指定分区正在直播的主播/Get live streamers of specified live area",
     "description": "# [中文]\n### 用途:\n- 获取指定分区正在直播的主播\n### 参数:\n- area_id: 直播分区id\n- pn: 页码\n### 返回:\n- 指定分区正在直播的主播\n\n# [English]\n### Purpose:\n- Get live streamers of specified live area\n### Parameters:\n- area_id: Live area ID\n- pn: Page number\n### Return:\n- live streamers of specified live area\n\n# [示例/Example]\narea_id = \"9\"\npn = 1"
   },
   {
     "path": "/api/v1/bilibili/web/fetch_all_live_areas",
+    "method": "GET",
     "summary": "获取所有直播分区列表/Get a list of all live areas",
     "description": "# [中文]\n### 用途:\n- 获取所有直播分区列表\n### 参数:\n### 返回:\n- 所有直播分区列表\n\n# [English]\n### Purpose:\n- Get a list of all live areas\n### Parameters:\n### Return:\n- list of all live areas\n\n# [示例/Example]"
   },
   {
     "path": "/api/v1/bilibili/web/bv_to_aid",
+    "method": "GET",
     "summary": "通过bv号获得视频aid号/Generate aid by bvid",
     "description": "# [中文]\n### 用途:\n- 通过bv号获得视频aid号\n### 参数:\n- bv_id: 作品id\n### 返回:\n- 视频aid号\n\n# [English]\n### Purpose:\n- Generate aid by bvid\n### Parameters:\n- bv_id: Video id\n### Return:\n- Video aid\n\n# [示例/Example]\nbv_id = \"BV1M1421t7hT\""
   },
   {
     "path": "/api/v1/bilibili/web/fetch_video_parts",
+    "method": "GET",
     "summary": "通过bv号获得视频分p信息/Get Video Parts By bvid",
     "description": "# [中文]\n### 用途:\n- 通过bv号获得视频分p信息\n### 参数:\n- bv_id: 作品id\n### 返回:\n- 视频分p信息\n\n# [English]\n### Purpose:\n- Get Video Parts By bvid\n### Parameters:\n- bv_id: Video id\n### Return:\n- Video Parts\n\n# [示例/Example]\nbv_id = \"BV1vf421i7hV\""
   },
   {
     "path": "/api/v1/bilibili/web/fetch_get_user_id",
+    "method": "GET",
     "summary": "提取用户ID/Extract user ID",
     "description": "# [中文]\n### 用途:\n- 提取用户ID\n### 参数:\n- share_link: 用户分享链接\n### 返回:\n- 用户ID\n\n# [English]\n### Purpose:\n- Extract user ID\n### Parameters:\n- share_link: User share link\n### Return:\n- User ID"
   }

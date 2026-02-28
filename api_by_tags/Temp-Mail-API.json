@@ -1,16 +1,19 @@
 [
   {
     "path": "/api/v1/temp_mail/v1/get_temp_email_address",
+    "method": "GET",
     "summary": "Get Temp Email",
     "description": "# [中文]\n### 用途:\n- 获取一个临时邮箱地址\n- 用于注册或者接收邮件，该邮箱地址不会被删除，也不会被其他人使用。\n- 该邮箱无法发送邮件，只能接收邮件。\n- 请自行保存邮箱地址、用户名、密码、Bearer Token，我们无法帮助您找回这些关键信息。\n### 参数:\n- 无\n### 返回:\n- domain: 邮箱域名\n- name: 邮箱用户名\n- password: 邮箱密码\n- email_address: 邮箱地址\n- token: 邮箱Bearer Token\n\n# [English]\n### Purpose:\n- Get a temporary email address\n- Used for registration or receiving emails, this email address will not be deleted or used by others.\n- This email cannot send emails, only receive emails.\n- Please save the email address, username, password, and Bearer Token yourself, we cannot help you retrieve this critical information.\n### Parameters:\n- None\n### Returns:\n- domain: Email domain\n- name: Email username\n- password: Email password\n- email_address: Email address\n- token: Email Bearer Token"
   },
   {
     "path": "/api/v1/temp_mail/v1/get_emails_inbox",
+    "method": "GET",
     "summary": "Get Emails",
     "description": "# [中文]\n### 用途:\n- 获取邮件列表\n### 参数:\n- token: 邮箱Bearer Token\n### 返回:\n- emails: 邮件列表\n\n# [English]\n### Purpose:\n- Get a list of emails\n### Parameters:\n- token: Email Bearer Token\n### Returns:\n- emails: List of emails"
   },
   {
     "path": "/api/v1/temp_mail/v1/get_email_by_id",
+    "method": "GET",
     "summary": "Get Email By Id",
     "description": "# [中文]\n### 用途:\n- 通过邮件ID获取邮件数据\n### 参数:\n- token: 邮箱Bearer Token\n- message_id: 邮件ID\n### 返回:\n- 邮件数据\n\n# [English]\n### Purpose:\n- Get email data by email ID\n### Parameters:\n- token: Email Bearer Token\n- message_id: Email ID\n### Returns:\n- Email data"
   }

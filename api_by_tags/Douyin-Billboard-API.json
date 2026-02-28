@@ -1,156 +1,187 @@
 [
   {
     "path": "/api/v1/douyin/billboard/fetch_city_list",
+    "method": "GET",
     "summary": "获取中国城市列表/Fetch Chinese city list",
     "description": "# [中文]\n### 用途:\n- 获取城市列表\n### 参数:\n- 无\n### 返回:\n- 中国城市列表\n\n# [English]\n### Purpose:\n- Get city list\n### Parameters:\n- None\n### Return:\n- Chinese city list"
   },
   {
     "path": "/api/v1/douyin/billboard/fetch_content_tag",
+    "method": "GET",
     "summary": "获取垂类内容标签/Fetch vertical content tags",
     "description": "# [中文]\n### 用途:\n- 获取垂类内容标签\n### 参数:\n- 无\n### 返回:\n- 垂类内容标签\n### 注意:\n- 该接口用于获取垂类内容标签，用于query_tag参数构建\n### 示例:\n已知顶级垂类内容标签 `美食`，它的顶级垂类id为 `628`；`美食` 的子垂类标签 `品酒教学`，它的子垂类id为 `62802`。\n那么构建标签查询参数为 `{\"value\": 628, \"children\": [{\"value\": 62808}]}`\n\n如果需要多个子垂类标签，所有的美食子垂类标签为 `{\"value\":628,\"children\":[{\"value\":62808},{\"value\":62804},{\"value\":62806},{\"value\":62803},{\"value\":62802},{\"value\":62801},{\"value\":62811},{\"value\":62807},{\"value\":62805},{\"value\":62810}]}`\n\n# [English]\n### Purpose:\n- Get vertical content tags\n### Parameters:\n- None\n### Return:\n- Vertical content tags\n### Note:\n- This interface is used to obtain vertical content tags, used to construct the query_tag parameter\n### Example:\nGiven the top-level vertical content tag `Food`, its top-level vertical id is `628`; `Food`'s sub-vertical tag `Wine Tasting`, its sub-vertical id is `62802`.\nThen the constructed tag query parameter is `{\"value\": 628, \"children\": [{\"value\": 62808}]}`\n\nIf you need multiple sub-vertical tags, all food sub-vertical tags are `{\"value\":628,\"children\":[{\"value\":62808},{\"value\":62804},{\"value\":62806},{\"value\":62803},{\"value\":62802},{\"value\":62801},{\"value\":62811},{\"value\":62807},{\"value\":62805},{\"value\":62810}]}`"
   },
   {
     "path": "/api/v1/douyin/billboard/fetch_hot_category_list",
+    "method": "GET",
     "summary": "获取热点榜分类/Fetch hot list category",
     "description": "# [中文]\n### 用途:\n- 获取热点榜分类的id与热度\n- 注意：使用start_date和end_date参数需要移除snapshot_time参数才可以生效\n### 参数:\n- billboard_type: 榜单类型\n    - rise 上升热点榜\n    - city 城市热点榜\n    - total 热点总榜\n- snapshot_time: 快照时间\n- start_date: 快照开始时间\n- end_date: 快照结束时间\n- keyword: 热点搜索词\n### 返回:\n- 热点榜分类\n\n# [English]\n### Purpose:\n- Get the id and popularity of the hot list category\n- Note: Using start_date and end_date parameters requires removing the snapshot_time parameter\n- Note: snapshot_time and start_date, end_date parameters cannot be empty at the same time\n### Parameters:\n- billboard_type: Billboard type\n    - rise Rising hot list\n    - city City hot list\n    - total Total hot list\n- snapshot_time: Snapshot time\n- start_date: Snapshot start time\n- end_date: Snapshot end time\n- keyword: Hot search term\n### Return:\n- Hot category list"
   },
   {
     "path": "/api/v1/douyin/billboard/fetch_hot_rise_list",
+    "method": "GET",
     "summary": "获取上升热点榜/Fetch rising hot list",
     "description": "# [中文]\n### 用途:\n- 获取上升热点榜\n### 参数:\n- page: 页码\n- page_size: 每页数量\n- order: 排序方式\n    - rank 按热度排序\n    - rank_diff 按排名变化\n- sentence_tag: 热点分类标签，从热点榜分类获取，多个分类用逗号分隔，空为全部\n- keyword: 热点搜索词\n### 返回:\n- 上升热点榜\n\n# [English]\n### Purpose:\n- Get the rising hot list\n### Parameters:\n- page: Page number\n- page_size: Number of items per page\n- order: Sorting method\n    - rank Sort by popularity\n    - rank_diff Sort by ranking change\n- sentence_tag: Hot category tag, get from hot list category, multiple categories separated by commas, empty for all\n- keyword: Hot search term\n### Return:\n- Rising hot list"
   },
   {
     "path": "/api/v1/douyin/billboard/fetch_hot_city_list",
+    "method": "GET",
     "summary": "获取同城热点榜/Fetch city hot list",
     "description": "# [中文]\n### 用途:\n- 获取同城热点榜\n### 参数:\n- page: 页码\n- page_size: 每页数量\n- order: 排序方式\n    - rank 按热度排序\n    - rank_diff 按排名变化\n- city_code: 城市编码，从城市列表获取，空为全部\n- sentence_tag: 热点分类标签，从热点榜分类获取，多个分类用逗号分隔，空为全部\n- keyword: 热点搜索词\n### 返回:\n- 同城热点榜\n\n# [English]\n### Purpose:\n- Get the city hot list\n### Parameters:\n- page: Page number\n- page_size: Number of items per page\n- order: Sorting method\n    - rank Sort by popularity\n    - rank_diff Sort by ranking change\n- city_code: City code, get from city list, empty for all\n- sentence_tag: Hot category tag, get from hot list category, multiple categories separated by commas, empty for all\n- keyword: Hot search term\n### Return:\n- City hot list"
   },
   {
     "path": "/api/v1/douyin/billboard/fetch_hot_challenge_list",
+    "method": "GET",
     "summary": "获取挑战热榜/Fetch hot challenge list",
     "description": "# [中文]\n### 用途:\n- 获取挑战榜\n### 参数:\n- page: 页码\n- page_size: 每页数量\n- keyword: 热点搜索词\n### 返回:\n- 挑战榜\n\n# [English]\n### Purpose:\n- Get the challenge list\n### Parameters:\n- page: Page number\n- page_size: Number of items per page\n- keyword: Hot search term\n### Return:\n- Challenge list"
   },
   {
     "path": "/api/v1/douyin/billboard/fetch_hot_total_list",
+    "method": "GET",
     "summary": "获取热点总榜/Fetch total hot list",
     "description": "# [中文]\n### 用途:\n- 获取热点总榜\n### 参数:\n- page: 页码\n- page_size: 每页数量\n- type: 快照类型 snapshot 按时刻查看 range 按时间范围。\n    - 备注：snapshot_time 在 snapshot时有效，start_date 和 end_date 在 range 时有效\n- snapshot_time: 快照时间 格式yyyyMMddHHmmss\n- start_date: 快照开始时间 格式yyyyMMdd\n- end_date: 快照结束时间 格式yyyyMMdd\n- sentence_tag: 热点分类标签，从热点榜分类获取，多个分类用逗号分隔，空为全部\n- keyword: 热点搜索词\n### 返回:\n- 热点总榜\n\n# [English]\n### Purpose:\n- Get the total hot list\n### Parameters:\n- page: Page number\n- page_size: Number of items per page\n- type: Snapshot type snapshot view by time range view by time range.\n    - Note: snapshot_time is valid when snapshot, start_date and end_date are valid when range\n- snapshot_time: Snapshot time format yyyyMMddHHmmss\n- start_date: Snapshot start time format yyyyMMdd\n- end_date: Snapshot end time format yyyyMMdd\n- sentence_tag: Hot category tag, get from hot list category, multiple categories separated by commas, empty for all\n- keyword: Hot search term\n### Return:\n- Total hot list"
   },
   {
     "path": "/api/v1/douyin/billboard/fetch_hot_calendar_list",
+    "method": "POST",
     "summary": "获取活动日历/Fetch activity calendar",
     "description": "# [中文]\n### 用途:\n- 获取活动日历\n### 参数:\n- city_code: 城市编码，从城市列表获取，空为全部\n- category_code: 热点榜分类编码，从热点榜分类获取，空为全部\n- end_date: 快照结束时间 格式10位时间戳\n- start_date: 快照开始时间 格式10位时间戳\n### 返回:\n- 活动日历\n\n# [English]\n### Purpose:\n- Get the activity calendar\n### Parameters:\n- city_code: City code, get from city list, empty for all\n- category_code: Hot list category code, get from hot list category, empty for all\n- end_date: Snapshot end time format 10 digit timestamp\n- start_date: Snapshot start time format 10 digit timestamp\n### Return:\n- Activity calendar"
   },
   {
     "path": "/api/v1/douyin/billboard/fetch_hot_calendar_detail",
+    "method": "GET",
     "summary": "获取活动日历详情/Fetch activity calendar detail",
     "description": "# [中文]\n### 用途:\n- 获取活动日历详情\n### 参数:\n- calendar_id: 活动id\n### 返回:\n- 活动日历详情\n\n# [English]\n### Purpose:\n- Get the activity calendar details\n### Parameters:\n- calendar_id: Activity id\n### Return:\n- Activity calendar details"
   },
   {
     "path": "/api/v1/douyin/billboard/fetch_hot_user_portrait_list",
+    "method": "GET",
     "summary": "获取作品点赞观众画像-仅限热门榜/Fetch work like audience portrait - hot list only",
     "description": "# [中文]\n### 用途:\n- 获取作品点赞观众画像\n### 参数:\n- aweme_id: 作品id\n- option: 选项，1 手机价格分布 2 性别分布 3 年龄分布 4 地域分布-省份 5 地域分布-城市 6 城市等级 7 手机品牌分布\n### 返回:\n- 作品点赞观众画像\n\n# [English]\n### Purpose:\n- Get the work like audience portrait\n### Parameters:\n- aweme_id: Work id\n- option: Option\n    - 1 Mobile price\n    - 2 Gender distribution\n    - 3 Age distribution\n    - 4 Regional distribution - province\n    - 5 Regional distribution - city\n    - 6 City level\n    - 7 Mobile brand distribution\n### Return:\n- Work like audience portrait"
   },
   {
     "path": "/api/v1/douyin/billboard/fetch_hot_comment_word_list",
+    "method": "GET",
     "summary": "获取作品评论分析-词云权重/Fetch work comment analysis word cloud weight",
     "description": "# [中文]\n### 用途:\n- 获取作品评论分析-词云权重\n### 参数:\n- aweme_id: 作品id\n### 返回:\n- 作品评论分析-词云权重\n\n# [English]\n### Purpose:\n- Get the work comment analysis word cloud weight\n### Parameters:\n- aweme_id: Work id\n### Return:\n- Work comment analysis word cloud weight"
   },
   {
     "path": "/api/v1/douyin/billboard/fetch_hot_item_trends_list",
+    "method": "GET",
     "summary": "获取作品数据趋势/Fetch post data trend",
     "description": "# [中文]\n### 用途:\n- 获取作品数据趋势\n### 参数:\n- aweme_id: 作品id\n- option: 选项，7 点赞量 8 分享量 9 评论量\n- date_window: 时间窗口，1 按小时 2 按天\n### 返回:\n- 作品数据趋势\n\n# [English]\n### Purpose:\n- Get the work data trend\n### Parameters:\n- aweme_id: Work id\n- option: Option, 7 Like 8 Share 9 Comment\n- date_window: Time window, 1 by hour 2 by day\n### Return:\n- Work data trend"
   },
   {
     "path": "/api/v1/douyin/billboard/fetch_hot_account_list",
+    "method": "POST",
     "summary": "获取热门账号/Fetch hot account list",
     "description": "# [中文]\n### 用途:\n- 获取热门账号\n### 参数:\n- date_window: 时间窗口，格式 小时，默认24小时\n- page_num: 页码，默认1\n- page_size: 每页数量，默认20\n- query_tag: 子级垂类标签，空则为全部，多个标签需传入\n{\"value\": \"{顶级垂类标签id}\", \"children\": [\n    {\"value\": \"{子级垂类标签id}\"},\n    {\"value\": \"{子级垂类标签id}\"}\n]}\n### 返回:\n- 热门账号\n\n# [English]\n### Purpose:\n- Get the hot account\n### Parameters:\n- date_window: Time window, format hour, default 24 hours\n- page_num: Page number, default 1\n- page_size: Number of items per page, default 20\n- query_tag: Sub-level vertical category tag, empty for all, multiple tags need to be passed in\n{\"value\": \"{top-level vertical category id}\", \"children\": [\n    {\"value\": \"{sub-level vertical category id}\"},\n    {\"value\": \"{sub-level vertical category id}\"}\n]}\n### Return:\n- Hot account"
   },
   {
     "path": "/api/v1/douyin/billboard/fetch_hot_account_search_list",
+    "method": "GET",
     "summary": "搜索用户名或抖音号/Fetch account search list",
     "description": "# [中文]\n### 用途:\n- 获取搜索用户名或抖音号\n### 参数:\n- keyword: 搜索的用户名或抖音号\n- cursor: 游标，默认空\n### 返回:\n- 搜索结果\n\n# [English]\n### Purpose:\n- Get the search username or Douyin number\n### Parameters:\n- keyword: Search username or Douyin number\n- cursor: Cursor, default empty\n### Return:\n- Search result"
   },
   {
     "path": "/api/v1/douyin/billboard/fetch_hot_account_trends_list",
+    "method": "GET",
     "summary": "获取账号粉丝数据趋势/Fetch account fan data trend",
     "description": "# [中文]\n### 用途:\n- 获取账号粉丝数据趋势\n### 参数:\n- sec_uid: 用户sec_id\n- option: 选项，2 新增点赞量 3 新增作品量 4 新增评论量 5 新增分享量\n- date_window: 时间窗口，1 按小时 2 按天\n### 返回:\n- 账号粉丝数据趋势\n\n# [English]\n### Purpose:\n- Get the account fan data trend\n### Parameters:\n- sec_uid: User sec_id\n- option: Option, 2 New like 3 New work 4 New comment 5 New share\n- date_window: Time window, 1 by hour 2 by day\n### Return:\n- Account fan data trend"
   },
   {
     "path": "/api/v1/douyin/billboard/fetch_hot_account_item_analysis_list",
+    "method": "GET",
     "summary": "获取账号作品分析-上周/Fetch account work analysis - last week",
     "description": "# [中文]\n### 用途:\n- 获取账号作品分析\n### 参数:\n- sec_uid: 用户sec_id\n- day: 天数，默认7天\n### 返回:\n- 账号作品分析\n\n# [English]\n### Purpose:\n- Get the account work analysis\n### Parameters:\n- sec_uid: User sec_id\n- day: Number of days, default 7 days\n### Return:\n- Account work analysis"
   },
   {
     "path": "/api/v1/douyin/billboard/fetch_hot_account_fans_portrait_list",
+    "method": "GET",
     "summary": "获取粉丝画像/Fetch fan portrait",
     "description": "# [中文]\n### 用途:\n- 获取粉丝画像\n### 参数:\n- sec_uid: 用户sec_id\n- option: 选项，默认值为：1 手机价格分布\n    - `1` = 手机价格分布\n    - `2` = 性别分布\n    - `3` = 年龄分布\n    - `4` = 地域分布-省份\n    - `5` = 地域分布-城市\n    - `6` = 城市等级\n    - `7` = 手机品牌分布\n    - `8` = 兴趣标签分析 百分比\n### 返回:\n- 粉丝画像\n\n# [English]\n### Purpose:\n- Get the fan portrait\n### Parameters:\n- sec_uid: User sec_id\n- option: Option\n    - 1 Mobile price\n    - 2 Gender distribution\n    - 3 Age distribution\n    - 4 Regional distribution - province\n    - 5 Regional distribution - city\n    - 6 City level\n    - 7 Mobile brand distribution\n    - 8 Interest tag analysis percentage\n### Return:\n- Fan portrait"
   },
   {
     "path": "/api/v1/douyin/billboard/fetch_hot_account_fans_interest_account_list",
+    "method": "GET",
     "summary": "获取粉丝兴趣作者 20个用户/Fetch fan interest author 20 users",
     "description": "# [中文]\n### 用途:\n- 获取粉丝兴趣作者 20个用户\n### 参数:\n- sec_uid: 用户sec_id\n### 返回:\n- 粉丝兴趣作者 20个用户\n\n# [English]\n### Purpose:\n- Get the fan interest author 20 users\n### Parameters:\n- sec_uid: User sec_id\n### Return:\n- Fan interest author 20 users"
   },
   {
     "path": "/api/v1/douyin/billboard/fetch_hot_account_fans_interest_topic_list",
+    "method": "GET",
     "summary": "获取粉丝近3天感兴趣的话题 10个话题/Fetch fan interest topic in the last 3 days 10 topics",
     "description": "# [中文]\n### 用途:\n- 获取粉丝近3天感兴趣的话题 10个话题\n### 参数:\n- sec_uid: 用户sec_id\n### 返回:\n- 粉丝近3天感兴趣的话题 10个话题\n\n# [English]\n### Purpose:\n- Get the fan interest topic in the last 3 days 10 topics\n### Parameters:\n- sec_uid: User sec_id\n### Return:\n- Fan interest topic in the last 3 days 10 topics"
   },
   {
     "path": "/api/v1/douyin/billboard/fetch_hot_account_fans_interest_search_list",
+    "method": "GET",
     "summary": "获取粉丝近3天搜索词 10个搜索词/Fetch fan interest search term in the last 3 days 10 search terms",
     "description": "# [中文]\n### 用途:\n- 获取粉丝近3天搜索词 10个搜索词\n### 参数:\n- sec_uid: 用户sec_id\n### 返回:\n- 粉丝近3天搜索词 10个搜索词\n\n# [English]\n### Purpose:\n- Get the fan interest search term in the last 3 days 10 search terms\n### Parameters:\n- sec_uid: User sec_id\n### Return:\n- Fan interest search term in the last 3 days 10 search terms"
   },
   {
     "path": "/api/v1/douyin/billboard/fetch_hot_total_video_list",
+    "method": "POST",
     "summary": "获取视频热榜/Fetch video hot list",
     "description": "# [中文]\n### 用途:\n- 获取视频榜\n### 参数:\n- page: 页码，默认1\n- page_size: 每页数量，默认10\n- date_window: 时间窗口，1 按小时 2 按天\n- sub_type: 榜单分类，1001 视频总榜 1002 低粉爆款 1003 高完播率 1004 高涨粉率 1005 高点赞率\n- tags: 子级垂类标签，空则为全部，多个标签需传入\n    {\"value\": \"{顶级垂类标签id}\", \"children\": [\n        {\"value\": \"{子级垂类标签id}\"},\n        {\"value\": \"{子级垂类标签id}\"}\n    ]}\n### 返回:\n- 视频榜\n\n# [English]\n### Purpose:\n- Get the video list\n### Parameters:\n- page: Page number\n- page_size: Number of items per page\n- date_window: Time window, 1 by hour 2 by day\n- sub_type: List category, 1001 Video total list 1002 Low fan explosion 1003 High completion rate 1004 High fan growth rate 1005 High like rate\n- tags: Sub-level vertical category tag, empty for all, multiple tags need to be passed in\n    {\"value\": \"{top-level vertical category id}\", \"children\": [\n        {\"value\": \"{sub-level vertical category id}\"},\n        {\"value\": \"{sub-level vertical category id}\"}\n    ]}\n### Return:\n- Video list"
   },
   {
     "path": "/api/v1/douyin/billboard/fetch_hot_total_low_fan_list",
+    "method": "POST",
     "summary": "获取低粉爆款榜/Fetch low fan explosion list",
     "description": "# [中文]\n### 用途:\n- 获取低粉爆款榜\n### 参数:\n- page: 页码\n- page_size: 每页数量\n- date_window: 时间窗口，1 按小时 2 按天\n- tags: 子级垂类标签，空则为全部，多个标签需传入\n    {\"value\": \"{顶级垂类标签id}\", \"children\": [\n        {\"value\": \"{子级垂类标签id}\"},\n        {\"value\": \"{子级垂类标签id}\"}\n    ]}\n### 返回:\n- 低粉爆款榜\n\n# [English]\n### Purpose:\n- Get the low fan explosion list\n### Parameters:\n- page: Page number\n- page_size: Number of items per page\n- date_window: Time window, 1 by hour 2 by day\n- tags: Sub-level vertical category tag, empty for all, multiple tags need to be passed in\n    {\"value\": \"{top-level vertical category id}\", \"children\": [\n        {\"value\": \"{sub-level vertical category id}\"},\n        {\"value\": \"{sub-level vertical category id}\"}\n    ]}\n### Return:\n- Low fan explosion list"
   },
   {
     "path": "/api/v1/douyin/billboard/fetch_hot_total_high_play_list",
+    "method": "POST",
     "summary": "获取高完播率榜/Fetch high completion rate list",
     "description": "# [中文]\n### 用途:\n- 获取高完播率榜\n### 参数:\n- page: 页码\n- page_size: 每页数量\n- date_window: 时间窗口，1 按小时 2 按天\n- tags: 子级垂类标签，空则为全部，多个标签需传入\n    {\"value\": \"{顶级垂类标签id}\", \"children\": [\n        {\"value\": \"{子级垂类标签id}\"},\n        {\"value\": \"{子级垂类标签id}\"}\n    ]}\n### 返回:\n- 高完播率榜\n\n# [English]\n### Purpose:\n- Get the high completion rate list\n### Parameters:\n- page: Page number\n- page_size: Number of items per page\n- date_window: Time window, 1 by hour 2 by day\n- tags: Sub-level vertical category tag, empty for all, multiple tags need to be passed in\n    {\"value\": \"{top-level vertical category id}\", \"children\": [\n        {\"value\": \"{sub-level vertical category id}\"},\n        {\"value\": \"{sub-level vertical category id}\"}\n    ]}\n### Return:\n- High completion rate list"
   },
   {
     "path": "/api/v1/douyin/billboard/fetch_hot_total_high_like_list",
+    "method": "POST",
     "summary": "获取高点赞率榜/Fetch high like rate list",
     "description": "# [中文]\n### 用途:\n- 获取高点赞率榜\n### 参数:\n- page: 页码\n- page_size: 每页数量\n- date_window: 时间窗口，1 按小时 2 按天\n- tags: 子级垂类标签，空则为全部，多个标签需传入\n    {\"value\": \"{顶级垂类标签id}\", \"children\": [\n        {\"value\": \"{子级垂类标签id}\"},\n        {\"value\": \"{子级垂类标签id}\"}\n    ]}\n### 返回:\n- 高点赞率榜\n\n# [English]\n### Purpose:\n- Get the high like rate list\n### Parameters:\n- page: Page number\n- page_size: Number of items per page\n- date_window: Time window, 1 by hour 2 by day\n- tags: Sub-level vertical category tag, empty for all, multiple tags need to be passed in\n    {\"value\": \"{top-level vertical category id}\", \"children\": [\n        {\"value\": \"{sub-level vertical category id}\"},\n        {\"value\": \"{sub-level vertical category id}\"}\n    ]}\n### Return:\n- High like rate list"
   },
   {
     "path": "/api/v1/douyin/billboard/fetch_hot_total_high_fan_list",
+    "method": "POST",
     "summary": "获取高涨粉率榜/Fetch high fan rate list",
     "description": "# [中文]\n### 用途:\n- 获取高涨粉率榜\n### 参数:\n- page: 页码\n- page_size: 每页数量\n- date_window: 时间窗口，1 按小时 2 按天\n- tags: 子级垂类标签，空则为全部，多个标签需传入\n    {\"value\": \"{顶级垂类标签id}\", \"children\": [\n        {\"value\": \"{子级垂类标签id}\"},\n        {\"value\": \"{子级垂类标签id}\"}\n    ]}\n### 返回:\n- 高涨粉率榜\n\n# [English]\n### Purpose:\n- Get the high fan rate list\n### Parameters:\n- page: Page number\n- page_size: Number of items per page\n- date_window: Time window, 1 by hour 2 by day\n- tags: Sub-level vertical category tag, empty for all, multiple tags need to be passed in\n    {\"value\": \"{top-level vertical category id}\", \"children\": [\n        {\"value\": \"{sub-level vertical category id}\"},\n        {\"value\": \"{sub-level vertical category id}\"}\n    ]}\n### Return:\n- High fan rate list"
   },
   {
     "path": "/api/v1/douyin/billboard/fetch_hot_total_topic_list",
+    "method": "POST",
     "summary": "获取话题热榜/Fetch topic hot list",
     "description": "# [中文]\n### 用途:\n- 获取话题榜\n### 参数:\n- page: 页码\n- page_size: 每页数量\n- date_window: 时间窗口，1 按小时 2 按天\n- tags: 子级垂类标签，空则为全部，多个标签需传入\n    {\"value\": \"{顶级垂类标签id}\", \"children\": [\n        {\"value\": \"{子级垂类标签id}\"},\n        {\"value\": \"{子级垂类标签id}\"}\n    ]}\n### 返回:\n- 话题榜\n\n# [English]\n### Purpose:\n- Get the topic list\n### Parameters:\n- page: Page number\n- page_size: Number of items per page\n- date_window: Time window, 1 by hour 2 by day\n- tags: Sub-level vertical category tag, empty for all, multiple tags need to be passed in\n    {\"value\": \"{top-level vertical category id}\", \"children\": [\n        {\"value\": \"{sub-level vertical category id}\"},\n        {\"value\": \"{sub-level vertical category id}\"}\n    ]}\n### Return:\n- Topic list"
   },
   {
     "path": "/api/v1/douyin/billboard/fetch_hot_total_high_topic_list",
+    "method": "POST",
     "summary": "获取热度飙升的话题榜/Fetch topic list with rising popularity",
     "description": "# [中文]\n### 用途:\n- 获取热度飙升的话题榜\n### 参数:\n- page: 页码\n- page_size: 每页数量\n- date_window: 时间窗口，1 按小时 2 按天\n- tags: 子级垂类标签，空则为全部，多个标签需传入\n    {\"value\": \"{顶级垂类标签id}\", \"children\": [\n        {\"value\": \"{子级垂类标签id}\"},\n        {\"value\": \"{子级垂类标签id}\"}\n    ]}\n### 返回:\n- 热度飙升的话题榜\n\n# [English]\n### Purpose:\n- Get the topic list with rising popularity\n### Parameters:\n- page: Page number\n- page_size: Number of items per page\n- date_window: Time window, 1 by hour 2 by day\n- tags: Sub-level vertical category tag, empty for all, multiple tags need to be passed in\n    {\"value\": \"{top-level vertical category id}\", \"children\": [\n        {\"value\": \"{sub-level vertical category id}\"},\n        {\"value\": \"{sub-level vertical category id}\"}\n    ]}\n### Return:\n- Topic list with rising popularity"
   },
   {
     "path": "/api/v1/douyin/billboard/fetch_hot_total_search_list",
+    "method": "POST",
     "summary": "获取搜索热榜/Fetch search hot list",
     "description": "# [中文]\n### 用途:\n- 获取搜索榜\n### 参数:\n- page_num: 页码\n- page_size: 每页数量\n- date_window: 时间窗口，1 按小时 2 按天\n- keyword: 搜索关键字\n### 返回:\n- 搜索榜\n\n# [English]\n### Purpose:\n- Get the search list\n### Parameters:\n- page_num: Page number\n- page_size: Number of items per page\n- date_window: Time window, 1 by hour 2 by day\n- keyword: Search keyword\n### Return:\n- Search list"
   },
   {
     "path": "/api/v1/douyin/billboard/fetch_hot_total_high_search_list",
+    "method": "POST",
     "summary": "获取热度飙升的搜索榜/Fetch search list with rising popularity",
     "description": "# [中文]\n### 用途:\n- 获取热度飙升的搜索榜\n### 参数:\n- page_num: 页码\n- page_size: 每页数量\n- date_window: 时间窗口，1 按小时 2 按天\n- keyword: 搜索关键字\n### 返回:\n- 热度飙升的搜索榜\n\n# [English]\n### Purpose:\n- Get the search list with rising popularity\n### Parameters:\n- page_num: Page number\n- page_size: Number of items per page\n- date_window: Time window, 1 by hour 2 by day\n- keyword: Search keyword\n### Return:\n- Search list with rising popularity"
   },
   {
     "path": "/api/v1/douyin/billboard/fetch_hot_total_hot_word_list",
+    "method": "POST",
     "summary": "获取全部热门内容词/Fetch all hot content words",
     "description": "# [中文]\n### 用途:\n- 获取全部内容词\n### 参数:\n- page_num: 页码\n- page_size: 每页数量\n- date_window: 时间窗口，1 按小时 2 按天\n- keyword: 搜索关键字\n### 返回:\n- 全部内容词\n\n# [English]\n### Purpose:\n- Get the list of all content words\n### Parameters:\n- page_num: Page number\n- page_size: Number of items per page\n- date_window: Time window, 1 by hour 2 by day\n- keyword: Search keyword\n### Return:\n- List of all content words"
   },
   {
     "path": "/api/v1/douyin/billboard/fetch_hot_total_hot_word_detail_list",
+    "method": "GET",
     "summary": "获取内容词详情/Fetch content word details",
     "description": "# [中文]\n### 用途:\n- 获取内容词详情\n### 参数:\n- keyword: 搜索关键字\n- word_id: 内容词id\n- query_day: 查询日期，格式为YYYYMMDD\n### 返回:\n- 内容词详情\n\n# [English]\n### Purpose:\n- Get the details of content words\n### Parameters:\n- keyword: Search keyword\n- word_id: Content word id\n- query_day: Query date, format is YYYYMMDD\n### Return:\n- Details of content words"
   }
