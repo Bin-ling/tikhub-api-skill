@@ -2098,9 +2098,9 @@
       },
       "Body_fetch_hot_total_high_fan_list_api_v1_douyin_billboard_fetch_hot_total_high_fan_list_post": {
         "properties": {
-          "page": {
+          "page_num": {
             "type": "integer",
-            "title": "Page",
+            "title": "Page Num",
             "description": "页码",
             "default": 1
           },
@@ -2131,9 +2131,9 @@
       },
       "Body_fetch_hot_total_high_like_list_api_v1_douyin_billboard_fetch_hot_total_high_like_list_post": {
         "properties": {
-          "page": {
+          "page_num": {
             "type": "integer",
-            "title": "Page",
+            "title": "Page Num",
             "description": "页码",
             "default": 1
           },
@@ -2164,9 +2164,9 @@
       },
       "Body_fetch_hot_total_high_play_list_api_v1_douyin_billboard_fetch_hot_total_high_play_list_post": {
         "properties": {
-          "page": {
+          "page_num": {
             "type": "integer",
-            "title": "Page",
+            "title": "Page Num",
             "description": "页码",
             "default": 1
           },
@@ -2227,9 +2227,9 @@
       },
       "Body_fetch_hot_total_high_topic_list_api_v1_douyin_billboard_fetch_hot_total_high_topic_list_post": {
         "properties": {
-          "page": {
+          "page_num": {
             "type": "integer",
-            "title": "Page",
+            "title": "Page Num",
             "description": "页码",
             "default": 1
           },
@@ -2290,9 +2290,9 @@
       },
       "Body_fetch_hot_total_low_fan_list_api_v1_douyin_billboard_fetch_hot_total_low_fan_list_post": {
         "properties": {
-          "page": {
+          "page_num": {
             "type": "integer",
-            "title": "Page",
+            "title": "Page Num",
             "description": "页码",
             "default": 1
           },
@@ -2353,9 +2353,9 @@
       },
       "Body_fetch_hot_total_topic_list_api_v1_douyin_billboard_fetch_hot_total_topic_list_post": {
         "properties": {
-          "page": {
+          "page_num": {
             "type": "integer",
-            "title": "Page",
+            "title": "Page Num",
             "description": "页码",
             "default": 1
           },
@@ -2386,9 +2386,9 @@
       },
       "Body_fetch_hot_total_video_list_api_v1_douyin_billboard_fetch_hot_total_video_list_post": {
         "properties": {
-          "page": {
+          "page_num": {
             "type": "integer",
-            "title": "Page",
+            "title": "Page Num",
             "description": "页码，默认1",
             "default": 1
           },
