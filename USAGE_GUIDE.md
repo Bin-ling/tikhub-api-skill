@@ -29,9 +29,8 @@ SDK 依赖以下 Python 包：
 
 ### 3.1 从源代码安装
 ```bash
-# 克隆仓库（如果尚未克隆）
-git clone https://github.com/your-repository/tikhub-api-python-sdk-v2.git
-
+# 克隆仓库
+git clone git clone https://github.com/Bin-ling/tikhub-api-skill.git
 # 进入 SDK 目录
 cd tikhub-api-python-sdk-v2
 
@@ -45,7 +44,7 @@ pip install -e .
 ### 3.2 直接安装
 ```bash
 # 从 GitHub 直接安装
-pip install git+https://github.com/your-repository/tikhub-api-python-sdk-v2.git
+pip install git+git clone https://github.com/Bin-ling/tikhub-api-skill.git
 
 # 或从本地安装（如果已克隆仓库）
 pip install /path/to/tikhub-api-python-sdk-v2
